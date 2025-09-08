@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Abstraktný geometrický náhľad">
+  
+    <defs>
+      <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="hsl(0 0% 95%)" />
+        <stop offset="100%" stop-color="hsl(0 0% 89%)" />
+      </linearGradient>
+      <clipPath id="rounded">
+        <rect x="0" y="0" width="720" height="360" rx="21.599999999999998" ry="21.599999999999998" />
+      </clipPath>
+    </defs>
+  <g clip-path="url(#rounded)">
+    <rect x="0" y="0" width="720" height="360" fill="url(#bg-grad)" />
+    <circle cx="697.6117337867618" cy="-113.78007830120622" r="358.602810954675" fill="hsl(0 0% 58%)" opacity="0.79" /><circle cx="802.6448937635869" cy="432.0761440079659" r="413.23632917739457" fill="hsl(0 0% 72%)" opacity="0.60" /><circle cx="958.0308723729104" cy="-114.20893397647886" r="203.83309074584395" fill="hsl(0 0% 34%)" opacity="0.66" /><circle cx="919.6241954751313" cy="374.02536945976317" r="300.7277677003294" fill="hsl(0 0% 26%)" opacity="0.77" />
+  </g>
+</svg>
