@@ -1,0 +1,52 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { tagToSlug } from '../../lib/slug';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const tags = new Set<string>();
+  for (const p of posts) for (const t of (p.data.tags ?? [])) tags.add(t);
+  return [...tags].map((t) => ({ params: { tag: tagToSlug(t) }, props: { tag: t } }));
+}
+
+const { tag } = Astro.props as { tag: string };
+const posts = (await getCollection('blog')).filter((p) => (p.data.tags ?? []).includes(tag)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="sk">
+  <head>
+    <BaseHead title={`Značka: ${tag}`} description={`Články so značkou ${tag}`} />
+    <style>
+      main { width: 720px; }
+      ul { list-style: none; padding: 0; margin: 0; }
+      li { margin-bottom: 1rem; }
+      a { text-decoration: none; }
+      .title { margin: 0; color: rgb(var(--black)); }
+      .date { margin: 0; color: rgb(var(--gray)); }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Články so značkou „{tag}”</h1>
+      <p><a href="/tags/">← Všetky značky</a></p>
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`}>
+              <h4 class="title">{post.data.title}</h4>
+              <p class="date"><FormattedDate date={post.data.pubDate} /></p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </main>
+    <Footer />
+  </body>
+  </html>
+

@@ -13,6 +13,9 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: image().optional(),
+      // New fields for posts
+      author: z.string().default('Lukas Cech'),
+      tags: z.array(z.string()).default([]),
 		}),
 });
 
