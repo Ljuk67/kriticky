@@ -5,6 +5,20 @@ import { join, dirname, relative } from 'path';
 const ROOT = process.cwd();
 const CONTENT_DIR = join(ROOT, 'src', 'content', 'blog');
 const OUT_DIR = join(ROOT, 'src', 'assets', 'thumbs');
+const GLOBAL_CSS = join(ROOT, 'src', 'styles', 'global.css');
+
+async function getAccentColor() {
+  try {
+    const css = await fs.readFile(GLOBAL_CSS, 'utf8');
+    // Find: --accent: <value>;
+    const m = css.match(/--accent:\s*([^;]+);/);
+    if (m && m[1]) return m[1].trim();
+  } catch (_) {
+    // ignore and fall back
+  }
+  // Fallback to current site accent
+  return '#0a8d7b';
+}
 
 function hashString(str) {
   let h = 2166136261 >>> 0;
@@ -35,7 +49,7 @@ async function walk(dir) {
   return out;
 }
 
-function generateSvg(seed, width = 720, height = 360) {
+function generateSvg(seed, width = 720, height = 360, accentColor = '#0a8d7b') {
   const rnd = mulberry32(hashString(String(seed)));
   const grays = [18, 26, 34, 46, 58, 72];
   const palette = grays.map((l) => `hsl(0 0% ${l}%)`);
@@ -53,7 +67,7 @@ function generateSvg(seed, width = 720, height = 360) {
   const shapes = Array.from({ length: shapesCount }).map((_, index) => {
     // Use accent color for the chosen shape, grayscale for others
     const isAccentShape = index === accentShapeIndex;
-    const tone = isAccentShape ? 'var(--accent)' : palette[Math.floor(rnd() * palette.length)];
+    const tone = isAccentShape ? accentColor : palette[Math.floor(rnd() * palette.length)];
     const opacity = (0.45 + rnd() * 0.35).toFixed(2);
     const t = rnd();
     if (t < 0.4) {
@@ -110,6 +124,7 @@ async function ensureDir(p) {
 }
 
 async function main() {
+  const accentColor = await getAccentColor();
   const files = await walk(CONTENT_DIR);
   await ensureDir(OUT_DIR);
   for (const f of files) {
@@ -117,7 +132,7 @@ async function main() {
     const slug = rel.replace(/\.(md|mdx)$/i, '');
     const outPath = join(OUT_DIR, `${slug}.svg`);
     await ensureDir(dirname(outPath));
-    const svg = generateSvg(slug, 720, 360);
+    const svg = generateSvg(slug, 720, 360, accentColor);
     await fs.writeFile(outPath, svg, 'utf8');
     // eslint-disable-next-line no-console
     console.log('Generated', outPath);
