@@ -2,6 +2,9 @@
 title: "Základy kritického myslenia"
 description: "Úvod do kritického myslenia a jeho kľúčových zručností"
 pubDate: "Sep 08 2025"
+author: "Lukas Cech"
+tags:
+  - "kritické myslenie"
 ---
 
 Kritické myslenie je schopnosť jasne a rozumne analyzovať informácie, vyhodnocovať argumenty a prijímať rozhodnutia na základe dôkazov. V dnešnom preplnenom informačnom prostredí sa stáva nevyhnutnosťou, pretože nás chráni pred manipuláciou, predsudkami či nepravdivými tvrdeniami.
@@ -32,4 +35,3 @@ Bez kritického myslenia ľahko podliehame dezinformáciám, mýtom či emocion�
 ---
 
 Rozvíjanie kritického myslenia nie je jednorazová aktivita, ale dlhodobý proces. Každá situácia, v ktorej aktívne spochybňujeme a overujeme tvrdenia, je príležitosťou zlepšiť túto zručnosť. Vďaka tomu sa stávame odolnejší voči manipulácii, samostatnejší v úsudku a otvorenejší novým perspektívam.
-
