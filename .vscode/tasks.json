@@ -1,0 +1,7 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      { "label": "New Post", "type": "shell", "command": "node scripts/generate_post.mjs" }
+    ]
+  }
+  
