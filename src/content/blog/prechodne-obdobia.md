@@ -1,17 +1,7 @@
-
----
-title: "Základy kritického myslenia"
-description: "Úvod do kritického myslenia a jeho kľúčových zručností"
-pubDate: "Sep 08 2025"
----
-
-
 ---
 title: "Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov"
 description: "Keď sa spoločnosť mení, otvára sa priestor pre manipuláciu, dezinformácie a populistov. Prečo? A ako sa brániť?"
-pubDate: 2025-09-08
-author: "Kritické myslenie v praxi"
-tags: ["kritické myslenie", "dezinformácie", "populizmus", "voľby", "hoaxy"]
+pubDate: "Sep 08 2025"
 ---
 
 ## Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov
