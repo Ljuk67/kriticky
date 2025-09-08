@@ -1,14 +1,16 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & { slug: string };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, slug } = Astro.props as Props;
+// Map of generated SVG thumbs (url strings)
+const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
+const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg`];
 ---
 
 <html lang="sk">
@@ -21,11 +23,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				margin: 0;
 			}
 			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
+				width: 600px;
 				display: block;
 				margin: 0 auto;
+			}
+			.hero-image img {
+
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
 			}
@@ -60,7 +63,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{heroUrl && <img src={heroUrl} alt="" />}
 				</div>
 				<div class="prose">
 					<div class="title">

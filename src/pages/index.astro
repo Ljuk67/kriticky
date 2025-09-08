@@ -3,9 +3,11 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+// Map of generated SVG thumbs (url strings)
+const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
+const getThumb = (id) => thumbs[`../assets/thumbs/${id}.svg`];
 
 const latestPosts = (await getCollection('blog'))
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -40,14 +42,19 @@ const latestPosts = (await getCollection('blog'))
 				margin-bottom: 1rem;
 				text-align: center;
 			}
-			.posts li:first-child img {
+			.posts li:first-child img,
+			.posts li:first-child svg {
 				width: 100%;
 			}
 			.posts li:first-child .title {
 				font-size: 2.369rem;
 			}
-			.posts li img {
-				margin-bottom: 0.5rem;
+			.posts li img,
+			.posts li svg {
+				display: block;
+				width: 100%;
+				height: auto;
+				margin-bottom: 20px;
 				border-radius: 12px;
 			}
 			.posts li a {
@@ -66,7 +73,8 @@ const latestPosts = (await getCollection('blog'))
 			.posts li a:hover .date {
 				color: rgb(var(--accent));
 			}
-			.posts a:hover img {
+			.posts a:hover img,
+			.posts a:hover svg {
 				box-shadow: var(--box-shadow);
 			}
 			.view-all {
@@ -122,9 +130,7 @@ const latestPosts = (await getCollection('blog'))
 						latestPosts.map((post) => (
 							<li>
 								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
+									<img src={getThumb(post.id)} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
