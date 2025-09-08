@@ -9,6 +9,8 @@ const exec = promisify(_exec);
 const ROOT = process.cwd();
 const CONTENT_DIR = join(ROOT, 'src', 'content', 'blog');
 const THUMBS_DIR = join(ROOT, 'src', 'assets', 'thumbs');
+const GLOBAL_CSS = join(ROOT, 'src', 'styles', 'global.css');
+const GEN_SCRIPT = join(ROOT, 'scripts', 'generate-thumbs.mjs');
 const STAMP = join(THUMBS_DIR, '.last-run');
 
 async function statOrNull(p) {
@@ -51,7 +53,8 @@ async function main() {
   const lastRun = stamp ? stamp.mtimeMs : 0;
   const now = Date.now();
 
-  const contentLatest = await latestMTime(files);
+  // Consider content, theme CSS (for --accent changes), and the generator script itself
+  const contentLatest = await latestMTime([...files, GLOBAL_CSS, GEN_SCRIPT]);
 
   // Rerun if: any content newer than last run, or last run older than 24h, or any thumb missing
   const DAY = 24 * 60 * 60 * 1000;
@@ -78,4 +81,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
