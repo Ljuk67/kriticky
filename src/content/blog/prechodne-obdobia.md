@@ -1,7 +1,7 @@
 ---
 title: "Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov"
 description: "Keď sa spoločnosť mení, otvára sa priestor pre manipuláciu, dezinformácie a populistov. Prečo? A ako sa brániť?"
-pubDate: "Sep 08 2025"
+pubDate: "Sep 09 2025"
 ---
 
 ## Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov
