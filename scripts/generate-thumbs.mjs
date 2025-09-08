@@ -47,24 +47,29 @@ function generateSvg(seed, width = 720, height = 360) {
   const exX = (pad = 0.35) => -width * pad + rnd() * (width * (1 + 2 * pad));
   const exY = (pad = 0.35) => -height * pad + rnd() * (height * (1 + 2 * pad));
 
-  const shapes = Array.from({ length: shapesCount }).map(() => {
-    const tone = palette[Math.floor(rnd() * palette.length)];
+  // Randomly choose which shape will be the accent color
+  const accentShapeIndex = Math.floor(rnd() * shapesCount);
+
+  const shapes = Array.from({ length: shapesCount }).map((_, index) => {
+    // Use accent color for the chosen shape, grayscale for others
+    const isAccentShape = index === accentShapeIndex;
+    const tone = isAccentShape ? 'var(--accent)' : palette[Math.floor(rnd() * palette.length)];
     const opacity = (0.45 + rnd() * 0.35).toFixed(2);
     const t = rnd();
     if (t < 0.4) {
       const r = Math.max(width, height) * (0.25 + rnd() * 0.35);
-      return { type: 'circle', cx: exX(), cy: exY(), r, tone, opacity };
+      return { type: 'circle', cx: exX(), cy: exY(), r, tone, opacity, isAccent: isAccentShape };
     } else if (t < 0.75) {
       const w = Math.max(width, height) * (0.35 + rnd() * 0.4);
       const h = Math.max(width, height) * (0.18 + rnd() * 0.3);
       const x = exX();
       const y = exY();
       const rot = Math.floor(rnd() * 360);
-      return { type: 'rect', x, y, w, h, rot, tone, opacity };
+      return { type: 'rect', x, y, w, h, rot, tone, opacity, isAccent: isAccentShape };
     } else {
       const ptsCount = 3 + Math.floor(rnd() * 2);
       const points = Array.from({ length: ptsCount }).map(() => [exX(), exY()]);
-      return { type: 'poly', points, tone, opacity };
+      return { type: 'poly', points, tone, opacity, isAccent: isAccentShape };
     }
   });
 
@@ -123,4 +128,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
