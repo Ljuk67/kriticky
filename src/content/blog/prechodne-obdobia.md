@@ -2,6 +2,11 @@
 title: "Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov"
 description: "Keď sa spoločnosť mení, otvára sa priestor pre manipuláciu, dezinformácie a populistov. Prečo? A ako sa brániť?"
 pubDate: "Sep 09 2025"
+author: "Lukas Cech"
+tags:
+  - "dezinformácie"
+  - "voľby"
+  - "kritické myslenie"
 ---
 
 ## Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov
@@ -86,4 +91,3 @@ Spýtaj sa:
 Čím viac ľudí sa začne pýtať, tým menej priestoru budú mať rozprávkari, manipulátori a šíritelia hoaxov.
 
 ---
-
