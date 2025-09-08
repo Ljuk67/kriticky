@@ -4,10 +4,11 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import { tagToSlug } from '../lib/slug';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug: string };
 
-const { title, description, pubDate, updatedDate, slug } = Astro.props as Props;
+const { title, description, pubDate, updatedDate, slug, author, tags } = Astro.props as Props;
 // Map of generated SVG thumbs (url strings)
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
 const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg`];
@@ -15,7 +16,15 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 
 <html lang="sk">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead
+			title={title}
+			description={description}
+			type="article"
+			author={author}
+			datePublished={pubDate}
+			dateModified={updatedDate}
+			keywords={Array.isArray(tags) ? tags : []}
+		/>
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -52,6 +61,24 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
 			}
+			.meta {
+				margin-top: 0.25em;
+				color: rgb(var(--gray));
+				font-size: 0.95em;
+			}
+			.tags {
+				margin-top: 0.25em;
+				color: rgb(var(--gray));
+			}
+			.tag {
+				display: inline-block;
+				background: rgb(var(--gray-light));
+				color: rgb(var(--gray-dark));
+				border-radius: 999px;
+				padding: 2px 10px;
+				margin: 0 6px;
+				font-size: 0.85em;
+			}
 			.last-updated-on {
 				font-style: italic;
 			}
@@ -77,6 +104,12 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 								)
 							}
 						</div>
+						<div class="meta">Autor: {author}</div>
+						{Array.isArray(tags) && tags.length > 0 && (
+							<div class="tags" aria-label="Značky">
+								{tags.map((t) => <a class="tag" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
+							</div>
+						)}
 						<h1>{title}</h1>
 						<hr />
 					</div>

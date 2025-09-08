@@ -5,13 +5,31 @@ import Header from '../components/Header.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { tagToSlug } from '../lib/slug';
 // Map of generated SVG thumbs (url strings)
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
 const getThumb = (id) => thumbs[`../assets/thumbs/${id}.svg`];
 
-const latestPosts = (await getCollection('blog'))
+const allPosts = await getCollection('blog');
+const latestPosts = allPosts
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .slice(0, 6);
+
+// Compute tag cloud data
+const tagCounts = new Map<string, number>();
+for (const p of allPosts) {
+  const tags = Array.isArray(p.data.tags) ? p.data.tags : [];
+  for (const t of tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+}
+const tags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'sk'));
+const counts = tags.map(([, c]) => c);
+const minCount = counts.length ? Math.min(...counts) : 0;
+const maxCount = counts.length ? Math.max(...counts) : 0;
+const scale = (c: number) => {
+  if (minCount === maxCount) return 1.0;
+  const t = (c - minCount) / (maxCount - minCount);
+  return 0.9 + t * 0.6; // 0.9em .. 1.5em
+};
 ---
 
 <!doctype html>
@@ -80,6 +98,31 @@ const latestPosts = (await getCollection('blog'))
 			.view-all {
 				margin-top: 1rem;
 			}
+			.tag-cloud {
+				margin-top: 4rem;
+				padding-top: 1rem;
+				border-top: 1px solid rgb(var(--gray-light));
+			}
+			.tag-cloud .tags { 
+				list-style: none; 
+				padding: 0; 
+				margin: 0.5rem 0 0 0; 
+				display: flex; 
+				flex-wrap: wrap; 
+				gap: 30px; 
+				align-items: baseline; 
+			}
+			.tag-cloud a { 
+				text-decoration: none; 
+				background: none; 
+				color: rgb(var(--black)); 
+				padding: 0; 
+				transition: color 0.2s ease; 
+			}
+			.tag-cloud a:hover { 
+				color: var(--accent); 
+				text-decoration: underline; 
+			}
 			@media (max-width: 720px) {
 				.posts {
 					gap: 0.5em;
@@ -142,6 +185,20 @@ const latestPosts = (await getCollection('blog'))
 				</ul>
 				<p class="view-all"><a href="/blog/">Zobraziť všetky články →</a></p>
 			</section>
+
+			{tags.length > 0 && (
+				<section class="tag-cloud">
+					<h2>Oblak značiek</h2>
+					<ul class="tags">
+						{tags.map(([t, c]) => (
+							<li>
+								<a href={`/tags/${tagToSlug(t)}/`} style={{ fontSize: `${scale(c)}em` }}>{t}</a>
+							</li>
+						))}
+					</ul>
+					<p class="view-all"><a href="/tags/">Zobraziť všetky značky →</a></p>
+				</section>
+			)}
 		</main>
 		<Footer />
 	</body>

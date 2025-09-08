@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { tagToSlug } from '../../lib/slug';
+
+const posts = await getCollection('blog');
+const tagCounts = new Map<string, number>();
+for (const p of posts) {
+  const tags = Array.isArray(p.data.tags) ? p.data.tags : [];
+  for (const t of tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+}
+const allTags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'sk'));
+---
+
+<!doctype html>
+<html lang="sk">
+  <head>
+    <BaseHead title="Značky" description="Prehľad všetkých značiek" />
+    <style>
+      main { width: 720px; }
+      ul.tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+      a.tag { display: inline-block; background: rgb(var(--gray-light)); color: rgb(var(--gray-dark)); border-radius: 999px; padding: 6px 12px; text-decoration: none; }
+      a.tag:hover { background: rgba(var(--gray), 0.15); }
+      .count { color: rgb(var(--gray)); margin-left: 6px; font-size: 0.9em; }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Značky</h1>
+      <ul class="tags">
+        {allTags.map(([t, c]) => (
+          <li>
+            <a class="tag" href={`/tags/${tagToSlug(t)}/`}>{t} <span class="count">({c})</span></a>
+          </li>
+        ))}
+      </ul>
+    </main>
+    <Footer />
+  </body>
+  </html>
