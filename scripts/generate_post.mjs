@@ -1,9 +1,4 @@
 // scripts/generate_post.mjs
-// Usage (from VSCodium task or terminal):
-//   node scripts/generate_post.mjs
-//
-// Requires env: OPENAI_API_KEY
-// Outputs: src/content/posts/YYYY-MM-DD-slug.md
 
 import fs from "node:fs";
 import path from "node:path";
@@ -47,17 +42,18 @@ async function main() {
 
   const date = new Date().toISOString().slice(0, 10);
   const slug = slugify(title);
-  const outDir = path.join(process.cwd(), "src", "content", "posts");
-  const outFile = path.join(outDir, `${date}-${slug}.md`);
 
-  // Lazy import to avoid hard dep if you only run sometimes
+  // ✅ Fixed path: put directly in src/content/blog/
+  const outDir = path.join(process.cwd(), "src", "content", "blog");
+  const outFile = path.join(outDir, `${slug}.md`);
+
   const { default: OpenAI } = await import("openai");
   const client = new OpenAI({ apiKey });
 
   const system = `
 You write Slovak Markdown blog posts for an Astro content collection.
 Output MUST be valid Markdown with YAML frontmatter at the top.
-Frontmatter fields: title, description (<=155 chars), date (YYYY-MM-DD), tags (array), noindex (optional).
+Frontmatter fields: title, description (<=155 chars), date (YYYY-MM-DD), tags (array).
 Target: critical thinking in practice for Slovakia.
 Use H2/H3, short paragraphs, bullet points where useful.
 No images, no emojis, no external commentary.
@@ -87,7 +83,6 @@ Slug: ${slug}
 
   let md = resp.choices?.[0]?.message?.content?.trim() || "";
   if (!md.startsWith("---")) {
-    // Fallback wrapper if model failed to include frontmatter
     const desc = "Článok o kritickom myslení v praxi.";
     const fm = [
       "---",
