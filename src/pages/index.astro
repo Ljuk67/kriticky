@@ -22,6 +22,7 @@ for (const p of allPosts) {
   for (const t of tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
 }
 const tags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'sk'));
+const allTags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'sk'));
 const counts = tags.map(([, c]) => c);
 const minCount = counts.length ? Math.min(...counts) : 0;
 const maxCount = counts.length ? Math.max(...counts) : 0;
@@ -143,7 +144,7 @@ const scale = (c: number) => {
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Vitajte!</h1>
+			<h1>🧑‍🚀 Kritické myslenie v praxi</h1>
 			<p>
 				Toto je oficiálna štartovacia šablóna blogu pre <a href="https://astro.build/">Astro</a>.
 				Je ľahká, minimálne štýlovaná a vhodná ako základ pre osobný web, blog alebo portfólio.
@@ -185,21 +186,31 @@ const scale = (c: number) => {
 				</ul>
 				<p class="view-all"><a href="/blog/">Zobraziť všetky články →</a></p>
 			</section>
-
+			<hr/>
 			{tags.length > 0 && (
-				<section class="tag-cloud">
-					<h2>Oblak značiek</h2>
-					<ul class="tags">
-						{tags.map(([t, c]) => (
-							<li>
-								<a href={`/tags/${tagToSlug(t)}/`} style={{ fontSize: `${scale(c)}em` }}>{t}</a>
-							</li>
-						))}
-					</ul>
-					<p class="view-all"><a href="/tags/">Zobraziť všetky značky →</a></p>
-				</section>
+
+			<style>
+			  ul.tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+			  a.tag { display: inline-block; background: rgb(var(--gray-light)); color: rgb(var(--gray-dark)); border-radius: 999px; padding: 6px 12px; text-decoration: none; }
+			  a.tag:hover { background: rgba(var(--gray), 0.25); }
+			  .count { color: rgb(var(--gray)); margin-left: 6px; font-size: 0.9em; }
+			</style>
+
+			<section>
+			  <h3>Značky</h3>
+			  <ul class="tags">
+				{allTags.map(([t, c]) => (
+				  <li>
+					<a class="tag" href={`/tags/${tagToSlug(t)}/`}>{t} <span class="count">({c})</span></a>
+				  </li>
+				))}
+			  </ul>
+			</section>
 			)}
+
 		</main>
+
+			
 		<Footer />
 	</body>
 </html>
