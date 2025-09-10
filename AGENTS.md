@@ -21,8 +21,9 @@
 - Indentation: 2 spaces; UTF-8; LF line endings.
 - File naming: pages in kebab-case; components in PascalCase; TypeScript files camelCase.
 - Content: blog posts in `src/content/blog/` as `.md` or `.mdx` with frontmatter:
+
   ```md
-  ---
+---
 title: "Základy kritického myslenia"
 description: "Úvod do kritického myslenia a jeho kľúčových zručností"
 pubDate: "Sep 08 2025"
