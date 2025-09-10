@@ -23,13 +23,16 @@
 - Content: blog posts in `src/content/blog/` as `.md` or `.mdx` with frontmatter:
   ```md
   ---
-  title: "Post Title"
-  pubDate: 2025-01-01
-  description: "One-line summary."
-  ---
+title: "Základy kritického myslenia"
+description: "Úvod do kritického myslenia a jeho kľúčových zručností"
+pubDate: "Sep 08 2025"
+author: "Lukas Cech"
+tags:
+  - "kritické myslenie"
+---
   ```
 - TypeScript: strict mode (see `tsconfig.json`); prefer explicit exports.
-- Images: place under `src/assets/`; reference via import for optimized handling.
+- Images: place under `src/assets/`; reference via import for optimized handling. But we prefer using our svg generator in /src/scripts/
 
 ## Testing Guidelines
 - No test suite configured yet. If adding tests, prefer Playwright for E2E and Vitest for unit tests. Place tests under `tests/` with `*.spec.ts` naming. Add an `npm test` script when introduced.
