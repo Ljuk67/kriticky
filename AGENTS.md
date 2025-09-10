@@ -33,7 +33,7 @@ tags:
 ---
   ```
 - TypeScript: strict mode (see `tsconfig.json`); prefer explicit exports.
-- Images: place under `src/assets/`; reference via import for optimized handling. But we prefer using our svg generator in /src/scripts/
+- Images: place under `src/assets/`; reference via import for optimized handling. But we prefer using our svg generator in scripts/generate-thumbs.mjs
 
 ## Testing Guidelines
 - No test suite configured yet. If adding tests, prefer Playwright for E2E and Vitest for unit tests. Place tests under `tests/` with `*.spec.ts` naming. Add an `npm test` script when introduced.
