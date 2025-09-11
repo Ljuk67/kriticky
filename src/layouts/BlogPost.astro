@@ -120,6 +120,32 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 			</article>
 			{showComments && (
 				<section class="prose" style="margin-top: 2rem;">
+
+					<form name="comments" method="POST" netlify>
+					<!-- Hidden field to identify which blog post -->
+					<input type="hidden" name="post-slug" value="your-blog-post-slug" />
+					
+					<p>
+						<label>Meno <input type="text" name="name" required /></label>
+					</p>
+					<p>
+						<label>Email <input type="email" name="email" required /></label>
+					</p>
+					<p>
+						<label>Komentár 
+						<textarea name="message" rows="5" required></textarea>
+						</label>
+					</p>
+					
+					<!-- Honeypot for spam protection -->
+					<p style="display: none;">
+						<label>Don't fill this out: <input name="bot-field" /></label>
+					</p>
+					
+					<p>
+						<button type="submit">Odoslať komentár</button>
+					</p>
+          </form>
 					<Comments slug={slug} />
 				</section>
 			)}
