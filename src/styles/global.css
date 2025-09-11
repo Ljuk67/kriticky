@@ -159,3 +159,15 @@ hr {
     flex-direction: row;
     justify-content: center;
 }
+
+.tag[data-astro-cid-bvzihdzo] {
+    display: inline-block;
+    background: rgb(var(--gray-light));
+    color: rgb(var(--gray-dark));
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin: 0 6px;
+    font-size: .85em;
+    text-decoration: none;
+    padding: 7px 15px;
+}
