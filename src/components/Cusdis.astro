@@ -27,7 +27,7 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
         {`
           // Provide Slovak UI and force language to 'sk'
           window.CUSDIS_LANG = 'sk';
-          window.CUSDIS_LOCALE = {
+          window.CUSDIS_LOCALE = 'sk';
             powered_by: 'Komentáre cez Cusdis',
             post_comment: 'Pridať komentár',
             loading: 'Načítavam…',
@@ -75,6 +75,7 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
         data-page-url={pageUrl}
         data-page-title={pageTitle}
         data-lang="sk"
+        data-theme="dark"
       ></div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
     </>
