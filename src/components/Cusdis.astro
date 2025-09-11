@@ -22,6 +22,10 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
           /* Make the comment iframe tall enough to avoid inner scrolling */
           #cusdis_thread { min-height: 900px; }
           #cusdis_thread iframe { height: 900px !important; min-height: 900px !important; width: 100% !important; }
+        #cusdis_thread {
+display: flex;
+height: 40em; // you can change to different value
+}
         `}
       </style>
       <script is:inline>
@@ -70,8 +74,10 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
         data-page-title={pageTitle}
         data-lang="sk"
         data-theme="auto"
-      ></div>
-      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+      >
+        <script defer src={`${import.meta.env.BASE_URL}js/cusdis-sk.js`}></script>
+        <script defer src="https://cusdis.com/js/cusdis.es.js"></script>
+      </div>
     </>
   ) : (
     <p style="color: var(--gray); font-style: italic;">
