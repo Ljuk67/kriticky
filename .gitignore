@@ -1,6 +1,7 @@
 dist/
 node_modules/
 .astro/
+.astro/**
 .env
 # Ignore all env variants, but allow example
 .env.*
