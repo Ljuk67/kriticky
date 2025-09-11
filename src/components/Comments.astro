@@ -46,7 +46,7 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
             <textarea name="message" required minlength="3" maxlength="5000"></textarea>
           </label>
         </p>
-        <button type="submit">Odoslať komentár</button>
+        <button type="button">Odoslať komentár</button>
         <span id="form-status" role="status" aria-live="polite"></span>
       </form>
 
@@ -154,6 +154,17 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
                 console.error('[comments] submit error', e);
               }
             });
+
+            // Also handle explicit button click to avoid any browser form navigation
+            const btn = document.querySelector('#comment-form button[type="button"]');
+            if (btn && form) {
+              btn.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+                const evt = new Event('submit', { cancelable: true, bubbles: true });
+                form.dispatchEvent(evt);
+              });
+            }
 
             fetchComments();
           })();
