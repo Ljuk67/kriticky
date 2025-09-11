@@ -1,5 +1,4 @@
-// Supabase comments client: fetch + submit
-// Reads config (URL/key) from #comments-list data attributes to avoid bundling envs.
+// Supabase comments client: fetch + submit using env-inlined config
 
 function escapeHtml(s) {
   return String(s)
@@ -19,13 +18,14 @@ function ready(fn) {
   else document.addEventListener('DOMContentLoaded', fn);
 }
 
+const url = import.meta.env.PUBLIC_SUPABASE_URL;
+const key = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
 ready(() => {
   const listEl = document.getElementById('comments-list');
   const form = document.getElementById('comment-form');
   const statusEl = document.getElementById('form-status');
   const slug = listEl?.dataset.slug || '';
-  const url = listEl?.dataset.supabaseUrl;
-  const key = listEl?.dataset.supabaseKey;
 
   if (!url || !key) {
     if (statusEl) statusEl.textContent = 'Komentáre sú dočasne vypnuté.';
