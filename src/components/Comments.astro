@@ -24,7 +24,7 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
         <div class="loading">Načítavam komentáre…</div>
       </div>
       <hr />
-      <form id="comment-form">
+      <form id="comment-form" action="#" novalidate>
         <input type="hidden" name="slug" value={slug} />
         <p>
           <label>Meno
@@ -92,7 +92,7 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
               }
               listEl.innerHTML = items.map(i => `
                 <div class="comment">
-                  <div class="meta"><strong>${'${'}i.name{'}'}</strong> · <time datetime="${'${'}i.created_at{'}'}">${'${'}fmtDate(i.created_at){'}'}</time></div>
+                  <div class="meta"><strong>${'${'}escapeHtml(i.name){'}'}</strong> · <time datetime="${'${'}i.created_at{'}'}">${'${'}fmtDate(i.created_at){'}'}</time></div>
                   <div class="body">${'${'}escapeHtml(i.message){'}'}</div>
                 </div>
               `).join('');
@@ -114,6 +114,7 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
             const statusEl = document.getElementById('form-status');
             form?.addEventListener('submit', async (e) => {
               e.preventDefault();
+              e.stopPropagation();
               if (!url || !key) return;
               statusEl.textContent = '';
               const fd = new FormData(form);
@@ -127,6 +128,7 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
                 name: (fd.get('name') || '').toString().trim(),
                 email: (fd.get('email') || '').toString().trim() || null,
                 message: (fd.get('message') || '').toString().trim(),
+                is_approved: false,
               };
               if (!payload.name || !payload.message){
                 statusEl.textContent = 'Vyplň meno a komentár.';
@@ -135,14 +137,21 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
               try {
                 const res = await fetch(url + '/rest/v1/comments', {
                   method: 'POST',
-                  headers: { ...headers, 'Prefer': 'return=minimal' },
+                  headers: { ...headers, 'Prefer': 'return=representation' },
                   body: JSON.stringify(payload)
                 });
-                if (!res.ok) throw new Error('HTTP ' + res.status);
+                if (!res.ok) {
+                  const body = await res.text().catch(()=>'');
+                  throw new Error('HTTP ' + res.status + ' ' + body);
+                }
+                // Optional: const created = await res.json();
                 statusEl.textContent = 'Ďakujeme, komentár čaká na schválenie.';
                 form.reset();
+                // Re-read list (won't show pending, but confirms flow works)
+                fetchComments();
               } catch (e){
                 statusEl.textContent = 'Chyba pri odosielaní. Skús neskôr.';
+                console.error('[comments] submit error', e);
               }
             });
 
@@ -167,4 +176,3 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
     #form-status { margin-left: 0.75rem; color: rgb(var(--gray)); }
   </style>
 </section>
-
