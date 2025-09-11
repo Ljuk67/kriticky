@@ -1,0 +1,63 @@
+---
+// Cusdis comments embed with Slovak UI.
+// Requires a Cusdis Site App ID set in env as PUBLIC_CUSDIS_APP_ID.
+// Props:
+// - pageId: unique id per page (e.g., slug)
+// - pageUrl: canonical URL (string)
+// - pageTitle: title (string)
+interface Props {
+  pageId: string;
+  pageUrl: string;
+  pageTitle: string;
+}
+const { pageId, pageUrl, pageTitle } = Astro.props as Props;
+const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
+---
+
+<section aria-label="Komentáre">
+  {appId ? (
+    <>
+      <script is:inline>
+        {`
+          window.CUSDIS_LOCALE = {
+            powered_by: 'Komentáre cez Cusdis',
+            post_comment: 'Pridať komentár',
+            loading: 'Načítavam…',
+            no_comment: 'Zatiaľ žiadne komentáre',
+            send: 'Odoslať',
+            reply: 'Odpovedať',
+            cancel: 'Zrušiť',
+            edit: 'Upraviť',
+            delete: 'Vymazať',
+            comment: 'Komentár',
+            name: 'Meno',
+            email: 'E-mail (nepovinné)',
+            website: 'Web (nepovinné)',
+            message: 'Správa',
+            preview: 'Náhľad',
+            load_more: 'Načítať viac',
+            sending: 'Odosielam…',
+            submit: 'Odoslať',
+            required: 'Povinné',
+          };
+        `}
+      </script>
+      <div
+        id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id={appId}
+        data-page-id={pageId}
+        data-page-url={pageUrl}
+        data-page-title={pageTitle}
+        data-lang="sk"
+      ></div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </>
+  ) : (
+    <p style="color: var(--gray); font-style: italic;">
+      Komentáre sú dočasne vypnuté. Nastav <code>PUBLIC_CUSDIS_APP_ID</code> v súbore <code>.env</code>.
+    </p>
+  )}
+  <noscript>Na zobrazenie komentárov povoľ JavaScript.</noscript>
+</section>
+
