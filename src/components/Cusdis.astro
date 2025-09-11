@@ -48,10 +48,16 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
             sending: 'Odosielam…',
             submit: 'Odoslať',
             required: 'Povinné',
-            seconds_ago: 'pred {0}s',
-            minutes_ago: 'pred {0}m',
-            hours_ago: 'pred {0}h',
+            // Additional keys aligned to en.js
+            comment_count: '{0} komentárov',
+            cancel_reply: 'Zrušiť odpoveď',
+            reply_to: 'Odpovedať na {0}',
+            just_now: 'práve teraz',
+            seconds_ago: 'pred {0} s',
+            minutes_ago: 'pred {0} min',
+            hours_ago: 'pred {0} h',
             days_ago: 'pred {0} dňami',
+            admin: 'Správca',
           };
         `}
       </script>
@@ -62,7 +68,7 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
         data-page-id={pageId}
         data-page-url={pageUrl}
         data-page-title={pageTitle}
-        data-lang="cs"
+        data-lang="sk"
         data-theme="auto"
       ></div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
