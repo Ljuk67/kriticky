@@ -7,7 +7,7 @@ tags:
   - "markdown"
   - "štýl"
   - "formátovanie"
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
