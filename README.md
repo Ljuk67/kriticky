@@ -10,3 +10,4 @@ Upevniť a rozšíriť kritické myslenie u bežných ľudí.
 - Markdown/MDX – články sú písané v jednoduchom formáte
 - Pagefind – vyhľadávanie priamo na stránke
 - giscus – komentáre čitateľov cez GitHub Discussions
+<hr/>
