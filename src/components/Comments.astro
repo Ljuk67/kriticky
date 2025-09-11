@@ -24,7 +24,7 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
         <div class="loading">Načítavam komentáre…</div>
       </div>
       <hr />
-      <form id="comment-form" action="#" novalidate>
+      <form id="comment-form" method="POST" action="javascript:void(0)" onsubmit="return false" novalidate>
         <input type="hidden" name="slug" value={slug} />
         <p>
           <label>Meno
