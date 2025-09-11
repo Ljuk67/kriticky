@@ -34,7 +34,7 @@ const posts = (await getCollection('blog')).filter((p) => (p.data.tags ?? []).in
     <Header />
     <main>
       <h1>Články so značkou „{tag}”</h1>
-      <p><a href="/tags/">← Všetky značky</a></p>
+      <p><a href={`${import.meta.env.BASE_URL}tags/`}>← Všetky značky</a></p>
       <ul>
         {posts.map((post) => (
           <li>
@@ -49,4 +49,3 @@ const posts = (await getCollection('blog')).filter((p) => (p.data.tags ?? []).in
     <Footer />
   </body>
   </html>
-
