@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { tagToSlug } from '../lib/slug';
-import Giscus from '../components/Giscus.astro';
+import Cusdis from '../components/Cusdis.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug: string };
 
@@ -119,7 +119,11 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 			</article>
 			<section class="prose" style="margin-top: 2rem;">
 				<h2>Komentáre</h2>
-				<Giscus />
+				<Cusdis
+					pageId={slug}
+					pageUrl={new URL(Astro.url.pathname, Astro.site).toString()}
+					pageTitle={title}
+				/>
 			</section>
 		</main>
 		<Footer />
