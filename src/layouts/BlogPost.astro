@@ -7,9 +7,9 @@ import Header from '../components/Header.astro';
 import { tagToSlug } from '../lib/slug';
 import Comments from '../components/Comments.astro';
 
-type Props = CollectionEntry<'blog'>['data'] & { slug: string };
+type Props = CollectionEntry<'blog'>['data'] & { slug: string; showComments?: boolean };
 
-const { title, description, pubDate, updatedDate, slug, author, tags } = Astro.props as Props;
+const { title, description, pubDate, updatedDate, slug, author, tags, showComments = true } = Astro.props as Props;
 // Map of generated SVG thumbs (url strings)
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
 const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg`];
@@ -118,9 +118,11 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 					<slot />
 				</div>
 			</article>
-			<section class="prose" style="margin-top: 2rem;">
-				<Comments slug={slug} />
-			</section>
+			{showComments && (
+				<section class="prose" style="margin-top: 2rem;">
+					<Comments slug={slug} />
+				</section>
+			)}
 		</main>
 		<Footer />
 	</body>
