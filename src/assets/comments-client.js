@@ -1,6 +1,4 @@
-// Supabase comments client: fetch + submit
-const url = import.meta.env.PUBLIC_SUPABASE_URL;
-const key = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+// Supabase comments client: fetch + submit using env-inlined config
 
 function escapeHtml(s) {
   return String(s)
@@ -19,6 +17,9 @@ function ready(fn) {
   if (document.readyState === 'complete' || document.readyState === 'interactive') fn();
   else document.addEventListener('DOMContentLoaded', fn);
 }
+
+const url = import.meta.env.PUBLIC_SUPABASE_URL;
+const key = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 ready(() => {
   const listEl = document.getElementById('comments-list');
@@ -114,4 +115,3 @@ ready(() => {
     });
   }
 });
-
