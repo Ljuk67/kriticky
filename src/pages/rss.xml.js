@@ -10,7 +10,7 @@ export async function GET(context) {
 		site: context.site,
 		items: posts.map((post) => ({
 			...post.data,
-			link: `/blog/${post.id}/`,
+            link: `${process.env.DEPLOY_TARGET === 'pages' ? 'https://ljuk67.github.io/kriticky' : 'https://kriticky.sk'}/blog/${post.id}/`,
 		})),
 	});
 }
