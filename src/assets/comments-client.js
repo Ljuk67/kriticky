@@ -1,6 +1,5 @@
 // Supabase comments client: fetch + submit
-const url = import.meta.env.PUBLIC_SUPABASE_URL;
-const key = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+// Reads config (URL/key) from #comments-list data attributes to avoid bundling envs.
 
 function escapeHtml(s) {
   return String(s)
@@ -25,6 +24,8 @@ ready(() => {
   const form = document.getElementById('comment-form');
   const statusEl = document.getElementById('form-status');
   const slug = listEl?.dataset.slug || '';
+  const url = listEl?.dataset.supabaseUrl;
+  const key = listEl?.dataset.supabaseKey;
 
   if (!url || !key) {
     if (statusEl) statusEl.textContent = 'Komentáre sú dočasne vypnuté.';
@@ -114,4 +115,3 @@ ready(() => {
     });
   }
 });
-
