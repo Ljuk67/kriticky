@@ -90,12 +90,12 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
                 listEl.innerHTML = '<p class="muted">Zatiaľ žiadne komentáre.</p>';
                 return;
               }
-              listEl.innerHTML = items.map(i => `
-                <div class="comment">
-                  <div class="meta"><strong>${'${'}escapeHtml(i.name){'}'}</strong> · <time datetime="${'${'}i.created_at{'}'}">${'${'}fmtDate(i.created_at){'}'}</time></div>
-                  <div class="body">${'${'}escapeHtml(i.message){'}'}</div>
-                </div>
-              `).join('');
+              listEl.innerHTML = items.map(i => (
+                '<div class="comment">'
+                + '<div class="meta"><strong>' + escapeHtml(i.name) + '</strong> · <time datetime="' + i.created_at + '">' + fmtDate(i.created_at) + '</time></div>'
+                + '<div class="body">' + escapeHtml(i.message) + '</div>'
+                + '</div>'
+              )).join('');
             }
 
             function renderError(msg){ if(listEl) listEl.innerHTML = '<p class="error">' + msg + '</p>'; }
@@ -154,6 +154,17 @@ const canRun = Boolean(supabaseUrl && supabaseAnon);
                 console.error('[comments] submit error', e);
               }
             });
+
+            // Also handle explicit button click to avoid any browser form navigation
+            const btn = document.querySelector('#comment-form button');
+            if (btn && form) {
+              btn.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+                const evt = new Event('submit', { cancelable: true, bubbles: true });
+                form.dispatchEvent(evt);
+              });
+            }
 
             // Also handle explicit button click to avoid any browser form navigation
             const btn = document.querySelector('#comment-form button[type="button"]');
