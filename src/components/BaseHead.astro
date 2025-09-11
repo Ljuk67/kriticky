@@ -5,6 +5,7 @@ import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
 import FallbackImage from '../assets/blog-placeholder-3.jpg';
 import { SITE_TITLE } from '../consts';
+import gateScript from '../assets/password-gate.js?raw';
 
 interface Props {
 	title: string;
@@ -38,7 +39,7 @@ const { title, description, image = FallbackImage, type = 'website', author, dat
 <meta name="robots" content="noindex, nofollow" />
 
 <!-- Temporary password gate across site -->
-<script src={new URL('../assets/password-gate.js', import.meta.url)} is:inline></script>
+<script is:inline>{gateScript}</script>
 
 <!-- Font preloads -->
 <link rel="preload" href={`${import.meta.env.BASE_URL}fonts/atkinson-regular.woff`} as="font" type="font/woff" crossorigin />
