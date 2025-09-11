@@ -39,12 +39,10 @@ import sentry from '@sentry/astro';
 import spotlightjs from '@spotlightjs/astro';
 
 // https://astro.build/config
-// Configure site/base for GitHub Pages vs custom domain
-const isPages = process.env.DEPLOY_TARGET === 'pages';
-
 export default defineConfig({
-    site: isPages ? 'https://ljuk67.github.io/kriticky' : 'https://kriticky.sk',
-    base: isPages ? '/kriticky/' : '/',
+    // Use root custom domain
+    site: 'https://kriticky.sk',
+    base: '/',
     integrations: [mdx(), sitemap(), sentry(), spotlightjs()],
     vite: {
         plugins: [thumbsWatcherPlugin()],
