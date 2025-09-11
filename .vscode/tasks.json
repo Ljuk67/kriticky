@@ -7,7 +7,7 @@
       "command": "node scripts/generate_post.mjs",
       "options": {
         "env": {
-          "OPENAI_API_KEY": "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"
+          "OPENAI_API_KEY": "${env:OPENAI_API_KEY}"
         }
       }
     }
