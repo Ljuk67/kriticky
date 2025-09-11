@@ -18,7 +18,7 @@
   const style = document.createElement('style');
   style.textContent = `
     #km-gate{position:fixed;inset:0;background:#0b0d12;color:#e6e8eb;z-index:2147483647;display:flex;align-items:center;justify-content:center;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif}
-    #km-box{width:min(92vw,440px);background:#141821;border:1px solid #263041;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.35);padding:20px}
+    #km-box{width:min(92vw,440px);background:#fff;border:1px solid #263041;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.35);padding:20px}
     #km-title{margin:0 0 8px;font-size:20px}
     #km-note{margin:0 0 16px;font-size:14px;color:#9aa4b2}
     #km-form{display:flex;gap:8px}
