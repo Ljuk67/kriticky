@@ -6,7 +6,10 @@
 // UI text is Slovak; code identifiers in English
 interface Props { slug: string; }
 const { slug } = Astro.props as Props;
-const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PUBLIC_SUPABASE_ANON_KEY);
+import commentsClientUrl from '../assets/comments-client.js?url';
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseAnon = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+const canRun = Boolean(supabaseUrl && supabaseAnon);
 ---
 
 <section class="comments" aria-label="Komentáre">
@@ -18,7 +21,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
 
   {canRun && (
     <>
-      <div id="comments-list" data-slug={slug}>
+      <div id="comments-list" data-slug={slug} data-supabase-url={supabaseUrl} data-supabase-key={supabaseAnon}>
         <div class="loading">Načítavam komentáre…</div>
       </div>
       <hr />
@@ -48,7 +51,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
         <span id="form-status" role="status" aria-live="polite"></span>
       </form>
 
-      <script type="module">import '/src/assets/comments-client.js';</script>
+      <script type="module" src={commentsClientUrl}></script>
     </>
   )}
 
