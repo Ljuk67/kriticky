@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DEPLOY_TARGET: pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,8 +27,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - name: Set deploy target env
-        run: echo "DEPLOY_TARGET=pages" >> $GITHUB_ENV
       - name: Install dependencies
         run: npm ci
       - name: Build
