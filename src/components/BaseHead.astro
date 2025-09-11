@@ -35,6 +35,10 @@ const { title, description, image = FallbackImage, type = 'website', author, dat
 	href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- Temporary password gate across site -->
+<script src={new URL('../assets/password-gate.js', import.meta.url)} is:inline></script>
 
 <!-- Font preloads -->
 <link rel="preload" href={`${import.meta.env.BASE_URL}fonts/atkinson-regular.woff`} as="font" type="font/woff" crossorigin />
