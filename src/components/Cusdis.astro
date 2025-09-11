@@ -20,14 +20,15 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
       <style is:inline>
         {`
           /* Make the comment iframe tall enough to avoid inner scrolling */
-          #cusdis_thread iframe { min-height: 700px !important; width: 100% !important; }
+          #cusdis_thread { min-height: 900px; }
+          #cusdis_thread iframe { height: 900px !important; min-height: 900px !important; width: 100% !important; }
         `}
       </style>
       <script is:inline>
         {`
           // Provide Slovak UI and force language to 'sk'
           window.CUSDIS_LANG = 'sk';
-          window.CUSDIS_LOCALE = 'sk';
+          window.CUSDIS_LOCALE = {
             powered_by: 'Komentáre cez Cusdis',
             post_comment: 'Pridať komentár',
             loading: 'Načítavam…',
@@ -52,19 +53,6 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
             hours_ago: 'pred {0}h',
             days_ago: 'pred {0} dňami',
           };
-          // Fallback: enforce a larger height after the iframe is injected
-          (function ensureCusdisHeight(){
-            function setH(){
-              var f = document.querySelector('#cusdis_thread iframe');
-              if (f) { f.style.minHeight = '700px'; f.style.height = Math.max(f.clientHeight, 700) + 'px'; }
-            }
-            var target = document.getElementById('cusdis_thread');
-            if (target) {
-              var obs = new MutationObserver(setH); obs.observe(target, { childList: true, subtree: true });
-              window.addEventListener('resize', setH);
-              setH();
-            }
-          })();
         `}
       </script>
       <div
@@ -74,8 +62,8 @@ const appId = import.meta.env.PUBLIC_CUSDIS_APP_ID;
         data-page-id={pageId}
         data-page-url={pageUrl}
         data-page-title={pageTitle}
-        data-lang="sk"
-        data-theme="dark"
+        data-lang="cs"
+        data-theme="auto"
       ></div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
     </>
