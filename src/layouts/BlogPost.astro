@@ -120,7 +120,7 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 			</article>
 			{showComments && (
 				<section class="prose" style="margin-top: 2rem;">
-					<form name="comments" netlify>
+					<form name="comments" method="POST" netlify>
 					<!-- Hidden field to identify which blog post -->
 					<input type="hidden" name="post-slug" value="your-blog-post-slug" />
 					
