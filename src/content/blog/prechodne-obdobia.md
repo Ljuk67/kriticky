@@ -9,8 +9,6 @@ tags:
   - "kritické myslenie"
 ---
 
-## Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov
-
 Predstav si, že ideš v hmle. Nevidíš, kam presne kráčaš, ale niekto pred tebou má baterku a kričí: **“Tadiaľto! Poďte za mnou!”**  
 Nevieš, či mu máš veriť. Ale ostatní idú, a ty nechceš zostať pozadu. Tak ideš tiež.
 

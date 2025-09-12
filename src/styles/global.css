@@ -6,7 +6,7 @@
 
 :root {
 	--accent: #0a8d7b;
-	--accent-dark: #000d8a;
+	--accent-dark: #3d625d;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;	
 	--gray-light: 229, 233, 240;
@@ -17,9 +17,9 @@
 		rgba(var(--gray), 15%);
 
 	/* Responsive content grid variables */
-	--grid-margin: clamp(1rem, 5vw, 3rem);
-	--grid-textcontent: min(65ch, 100% - 4rem);
-	--grid-expansion: clamp(1rem, 8vw, 6rem);
+	--grid-margin: clamp(1rem, 1vw, 3rem);
+	--grid-textcontent: min(65ch, 100vw - 1.5rem);
+	--grid-expansion: clamp(1rem, 8vw, 3rem);
 }
 @font-face {
 	font-family: "Atkinson";
@@ -50,7 +50,7 @@ body {
 }
 main {
 	max-width: 100%;
-	margin: 0;
+	margin: 30;
 	padding: 3em 1em;
 }
 
@@ -153,6 +153,7 @@ hr {
 		font-size: 20px;
 	}
 	main { padding: 1em; }
+	h1 {font-size: 1.9em;}
 }
 
 .sr-only {
