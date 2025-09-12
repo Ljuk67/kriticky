@@ -23,8 +23,8 @@ ready(() => {
   const form = document.getElementById('comment-form');
   const statusEl = document.getElementById('form-status');
   const slug = listEl?.dataset.slug || '';
-  const url = listEl?.dataset.supabaseUrl;
-  const key = listEl?.dataset.supabaseKey;
+  const url = (listEl?.dataset.supabaseUrl || '').trim();
+  const key = (listEl?.dataset.supabaseKey || '').trim();
 
   if (!url || !key) {
     if (statusEl) statusEl.textContent = 'Komentáre sú dočasne vypnuté.';
@@ -42,6 +42,8 @@ ready(() => {
     if (!listEl || !slug) return;
     try {
       const q = new URL(url + '/rest/v1/comments');
+      // Fallback: add apikey as URL param in case some environments strip custom headers
+      q.searchParams.set('apikey', key);
       q.searchParams.set('select', 'id,name,message,created_at');
       q.searchParams.set('slug', 'eq.' + slug);
       q.searchParams.set('is_approved', 'eq.true');
@@ -95,7 +97,7 @@ ready(() => {
         return;
       }
       try {
-        const res = await fetch(url + '/rest/v1/comments', {
+        const res = await fetch(url + '/rest/v1/comments?apikey=' + encodeURIComponent(key), {
           method: 'POST',
           headers: { ...headers, Prefer: 'return=representation' },
           body: JSON.stringify(payload),
