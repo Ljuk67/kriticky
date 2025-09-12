@@ -62,11 +62,11 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
     .error { color: #e11d48; }
     /* Center and size the form and list */
     form#comment-form, #comments-list { width: 100%; max-width: 720px; margin: 0 auto; }
-    #comments-list { margin-top: 1rem;background: #3d625d;border-radius: 12px;padding: 20px;}
+    #comments-list { width: 100%; max-width: 100%; margin-inline: auto; box-sizing: border-box; margin: 1rem auto; background: #3d625d;border-radius: 12px;padding: 20px;}
     
     /* Inputs */
     form#comment-form p { margin: 0.75rem 0; width: 100%; display: block; }
-    form#comment-form input, form#comment-form textarea { width: 100%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
+    form#comment-form input, form#comment-form textarea { width: 92%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
     form#comment-form textarea { height: 150px; }
     form#comment-form .hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
     #form-status { margin-left: 0.75rem; color: rgb(var(--white));}
