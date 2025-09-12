@@ -2,11 +2,11 @@
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
-
-<header>
+<div class="header-sentinel" aria-hidden="true"></div>
+<header class="site-header">
 	<nav>
-		<h2><a href={`${import.meta.env.BASE_URL}`}>{SITE_TITLE}</a></h2>
-		<div class="internal-links">
+		<span class="sitename"><a href={`${import.meta.env.BASE_URL}`}>{SITE_TITLE}</a></span>
+		<div class="nav-links">
 			<HeaderLink href={`${import.meta.env.BASE_URL}`}>Domov</HeaderLink>
 			<HeaderLink href={`${import.meta.env.BASE_URL}blog`}>Blog</HeaderLink>
 			<HeaderLink href={`${import.meta.env.BASE_URL}about`}>O mne</HeaderLink>
@@ -23,13 +23,49 @@ import HeaderLink from './HeaderLink.astro';
 			</a>
 		</div>
 	</nav>
+  <script is:inline>
+    (function () {
+      try {
+        var header = document.querySelector('header.site-header');
+        var sentinel = document.querySelector('.header-sentinel');
+        if (!header || !sentinel || !('IntersectionObserver' in window)) return;
+
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              header.classList.remove('is-sticky');
+            } else {
+              header.classList.add('is-sticky');
+              header.classList.add('is-sticky-enter');
+            header.addEventListener('animationend', function () {
+                header.classList.remove('is-sticky-enter');
+            }, { once: true });
+            }
+          });
+        });
+        io.observe(sentinel);
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 </header>
 <style>
-	header {
+	/* Sticky header with slide-in on stick */
+	header.site-header {
 		margin: 0;
 		padding: 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+	/* Invisible sentinel before header to detect stickiness */
+	.header-sentinel { position: relative; height: 1px; }
+	/* Animate when becoming sticky */
+	.site-header.is-sticky-enter { animation: headerSlideIn 400ms ease-out forwards; }
+	@keyframes headerSlideIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+	@media (prefers-reduced-motion: reduce) {
+		.site-header.is-sticky-enter { animation: none; }
 	}
 	h2 {
 		margin: 0;
@@ -40,11 +76,11 @@ import HeaderLink from './HeaderLink.astro';
 	h2 a.active {
 		text-decoration: none;
 	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+	/* Centered menu with balanced sides */
+	nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+	.sitename { justify-self: start; }
+	.internal-links { justify-self: center; display: flex; gap: 0.25rem; }
+	.social-links { justify-self: end; }
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
@@ -63,5 +99,7 @@ import HeaderLink from './HeaderLink.astro';
 		.social-links {
 			display: none;
 		}
+		/* Keep centered menu on mobile */
+		nav { grid-template-columns: 1fr auto 0; }
 	}
 </style>

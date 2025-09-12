@@ -18,7 +18,7 @@
 
 	/* Responsive content grid variables */
 	--grid-margin: clamp(1rem, 1vw, 3rem);
-	--grid-textcontent: min(65ch, 100vw - 1.5rem);
+	--grid-textcontent: min(65ch, 100% - 1.5rem);
 	--grid-expansion: clamp(1rem, 8vw, 3rem);
 }
 @font-face {
@@ -53,6 +53,7 @@ main {
 	margin: 30;
 	padding: 3em 1em;
 }
+@media (max-width: 720px){ main { padding-inline: 0; } }
 
 /* Content grid layout helpers */
 .content-grid {
@@ -69,11 +70,60 @@ main {
 .content-grid > * { grid-column: content; }
 .content-grid > .content { grid-column: content; }
 .content-grid > .breakout { grid-column: breakout; }
-.content-grid > .full-width { grid-column: fullwidth; }
+.content-grid > .full-width { grid-column: fullwidth-start / fullwidth-end; }
+.content-grid > .breakout-90 { grid-column: 1 / -1; width: 90%; justify-self: center; }
+@media (max-width: 720px){ .breakout-90 { width: 100%; } }
+  
 
+/* nav styles */
+
+.nav-links {
+	width: 100%;
+	top: 5rem;
+	left: 48px;
+	background-color: #ff9776;
+	display: none;
+	margin: 0;
+  }
+  
+  .nav-links a {
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a:focus {
+	background-color: #ff9776;
+  }
+  
+  .expanded {
+	display: unset;
+  }
+  
+  @media screen and (min-width: 636px) {
+	.nav-links {
+	  margin-left: 5em;
+	  display: block;
+	  position: static;
+	  width: auto;
+	  background: none;
+	}
+  
+	.nav-links a {
+	  display: inline-block;
+	  padding: 15px 20px;
+	}
+  
+  }
 
 .glass { background: rgba(255,255,255,0.5); backdrop-filter: saturate(140%) blur(12px); -webkit-backdrop-filter: saturate(140%) blur(12px); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
 
+.sitename a{font-size: 1.7em;font-weight: 600;}
 
 h1,
 h2,
