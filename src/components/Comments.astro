@@ -56,16 +56,16 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
   )}
 
   <style>
-    .comments { margin-top: 2rem; background: #51716c; padding: 20px; color: white; border-radius: 18px;}
+    .comments { margin-top: 2rem; background: #51716c; padding: 40px 20px; color: white; border-radius: 18px;}
     .comments :is(h2, h3, h4, h5, h6){ margin-bottom: 0.5rem; color: white; }
     .loading, .muted { color: rgb(var(--gray)); }
     .error { color: #e11d48; }
     /* Comments list items are injected via JS, so use :global to style them */
     :global(.comments .comment) { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
     :global(.comments .comment .meta) { color: black; padding-left: 25px; font-size: 0.9rem; margin-bottom: 0.25rem; }
-    :global(.comments .comment .body) { white-space: pre-wrap; color: blue; }
-    form#comment-form p { margin: 1rem 30px 0px 20px; width: 90%;}
-    form#comment-form input, form#comment-form textarea { width: 100%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
+    :global(.comments .comment .body) { color: white; white-space: pre-wrap;}
+    form#comment-form p { margin: 1rem 0% 10px 0%; display: flex; }
+    form#comment-form input, form#comment-form textarea { width: 90%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
     form#comment-form textarea {height: 150px;}
     form#comment-form .hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
     #form-status { margin-left: 0.75rem; color: rgb(var(--white));}
