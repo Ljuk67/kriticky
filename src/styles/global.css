@@ -15,6 +15,11 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 5%), 0 8px 24px rgba(var(--gray), 10%), 0 16px 32px
 		rgba(var(--gray), 15%);
+
+	/* Responsive content grid variables */
+	--grid-margin: clamp(1rem, 5vw, 3rem);
+	--grid-textcontent: min(65ch, 100% - 4rem);
+	--grid-expansion: clamp(1rem, 8vw, 6rem);
 }
 @font-face {
 	font-family: "Atkinson";
@@ -44,11 +49,27 @@ body {
 	line-height: 1.7;
 }
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
+	max-width: 100%;
+	margin: 0;
 	padding: 3em 1em;
 }
+
+/* Content grid layout helpers */
+.content-grid {
+	display: grid;
+	grid-template-columns:
+		[fullwidth-start] minmax(var(--grid-margin), 1fr)
+		[breakout-start] minmax(0, var(--grid-expansion))
+		[content-start] var(--grid-textcontent)
+		[content-end] minmax(0, var(--grid-expansion))
+		[breakout-end] minmax(var(--grid-margin), 1fr)
+		[fullwidth-end];
+	gap: 0;
+}
+.content-grid > * { grid-column: content; }
+.content-grid > .content { grid-column: content; }
+.content-grid > .breakout { grid-column: breakout; }
+.content-grid > .full-width { grid-column: fullwidth; }
 h1,
 h2,
 h3,
@@ -131,9 +152,7 @@ hr {
 	body {
 		font-size: 20px;
 	}
-	main {
-		padding: 1em;
-	}
+	main { padding: 1em; }
 }
 
 .sr-only {
@@ -159,4 +178,3 @@ hr {
     flex-direction: row;
     justify-content: center;
 }
-

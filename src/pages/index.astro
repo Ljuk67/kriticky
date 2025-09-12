@@ -37,142 +37,120 @@ const scale = (c: number) => {
 <html lang="sk">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			.latest-posts {
-				margin-top: 3rem;
-			}
-			.posts {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			.posts li {
-				width: calc(50% - 1rem);
-			}
-			.posts li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			.posts li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			.posts li:first-child img,
-			.posts li:first-child svg {
-				width: 100%;
-			}
-			.posts li:first-child .title {
-				font-size: 2.369rem;
-			}
-			.posts li img,
-			.posts li svg {
-				display: block;
-				width: 100%;
-				height: auto;
-				margin-bottom: 20px;
-				border-radius: 12px;
-			}
-			.posts li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			.posts li a:hover h4,
-			.posts li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			.posts a:hover img,
-			.posts a:hover svg {
-				box-shadow: var(--box-shadow);
-			}
-			.view-all {
-				margin-top: 1rem;
-			}
-			.tag-cloud {
-				margin-top: 4rem;
-				padding-top: 1rem;
-				border-top: 1px solid rgb(var(--gray-light));
-			}
-			.tag-cloud .tags { 
-				list-style: none; 
-				padding: 0; 
-				margin: 0.5rem 0 0 0; 
-				display: flex; 
-				flex-wrap: wrap; 
-				gap: 30px; 
-				align-items: baseline; 
-			}
-			.tag-cloud a { 
-				text-decoration: none; 
-				background: none; 
-				color: rgb(var(--black)); 
-				padding: 0; 
-				transition: color 0.2s ease; 
-			}
-			.tag-cloud a:hover { 
-				color: var(--accent); 
-				text-decoration: underline; 
-			}
-			@media (max-width: 720px) {
-				.posts {
-					gap: 0.5em;
-				}
-				.posts li {
-					width: 100%;
-					text-align: center;
-				}
-				.posts li:first-child {
-					margin-bottom: 0;
-				}
-				.posts li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
+			<style>
+				/* Glass + grid */
+				.glass { background: rgba(255,255,255,0.5); backdrop-filter: saturate(140%) blur(12px); -webkit-backdrop-filter: saturate(140%) blur(12px); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+				.hero { grid-column: content; padding: 2rem; text-align: center; }
+				.hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 0.5rem 0; }
+				.hero p.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); margin: 0.5rem 0 0; }
+				.stop-grid { grid-column: content; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+				.stop-card { padding: 1rem 1.25rem; }
+				.stop-card h3 { margin: 0 0 0.25rem 0; }
+				.stop-card p { margin: 0.25rem 0; }
+				.latest-posts { grid-column: content; margin-top: 3rem; }
+				.posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 0; }
+				.posts li a { display: block; text-decoration: none; }
+				.posts li img, .posts li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 12px; }
+				.posts li .title { margin: 0; color: rgb(var(--black)); }
+				.posts li .date { margin: 0; color: rgb(var(--gray)); }
+				.posts li:hover .title, .posts li:hover .date { color: rgb(var(--accent)); }
+				.posts li:hover img, .posts li:hover svg { box-shadow: var(--box-shadow); }
+				.tag-cloud { grid-column: content; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgb(var(--gray-light)); }
+				.tag-cloud .tags { list-style: none; padding: 0; margin: 0.5rem 0 0 0; display: flex; flex-wrap: wrap; gap: 22px; align-items: baseline; }
+				.tag-cloud a { text-decoration: none; background: none; color: rgb(var(--black)); padding: 0; transition: color 0.2s ease; }
+				.tag-cloud a:hover { color: var(--accent); text-decoration: underline; }
+			</style>
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Kritické myslenie v praxi</h1>
-			<p>
-				Toto je oficiálna štartovacia šablóna blogu pre <a href="https://astro.build/">Astro</a>.
-				Je ľahká, minimálne štýlovaná a vhodná ako základ pre osobný web, blog alebo portfólio.
-			</p>
-			<p>
-				V projekte sú už predkonfigurované niektoré integrácie (pozri súbor
-				<code>astro.config.mjs</code>). Ďalšie nástroje ako Tailwind, React či Vue môžeš pridať cez
-				<a href="https://astro.build/integrations">Astro Integrations</a>.
-			</p>
-			<p>Tu je pár tipov, kde začať:</p>
-			<ul>
-				<li>Uprav túto stránku v <code>src/pages/index.astro</code>.</li>
-				<li>Uprav položky hlavičky v <code>src/components/Header.astro</code>.</li>
-				<li>Pridaj svoje meno do pätičky v <code>src/components/Footer.astro</code>.</li>
-				<li>Pozri si ukážkové články v <code>src/content/blog/</code>.</li>
-				<li>Prispôsob rozloženie článku v <code>src/layouts/BlogPost.astro</code>.</li>
-			</ul>
-			<p>
-				Ak sa zasekneš, <a href="https://docs.astro.build/">prečítaj dokumentáciu</a>
-				alebo sa opýtaj na <a href="https://astro.build/chat">Discorde</a>.
-			</p>
+		<main class="content-grid">
+			<section class="hero glass">
+				<h1>Kto myslí, ten STOPne.</h1>
+				<p class="lead">Spomaľ. Mysli. Overuj. Kritické myslenie v bežnom živote.</p>
+			</section>
+
+			<section class="stop-grid">
+				<div class="stop-card glass">
+					<h3>S – Skontroluj zdroj</h3>
+					<p>– Kto to tvrdí? Je to dôveryhodný zdroj? Má meno, odbornú autoritu, minulosť v klamstvách?</p>
+				</div>
+				<div class="stop-card glass">
+					<h3>T – Triezvo premýšľaj</h3>
+					<p>– Nehrá to na tvoje emócie? Znie to príliš dobre/zle na to, aby to bola pravda?</p>
+				</div>
+				<div class="stop-card glass">
+					<h3>O – Over fakty</h3>
+					<p>– Dajú sa tvrdenia potvrdiť z viacerých nezávislých zdrojov? Je k tomu dôkaz, štúdia, reálne čísla?</p>
+				</div>
+				<div class="stop-card glass">
+					<h3>P – Pozor na vlastnú zaujatosť (bias)</h3>
+					<p>– Nehľadáš len to, čo potvrdzuje tvoje názory? Neodmietaš niečo len preto, že s tým nesúhlasíš?</p>
+				</div>
+			</section>
+
+			<!-- Introductory content -->
+			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1.5rem;">
+				<h2>Spomaľ, mysli, overuj.</h2>
+				<p>Na internete je dnes ťažké vyznať sa. Každý má „svoju pravdu“, niečo zdieľa, niečo komentuje, niečomu verí. A je úplne normálne, ak sa v tom človek občas stratí. Aj my sme verili veciam, ktoré neboli úplne pravdivé – a možno stále niektorým veríme.</p>
+				<p>Preto vznikol tento web. <strong>Kriticky.sk</strong> je miesto pre každého, kto si kladie otázky. Kto nechce hneď uveriť všetkému, ale ani hneď všetko odmietať. Kto chce rozumieť svetu okolo seba – a naučiť sa rozlišovať fakty od domnienok, emócie od reality.</p>
+			</section>
+
+			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1rem;">
+				<h2>🧭 Čo je to kritické myslenie?</h2>
+				<p>Kritické myslenie nie je o tom byť "múdrejší" než ostatní.<br/>Je to zručnosť, ktorú si môže rozvíjať každý – či má 16 alebo 60.<br/>Ide len o to, <strong>spomaliť, pozrieť sa na veci s odstupom a položiť si zopár otázok</strong>.</p>
+			</section>
+
+			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1rem;">
+				<h2>🛑 Metóda STOP</h2>
+				<p>Jednoduchý nástroj, ktorý ti pomôže, keď niečo znie až príliš dobre (alebo zle) na to, aby to bola pravda:</p>
+				<p><strong>S</strong> – <strong>Skontroluj zdroj</strong><br/>
+				<strong>T</strong> – <strong>Triezvo premýšľaj</strong><br/>
+				<strong>O</strong> – <strong>Over fakty</strong><br/>
+				<strong>P</strong> – <strong>Pozor na vlastnú zaujatost</strong></p>
+
+				<p>Týchto 4 krokov ti môže ušetriť nielen trapas na Facebooku, ale aj názor, ktorého by si mohol časom ľutovať.</p>
+			</section>
+
+			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1rem;">
+				<h2>🔎 Čo tu nájdeš?</h2>
+				<p>🧩 <strong>Príklady z praxe</strong><br/>Reálne príklady z médií, sociálnych sietí, politiky – rozobrané jednoducho, bez poučovania.</p>
+				<p>🔍 <strong>Návody a techniky</strong><br/>Ako si overiť informácie, ako spoznať zavádzanie, ako si dať pozor na vlastné chyby v uvažovaní.</p>
+				<p>🧠 <strong>Zaujímavosti o ľudskej mysli</strong><br/>Prečo nás lákajú jednoduché riešenia? Prečo si niektoré názory chránime ako keby boli naše deti? (A čo s tým?)</p>
+			</section>
+
+			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1rem;">
+				<h2>🫱 Pre koho to je?</h2>
+				<p>Pre všetkých, ktorí si niekedy povedali:<br/>
+				<strong>„Toto mi nesedí… ale neviem prečo.“</strong><br/>
+				alebo<br/>
+				<strong>„Niečo mi tu nesedí… ale ostatní to zdieľajú, tak asi OK?“</strong></p>
+				<p>Ak chceš rozumieť svetu, ale nechceš byť manipulovaný – si tu správne.<br/>
+				Ak si myslíš, že nikto nemá vždy pravdu – vitaj.<br/>
+				Ak si zvedavý, ale opatrný – poď ďalej.</p>
+			</section>
+
+			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1rem;">
+				<h2>✨ Prečo to robíme?</h2>
+				<p>Lebo veríme, že <strong>kritické myslenie patrí do každodenného života</strong>.<br/>
+				Nie ako školská poučka, ale ako užitočný kompas pre dobu, kde sa informácie šíria rýchlejšie než rozum.</p>
+				<p>Nechceme ti hovoriť, čo si máš myslieť.<br/>
+				Chceme ti pomôcť <strong>rozpoznať, kedy sa oplatí myslieť viac.</strong></p>
+			</section>
+
+			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1rem;">
+				<h2>📩 Pridaj sa</h2>
+				<p>Chystáme články, videá, jednoduché testy aj praktické tipy.<br/>
+				Môžeš si nás pridať do záložiek, sledovať na sociálnych sieťach alebo sa prihlásiť na newsletter – čoskoro.</p>
+				<p>A hlavne –<br/>
+				<strong>Spomaľ. Mysli. Overuj.</strong></p>
+			</section>
 
 			<section class="latest-posts">
 				<h2>Najnovšie články</h2>
 				<ul class="posts">
 					{
 						latestPosts.map((post) => (
-							<li>
+							<li class="glass" style="padding: 0.75rem; border-radius: 14px;">
 								<a href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
 									<img src={getThumb(post.id)} alt="" />
 									<h4 class="title">{post.data.title}</h4>
@@ -196,7 +174,7 @@ const scale = (c: number) => {
 			  .count { color: rgb(var(--gray)); margin-left: 6px; font-size: 0.9em; }
 			</style>
 
-			<section>
+			<section class="tag-cloud">
 			  <h3>Značky</h3>
 			  <ul class="tags">
 				{allTags.map(([t, c]) => (
