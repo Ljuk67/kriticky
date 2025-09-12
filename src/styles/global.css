@@ -70,6 +70,11 @@ main {
 .content-grid > .content { grid-column: content; }
 .content-grid > .breakout { grid-column: breakout; }
 .content-grid > .full-width { grid-column: fullwidth; }
+
+
+.glass { background: rgba(255,255,255,0.5); backdrop-filter: saturate(140%) blur(12px); -webkit-backdrop-filter: saturate(140%) blur(12px); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+
 h1,
 h2,
 h3,

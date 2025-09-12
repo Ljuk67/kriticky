@@ -1,15 +1,12 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import Page from '../layouts/Page.astro';
 ---
 
 
-<Layout
-	title="O mne"
-	description="Stručné predstavenie autora"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
-  showComments={false}
+<Page
+  title="O mne"
+  description="Stručné predstavenie autora"
 >
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -62,4 +59,4 @@ import Layout from '../layouts/BlogPost.astro';
 		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
 		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
 	</p>
-</Layout>
+</Page>
