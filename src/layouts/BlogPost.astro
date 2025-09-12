@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -13,6 +14,13 @@ const { title, description, pubDate, updatedDate, slug, author, tags, showCommen
 // Map of generated SVG thumbs (url strings)
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
 const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg`];
+// Determine newer/older posts based on pubDate (desc)
+const allPosts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const currentIndex = allPosts.findIndex((p) => p.id === slug);
+const newerPost = currentIndex > 0 ? allPosts[currentIndex - 1] : undefined; // novší článok
+const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : undefined; // starší článok
 ---
 
 <html lang="sk">
@@ -70,6 +78,17 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 			.last-updated-on {
 				font-style: italic;
 			}
+			.post-nav { 
+				grid-column: content; 
+				display: flex; 
+				justify-content: space-between; 
+				gap: 1rem; 
+				margin: 2rem 0 0; 
+				font-size: 0.9em; 
+				color: rgb(var(--gray));
+			}
+			.post-nav a { color: inherit; text-decoration: none; }
+			.post-nav a:hover { color: rgb(var(--accent)); text-decoration: underline; }
 		</style>
 	</head>
 
@@ -104,6 +123,21 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 					<slot />
 				</div>
 			</article>
+			{(newerPost || olderPost) && (
+				<nav class="post-nav" aria-label="Navigácia medzi článkami">
+
+					{olderPost ? (
+						<a class="older" rel="next" href={`${import.meta.env.BASE_URL}blog/${olderPost.id}/`}>
+							&lt;&lt; <b>Starší:</b>  <br/>{olderPost.data.title} 
+						</a>
+					) : <span />}
+										{newerPost ? (
+						<a class="newer" rel="prev" href={`${import.meta.env.BASE_URL}blog/${newerPost.id}/`}>
+							 <b>Novší:</b> &gt;&gt;<br/> {newerPost.data.title} 
+						</a>
+					) : <span />}
+				</nav>
+			)}
 			{showComments && (
 				<section style="margin-top: 2rem;">
 
