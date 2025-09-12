@@ -27,27 +27,14 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 			keywords={Array.isArray(tags) ? tags : []}
 		/>
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: min(600px, 90vw);
-				display: block;
-			}
+			/* Use grid helpers defined in global.css */
+			.hero-image { display: block; margin: 0 auto; }
 			.hero-image img {
 
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
 			}
-			.prose {
-				/*width: 720px;*/
-				max-width: calc(100% - 0.1em);
-				margin: auto;
-				padding: 0em;
-				color: rgb(var(--gray-dark));
-			}
+			.prose { padding: 0; color: rgb(var(--gray-dark)); }
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
@@ -88,12 +75,12 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 
 	<body>
 		<Header />
-		<main>
+		<main class="content-grid">
 			<article class="blog-post">
-				<div class="hero-image">
+				<div class="hero-image content">
 					{heroUrl && <img src={heroUrl} alt="" />}
 				</div>
-				<div class="prose">
+				<div class="prose content">
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={pubDate} />

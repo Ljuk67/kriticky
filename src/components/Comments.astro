@@ -28,8 +28,8 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
           </label>
         </p>
         <p>
-          <label>E‑mail (nepovinné)
-            <input type="email" name="email" />
+          <label>E‑mail
+            <input type="email" required name="email" />
           </label>
         </p>
         <p class="hp">
@@ -39,13 +39,13 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
         </p>
         <p>
           <label>Komentár
-            <textarea name="message" required minlength="3" maxlength="5000"></textarea>
+            <textarea name="message" required minlength="10" maxlength="5000"></textarea>
           </label>
         </p>
         <button type="button">Odoslať komentár</button>
         <span id="form-status" role="status" aria-live="polite"></span>
       </form>
-      <hr />
+      
       <div id="comments-list" data-slug={slug} data-supabase-url={import.meta.env.PUBLIC_SUPABASE_URL} data-supabase-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}>
         <div class="loading">Načítavam komentáre…</div>
       </div>
@@ -57,19 +57,33 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
 
   <style>
     .comments { margin-top: 2rem; background: #51716c; padding: 40px 20px; color: white; border-radius: 18px;}
-    .comments :is(h2, h3, h4, h5, h6){ margin-bottom: 0.5rem; color: white; }
+    .comments :is(h2, h3, h4, h5, h6){ margin-bottom: 0.5rem; color: white;text-align: center; }
     .loading, .muted { color: rgb(var(--gray)); }
     .error { color: #e11d48; }
+    /* Center and size the form and list */
+    form#comment-form, #comments-list { width: 100%; max-width: 720px; margin: 0 auto; }
+    #comments-list { margin-top: 1rem;background: #3d625d;border-radius: 12px;padding: 20px;}
+    
+    /* Inputs */
+    form#comment-form p { margin: 0.75rem 0; width: 100%; display: block; }
+    form#comment-form input, form#comment-form textarea { width: 100%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
+    form#comment-form textarea { height: 150px; }
+    form#comment-form .hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
+    #form-status { margin-left: 0.75rem; color: rgb(var(--white));}
+    
+    /* Submit button */
+    form#comment-form button { padding: 10px 15px; color: white; background: black; border: 0; border-radius: 6px; font-size: 1em; cursor: pointer; }
+    
     /* Comments list items are injected via JS, so use :global to style them */
     :global(.comments .comment) { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
     :global(.comments .comment .meta) { color: black; padding-left: 25px; font-size: 0.9rem; margin-bottom: 0.25rem; }
-    :global(.comments .comment .body) { color: white; white-space: pre-wrap;}
-    form#comment-form p { margin: 1rem 0% 10px 0%; display: flex; }
-    form#comment-form input, form#comment-form textarea { width: 90%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
-    form#comment-form textarea {height: 150px;}
-    form#comment-form .hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
-    #form-status { margin-left: 0.75rem; color: rgb(var(--white));}
-    form#comment-form button{padding: 10px 15px; color: white; background:black; border: 0px; border-radius: 6px; font-size: 1em; cursor: pointer;}
+    :global(.comments .comment .body) { white-space: pre-wrap; }
+    
+    /* Small screens */
+    @media (max-width: 480px) {
+      .comments { padding: 18px; }
+      form#comment-form textarea { height: 120px; }
+    }
     
   </style>
 </section>
