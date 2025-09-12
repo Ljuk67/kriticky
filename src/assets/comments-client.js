@@ -92,19 +92,32 @@ ready(() => {
         message: (fd.get('message') || '').toString().trim(),
         is_approved: false,
       };
-      if (!payload.name || !payload.message) {
-        if (statusEl) statusEl.textContent = 'Vyplň meno a komentár.';
+      // Basic client validation mirroring DB constraints
+      if (!payload.name || payload.name.length < 2) {
+        if (statusEl) statusEl.textContent = 'Meno musí mať aspoň 2 znaky.';
+        return;
+      }
+      if (!payload.message || payload.message.length < 3) {
+        if (statusEl) statusEl.textContent = 'Komentár musí mať aspoň 3 znaky.';
         return;
       }
       try {
         const res = await fetch(url + '/rest/v1/comments?apikey=' + encodeURIComponent(key), {
           method: 'POST',
-          headers: { ...headers, Prefer: 'return=representation' },
+          // Do not request returning rows to avoid SELECT RLS on the inserted row
+          headers: { ...headers },
           body: JSON.stringify(payload),
         });
         if (!res.ok) {
-          const body = await res.text().catch(() => '');
-          throw new Error('HTTP ' + res.status + ' ' + body);
+          // Try to parse JSON error from PostgREST for clearer feedback
+          let bodyText = '';
+          try {
+            const txt = await res.text();
+            bodyText = txt;
+            const j = JSON.parse(txt);
+            if (j && j.message) bodyText = j.message;
+          } catch {}
+          throw new Error('HTTP ' + res.status + (bodyText ? ': ' + bodyText : ''));
         }
         if (statusEl) statusEl.textContent = 'Ďakujeme, komentár čaká na schválenie.';
         form.reset();
