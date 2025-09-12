@@ -11,7 +11,8 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
 ---
 
 <section class="comments" aria-label="Komentáre">
-  <h2>Komentáre</h2>
+  <h3> 💬 Diskusia</h3>
+  <h5>Pridať komentár:</h5>
 
   {!canRun && (
     <p class="note">Komentáre sú dočasne vypnuté. Chýba <code>PUBLIC_SUPABASE_URL</code> alebo <code>PUBLIC_SUPABASE_ANON_KEY</code>.</p>
@@ -19,10 +20,6 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
 
   {canRun && (
     <>
-      <div id="comments-list" data-slug={slug} data-supabase-url={import.meta.env.PUBLIC_SUPABASE_URL} data-supabase-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}>
-        <div class="loading">Načítavam komentáre…</div>
-      </div>
-      <hr />
       <form id="comment-form" method="POST" action="javascript:void(0)" onsubmit="return false" novalidate>
         <input type="hidden" name="slug" value={slug} />
         <p>
@@ -48,80 +45,30 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
         <button type="button">Odoslať komentár</button>
         <span id="form-status" role="status" aria-live="polite"></span>
       </form>
+      <hr />
+      <div id="comments-list" data-slug={slug} data-supabase-url={import.meta.env.PUBLIC_SUPABASE_URL} data-supabase-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}>
+        <div class="loading">Načítavam komentáre…</div>
+      </div>
 
       <script type="module" src={commentsClientUrl}></script>
-      <!--
-      <script type="module" is:inline>
-        const SUPABASE_URL = {JSON.stringify(import.meta.env.PUBLIC_SUPABASE_URL)};
-        const SUPABASE_KEY = {JSON.stringify(import.meta.env.PUBLIC_SUPABASE_ANON_KEY)};
-        (function(){
-          function escapeHtml(s){
-            return String(s)
-              .replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;')
-              .replace(/"/g, '&quot;')
-              .replace(/'/g, '&#039;');
-          }
-          function fmtDate(iso){ try { return new Date(iso).toLocaleString('sk-SK'); } catch { return iso; } }
-          function ready(fn){ if(document.readyState==='complete'||document.readyState==='interactive') fn(); else document.addEventListener('DOMContentLoaded', fn); }
-          ready(() => {
-            const url = SUPABASE_URL; const key = SUPABASE_KEY;
-            const listEl = document.getElementById('comments-list');
-            const form = document.getElementById('comment-form');
-            const statusEl = document.getElementById('form-status');
-            const slug = listEl?.dataset.slug || '';
-            if(!url||!key){ if(statusEl) statusEl.textContent='Komentáre sú dočasne vypnuté.'; return; }
-            const headers = { apikey:key, Authorization:'Bearer '+key, 'Content-Type':'application/json', Accept:'application/json' };
-            async function fetchComments(){
-              try{
-                const q=new URL(url+'/rest/v1/comments');
-                q.searchParams.set('select','id,name,message,created_at');
-                q.searchParams.set('slug','eq.'+slug);
-                q.searchParams.set('is_approved','eq.true');
-                q.searchParams.set('order','created_at.asc');
-                const res=await fetch(q,{headers}); const data=await res.json();
-                const items=Array.isArray(data)?data:[];
-                if(!items.length){ listEl.innerHTML='<p class="muted">Zatiaľ žiadne komentáre.</p>'; return; }
-                listEl.innerHTML=items.map(i=>('<div class="comment">'
-                  +'<div class="meta"><strong>'+escapeHtml(i.name)+'</strong> · <time datetime="'+i.created_at+'">'+fmtDate(i.created_at)+'</time></div>'
-                  +'<div class="body">'+escapeHtml(i.message)+'</div>'
-                +'</div>')).join('');
-              }catch(e){ if(listEl) listEl.innerHTML='<p class="error">Nepodarilo sa načítať komentáre.</p>'; }
-            }
-            fetchComments();
-            form?.addEventListener('submit', async (e)=>{
-              e.preventDefault(); e.stopPropagation(); if(!url||!key) return; if(statusEl) statusEl.textContent='';
-              const fd=new FormData(form);
-              if((fd.get('hp_field')||'').toString().trim()){ if(statusEl) statusEl.textContent='Ďakujeme.'; form.reset(); return; }
-              const payload={ slug:fd.get('slug'), name:(fd.get('name')||'').toString().trim(), email:(fd.get('email')||'').toString().trim()||null, message:(fd.get('message')||'').toString().trim(), is_approved:false };
-              if(!payload.name||!payload.message){ if(statusEl) statusEl.textContent='Vyplň meno a komentár.'; return; }
-              try{
-                const res=await fetch(url+'/rest/v1/comments',{ method:'POST', headers:{...headers, Prefer:'return=representation'}, body:JSON.stringify(payload)});
-                if(!res.ok){ const body=await res.text().catch(()=>'' ); throw new Error('HTTP '+res.status+' '+body); }
-                if(statusEl) statusEl.textContent='Ďakujeme, komentár čaká na schválenie.'; form.reset(); fetchComments();
-              }catch(err){ if(statusEl) statusEl.textContent='Chyba pri odosielaní. Skús neskôr.'; console.error('[comments] submit error',err); }
-            });
-            const btn=document.querySelector('#comment-form button[type="button"]');
-            if(btn&&form){ btn.addEventListener('click',(ev)=>{ ev.preventDefault(); ev.stopPropagation(); const evt=new Event('submit',{cancelable:true,bubbles:true}); form.dispatchEvent(evt); }); }
-          });
-        })();
-      </script>
-      -->
+      
     </>
   )}
 
   <style>
-    .comments { margin-top: 2rem; }
-    .comments h2 { margin-bottom: 0.5rem; }
+    .comments { margin-top: 2rem; background: #51716c; padding: 20px; color: white; border-radius: 18px;}
+    .comments :is(h2, h3, h4, h5, h6){ margin-bottom: 0.5rem; color: white; }
     .loading, .muted { color: rgb(var(--gray)); }
     .error { color: #e11d48; }
     .comment { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
-    .comment .meta { font-size: 0.9rem; color: rgb(var(--gray)); margin-bottom: 0.25rem; }
+    .comment .meta { color: black; font-size: 0.9rem; color: rgb(var(--gray)); margin-bottom: 0.25rem; }
     .comment .body { white-space: pre-wrap; }
-    form#comment-form { margin-top: 1rem; }
+    form#comment-form p { margin: 1rem 30px 0px 20px; width: 90%;}
     form#comment-form input, form#comment-form textarea { width: 100%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
+    form#comment-form textarea {height: 150px;}
     form#comment-form .hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
-    #form-status { margin-left: 0.75rem; color: rgb(var(--gray)); }
+    #form-status { margin-left: 0.75rem; color: rgb(var(--white));}
+    form#comment-form button{padding: 10px 15px; color: white; background:black; border: 0px; border-radius: 6px; font-size: 1em; cursor: pointer;}
+    
   </style>
 </section>

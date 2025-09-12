@@ -39,11 +39,18 @@ import sentry from '@sentry/astro';
 import spotlightjs from '@spotlightjs/astro';
 
 // https://astro.build/config
+const integrations = [mdx(), sitemap(), sentry()];
+// Spotlight overlay is useful, but can conflict with HMR/DOM in dev.
+// Enable it only when explicitly requested.
+if (process.env.SPOTLIGHT_ENABLED === 'true') {
+    integrations.push(spotlightjs());
+}
+
 export default defineConfig({
     // Use root custom domain
     site: 'https://kriticky.sk',
     base: '/',
-    integrations: [mdx(), sitemap(), sentry(), spotlightjs()],
+    integrations,
     vite: {
         plugins: [thumbsWatcherPlugin()],
     },
