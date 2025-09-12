@@ -33,9 +33,8 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 				margin: 0;
 			}
 			.hero-image {
-				width: 600px;
+				width: min(600px, 90vw);
 				display: block;
-				margin: 0 auto;
 			}
 			.hero-image img {
 
@@ -43,10 +42,10 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
+				/*width: 720px;*/
+				max-width: calc(100% - 0.1em);
 				margin: auto;
-				padding: 1em;
+				padding: 0em;
 				color: rgb(var(--gray-dark));
 			}
 			.title {
@@ -56,7 +55,7 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 				line-height: 1;
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 20px 0 0.5em 0;
 			}
 			.date {
 				margin-bottom: 0.5em;
@@ -119,7 +118,7 @@ const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg
 				</div>
 			</article>
 			{showComments && (
-				<section class="prose" style="margin-top: 2rem;">
+				<section style="margin-top: 2rem;">
 
 					
 					<Comments slug={slug} />
