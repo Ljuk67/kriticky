@@ -42,12 +42,12 @@ const scale = (c: number) => {
 				.hero { grid-column: content; padding: 2rem; text-align: center; }
 				.hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 0.5rem 0; }
 				.hero p.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); margin: 0.5rem 0 0; }
-				.stop-grid { grid-column: breakout; display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-				.stop-card { padding: 1rem 1.25rem; }
+				.stop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+				.stop-card { padding: 2rem; text-align: center; }
 				.stop-card h3 { margin: 0 0 0.25rem 0; }
 				.stop-card p { margin: 0.25rem 0; }
-				.latest-posts { grid-column: content; margin-top: 3rem; }
-				.posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 0; }
+				.latest-posts { margin-top: 3rem; }
+				.posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 0; }
 				.posts li a { display: block; text-decoration: none; }
 				.posts li img, .posts li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 12px; }
 				.posts li .title { margin: 0; color: rgb(var(--black)); }
@@ -58,17 +58,18 @@ const scale = (c: number) => {
 				.tag-cloud .tags { list-style: none; padding: 0; margin: 0.5rem 0 0 0; display: flex; flex-wrap: wrap; gap: 22px; align-items: baseline; }
 				.tag-cloud a { text-decoration: none; background: none; color: rgb(var(--black)); padding: 0; transition: color 0.2s ease; }
 				.tag-cloud a:hover { color: var(--accent); text-decoration: underline; }
+				.lead{font-size: 1.5em; font-weight:200;}
 			</style>
 	</head>
 	<body>
 		<Header />
-		<main class="content-grid">
-			<section class="hero glass">
-				<h1>Kto myslí, ten STOPne.</h1>
-				<p class="lead">Spomaľ. Mysli. Overuj. Kritické myslenie v bežnom živote.</p>
+		<main class="content-grid" style="background: #f2f2f2;">
+			<section class="hero">
+				
+				<h1 style="font-size:2em;  margin: 0px auto;">Spomaľ. Mysli. Overuj. <br/>Kritické myslenie v bežnom živote.</h1>
 			</section>
 
-			<section class="stop-grid">
+			<section class="stop-grid breakout-90">
 				<div class="stop-card glass">
 					<h3>S – Skontroluj zdroj</h3>
 					<p>– Kto to tvrdí? Je to dôveryhodný zdroj? Má meno, odbornú autoritu, minulosť v klamstvách?</p>
@@ -85,11 +86,12 @@ const scale = (c: number) => {
 					<h3>P – Pozor na vlastnú zaujatosť (bias)</h3>
 					<p>– Nehľadáš len to, čo potvrdzuje tvoje názory? Neodmietaš niečo len preto, že s tým nesúhlasíš?</p>
 				</div>
+				
 			</section>
-
+			<span class="lead" style="text-align: center; color:var(--accent);margin: 35px 5px;" >Kto myslí, ten STOPne.</span>
 			<!-- Introductory content -->
-			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1.5rem;">
-				<h2>Spomaľ, mysli, overuj.</h2>
+			<section style="grid-column: content; padding: 1.5rem; margin-top: 1.5rem; ">
+				
 				<p>Na internete je dnes ťažké vyznať sa. Každý má „svoju pravdu“, niečo zdieľa, niečo komentuje, niečomu verí. A je úplne normálne, ak sa v tom človek občas stratí. Aj my sme verili veciam, ktoré neboli úplne pravdivé – a možno stále niektorým veríme.</p>
 				<p>Preto vznikol tento web. <strong>Kriticky.sk</strong> je miesto pre každého, kto si kladie otázky. Kto nechce hneď uveriť všetkému, ale ani hneď všetko odmietať. Kto chce rozumieť svetu okolo seba – a naučiť sa rozlišovať fakty od domnienok, emócie od reality.</p>
 			</section>
@@ -134,17 +136,13 @@ const scale = (c: number) => {
 				Nie ako školská poučka, ale ako užitočný kompas pre dobu, kde sa informácie šíria rýchlejšie než rozum.</p>
 				<p>Nechceme ti hovoriť, čo si máš myslieť.<br/>
 				Chceme ti pomôcť <strong>rozpoznať, kedy sa oplatí myslieť viac.</strong></p>
-			</section>
-
-			<section class="glass" style="grid-column: content; padding: 1.5rem; margin-top: 1rem;">
-				<h2>📩 Pridaj sa</h2>
-				<p>Chystáme články, videá, jednoduché testy aj praktické tipy.<br/>
-				Môžeš si nás pridať do záložiek, sledovať na sociálnych sieťach alebo sa prihlásiť na newsletter – čoskoro.</p>
+				<p>Vitaj.</p>
 				<p>A hlavne –<br/>
-				<strong>Spomaľ. Mysli. Overuj.</strong></p>
+					<strong>Spomaľ. Mysli. Overuj.</strong></p>
 			</section>
 
-			<section class="latest-posts">
+
+			<section class="latest-posts breakout-90">
 				<h2>Najnovšie články</h2>
 				<ul class="posts">
 					{
