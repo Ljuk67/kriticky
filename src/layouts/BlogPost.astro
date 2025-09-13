@@ -39,7 +39,7 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 			.hero-image { display: block; margin: 0 auto; }
 			.hero-image img {
 
-				border-radius: 12px;
+				border-radius: 27px;
 				box-shadow: var(--box-shadow);
 			}
 			.prose { padding: 0; color: rgb(var(--gray-dark)); }
@@ -79,7 +79,6 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				font-style: italic;
 			}
 			.post-nav { 
-				grid-column: content; 
 				display: flex; 
 				justify-content: space-between; 
 				gap: 1rem; 
@@ -94,12 +93,12 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 
 	<body>
 		<Header />
-		<main class="content-grid" style="justify-content: center;">
+		<main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 			<article class="blog-post" >
-				<div class="hero-image content">
+				<div class="hero-image">
 					{heroUrl && <img src={heroUrl} alt="" />}
 				</div>
-				<div class="prose content">
+				<div class="prose prose-lg max-w-none">
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={pubDate} />
@@ -139,7 +138,7 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				</nav>
 			)}
 			{showComments && (
-				<section style="margin-top: 2rem;">
+				<section class="mt-8">
 
 					
 					<Comments slug={slug} />
