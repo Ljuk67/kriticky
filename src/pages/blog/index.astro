@@ -23,10 +23,7 @@ const enhanced = posts.map((p) => ({ ...p, thumb: thumbs[`../../assets/thumbs/${
 		<style>
 			/* Glass look to match homepage */
 			.glass { background: rgba(255,255,255,0.5); backdrop-filter: saturate(140%) blur(12px); -webkit-backdrop-filter: saturate(140%) blur(12px); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-			main {
-				width: 960px;
-				margin: 0px auto;
-			}
+			/* Use global content grid for consistent responsive layout */
 			ul {
 				display: flex;
 				flex-wrap: wrap;
@@ -123,8 +120,8 @@ const enhanced = posts.map((p) => ({ ...p, thumb: thumbs[`../../assets/thumbs/${
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section>
+		<main class="content-grid">
+			<section class="breakout">
 				<ul>
 					{
 						enhanced.map((post) => (

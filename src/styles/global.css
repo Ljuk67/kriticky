@@ -204,11 +204,10 @@ hr {
 	border-top: 1px solid rgb(var(--gray-light));
 }
 @media (max-width: 720px) {
-	body {
-		font-size: 20px;
-	}
-	main { padding: 1em; }
-	h1 {font-size: 1.9em;}
+	body { font-size: 20px; }
+	/* Remove horizontal padding to avoid ~15px right shift */
+	main { padding-block: 1em; padding-inline: 0; }
+	h1 { font-size: 1.9em; }
 }
 
 .sr-only {
