@@ -19,7 +19,6 @@ const allTags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0],
   <head>
     <BaseHead title="Značky" description="Prehľad všetkých značiek" />
     <style>
-      main { width: 720px; }
       ul.tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
       a.tag { display: inline-block; background: rgb(var(--gray-light)); color: rgb(var(--gray-dark)); border-radius: 999px; padding: 6px 12px; text-decoration: none; }
       a.tag:hover { background: rgba(var(--gray), 0.15); }
@@ -28,7 +27,7 @@ const allTags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0],
   </head>
   <body>
     <Header />
-    <main>
+    <main class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <h1>Značky</h1>
       <ul class="tags">
         {allTags.map(([t, c]) => (

@@ -2,37 +2,49 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
+import "../styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
+  sectionClass?: string;
+  wrap?: boolean; // if false, render slot directly under main
 }
 
-const { title, description }: Props = Astro.props;
+const { title, description, sectionClass = 'prose prose-lg max-w-none', wrap = true }: Props & { sectionClass?: string; wrap?: boolean } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
 ---
 
 <!doctype html>
 <html lang="sk">
   <head>
     <BaseHead title={title ?? 'Stránka'} description={description ?? ''} />
-    <style>
-      .page-section { grid-column: content; }
-      .glass { background: rgba(255,255,255,0.5); backdrop-filter: saturate(140%) blur(12px); -webkit-backdrop-filter: saturate(140%) blur(12px); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-      .card { padding: 3rem 1.5rem; margin-top: 1.5rem; }
-      .title { margin: 0 0 0.5rem 0; text-align: center; }
-      .lead { margin: 0.25rem 0 0.75rem 0; color: rgb(var(--gray)); text-align: center; }
-    </style>
   </head>
   <body>
     <Header />
-    <main class="content-grid">
-      <section class="page-section glass card">
-        {title && <h1 class="title">{title}</h1>}
-        {description && <p class="lead">{description}</p>}
-        <slot />
-      </section>
+    <main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      {wrap && (
+        <section class={sectionClass}>
+          {title && <h1>{title}</h1>}
+          {description && <p>{description}</p>}
+          <slot />
+        </section>
+      )}
+      {!wrap && <slot />}
     </main>
     <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img, svg {
+        content-visibility: auto;
+      }
+    </style>
   </body>
 </html>
-

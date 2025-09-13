@@ -2,6 +2,8 @@
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
+import astroIcon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { exec } from 'node:child_process';
 
@@ -39,7 +41,7 @@ import sentry from '@sentry/astro';
 import spotlightjs from '@spotlightjs/astro';
 
 // https://astro.build/config
-const integrations = [mdx(), sitemap(), sentry()];
+const integrations = [mdx(), sitemap(), sentry(), tailwind(), astroIcon()];
 // Spotlight overlay is useful, but can conflict with HMR/DOM in dev.
 // Enable it only when explicitly requested.
 if (process.env.SPOTLIGHT_ENABLED === 'true') {
