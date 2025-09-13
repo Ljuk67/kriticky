@@ -20,122 +20,26 @@ const enhanced = posts.map((p) => ({ ...p, thumb: thumbs[`../../assets/thumbs/${
 <html lang="sk">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			/* Glass look to match homepage */
-			.glass { background: rgba(255,255,255,0.5); backdrop-filter: saturate(140%) blur(12px); -webkit-backdrop-filter: saturate(140%) blur(12px); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-			/* Use global content grid for consistent responsive layout */
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(47% - 1rem);
-				text-align: center;
-			}
-			/* Card padding + rounded corners like homepage */
-			ul li.glass { padding: 0.75rem; border-radius: 14px; }
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			/* Keep the first (newest) big, but still glass */
-			ul li:first-child.glass { padding: 1rem; }
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img,
-			ul li svg {
-				display: block;
-				width: 100%;
-				height: auto;
-				margin-bottom: 20px;
-				border-radius: 27px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			.meta {
-				margin: 0.25em 0 0.25em 0;
-				color: rgb(var(--gray));
-				font-size: 0.95em;
-			}
-			.tags {
-				margin-top: 0.25em;
-				color: rgb(var(--gray));
-			}
-			.tag {
-				display: inline-block;
-				background: rgb(var(--gray-light));
-				color: rgb(var(--gray-dark));
-				border-radius: 999px;
-				padding: 2px 10px;
-				margin: 0 6px 0 0;
-				font-size: 0.8em;
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img,
-			ul a:hover svg {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
+		<style></style>
 	</head>
 	<body>
 		<Header />
-		<main class="content-grid">
-			<section class="breakout">
-				<ul>
+		<main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 archive">
+			<section>
+				<ul class="grid grid-cols-1 sm:grid-cols-2 gap-8 list-none p-0 m-0">
 					{
-						enhanced.map((post) => (
-							<li class="glass">
-								<a href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
-									<img src={post.thumb} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+						enhanced.map((post, i) => (
+							<li class={['glass','rounded-[14px]', i === 0 ? 'sm:col-span-2 p-4' : 'p-3'].join(' ')}>
+								<a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
+									<img class="w-full h-auto rounded-[27px] mb-4 group-hover:shadow-xl" src={post.thumb} alt="" />
+									<h2 class={['posttitle', 'text-center', i === 0 ? 'text-[1.8em] font-semibold' : 'text-[1.5em]'].join(' ')}>{post.data.title}</h2>
+									<div class="text-center date text-gray-500 group-hover:text-[var(--accent)]">
 										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<p class="meta">Autor: {post.data.author}</p>
+									</div>
+									<div class="text-center meta text-gray-500">Autor: {post.data.author}</div>
 									{Array.isArray(post.data.tags) && post.data.tags.length > 0 && (
-										<div class="tags" aria-label="Značky">
-											{post.data.tags.map((t) => <a class="tag" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
+										<div class="tags mt-1 text-gray-500" aria-label="Značky">
+											{post.data.tags.map((t) => <a class="inline-block bg-gray-200 text-gray-800 rounded-full px-2 py-0.5 no-underline mr-1" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
 										</div>
 									)}
 								</a>
