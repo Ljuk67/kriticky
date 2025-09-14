@@ -175,12 +175,6 @@ strong,
 b {
 	font-weight: 700;
 }
-a:not(.btn):not(.btn-light):not(.btn-dark) {
-	color: var(--accent);
-}
-a:hover:not(.btn):not(.btn-light):not(.btn-dark) {
-	color: var(--accent);
-}
 p {
 	margin-bottom: 1em;
 }
