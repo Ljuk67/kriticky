@@ -37,12 +37,12 @@ const enhanced = posts.map((p) => ({ ...p, thumb: thumbs[`../../assets/thumbs/${
 										<FormattedDate date={post.data.pubDate} />
 									</div>
 									<div class="text-center meta text-gray-500">Autor: {post.data.author}</div>
-									{Array.isArray(post.data.tags) && post.data.tags.length > 0 && (
-										<div class="tags mt-1 text-gray-500" aria-label="Značky">
-											{post.data.tags.map((t) => <a class="inline-block bg-gray-200 text-gray-800 rounded-full px-2 py-0.5 no-underline mr-1" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
-										</div>
-									)}
 								</a>
+								{Array.isArray(post.data.tags) && post.data.tags.length > 0 && (
+									<div class="tags mt-1 text-gray-500" aria-label="Značky">
+										{post.data.tags.map((t) => <a class="inline-block bg-gray-200 text-gray-800 rounded-full px-2 py-0.5 no-underline mr-1" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
+									</div>
+								)}
 							</li>
 						))
 					}

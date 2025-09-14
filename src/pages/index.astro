@@ -54,7 +54,8 @@ const scale = (c: number) => {
 				.posts li img, .posts li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 12px; }
 				.posts li .title { margin: 0; color: rgb(var(--black)); }
 				.posts li .date { margin: 0; color: rgb(var(--gray)); }
-				.posts li:hover .title, .posts li:hover .date { color: rgb(var(--accent)); }
+				/* On hover, only adjust date; keep title color unchanged */
+				.posts li:hover .date { color: rgb(var(--accent)); }
 				.posts li:hover img, .posts li:hover svg { box-shadow: var(--box-shadow); }
 				.tag-cloud { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgb(var(--gray-light)); }
 				.tag-cloud .tags { list-style: none; padding: 0; margin: 0.5rem 0 0 0; display: flex; flex-wrap: wrap; gap: 22px; align-items: baseline; }
@@ -114,7 +115,7 @@ const scale = (c: number) => {
 			  </blockquote>
 
 			<section class="fancybox p-6 mt-4">
-				<h2>🧭 Čo je to kritické myslenie?</h2>
+				<h2>Čo je to kritické myslenie?</h2>
 				<p>Kritické myslenie nie je o tom byť "múdrejší" než ostatní.<br/>Je to zručnosť, ktorú si môže rozvíjať každý – či má 16 alebo 60.<br/>Ide len o to, <strong>spomaliť, pozrieť sa na veci s odstupom a položiť si zopár otázok</strong>.</p>
 				<span class="bg-yellow-300">→ CTA button: “Čo je kritické myslenie?” → leads to detailed explanation</span>Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)
 			</section>
@@ -125,20 +126,20 @@ const scale = (c: number) => {
 				<p><strong>S</strong> – <strong>Skontroluj zdroj</strong><br/>
 				<strong>T</strong> – <strong>Triezvo premýšľaj</strong><br/>
 				<strong>O</strong> – <strong>Over fakty</strong><br/>
-				<strong>P</strong> – <strong>Pozor na vlastnú zaujatost</strong></p>
+				<strong>P</strong> – <strong>Pozor na vlastnú zaujatosť</strong></p>
 
 				<p>Týchto 4 krokov ti môže ušetriť nielen trapas na Facebooku, ale aj názor, ktorého by si mohol časom ľutovať.</p>
 			</section>
 
 			<section class="fancybox p-6 mt-4" >
-				<h2>🔎 Čo tu nájdeš?</h2>
+				<h2>Čo tu nájdeš?</h2>
 				<p>🧩 <strong>Príklady z praxe</strong><br/>Reálne príklady z médií, sociálnych sietí, politiky – rozobrané jednoducho, bez poučovania.</p>
 				<p>🔍 <strong>Návody a techniky</strong><br/>Ako si overiť informácie, ako spoznať zavádzanie, ako si dať pozor na vlastné chyby v uvažovaní.</p>
 				<p>🧠 <strong>Zaujímavosti o ľudskej mysli</strong><br/>Prečo nás lákajú jednoduché riešenia? Prečo si niektoré názory chránime ako keby boli naše deti? (A čo s tým?)</p>
 			</section>
 
 			<section class="fancybox p-6 mt-4" >
-				<h2>🫱 Pre koho to je?</h2>
+				<h2>Pre koho to je?</h2>
 				<p>Pre všetkých, ktorí si niekedy povedali:<br/>
 				<strong>„Toto mi nesedí… ale neviem prečo.“</strong><br/>
 				alebo<br/>
@@ -149,7 +150,7 @@ const scale = (c: number) => {
 			</section>
 
 			<section class="fancybox p-6 mt-4" >
-				<h2>✨ Prečo to robíme?</h2>
+				<h2>Prečo to robíme?</h2>
 				<p>Lebo veríme, že <strong>kritické myslenie patrí do každodenného života</strong>.<br/>
 				Nie ako školská poučka, ale ako užitočný kompas pre dobu, kde sa informácie šíria rýchlejšie než rozum.</p>
 				<p>Nechceme ti hovoriť, čo si máš myslieť.<br/>
