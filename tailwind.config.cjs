@@ -9,6 +9,14 @@ module.exports = {
         DEFAULT: {
           css: {
             maxWidth: 'none',
+            fontSize: '1em', // inherit body size (20px from global.css)
+            lineHeight: '1.7',
+          },
+        },
+        lg: {
+          css: {
+            fontSize: '1em', // keep prose-lg at body size; headings still scale
+            lineHeight: '1.7',
           },
         },
       }),

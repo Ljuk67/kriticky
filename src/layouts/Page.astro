@@ -2,9 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import "@fontsource-variable/inter/index.css";
-import "@fontsource-variable/bricolage-grotesque";
-import "../styles/global.css";
+// Fonts and global styles are loaded globally via BaseHead
 
 interface Props {
   title?: string;
@@ -32,7 +30,7 @@ const resolvedImageWithDomain = new URL(
       {wrap && (
         <section class={sectionClass}>
           {title && <h1>{title}</h1>}
-          {description && <p>{description}</p>}
+          {description && <p class="page-description">{description}</p>}
           <slot />
         </section>
       )}

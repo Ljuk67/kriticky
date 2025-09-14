@@ -5,9 +5,10 @@
  */
 
 
-:root {
+ :root {
 	--accent: #0a8d7b;
 	--accent-dark: #3d625d;
+	--highlight:#ffa17a;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;	
 	--gray-light: 229, 233, 240;
@@ -52,6 +53,7 @@ body {
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
+	background: white;
 }
 main {
 	max-width: 100%;
@@ -65,23 +67,67 @@ main {
 /* Prose (Tailwind Typography) theme overrides to match palette */
 .prose { color: rgb(var(--gray-dark)); }
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { color: rgb(var(--black)); }
-.prose a { color: var(--accent); text-decoration: underline; }
-.prose a:hover { color: var(--accent); text-decoration: none; }
-.prose blockquote { border-left-color: var(--accent); }
+.prose a:not(.btn):not(.btn-light):not(.btn-dark) { color: var(--accent); text-decoration: underline; }
+.prose a:hover:not(.btn):not(.btn-light):not(.btn-dark) { color: var(--accent); text-decoration: none; }
 .prose strong { color: rgb(var(--black)); }
 .prose code { background-color: rgb(var(--gray-light)); color: rgb(var(--gray-dark)); border-radius: 4px; padding: 0.15em 0.35em; }
 .prose hr { border-color: rgb(var(--gray-light)); }
   
+.fancybox {
+	/* Tailwind-inspired styling: rounded-2xl p-8 bg-gray-50 transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg */
+	border-radius: 1rem; /* rounded-2xl */
+	background-color: #F9FAFB; /* bg-gray-50 */
+	/* Default padding approximates p-8; utility p-* on element will override */
+	padding: 2rem; /* p-8 */
+	/* Ring (1px outline) using box-shadow technique similar to Tailwind's ring */
+	box-shadow:
+	  0 0 0 1px rgba(229, 231, 235, 0.5), /* ring-1 ring-gray-200/50 */
+	  0 1px 2px rgba(0, 0, 0, 0.06); /* shadow */
+	transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, border-color 200ms ease; /* transition-all */
+	margin: 20px 0;
+  }
 
 
+.glass {
+  /* Tailwind-inspired styling: rounded-2xl p-8 bg-gray-50 transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg */
+  border-radius: 1rem; /* rounded-2xl */
+  background-color: #F9FAFB; /* bg-gray-50 */
+  /* Default padding approximates p-8; utility p-* on element will override */
+  padding: 2rem; /* p-8 */
+  /* Ring (1px outline) using box-shadow technique similar to Tailwind's ring */
+  box-shadow:
+    0 0 0 1px rgba(229, 231, 235, 0.5), /* ring-1 ring-gray-200/50 */
+    0 1px 2px rgba(0, 0, 0, 0.06); /* shadow */
+  transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, border-color 200ms ease; /* transition-all */
+  margin: 20px 0;
+}
+.glass:hover {
+  /* hover:shadow-lg */
+  box-shadow:
+    0 0 0 1px rgba(229, 231, 235, 0.5),
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.latest-posts .glass, .archive .glass { padding: 0.8em; }
 
-.glass { background: rgba(255,255,255,0.5); backdrop-filter: saturate(140%) blur(12px);
-	 -webkit-backdrop-filter: saturate(140%) blur(12px); 
-	 border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; 
-	 box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-	 padding: 2.5em 1.5em;
-	margin: 20px 0px; }
-.latest-posts .glass, .archive .glass{padding: 0.8em;}
+/* Separate dark styled variant, opt-in via class */
+.glassdark {
+  border-radius: 1rem; /* same shape as .glass */
+  background-color: rgba(17, 24, 39, 0.6); /* gray-900/60 feel */
+  color: rgba(243, 244, 246, 0.92); /* near gray-100 */
+  padding: 2rem; /* p-8 default */
+  box-shadow:
+    0 0 0 1px rgba(55, 65, 81, 0.6), /* ring */
+    0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
+  margin: 20px 0;
+}
+.glassdark:hover {
+  box-shadow:
+    0 0 0 1px rgba(55, 65, 81, 0.6),
+    0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
 
 
 .sitename a {
@@ -129,10 +175,10 @@ strong,
 b {
 	font-weight: 700;
 }
-a {
+a:not(.btn):not(.btn-light):not(.btn-dark) {
 	color: var(--accent);
 }
-a:hover {
+a:hover:not(.btn):not(.btn-light):not(.btn-dark) {
 	color: var(--accent);
 }
 p {
@@ -140,6 +186,13 @@ p {
 }
 .prose p {
 	margin-bottom: 2em;
+}
+
+/* Page description styling: larger and italic for emphasis */
+.prose .page-description,
+.page-description {
+  font-size: 1.3em;
+  font-style: italic;
 }
 textarea {
 	width: 100%;
@@ -168,16 +221,51 @@ pre {
 pre > code {
 	all: unset;
 }
+
+
+
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
+	
+	font-family: 'Special Elite', cursive;
+	font-weight: 100;
+	font-size: 2rem;
+	max-width: clamp(95%, 95%, 800px);
+	line-height: 1.4;
+	position: relative;
+	margin: 0;
+	padding: .5rem;
 }
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+
+blockquote:before,
+blockquote:after {
+	position: absolute;
+	color: var(--highlight);
+	font-size: 8rem;
+	width: 4rem;
+	height: 4rem;
 }
+
+blockquote:before {
+	content: '“';
+	left: -3rem;
+	top: -2rem;
+}
+
+blockquote:after {
+	content: '”';
+	right: -1rem;
+	bottom: 1rem;
+}
+
+cite {
+	line-height: 3;
+	text-align: left;
+}
+
+
+
+
+
 @media (max-width: 720px) {
 	body { font-size: 20px; }
 	/* Remove horizontal padding to avoid ~15px right shift */
@@ -208,3 +296,5 @@ hr {
     flex-direction: row;
     justify-content: center;
 }
+
+/* Button utilities are defined in src/styles/tailwind.css under @layer components */

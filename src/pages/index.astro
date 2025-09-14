@@ -6,7 +6,6 @@ import FormattedDate from '../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { tagToSlug } from '../lib/slug';
-import Cta from "../components/cta.astro";
 
 // Map of generated SVG thumbs (url strings)
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
@@ -72,45 +71,55 @@ const scale = (c: number) => {
 			</section>
 
 			<section class="stop-grid relative left-1/2 -translate-x-1/2 w-[90vw]">
-				<div class="stop-card glass">
+				<div class="stop-card fancybox">
 					<h3>S – Skontroluj zdroj</h3>
 					<p>– Kto to tvrdí? Je to dôveryhodný zdroj? Má meno, odbornú autoritu, minulosť v klamstvách?</p>
 				</div>
-				<div class="stop-card glass">
+				<div class="stop-card fancybox">
 					<h3>T – Triezvo premýšľaj</h3>
 					<p>– Nehrá to na tvoje emócie? Znie to príliš dobre/zle na to, aby to bola pravda?</p>
 				</div>
-				<div class="stop-card glass">
+				<div class="stop-card fancybox">
 					<h3>O – Over fakty</h3>
 					<p>– Dajú sa tvrdenia potvrdiť z viacerých nezávislých zdrojov? Je k tomu dôkaz, štúdia, reálne čísla?</p>
 				</div>
-				<div class="stop-card glass">
+				<div class="stop-card fancybox">
 					<h3>P – Pozor na vlastnú zaujatosť (bias)</h3>
 					<p>– Nehľadáš len to, čo potvrdzuje tvoje názory? Neodmietaš niečo len preto, že s tým nesúhlasíš?</p>
 				</div>
 				
 			</section>
-			<Cta />
-			<span class="lead block text-center text-[var(--accent)] my-9 mx-1" >
-				Kto myslí, ten STOPne.</span>
+
+				<div
+				class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+				<h2 class="text-white text-4xl md:text-6xl tracking-tight">
+					Kto myslí, ten STOPne.
+				</h2>
+				<p class="text-slate-400 mt-4 text-lg md:text-xl">
+					some text...
+				</p>
+				<div class="flex mt-5">
+					<a class="btn btn-light" href="#">Get Started</a>
+				</div>
+				</div>
 			
 			<section>
 				
 				<p>Na internete je dnes ťažké vyznať sa. Každý má „svoju pravdu“, niečo zdieľa, niečo komentuje, niečomu verí. A je úplne normálne, ak sa v tom človek občas stratí. Aj my sme verili veciam, ktoré neboli úplne pravdivé – a možno stále niektorým veríme.</p>
 				<p>Preto vznikol tento web. <strong>Kriticky.sk</strong> je miesto pre každého, kto si kladie otázky. Kto nechce hneď uveriť všetkému, ale ani hneď všetko odmietať. Kto chce rozumieť svetu okolo seba – a naučiť sa rozlišovať fakty od domnienok, emócie od reality.</p>
 			</section>
-			<span class="bg-yellow-300">
-			4. Quote or Motto Block
-Something from Seneca, Popper, or a local thinker—bridging Stoicism and rationality.
-			</span>
+			<blockquote>
+				<p>„Múdry človek porovnáva svoje tvrdenia s dôkazmi.“</p>
+				<footer>— <cite>David Hume</cite></footer>
+			  </blockquote>
 
-			<section class="glass p-6 mt-4">
+			<section class="fancybox p-6 mt-4">
 				<h2>🧭 Čo je to kritické myslenie?</h2>
 				<p>Kritické myslenie nie je o tom byť "múdrejší" než ostatní.<br/>Je to zručnosť, ktorú si môže rozvíjať každý – či má 16 alebo 60.<br/>Ide len o to, <strong>spomaliť, pozrieť sa na veci s odstupom a položiť si zopár otázok</strong>.</p>
 				<span class="bg-yellow-300">→ CTA button: “Čo je kritické myslenie?” → leads to detailed explanation</span>Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)
 			</section>
 
-			<section class="glass p-6 mt-4">
+			<section class="fancybox p-6 mt-4">
 				<h2>🛑 Metóda STOP</h2>
 				<p>Jednoduchý nástroj, ktorý ti pomôže, keď niečo znie až príliš dobre (alebo zle) na to, aby to bola pravda:</p>
 				<p><strong>S</strong> – <strong>Skontroluj zdroj</strong><br/>
@@ -121,14 +130,14 @@ Something from Seneca, Popper, or a local thinker—bridging Stoicism and ration
 				<p>Týchto 4 krokov ti môže ušetriť nielen trapas na Facebooku, ale aj názor, ktorého by si mohol časom ľutovať.</p>
 			</section>
 
-			<section class="glass p-6 mt-4" >
+			<section class="fancybox p-6 mt-4" >
 				<h2>🔎 Čo tu nájdeš?</h2>
 				<p>🧩 <strong>Príklady z praxe</strong><br/>Reálne príklady z médií, sociálnych sietí, politiky – rozobrané jednoducho, bez poučovania.</p>
 				<p>🔍 <strong>Návody a techniky</strong><br/>Ako si overiť informácie, ako spoznať zavádzanie, ako si dať pozor na vlastné chyby v uvažovaní.</p>
 				<p>🧠 <strong>Zaujímavosti o ľudskej mysli</strong><br/>Prečo nás lákajú jednoduché riešenia? Prečo si niektoré názory chránime ako keby boli naše deti? (A čo s tým?)</p>
 			</section>
 
-			<section class="glass p-6 mt-4" >
+			<section class="fancybox p-6 mt-4" >
 				<h2>🫱 Pre koho to je?</h2>
 				<p>Pre všetkých, ktorí si niekedy povedali:<br/>
 				<strong>„Toto mi nesedí… ale neviem prečo.“</strong><br/>
@@ -139,7 +148,7 @@ Something from Seneca, Popper, or a local thinker—bridging Stoicism and ration
 				Ak si zvedavý, ale opatrný – poď ďalej.</p>
 			</section>
 
-			<section class="glass p-6 mt-4" >
+			<section class="fancybox p-6 mt-4" >
 				<h2>✨ Prečo to robíme?</h2>
 				<p>Lebo veríme, že <strong>kritické myslenie patrí do každodenného života</strong>.<br/>
 				Nie ako školská poučka, ale ako užitočný kompas pre dobu, kde sa informácie šíria rýchlejšie než rozum.</p>
