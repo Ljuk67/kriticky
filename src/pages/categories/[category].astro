@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { tagToSlug } from '../../lib/slug';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const cats = new Set<string>();
+  for (const p of posts) for (const c of (p.data.categories ?? [])) cats.add(c);
+  return [...cats].map((c) => ({ params: { category: tagToSlug(c) }, props: { category: c } }));
+}
+
+const { category } = Astro.props as { category: string };
+const posts = (await getCollection('blog'))
+  .filter((p) => (p.data.categories ?? []).includes(category))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="sk">
+  <head>
+    <BaseHead title={`Kategória: ${category}`} description={`Články v kategórii ${category}`} />
+    <style>
+      ul { list-style: none; padding: 0; margin: 0; }
+      li { margin-bottom: 1rem; }
+      a { text-decoration: none; }
+      .title { margin: 0; color: rgb(var(--black)); }
+      .date { margin: 0; color: rgb(var(--gray)); }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h1>Kategória „{category}”</h1>
+      <p><a href={`${import.meta.env.BASE_URL}categories/`}>← Všetky kategórie</a></p>
+      {posts.length === 0 && <p class="text-gray-500">Žiadne články v tejto kategórii.</p>}
+      {posts.length > 0 && (
+        <ul>
+          {posts.map((post) => (
+            <li>
+              <a href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
+                <h4 class="title">{post.data.title}</h4>
+                <p class="date"><FormattedDate date={post.data.pubDate} /></p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </main>
+    <Footer />
+  </body>
+  </html>
+
