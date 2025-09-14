@@ -6,9 +6,10 @@
 
 
  :root {
-	--accent: #0a8d7b;
-	--accent-dark: #3d625d;
-	--highlight:#ffa17a;
+	--accent: #2A7B9B;
+	--accent-dark: #0f3f53;
+	--highlight:#57C785;
+	--secondary: #EDDD53;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;	
 	--gray-light: 229, 233, 240;
@@ -54,11 +55,15 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 	background: white;
+  display: flex;            /* Make footer stick to bottom */
+  min-height: 100vh;
+  flex-direction: column;
 }
 main {
 	max-width: 100%;
 	margin: 5px;
 	padding: 3em 1em;
+  flex: 1;                 /* Take up remaining space between header/footer */
 }
 
 /*.posttitle{font-size: 1.5em;}*/
@@ -131,17 +136,24 @@ main {
 
 
 .sitename a {
-    font-size: 1.7em;
-    font-weight: 600;
-    color: black;
-    text-decoration: none;
-	max-width: 50%;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgb(var(--black));
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.sitename a .logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
 }
 @media (max-width: 720px) {
-	.sitename{max-width: 70%;}
-	.sitename a {
-		font-size: 1em;
-	}
+  .sitename { max-width: 100%; }
+  .sitename a { font-size: 0.95em; }
+  .sitename a .logo { width: 18px; height: 18px; }
 }
 
 
@@ -291,4 +303,8 @@ cite {
     justify-content: center;
 }
 
+.tags a{background: var(--secondary);
+		padding: 1px 20px;
+		font-size: 0.8em;
+	}
 /* Button utilities are defined in src/styles/tailwind.css under @layer components */
