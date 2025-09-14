@@ -72,7 +72,7 @@ main {
 /* Prose (Tailwind Typography) theme overrides to match palette */
 .prose { color: rgb(var(--gray-dark)); }
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { color: rgb(var(--black)); }
-.prose a:not(.btn):not(.btn-light):not(.btn-dark) { color: var(--accent); text-decoration: underline; }
+.prose a:not(.btn):not(.btn-light):not(.btn-dark):not(.tag){ color: var(--accent); text-decoration: underline; }
 .prose a:hover:not(.btn):not(.btn-light):not(.btn-dark) { color: var(--accent); text-decoration: none; }
 .prose strong { color: rgb(var(--black)); }
 .prose code { background-color: rgb(var(--gray-light)); color: rgb(var(--gray-dark)); border-radius: 4px; padding: 0.15em 0.35em; }
