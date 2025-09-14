@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { tagToSlug } from '../../lib/slug';
+
+const posts = await getCollection('blog');
+const catCounts = new Map<string, number>();
+for (const p of posts) {
+  const cats = Array.isArray(p.data.categories) ? p.data.categories : [];
+  for (const c of cats) catCounts.set(c, (catCounts.get(c) ?? 0) + 1);
+}
+const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'sk'));
+---
+
+<!doctype html>
+<html lang="sk">
+  <head>
+    <BaseHead title="Kategórie" description="Prehľad všetkých kategórií" />
+    <style>
+      ul.cats { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+      a.cat { display: inline-block; background: rgb(var(--gray-light)); color: rgb(var(--gray-dark)); border-radius: 999px; padding: 6px 12px; text-decoration: none; }
+      a.cat:hover { background: rgba(var(--gray), 0.15); }
+      .count { color: rgb(var(--gray)); margin-left: 6px; font-size: 0.9em; }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h1>Kategórie</h1>
+      {allCategories.length === 0 && <p class="text-gray-500">Zatiaľ nie sú žiadne kategórie.</p>}
+      {allCategories.length > 0 && (
+        <ul class="cats">
+          {allCategories.map(([c, count]) => (
+            <li>
+              <a class="cat" href={`/categories/${tagToSlug(c)}/`}>{c} <span class="count">({count})</span></a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </main>
+    <Footer />
+  </body>
+  </html>
+

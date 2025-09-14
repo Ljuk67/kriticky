@@ -7,7 +7,15 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   { title: "Domov", path: "/" },
-  { title: "Blog", path: "/blog" },
+  {
+    title: "Blog",
+    path: "/blog",
+    children: [
+      { title: "Politika", path: "/categories/politika/" },
+      { title: "Veda", path: "/categories/veda/" },
+      { title: "Vzťahy", path: "/categories/vztahy/" },
+    ],
+  },
   { title: "O Projekte", path: "/about" },
   { title: "Kontakt", path: "/kontakt" },
 ];
@@ -15,15 +23,17 @@ const menuitems = [
 
 <style>
 #astronav-menu{ 
-    background: none;
+    background: white;
     border: 0px;
     color: black;
 }
-
+.astronav-dropdown {
+  padding: 8px 0px 5px 5px !important;
+}
 </style>
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center">
+  <header class="flex flex-col lg:flex-row justify-between items-center mt-2 mb-2">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <span class="sitename flex flex-row items-center justify-center">
@@ -34,7 +44,7 @@ const menuitems = [
           </a>
         </span>
         <div class="block lg:hidden">
-          <MenuIcon class="w-6 h-6" />
+          <MenuIcon class="w-6 h-6 mt-2" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -45,6 +55,7 @@ const menuitems = [
                 {item.children && (
                   <Dropdown
                     title={item.title}
+                    path={item.path}
                     children={item.children}
                     lastItem={index === menuitems.length - 1}
                   />
@@ -75,16 +86,33 @@ const menuitems = [
 </Container>
 <style>
   /* Style inside child component via :global since Astro scopes styles per component */
+  /* Reset native <menu> defaults in astro-navbar components */
+  :global(.astronav-dropdown) {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
   :global(#astronav-menu) {
     -webkit-appearance: none;
     appearance: none;
     background: none;
     border: 0;
-    padding: 0.5rem;
+    padding: 0; /* fully reset padding to avoid indent */
+    padding-inline-start: 0; /* ensure no left indent */
+    margin: 0; /* reset UA default for <menu> */
+    list-style: none;
     line-height: 0;
     color: rgb(var(--black));
     border-radius: 8px;
   }
   :global(#astronav-menu:hover) { background: rgba(0,0,0,0.04); }
   :global(#astronav-menu:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Desktop: open dropdown on hover (keep mobile/touch click-to-open) */
+  @media (hover: hover) and (pointer: fine) {
+    :global(.astronav-dropdown:hover > .dropdown-toggle),
+    :global(li.has-submenu:hover .astronav-dropdown > .dropdown-toggle) {
+      display: block !important; /* override hidden */
+    }
+  }
 </style>
