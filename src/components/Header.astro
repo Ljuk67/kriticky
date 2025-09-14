@@ -9,9 +9,7 @@ import Navbar from './navbar/navbar.astro';
     </div>
   </div>
   <style>
-    /* Preserve old sitename look inside the new navbar */
-    .sitename a { font-size: 1.7em; font-weight: 600; color: rgb(var(--black)); text-decoration: none; }
-    /* Containerized header using Tailwind; no custom grid needed */
+  
     /* Subtle slide-in when the header becomes sticky */
     .site-header.is-sticky-enter { animation: headerSlideIn 360ms ease-out forwards; }
     @keyframes headerSlideIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }

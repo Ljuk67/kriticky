@@ -2,9 +2,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Abstraktný geometrický náhľad">
   
     <defs>
-      <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="hsl(0 0% 97%)" />
-        <stop offset="100%" stop-color="hsl(0 0% 91%)" />
+      <linearGradient id="bg-grad" x1="0" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(131, 360, 180)">
+        <stop offset="0%" stop-color="#90aebb" />
+        <stop offset="100%" stop-color="#a6d1b8" />
       </linearGradient>
       <clipPath id="rounded">
         <rect x="0" y="0" width="720" height="360" rx="21.599999999999998" ry="21.599999999999998" />
@@ -12,6 +12,6 @@
     </defs>
   <g clip-path="url(#rounded)">
     <rect x="0" y="0" width="720" height="360" fill="url(#bg-grad)" />
-    <polygon points="202.67255993373695,-112.65797623526304 278.62128266505897,469.9477136693895 -87.99746258184311,417.80893206596375 58.85083984583619,375.6487067621201" fill="#0a8d7b" opacity="0.77" /><polygon points="219.88286737538877,226.81383991520852 296.58109618350863,128.22268530540168 5.174334906041651,57.68659077957274" fill="hsl(0 0% 18%)" opacity="0.74" /><circle cx="952.4721675608307" cy="404.9964453689754" r="290.656077417545" fill="hsl(0 0% 58%)" opacity="0.60" /><circle cx="887.3654856998473" cy="325.1954549588263" r="431.33016241248697" fill="hsl(0 0% 72%)" opacity="0.51" /><polygon points="521.2345111593604,174.3745972244069 74.26127335801723,190.03805626183748 822.7697876896709,185.8648835476488" fill="hsl(0 0% 58%)" opacity="0.75" />
+    <circle cx="483.0097085013985" cy="72.24897911958396" r="222.4939403653572" fill="hsl(0 0% 70%)" opacity="0.35" /><g transform="translate(137.7917782254517 239.12790217995644) rotate(244)"><rect x="-53.592057778506046" y="-64.46322968788284" width="107.18411555701209" height="128.9264593757657" fill="#EDDD53" opacity="0.38"/></g><circle cx="207.09443347156048" cy="62.17942319624127" r="73.95290020257285" fill="#2A7B9B" opacity="0.44" /><g transform="translate(523.7754286117852 246.5274207685143) rotate(193)"><rect x="-92.47768641532309" y="-80.59991054934821" width="184.95537283064618" height="161.19982109869642" fill="#57C785" opacity="0.47"/></g>
   </g>
 </svg>

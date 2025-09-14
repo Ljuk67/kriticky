@@ -2,9 +2,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Abstraktný geometrický náhľad">
   
     <defs>
-      <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="hsl(0 0% 96%)" />
-        <stop offset="100%" stop-color="hsl(0 0% 90%)" />
+      <linearGradient id="bg-grad" x1="0" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(73, 360, 180)">
+        <stop offset="0%" stop-color="#d3cc95" />
+        <stop offset="100%" stop-color="#8aa9b5" />
       </linearGradient>
       <clipPath id="rounded">
         <rect x="0" y="0" width="720" height="360" rx="21.599999999999998" ry="21.599999999999998" />
@@ -12,6 +12,6 @@
     </defs>
   <g clip-path="url(#rounded)">
     <rect x="0" y="0" width="720" height="360" fill="url(#bg-grad)" />
-    <circle cx="630.016475116834" cy="166.08426554035395" r="320.0643129302189" fill="#0a8d7b" opacity="0.66" /><circle cx="838.8440483361483" cy="341.24820438958704" r="209.78281984850761" fill="hsl(0 0% 34%)" opacity="0.78" /><g transform="translate(182.36626440659168 38.70581413060428) rotate(340)"><rect x="-177.44461501389742" y="-133.32948508691044" width="354.88923002779484" height="266.6589701738209" fill="hsl(0 0% 72%)" opacity="0.51"/></g><polygon points="-83.38680072315034,480.70929138734937 475.300070643425,270.52060598228127 -174.60550823807714,266.06547809019685 300.8870053701103,8.63405776675792" fill="hsl(0 0% 46%)" opacity="0.55" /><circle cx="333.61575068347156" cy="350.77039145026356" r="430.2842425592244" fill="hsl(0 0% 18%)" opacity="0.59" />
+    <g transform="translate(116.9840479977429 92.98267459496856) rotate(51)"><rect x="-163.22621595128354" y="-238.1970308715857" width="326.45243190256707" height="476.3940617431714" fill="none" stroke="#57C785" stroke-width="4.557677508182824" stroke-linejoin="round" opacity="0.40"/></g><circle cx="485.06437619403005" cy="81.32528295367956" r="98.00658280578166" fill="#EDDD53" opacity="0.59" /><polygon points="479.493348923172,372.7093892736251 382.99306717435064,352.464728489317 371.2532734256321,243.2931118561116 464.0817532695076,206.994707203686 559.2024781846741,182.5645730796166 589.3618178711533,278.1334891618757 560.4462124858221,359.8185411409045" fill="#2A7B9B" opacity="0.56" /><circle cx="161.9267336167395" cy="239.71050402894613" r="69.11035322850535" fill="none" stroke="hsl(0 0% 70%)" stroke-width="3.017677678260952" opacity="0.52" />
   </g>
 </svg>
