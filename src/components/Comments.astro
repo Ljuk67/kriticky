@@ -56,17 +56,24 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
   )}
 
   <style>
-    .comments { margin-top: 2rem; background: #51716c; padding: 40px 20px; color: white; border-radius: 18px;}
+    .comments { margin-top: 2rem; background: var(--accent); padding: 2rem 3rem; color: white; border-radius: 18px;}
     .comments :is(h2, h3, h4, h5, h6){ margin-bottom: 0.5rem; color: white;text-align: center; }
     .loading, .muted { color: rgb(var(--gray)); }
     .error { color: #e11d48; }
-    /* Center and size the form and list */
-    form#comment-form, #comments-list { width: 100%; max-width: 720px; margin: 0 auto; }
-    #comments-list { width: 100%; max-width: 100%; margin-inline: auto; box-sizing: border-box; margin: 1rem auto; background: #3d625d;border-radius: 12px;padding: 20px;}
+    /* Center and size the form and list: fill parent, no fixed px max */
+    form#comment-form, #comments-list { width: 100%; max-width: 100%; margin: 0 auto; box-sizing: border-box; }
+    #comments-list { width: 100%; max-width: 100%; margin-inline: auto; box-sizing: border-box; margin: 1rem auto;  background: var(--accent-dark); border-radius: 12px;padding: 20px;}
     
     /* Inputs */
     form#comment-form p { margin: 0.75rem 0; width: 100%; display: block; }
-    form#comment-form input, form#comment-form textarea { width: 92%; padding: 13px; border: none; border-radius: 12px; background: #f2f2f2; }
+    form#comment-form input, form#comment-form textarea {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 12px;
+      background: #f2f2f2;
+      box-sizing: border-box; /* prevent right-side bleed from padding */
+    }
     form#comment-form textarea { height: 150px; }
     form#comment-form .hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
     #form-status { margin-left: 0.75rem; color: rgb(var(--white));}
