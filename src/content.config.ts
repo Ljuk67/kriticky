@@ -16,6 +16,7 @@ const blog = defineCollection({
       // New fields for posts
       author: z.string().default('Lukas Cech'),
       tags: z.array(z.string()).default([]),
+      categories: z.array(z.string()).default([]),
 		}),
 });
 

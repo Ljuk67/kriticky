@@ -194,6 +194,9 @@ p {
 	margin-bottom: 2em;
 }
 
+a {color:var(--accent);}
+a:hover {color:var(--accent-dark);}
+
 /* Page description styling: larger and italic for emphasis */
 .prose .page-description,
 .page-description {

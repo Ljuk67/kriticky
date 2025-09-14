@@ -5,6 +5,8 @@ pubDate: "Sep 08 2025"
 author: "Lukas Cech"
 tags:
   - "základy"
+categories:
+  - "Veda"
 ---
 
 Kritické myslenie je schopnosť jasne a rozumne analyzovať informácie, vyhodnocovať argumenty a prijímať rozhodnutia na základe dôkazov. V dnešnom preplnenom informačnom prostredí sa stáva nevyhnutnosťou, pretože nás chráni pred manipuláciou, predsudkami či nepravdivými tvrdeniami.

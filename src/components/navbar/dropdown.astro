@@ -1,13 +1,18 @@
 ---
 import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
-const { title, lastItem, children } = Astro.props;
+const { title, path, lastItem, children } = Astro.props;
 ---
 
-<li class="relative">
+<li class="relative flex items-start lg:items-center has-submenu">
+  <a
+    href={path}
+    class="flex lg:pl-3 lg:pr-1 py-2 items-center text-gray-700 hover:text-black no-underline">
+    <span>{title}</span>
+  </a>
   <DropdownContainer class="group">
     <button
-      class="flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-700 hover:text-black">
-      <span>{title}</span>
+      aria-label={`Zobraziť podkategórie: ${title}`}
+      class="flex items-center py-2 px-1 -ml-1 text-gray-700 hover:text-black no-underline bg-transparent border-0 appearance-none cursor-pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
