@@ -6,7 +6,6 @@ author: "Lukas Cech"
 tags:
   - "dezinformácie"
   - "voľby"
-  - "kritické myslenie"
 ---
 
 Predstav si, že ideš v hmle. Nevidíš, kam presne kráčaš, ale niekto pred tebou má baterku a kričí: **“Tadiaľto! Poďte za mnou!”**  

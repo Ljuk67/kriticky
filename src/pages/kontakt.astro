@@ -3,29 +3,19 @@ import { Icon } from "astro-icon/components";
 import Page from '../layouts/Page.astro';
 ---
 
-<Page title="Kontakt">
+<Page sectionClass="text-center" title="Kontakt">
 
 
     <div class="grid md:grid-cols-1 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
-        <p>
-          Ak máš názor k nejakej z rozoberaných tém, najlepšie bude nechať komentár priamo v danom článku.
-        </p>
-        <p>Pre všeobecné návrhy, otázky či spoluprácu, napíš mi na:</p>
-        <div class="mt-5">
-         
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-black-300 w-8 h-8" name="uil:envelope" /><a
-              href="mailto:mysli@kriticky.sk"
-              >mysli@kriticky.sk</a
-            >
-          </div>
+        <div class="text-center items-center mt-2 space-x-2 text-black-600 justify-center">
+            <p>
+              Ak máš názor k nejakej z rozoberaných tém, najlepšie bude nechať komentár priamo v danom článku.
+            </p>
+            <p>Pre všeobecné návrhy, otázky či spoluprácu, napíš mi na:</p>
+            <p class="flex flex-col gap-2 items-center justify-center">      
+            <Icon class="text-black-600 w-8 h-8" name="uil:envelope" />
+            <a href="mailto:mysli@kriticky.sk">mysli@kriticky.sk</a>
+            </p>    
         </div>
-      </div>
-      <div>
-      </div>
-    </div>
-    <div class="relative left-1/2 -translate-x-1/2 w-[90vw] my-12">
-      <section class="flex items-center justify-center">…map…</section>
     </div>
   </Page>
