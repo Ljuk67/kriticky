@@ -3,7 +3,7 @@ import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
 const { title, path, lastItem, children } = Astro.props;
 ---
 
-<li class="relative flex items-start lg:items-center has-submenu">
+<li class="relative flex flex-col lg:flex-row items-start lg:items-center has-submenu">
   <a
     href={path}
     class="flex lg:pl-3 lg:pr-1 py-2 items-center text-gray-700 hover:text-black no-underline">
@@ -12,14 +12,14 @@ const { title, path, lastItem, children } = Astro.props;
   <DropdownContainer class="group">
     <button
       aria-label={`Zobraziť podkategórie: ${title}`}
-      class="flex items-center py-2 px-1 -ml-1 text-gray-700 hover:text-black no-underline bg-transparent border-0 appearance-none cursor-pointer">
+      class="flex items-center self-start py-2 ml-2 px-2 lg:-ml-1 lg:px-1 leading-none text-gray-700 hover:text-black no-underline bg-transparent border-0 appearance-none cursor-pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="3"
         stroke="currentColor"
-        class="w-3 h-3 mt-0.5 group-open:rotate-180">
+        class="w-3 h-3 mt-0 group-open:rotate-180">
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -29,18 +29,16 @@ const { title, path, lastItem, children } = Astro.props;
     <DropdownItems>
       <div
         class:list={[
-          "lg:absolute w-full lg:w-48 z-10",
-          lastItem
-            ? "lg:right-0 origin-top-right"
-            : "lg:left-0 origin-top-left",
+          "w-full mt-1 lg:mt-0 lg:w-56 z-10",
+          lastItem ? "origin-top-right" : "origin-top-left",
         ]}>
         <div
-          class="px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow-sm lg:border flex flex-col">
+          class="px-3 py-2 bg-gray-100 rounded-[12px] lg:rounded-md lg:shadow-sm lg:border flex flex-col">
           {
             children.map((item) => (
               <a
                 href={item.path}
-                class="py-1 text-gray-700 hover:text-black no-underline">
+                class="py-1 pl-2 lg:pl-0 text-gray-700 hover:text-black no-underline">
                 {item.title}
               </a>
             ))

@@ -27,9 +27,7 @@ const menuitems = [
     border: 0px;
     color: black;
 }
-.astronav-dropdown {
-  padding: 8px 0px 5px 5px !important;
-}
+
 </style>
 
 <Container>
@@ -108,7 +106,33 @@ const menuitems = [
   :global(#astronav-menu:hover) { background: rgba(0,0,0,0.04); }
   :global(#astronav-menu:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-  /* Desktop: open dropdown on hover (keep mobile/touch click-to-open) */
+  /* Mobile-first: Always show submenu; hide chevron */
+  :global(.astronav-dropdown > .dropdown-toggle) {
+    display: block !important; /* override hidden */
+    position: static; /* ensure it pushes items below */
+  }
+  :global(.astronav-dropdown > button) {
+    display: none; /* hide chevron on mobile */
+  }
+
+  /* Desktop (lg+): revert to chevron + hidden dropdown until hover/click */
+  @media (min-width: 1024px) {
+    :global(.astronav-dropdown > .dropdown-toggle) {
+      display: none !important; /* hidden by default on desktop */
+      position: absolute; /* allow floating dropdown */
+      left: 0.75rem; /* align with start of the label (matches lg:pl-3) */
+      top: 100%; /* place directly under trigger row */
+    }
+    :global(.astronav-dropdown > button) {
+      display: inline-flex; /* show chevron on desktop */
+    }
+    /* Also show when expanded via click (JS toggles aria-expanded) */
+    :global(.astronav-dropdown[aria-expanded="true"] > .dropdown-toggle) {
+      display: block !important;
+    }
+  }
+
+  /* Desktop: open dropdown on hover */
   @media (hover: hover) and (pointer: fine) {
     :global(.astronav-dropdown:hover > .dropdown-toggle),
     :global(li.has-submenu:hover .astronav-dropdown > .dropdown-toggle) {
