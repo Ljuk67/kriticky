@@ -45,15 +45,11 @@ const scale = (c: number) => {
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 			<style>
-				/* Glass + grid */
-				.hero { text-align: center; }
-				.hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 0.5rem 0; }
-				.hero p.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); margin: 0.5rem 0 0; }
+				.hero h1 { font-size: clamp(2.5rem, 4vw, 4rem); }
+				.hero p.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); }
 				/* Prevent horizontal overflow on narrow screens */
 				.stop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 1rem; margin-top: 1.5rem; }
 				.stop-card { text-align: center; }
-				.stop-card h3 { margin: 0 0 0.25rem 0; }
-				.stop-card p { margin: 0.25rem 0; }
 				.latest-posts { margin-top: 3rem; }
 				.posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 0; }
 				.posts li a { display: block; text-decoration: none; }
@@ -71,10 +67,16 @@ const scale = (c: number) => {
 	<body>
 		<Header />
 		<main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-			<section class="hero text-center">
-				<h1 class="mx-auto text-3xl sm:text-4xl md:text-5xl font-semibold">Spomaľ. Mysli. Overuj. <br/>Kritické myslenie v bežnom živote.</h1>
+			<section class="hero text-center relative left-1/2 -translate-x-1/2 w-[100vw] lg:w-[60vw]">
+				<h1 class="mx-auto my-20 text-3xl sm:text-4xl md:text-5xl font-semibold">Spomaľ. Mysli. Overuj. <br/>Kritické myslenie v bežnom živote.</h1>
 			</section>
-
+			<section>
+				
+				<p class="text-2xl headingfont">Svet je preplnený informáciami. <b>Ale informácie sa nemusia rovnať pravde.</b> Každý má „svoju pravdu“, niečo zdieľa, niečo komentuje, niečomu verí. 
+					A je úplne normálne, ak sa v tom človek občas stratí.</p>
+				<p class="text-2xl font-light headingfont"><strong>Kriticky.sk</strong> je miesto pre každého, kto si kladie otázky. Kto je <em>zdravo</em> skeptický.
+					Kto nechce hneď uveriť všetkému, ale ani hneď všetko odmietať. Kto chce rozumieť svetu okolo seba – a naučiť sa rozlišovať fakty od domnienok, emócie od reality.</p>
+			</section>
 			<section class="stop-grid relative left-1/2 -translate-x-1/2 w-[90vw]">
 				<div class="stop-card fancybox ">
 					<h3><span style="font-size: 2em;"">S</span><br/>Skontroluj zdroj</h3>
@@ -96,70 +98,19 @@ const scale = (c: number) => {
 			</section>
 
 				<div
-				class="bg-black p-8 md:px-10 md:py-10 mt-10 mb-12 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+				class="bg-black p-8 md:px-10 md:py-10 mt-10 mb-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
 				<h5 class="text-white text-4xl md:text-6xl tracking-tight">
 					Kto myslí, ten STOPne.
 				</h5>
 				</div>
 			
-			<section>
-				
-				<p>Na internete je dnes ťažké vyznať sa. Každý má „svoju pravdu“, niečo zdieľa, niečo komentuje, niečomu verí. A je úplne normálne, ak sa v tom človek občas stratí. Aj my sme verili veciam, ktoré neboli úplne pravdivé – a možno stále niektorým veríme.</p>
-				<p>Preto vznikol tento web. <strong>Kriticky.sk</strong> je miesto pre každého, kto si kladie otázky. Kto nechce hneď uveriť všetkému, ale ani hneď všetko odmietať. Kto chce rozumieť svetu okolo seba – a naučiť sa rozlišovať fakty od domnienok, emócie od reality.</p>
-			</section>
+			
 			<blockquote>
 				<p>„Múdry človek porovnáva svoje tvrdenia s dôkazmi.“</p>
 				<footer>— <cite>David Hume</cite></footer>
 			  </blockquote>
 
-			<section class="fancybox p-6 mt-4">
-				<h2>Čo je to kritické myslenie?</h2>
-				<p>Kritické myslenie nie je o tom byť "múdrejší" než ostatní.<br/>Je to zručnosť, ktorú si môže rozvíjať každý – či má 16 alebo 60.<br/>Ide len o to, <strong>spomaliť, pozrieť sa na veci s odstupom a položiť si zopár otázok</strong>.</p>
-				<span class="bg-yellow-300">→ CTA button: “Čo je kritické myslenie?” → leads to detailed explanation</span>Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)
-			</section>
-
-			<section class="fancybox p-6 mt-4">
-				<h2>🛑 Metóda STOP</h2>
-				<p>Jednoduchý nástroj, ktorý ti pomôže, keď niečo znie až príliš dobre (alebo zle) na to, aby to bola pravda:</p>
-				<p><strong>S</strong> – <strong>Skontroluj zdroj</strong><br/>
-				<strong>T</strong> – <strong>Triezvo premýšľaj</strong><br/>
-				<strong>O</strong> – <strong>Over fakty</strong><br/>
-				<strong>P</strong> – <strong>Pozor na vlastnú zaujatosť</strong></p>
-
-				<p>Týchto 4 krokov ti môže ušetriť nielen trapas na Facebooku, ale aj názor, ktorého by si mohol časom ľutovať.</p>
-			</section>
-
-			<section class="fancybox p-6 mt-4" >
-				<h2>Čo tu nájdeš?</h2>
-				<p>🧩 <strong>Príklady z praxe</strong><br/>Reálne príklady z médií, sociálnych sietí, politiky – rozobrané jednoducho, bez poučovania.</p>
-				<p>🔍 <strong>Návody a techniky</strong><br/>Ako si overiť informácie, ako spoznať zavádzanie, ako si dať pozor na vlastné chyby v uvažovaní.</p>
-				<p>🧠 <strong>Zaujímavosti o ľudskej mysli</strong><br/>Prečo nás lákajú jednoduché riešenia? Prečo si niektoré názory chránime ako keby boli naše deti? (A čo s tým?)</p>
-			</section>
-
-			<section class="fancybox p-6 mt-4" >
-				<h2>Pre koho to je?</h2>
-				<p>Pre všetkých, ktorí si niekedy povedali:<br/>
-				<strong>„Toto mi nesedí… ale neviem prečo.“</strong><br/>
-				alebo<br/>
-				<strong>„Niečo mi tu nesedí… ale ostatní to zdieľajú, tak asi OK?“</strong></p>
-				<p>Ak chceš rozumieť svetu, ale nechceš byť manipulovaný – si tu správne.<br/>
-				Ak si myslíš, že nikto nemá vždy pravdu – vitaj.<br/>
-				Ak si zvedavý, ale opatrný – poď ďalej.</p>
-			</section>
-
-			<section class="fancybox p-6 mt-4" >
-				<h2>Prečo to robíme?</h2>
-				<p>Lebo veríme, že <strong>kritické myslenie patrí do každodenného života</strong>.<br/>
-				Nie ako školská poučka, ale ako užitočný kompas pre dobu, kde sa informácie šíria rýchlejšie než rozum.</p>
-				<p>Nechceme ti hovoriť, čo si máš myslieť.<br/>
-				Chceme ti pomôcť <strong>rozpoznať, kedy sa oplatí myslieť viac.</strong></p>
-				<p>Vitaj.</p>
-				<p>A hlavne –<br/>
-					<strong>Spomaľ. Mysli. Overuj.</strong></p>
-			</section>
-
-
-			<section class="latest-posts relative left-1/2 -translate-x-1/2 w-[90vw] mt-12">
+			  <section class="latest-posts relative left-1/2 -translate-x-1/2 w-[90vw] mt-12">
 				<h2>Najnovšie články</h2>
 				<span class="bg-yellow-300">→ Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)</span>
 				<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none p-0 m-0">
@@ -195,6 +146,70 @@ const scale = (c: number) => {
 			</section>
 			)}
 
+<section class="fancybox p-6 mt-4">
+	<h2>🛑 SI TU PRVÝ KRÁT? ZAČNI TAKTO:</h2>
+	<p>Odporúčané čítanie predtým, než sa ponoríš do článkov:</p>
+	<p><strong>S</strong> – <strong>Skontroluj zdroj</strong><br/>
+	<strong>T</strong> – <strong>Triezvo premýšľaj</strong><br/>
+	<strong>O</strong> – <strong>Over fakty</strong><br/>
+	<strong>P</strong> – <strong>Pozor na vlastnú zaujatosť</strong></p>
+
+	<p>Týchto 4 krokov ti môže ušetriť nielen trapas na Facebooku, ale aj názor, ktorého by si mohol časom ľutovať.</p>
+</section>
+
+				<div class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+				<h2 class="text-white text-4xl md:text-6xl tracking-tight">
+				Čo myslíme pod kritickým myslením?
+				</h2>
+				<p class="text-slate-400 mt-4 text-lg md:text-xl">
+				Kritické myslenie nie je o tom byť "múdrejší" než ostatní.<br/>Je to zručnosť, ktorú si môže rozvíjať každý – či má 16 alebo 60.
+				<br/>Ide len o to, <strong>spomaliť, pozrieť sa na veci s odstupom a položiť si zopár otázok</strong>.
+				</p>
+				<div class="flex mt-5">
+				<a class="btn btn-light" href="/kriticke-myslenie">Viac o kritickom myslení</a>
+				</div>
+				</div>
+
+
+			<section class="fancybox p-6 mt-4">
+				<h2>🛑 Metóda STOP</h2>
+				<p>Jednoduchý nástroj, ktorý ti pomôže, keď niečo znie až príliš dobre (alebo zle) na to, aby to bola pravda:</p>
+				<p><strong>S</strong> – <strong>Skontroluj zdroj</strong><br/>
+				<strong>T</strong> – <strong>Triezvo premýšľaj</strong><br/>
+				<strong>O</strong> – <strong>Over fakty</strong><br/>
+				<strong>P</strong> – <strong>Pozor na vlastnú zaujatosť</strong></p>
+
+				<p>Týchto 4 krokov ti môže ušetriť nielen trapas na Facebooku, ale aj názor, ktorého by si mohol časom ľutovať.</p>
+			</section>
+
+			<blockquote>
+				<p>Information is not the same as truth. Most information is not an accurate representation of reality. 
+				The main role information plays is to connect many things, to connect people. Sometimes people are connected by truth, 
+				but often it is easier to use fiction or illusion.</p>
+				— <cite>YUVAL NOAH HARARI</cite>
+				
+			</blockquote>
+
+			<section class="fancybox p-6 mt-4" >
+				<h2>Čo tu nájdeš?</h2>
+				<p>🧩 <strong>Príklady z praxe</strong><br/>Reálne príklady z médií, sociálnych sietí, politiky – rozobrané jednoducho, bez poučovania.</p>
+				<p>🔍 <strong>Návody a techniky</strong><br/>Ako si overiť informácie, ako spoznať zavádzanie, ako si dať pozor na vlastné chyby v uvažovaní.</p>
+				<p>🧠 <strong>Zaujímavosti o ľudskej mysli</strong><br/>Prečo nás lákajú jednoduché riešenia? Prečo si niektoré názory chránime ako keby boli naše deti? (A čo s tým?)</p>
+			</section>
+
+			<section class="fancybox p-6 mt-4" >
+				<h2>Prečo to robíme?</h2>
+				<p>Lebo veríme, že <strong>kritické myslenie patrí do každodenného života</strong>.<br/>
+				Nie ako školská poučka, ale ako užitočný kompas pre dobu, kde sa informácie šíria rýchlejšie než rozum.</p>
+				<p>Nechceme ti hovoriť, čo si máš myslieť.<br/>
+				Chceme ti pomôcť <strong>rozpoznať, kedy sa oplatí myslieť viac.</strong></p>
+				<p>Vitaj.</p>
+				<p>A hlavne –<br/>
+					<strong>Spomaľ. Mysli. Overuj.</strong></p>
+			</section>
+
+
+			
 		</main>
 
 			

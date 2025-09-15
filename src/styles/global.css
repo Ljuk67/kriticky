@@ -156,6 +156,7 @@ main {
   .sitename a .logo { width: 18px; height: 18px; }
 }
 
+.headingfont{    font-family: 'Bricolage Grotesque Variable';}
 
 h1,
 h2,
@@ -249,7 +250,6 @@ pre > code {
 blockquote {
 	
 	font-family: 'Special Elite', cursive;
-	font-weight: 100;
 	font-size: 2rem;
 	max-width: clamp(95%, 95%, 800px);
 	line-height: 1.4;
