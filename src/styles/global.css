@@ -113,7 +113,7 @@ main {
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-.latest-posts .glass, .archive .glass { padding: 0.8em; }
+.latest-posts .glass, .archive .glass { padding: 0.8em; margin: 0px;}
 
 /* Separate dark styled variant, opt-in via class */
 .glassdark {

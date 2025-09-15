@@ -31,13 +31,14 @@ const enhanced = await Promise.all(posts.map(async (p) => ({ ...p, thumb: await 
 	<body>
 		<Header />
 		<main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 archive">
+			<h1 class="text-center">Všetky články o kritickom myslení v praxi</h1>
 			<section>
 				<ul class="grid grid-cols-1 sm:grid-cols-2 gap-8 list-none p-0 m-0">
 					{
 						enhanced.map((post, i) => (
 							<li class={['glass','rounded-[14px]', i === 0 ? 'sm:col-span-2 p-4' : 'p-3'].join(' ')}>
 								<a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
-									<img class="w-full h-auto rounded-[27px] mb-4" src={post.thumb} alt="" />
+									<img class="w-full h-auto rounded-[14px] mb-2" src={post.thumb} alt="" />
 									<h2 class={['posttitle', 'text-center', i === 0 ? 'text-[1.8em] font-semibold' : 'text-[1.5em]'].join(' ')}>{post.data.title}</h2>
 									<div class="text-center date text-gray-500 group-hover:text-[var(--accent)]">
 										<FormattedDate date={post.data.pubDate} />
