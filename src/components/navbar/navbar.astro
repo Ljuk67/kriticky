@@ -4,18 +4,25 @@ import Link from "../ui/link.astro";
 import { SITE_TITLE } from "../../consts";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Icon from "astro-icon";   
 
 const menuitems = [
-  { title: "Domov", path: "/" },
   {
-    title: "Blog",
-    path: "/blog",
+      title: "Home",
+      path: "/",
+      isHomeIcon: true  // Flag to identify the home item
+    },
+  /* uncomment this for Blog + submenu {
+    title: "Blog", path: "/blog",
     children: [
       { title: "Politika", path: "/categories/politika/" },
       { title: "Veda", path: "/categories/veda/" },
       { title: "Vzťahy", path: "/categories/vztahy/" },
     ],
-  },
+  },*/
+  { title: "Politika", path: "/categories/politika/" },
+  { title: "Veda", path: "/categories/veda/" },
+  { title: "Vzťahy", path: "/categories/vztahy/" },
   { title: "O Projekte", path: "/about" },
   { title: "Kontakt", path: "/kontakt" },
 ];
@@ -46,7 +53,7 @@ const menuitems = [
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3 list-none m-0 p-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3 list-none m-0 p-0 items-center justify-center">
           {
             menuitems.map((item, index) => (
               <>
@@ -63,8 +70,15 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-700 hover:text-black no-underline">
-                      <span> {item.title}</span>
+                      class="flex lg:px-3 py-2 items-center text-gray-700 hover:text-black no-underline"
+                      title={item.isHomeIcon ? "Home" : undefined}>
+                      {item.isHomeIcon ? (
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                        </svg>
+                      ) : (
+                        <span>{item.title}</span>
+                      )}
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
                           New
