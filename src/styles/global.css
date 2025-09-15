@@ -231,7 +231,20 @@ pre > code {
 	all: unset;
 }
 
-
+.callout {
+	background: color-mix(in srgb, var(--accent) 20%, transparent);
+	padding: 2.5rem;
+	border-radius: 20px;
+	gap: 1rem;
+}
+.callout::before {
+	content: "🛈" ;
+	display: inline-block;
+	font-size: 60px;
+	line-height: 1;
+	padding-right:3px;
+	color: var(--accent);
+}
 
 blockquote {
 	
@@ -304,6 +317,8 @@ cite {
     display: flex;
     flex-direction: row;
     justify-content: center;
+	flex-wrap: wrap;
+    row-gap: 10px;
 }
 
 .tags a{background: var(--secondary);
@@ -311,3 +326,27 @@ cite {
 		font-size: 0.8em;
 	}
 /* Button utilities are defined in src/styles/tailwind.css under @layer components */
+
+/* Lightweight auto-usable icon tags without imports */
+/* Support both PascalCase and kebab-case tags for no-import usage */
+HandRight, HandLeft, InfoIcon,
+hand-right, hand-left, info-icon {
+  display: inline-block;
+  /* Prevent icon font metrics from affecting siblings */
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+}
+HandRight::before,
+HandLeft::before,
+InfoIcon::before,
+hand-right::before,
+hand-left::before,
+info-icon::before {
+  display: inline-block;
+  line-height: 1;
+  font-size: var(--icon-size, 30px); /* control via style="--icon-size: 20px" */
+}
+HandRight::before, hand-right::before { content: "👉"; }
+HandLeft::before,  hand-left::before  { content: "👈"; }
+InfoIcon::before,  info-icon::before  { content: "🛈"; }

@@ -7,14 +7,20 @@ import { getCollection } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { tagToSlug } from '../lib/slug';
 
-// Map of generated SVG thumbs (url strings)
-const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
-const getThumb = (id) => thumbs[`../assets/thumbs/${id}.svg`];
+// Thumbnails with runtime-safe lazy imports (avoid missing-file crashes in dev)
+const thumbs = import.meta.glob('../assets/thumbs/*.svg', { query: '?url', import: 'default' });
+async function getThumb(id: string) {
+  const key = `../assets/thumbs/${id}.svg`;
+  const def = `../assets/thumbs/default.svg`;
+  const loader = (thumbs as Record<string, () => Promise<string>>)[key] || (thumbs as Record<string, () => Promise<string>>)[def];
+  return await loader();
+}
 
 const allPosts = await getCollection('blog');
 const latestPosts = allPosts
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .slice(0, 6);
+const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
 
 // Compute tag cloud data
 const tagCounts = new Map<string, number>();
@@ -166,10 +172,10 @@ const scale = (c: number) => {
 				<span class="bg-yellow-300">→ Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)</span>
 				<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 list-none p-0 m-0">
 					{
-						latestPosts.map((post) => (
+						latestWithThumbs.map((post) => (
 							<li class="glass p-3 rounded-[14px]">
 								<a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
-									<img class="w-full h-auto rounded-[12px] mb-3" src={getThumb(post.id)} alt="" />
+									<img class="w-full h-auto rounded-[12px] mb-3" src={post.thumb} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date group-hover:text-[var(--accent)]">
 										<FormattedDate date={post.data.pubDate} />

@@ -238,6 +238,14 @@ async function main() {
   const theme = await getThemeColors();
   const files = await walk(CONTENT_DIR);
   await ensureDir(OUT_DIR);
+  // Always generate a text-free default placeholder as well
+  {
+    const defPath = join(OUT_DIR, 'default.svg');
+    const defSvg = generateSvg('default', 720, 360, theme);
+    await fs.writeFile(defPath, defSvg, 'utf8');
+    // eslint-disable-next-line no-console
+    console.log('Generated', defPath);
+  }
   for (const f of files) {
     const rel = relative(CONTENT_DIR, f).replace(/\\/g, '/');
     const slug = rel.replace(/\.(md|mdx)$/i, '');

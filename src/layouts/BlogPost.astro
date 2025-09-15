@@ -12,8 +12,8 @@ type Props = CollectionEntry<'blog'>['data'] & { slug: string; showComments?: bo
 
 const { title, description, pubDate, updatedDate, slug, author, tags, showComments = true } = Astro.props as Props;
 // Map of generated SVG thumbs (url strings)
-const thumbs = import.meta.glob('../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
-const heroUrl = (thumbs as Record<string, string>)[`../assets/thumbs/${slug}.svg`];
+const thumbs = import.meta.glob('../assets/thumbs/*.svg', { query: '?url', import: 'default' });
+const heroUrl = (await (thumbs[`../assets/thumbs/${slug}.svg`] || thumbs[`../assets/thumbs/default.svg`])());
 // Determine newer/older posts based on pubDate (desc)
 const allPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -35,7 +35,12 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 			keywords={Array.isArray(tags) ? tags : []}
 		/>
 		<style>
-			/* Use grid helpers defined in global.css */
+			
+			/* Apply card styling only on screens wider than mobile */
+			@media (min-width: 640px) {
+				body{background: #fafafa !important;}
+				.blog-post { background-color: white; padding: 2rem; border-radius: 20px; }
+			}
 			.hero-image { display: block; margin: 0 auto; }
 			.hero-image img {
 
