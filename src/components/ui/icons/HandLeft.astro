@@ -1,0 +1,17 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+  title?: string; // accessible label override (sk-SK)
+}
+const { size = 30, class: className = '', title } = Astro.props as Props;
+const aria = title ?? 'Ruka doľava';
+---
+
+<span
+  role="img"
+  aria-label={aria}
+  class={className}
+  style={`font-size: ${size}px; line-height: 1; display: inline-block;`}
+>👈</span>
+

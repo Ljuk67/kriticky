@@ -7,13 +7,19 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import { tagToSlug } from '../../lib/slug';
-// Generated SVG thumbnails (URL map)
-const thumbs = import.meta.glob('../../assets/thumbs/*.svg', { eager: true, query: '?url', import: 'default' });
+// Generated SVG thumbnails (lazy) with fallback to default.svg
+const thumbs = import.meta.glob('../../assets/thumbs/*.svg', { query: '?url', import: 'default' });
+async function getThumb(id) {
+  const key = `../../assets/thumbs/${id}.svg`;
+  const def = `../../assets/thumbs/default.svg`;
+  const loader = (thumbs)[key] || (thumbs)[def];
+  return await loader();
+}
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const enhanced = posts.map((p) => ({ ...p, thumb: thumbs[`../../assets/thumbs/${p.id}.svg`] }));
+const enhanced = await Promise.all(posts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
 ---
 
 <!doctype html>
