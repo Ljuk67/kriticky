@@ -19,7 +19,7 @@ async function getThumb(id: string) {
 const allPosts = await getCollection('blog');
 const latestPosts = allPosts
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    .slice(0, 6);
+    .slice(0, 8);
 const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
 
 // Compute tag cloud data
@@ -51,7 +51,7 @@ const scale = (c: number) => {
 				.hero p.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); margin: 0.5rem 0 0; }
 				/* Prevent horizontal overflow on narrow screens */
 				.stop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 1rem; margin-top: 1.5rem; }
-				.stop-card { padding: 2rem; text-align: center; }
+				.stop-card { text-align: center; }
 				.stop-card h3 { margin: 0 0 0.25rem 0; }
 				.stop-card p { margin: 0.25rem 0; }
 				.latest-posts { margin-top: 3rem; }
@@ -65,8 +65,6 @@ const scale = (c: number) => {
 				.posts li:hover img, .posts li:hover svg { box-shadow: var(--box-shadow); }
 				.tag-cloud { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgb(var(--gray-light)); }
 				.tag-cloud .tags { list-style: none; padding: 0; margin: 0.5rem 0 0 0; display: flex; flex-wrap: wrap; gap: 22px; align-items: baseline; }
-				.tag-cloud a { text-decoration: none; background: none; color: rgb(var(--black)); padding: 0; transition: color 0.2s ease; }
-				.tag-cloud a:hover { color: var(--accent); text-decoration: underline; }
 				.lead{font-size: 1.5em; font-weight:200;}
 			</style>
 	</head>
@@ -78,36 +76,30 @@ const scale = (c: number) => {
 			</section>
 
 			<section class="stop-grid relative left-1/2 -translate-x-1/2 w-[90vw]">
-				<div class="stop-card fancybox">
-					<h3>S – Skontroluj zdroj</h3>
+				<div class="stop-card fancybox ">
+					<h3><span style="font-size: 2em;"">S</span><br/>Skontroluj zdroj</h3>
 					<p>– Kto to tvrdí? Je to dôveryhodný zdroj? Má meno, odbornú autoritu, minulosť v klamstvách?</p>
 				</div>
 				<div class="stop-card fancybox">
-					<h3>T – Triezvo premýšľaj</h3>
+					<h3><span style="font-size: 2em;"">T</span><br/>Triezvo premýšľaj</h3>
 					<p>– Nehrá to na tvoje emócie? Znie to príliš dobre/zle na to, aby to bola pravda?</p>
 				</div>
 				<div class="stop-card fancybox">
-					<h3>O – Over fakty</h3>
+					<h3><span style="font-size: 2em;"">O</span><br/>Over fakty</h3>
 					<p>– Dajú sa tvrdenia potvrdiť z viacerých nezávislých zdrojov? Je k tomu dôkaz, štúdia, reálne čísla?</p>
 				</div>
 				<div class="stop-card fancybox">
-					<h3>P – Pozor na vlastnú zaujatosť (bias)</h3>
+					<h3><span style="font-size: 2em;"">P</span><br/>Pozor na vlastnú zaujatosť (bias)</h3>
 					<p>– Nehľadáš len to, čo potvrdzuje tvoje názory? Neodmietaš niečo len preto, že s tým nesúhlasíš?</p>
 				</div>
 				
 			</section>
 
 				<div
-				class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
-				<h2 class="text-white text-4xl md:text-6xl tracking-tight">
+				class="bg-black p-8 md:px-10 md:py-10 mt-10 mb-12 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+				<h5 class="text-white text-4xl md:text-6xl tracking-tight">
 					Kto myslí, ten STOPne.
-				</h2>
-				<p class="text-slate-400 mt-4 text-lg md:text-xl">
-					some text...
-				</p>
-				<div class="flex mt-5">
-					<a class="btn btn-light" href="#">Get Started</a>
-				</div>
+				</h5>
 				</div>
 			
 			<section>
@@ -170,7 +162,7 @@ const scale = (c: number) => {
 			<section class="latest-posts relative left-1/2 -translate-x-1/2 w-[90vw] mt-12">
 				<h2>Najnovšie články</h2>
 				<span class="bg-yellow-300">→ Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)</span>
-				<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 list-none p-0 m-0">
+				<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none p-0 m-0">
 					{
 						latestWithThumbs.map((post) => (
 							<li class="glass p-3 rounded-[14px]">
@@ -187,13 +179,13 @@ const scale = (c: number) => {
 				</ul>
 				<p class="view-all"><a href={`${import.meta.env.BASE_URL}blog/`}>Zobraziť všetky články →</a></p>
 			</section>
-			<hr/>
+
 			{tags.length > 0 && (
 
 
-			<section class="tag-cloud mt-12 pt-4 border-t border-gray-200">
-			  <h3>Značky</h3>
-			  <ul class="flex flex-wrap gap-6 items-baseline p-0 m-0 list-none">
+			<section class="tag-cloud mt-12 pt-4 border-t border-gray-200 relative left-1/2 -translate-x-1/2 w-[90vw] mt-12">
+			  <h3>Podľa tém</h3>
+			  <ul class="flex flex-wrap gap-2 sm:gap-3 md:gap-6 items-baseline p-0 m-0 list-none">
 				{allTags.map(([t, c]) => (
 				  <li>
 					<a class="inline-block bg-gray-200 text-gray-800 rounded-full px-3 py-1 no-underline hover:bg-gray-300" href={`/tags/${tagToSlug(t)}/`}>{t} <span class="text-gray-500 ml-1 text-sm">({c})</span></a>
