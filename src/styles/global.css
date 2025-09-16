@@ -66,8 +66,6 @@ main {
   flex: 1;                 /* Take up remaining space between header/footer */
 }
 
-/*.posttitle{font-size: 1.5em;}*/
-
 
 /* Prose (Tailwind Typography) theme overrides to match palette */
 .prose { color: rgb(var(--gray-dark)); }
@@ -256,7 +254,6 @@ blockquote {
 	position: relative;
 	margin: 0;
 	padding: .5rem;
-	overflow: hidden;
 }
 
 blockquote:before,
@@ -270,20 +267,27 @@ blockquote:after {
 
 blockquote:before {
 	content: '“';
-	left: -3rem;
-	top: -2rem;
+	left: -1rem;
+	top: -3rem;
 }
 
 blockquote:after {
 	content: '”';
-	right: -1rem;
-	bottom: 1rem;
+	right: -2rem;
+	bottom: 5rem;
 }
 
 cite {
 	line-height: 3;
 	text-align: left;
 }
+cite:before {
+	content: '— ';
+	left: 0rem;
+	top: 0rem;
+}
+
+
 
 
 
