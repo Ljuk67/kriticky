@@ -11,13 +11,15 @@
 	--highlight:#57C785;
 	--secondary: #EDDD53;
 	--black: 15, 18, 25;
-	--gray: 96, 115, 159;	
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
+	--gray: #e6e6e6;	
+	--gray-light: #f9fafb;
+	--gray-dark: #c7c6c6;	
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 5%), 0 8px 24px rgba(var(--gray), 10%), 0 16px 32px
 		rgba(var(--gray), 15%);
+	--radius-12: box-radius: 12px;
+	--radius-20: box-radius: 20px;
 
 	/* Responsive content grid variables */
 	--grid-margin: clamp(1rem, 1vw, 3rem);
@@ -59,6 +61,15 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
+/* Edge-to-edge section utility: full viewport width with safe padding */
+.full-bleed { 
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: clamp(1rem, 4vw, 2rem);
+	padding-right: clamp(1rem, 4vw, 2rem);
+}
+
 main {
 	max-width: 100%;
 	margin: 5px;
@@ -79,7 +90,7 @@ main {
 .fancybox {
 	/* Tailwind-inspired styling: rounded-2xl p-8 bg-gray-50 transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg */
 	border-radius: 1rem; /* rounded-2xl */
-	background-color: #F9FAFB; /* bg-gray-50 */
+	background-color: var(--gray-light); 
 	/* Default padding approximates p-8; utility p-* on element will override */
 	padding: 2rem; /* p-8 */
 	/* Ring (1px outline) using box-shadow technique similar to Tailwind's ring */

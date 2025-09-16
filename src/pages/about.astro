@@ -1,5 +1,6 @@
 ---
 import Page from '../layouts/Page.astro';
+import myPhotoUrl from '../assets/Lukas-cech.png?url';
 
 ---
 
@@ -8,6 +9,59 @@ import Page from '../layouts/Page.astro';
   title="O projekte"
   description="Prečo vznikol, čo ponúka a ako môže pomôcť"
 >
+
+
+
+  <section class="fancybox sm:!m-6 about-me overflow-hidden" style={`--about-photo: url(${myPhotoUrl})`}>
+    <img src={myPhotoUrl} alt="Lukáš Čech" class="about-portrait block " />
+    <h2 class="text-left">O mne</h2>
+    <div class="mt-4">
+      <div class="prose max-w-none sm:mt-0">
+        <p class="text-[16px] sm:text-[20px] leading-[18px] sm:leading-[1.4]">
+          Som <strong>Lukáš Čech</strong> a baví ma hľadať poriadok v informačnom chaose. A takisto ma frustruje, 
+          keď vidím, ako ľahko dnes neféroví hráči využívajú rôzne manipulatívne taktiky a kognitívne zaujatosti, aby zastreli ľuďom oči.
+          Verím, že <em>dobré rozhodnutia</em> stoja na poctivých informáciách a ochote zmeniť názor, keď sa objavia lepšie dôkazy.
+          <p class="text-[16px] sm:text-[20px] leading-[18px] sm:leading-[1.4]">
+            Na tomto webe spájam zdravú zvedavosť, rešpekt k faktom a praktický prístup. 
+          Namiesto veľkých slov ponúkam užitočné postupy: ako overovať tvrdenia, 
+          rozpoznať manipulatívne techniky a vyhnúť sa kognitívnym skratkám, ktoré nás často zvedú.
+            Mojím cieľom nie je určovať, <em>čo si máš myslieť</em>, ale pomôcť ti 
+            myslieť <strong>kritickejšie – pokojnejšie, systematickejšie a s väčšou istotou v neistej dobe.</strong>
+          </p>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @media (min-width: 640px) {
+      .about-me {
+        padding-left: 30px;
+        padding-right: 40px;
+        padding-bottom: 0px !important;
+      }
+      .about-portrait {
+      transform: translate(-33px, 0%);
+      shape-margin: 20px;
+    }
+    }
+    .about-portrait {
+        float: left;
+        width: clamp(180px, 35%, 240px);
+        margin: 0 2rem 0rem 0;
+        shape-outside: polygon(
+        0% 0%, 80% 0%, 5% 15%, 40% 0%,
+        75% 55%, 65% 70%, 60% 100%, 0% 100%
+        );
+        shape-margin: 2px;
+        /* Optional: visually clip image to match the shape */
+        clip-path: polygon(
+        0% 0%, 80% 0%, 95% 10%, 100% 100%,
+        90% 95%, 80% 60%, 100% 100%, 0% 100%
+        );
+        transform: translate(-53px, 0%);
+        }
+  </style>
 
   <p>
     Tento projekt vznikol z mojej frustrácie z toho, akú veľkú váhu dnes
