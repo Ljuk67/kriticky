@@ -256,6 +256,7 @@ blockquote {
 	position: relative;
 	margin: 0;
 	padding: .5rem;
+	overflow: hidden;
 }
 
 blockquote:before,
