@@ -62,14 +62,6 @@ body {
   flex-direction: column;
 }
 
-/* Edge-to-edge section utility: full viewport width with safe padding */
-.full-bleed { 
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw);
-	padding-left: clamp(1rem, 4vw, 2rem);
-	padding-right: clamp(1rem, 4vw, 2rem);
-}
-
 main {
 	max-width: 100%;
 	margin: 5px;
@@ -342,6 +334,32 @@ cite:before {
 		font-size: 0.8em;
 	}
 /* Button utilities are defined in src/styles/tailwind.css under @layer components */
+
+/* Full-bleed utility: stretches to viewport edges with safe side padding */
+.full-bleed {
+  /* Use viewport-based breakout without causing horizontal scroll */
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  /* Side padding with safe-area support */
+  padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));
+}
+@supports (width: 100dvw) {
+  .full-bleed {
+    width: 100dvw;
+    max-width: 100dvw;
+    margin-left: calc(50% - 50dvw);
+    margin-right: calc(50% - 50dvw);
+  }
+}
+/* Optional inner container for constrained content inside a full-bleed section */
+.full-bleed > .inner {
+  max-width: 1200px;
+  width: min(100%, 1200px);
+  margin-inline: auto;
+}
 
 /* Lightweight auto-usable icon tags without imports */
 /* Support both PascalCase and kebab-case tags for no-import usage */

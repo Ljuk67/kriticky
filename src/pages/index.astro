@@ -59,8 +59,7 @@ const scale = (c: number) => {
 				/* On hover, only adjust date; keep title color unchanged */
 				.posts li:hover .date { color: rgb(var(--accent)); }
 				.posts li:hover img, .posts li:hover svg { box-shadow: var(--box-shadow); }
-				.tag-cloud { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgb(var(--gray-light)); }
-				.tag-cloud .tags { list-style: none; padding: 0; margin: 0.5rem 0 0 0; display: flex; flex-wrap: wrap; gap: 22px; align-items: baseline; }
+				
 				.lead{font-size: 1.5em; font-weight:200;}
 			</style>
 	</head>
@@ -77,8 +76,8 @@ const scale = (c: number) => {
 				<p class="text-2xl font-light headingfont"><strong>Kriticky.sk</strong> je miesto pre každého, kto si kladie otázky. Kto je <em>zdravo</em> skeptický.
 					Kto nechce hneď uveriť všetkému, ale ani hneď všetko odmietať. Kto chce rozumieť svetu okolo seba – a naučiť sa rozlišovať fakty od domnienok, emócie od reality.</p>
 			</section>
-			<section class="full-bleed w-ful w-full inline-flex flex-auto flex-row">
-				<div class="mx-auto max-w-[min(100%,1200px)]">
+			<section class="full-bleed">
+				<div class="mx-8 grid gap-8 grid-cols-4">
 				<div class="stop-card fancybox ">
 					<h3><span style="font-size: 2em;">S</span><br/>Skontroluj zdroj</h3>
 					<p>– Kto to tvrdí? Je to dôveryhodný zdroj? Má meno, odbornú autoritu, minulosť v klamstvách?</p>
@@ -111,8 +110,8 @@ const scale = (c: number) => {
 				<footer><cite>David Hume</cite></footer>
 			  </blockquote>
 
-			  <section class="latest-posts full-bleed w-full mt-12">
-				<div class="mx-auto max-w-[min(100%,1200px)]">
+			  <section class="latest-posts full-bleed mt-12">
+				<div class="mx-8">
 				<h2>Najnovšie články</h2>
 				<span class="bg-yellow-300">→ Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)</span>
 				<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none p-0 m-0">
@@ -137,8 +136,8 @@ const scale = (c: number) => {
 			{tags.length > 0 && (
 
 
-			<section class="tag-cloud full-bleed w-full mt-12 pt-4 border-t border-gray-200">
-			  <div class="mx-auto max-w-[min(100%,1200px)]">
+			<section class="tag-cloud full-bleed mt-2 pt-4 border-t border-gray-200">
+			  <div class="mx-8">
 			  <h3>Podľa tém</h3>
 			  <ul class="flex flex-wrap gap-2 sm:gap-3 md:gap-6 items-baseline p-0 m-0 list-none">
 				{allTags.map(([t, c]) => (
