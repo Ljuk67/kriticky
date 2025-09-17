@@ -261,7 +261,7 @@ blockquote {
 blockquote:before,
 blockquote:after {
 	position: absolute;
-	color: var(--highlight);
+	color: var(--secondary);
 	font-size: 8rem;
 	width: 4rem;
 	height: 4rem;

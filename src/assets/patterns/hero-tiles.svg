@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" fill="none">
+  <!-- Subtle seamless dot grid + lines; transparent bg for blending -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#000" fill-opacity="0.9"/>
+    </pattern>
+  </defs>
+  <!-- Very faint base grid of dots -->
+  <rect width="320" height="320" fill="url(#dots)" opacity="0.3"/>
+
+  <!-- A few abstract strokes reminiscent of thumb style, placed away from edges -->
+  <g stroke="#000" stroke-width="2" stroke-opacity="0.8" fill="none">
+    <path d="M60 90 C 90 60, 130 60, 160 90"/>
+    <path d="M200 230 C 230 260, 270 260, 300 230"/>
+    <path d="M70 250 Q 120 220, 150 260"/>
+    <path d="M210 80 Q 260 50, 290 90"/>
+  </g>
+
+  <!-- Some scatter dots for texture -->
+  <g fill="#000" fill-opacity="0.8">
+    <circle cx="95" cy="145" r="3"/>
+    <circle cx="225" cy="145" r="3"/>
+    <circle cx="140" cy="205" r="2.5"/>
+    <circle cx="260" cy="105" r="2.5"/>
+  </g>
+</svg>
+
