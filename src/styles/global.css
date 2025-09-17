@@ -239,11 +239,11 @@ pre > code {
 	gap: 1rem;
 }
 .callout::before {
-	content: "🛈" ;
+	content: "\2139";
 	display: inline-block;
 	font-size: 60px;
 	line-height: 1;
-	padding-right:3px;
+	padding-right:13px;
 	color: var(--accent);
 }
 
