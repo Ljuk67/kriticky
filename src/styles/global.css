@@ -300,6 +300,13 @@ cite:before {
 	/* Remove horizontal padding to avoid ~15px right shift */
 	main { padding-block: 1em; padding-inline: 0; }
 	h1 { font-size: 1.9em; }
+
+	/* Prevent blockquote quotes from bleeding off-screen on mobile */
+	blockquote { padding: 1rem; overflow: hidden; }
+	blockquote:before,
+	blockquote:after { font-size: 4rem; opacity: 0.3; }
+	blockquote:before { left: 0; top: -0.75rem; }
+	blockquote:after { right: 0; bottom: -0.75rem; }
 }
 
 .sr-only {
