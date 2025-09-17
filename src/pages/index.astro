@@ -38,6 +38,14 @@ const scale = (c: number) => {
   const t = (c - minCount) / (maxCount - minCount);
   return 0.9 + t * 0.6; // 0.9em .. 1.5em
 };
+
+// Compute categories with at least one post
+const catCounts = new Map<string, number>();
+for (const p of allPosts) {
+  const cats = Array.isArray(p.data.categories) ? p.data.categories : [];
+  for (const c of cats) catCounts.set(c, (catCounts.get(c) ?? 0) + 1);
+}
+const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'sk'));
 ---
 
 <!doctype html>
@@ -113,7 +121,17 @@ const scale = (c: number) => {
 			  <section class="latest-posts full-bleed mt-12">
 				<div class="mx-0 md:mx-8">
 				<h2>Najnovšie články</h2>
-				<span class="bg-yellow-300">→ Maybe filters by category (e.g. Politika, Médiá, Hoaxy, Vzťahy)</span>
+				{allCategories.length > 0 && (
+					<div class="mt-2 mb-4">
+						<ul class="flex flex-wrap gap-2 p-0 m-0 list-none" aria-label="Kategórie">
+							{allCategories.map(([c, count]) => (
+								<li>
+									<a class="inline-block bg-gray-200 text-gray-800 rounded-full px-2 py-0.5 no-underline mr-1" href={`/categories/${tagToSlug(c)}/`}>{c} <span class="text-gray-500 ml-1 text-sm">({count})</span></a>
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
 				<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none p-0 m-0">
 					{
 						latestWithThumbs.map((post) => (
