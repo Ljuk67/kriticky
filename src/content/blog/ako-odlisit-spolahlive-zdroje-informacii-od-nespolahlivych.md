@@ -6,7 +6,7 @@ author: "Lukas Cech"
 tags:
   - "overovanie zdrojov"
   - "kritické myslenie"
-  - "média"
+  - "médiá"
 categories:
   - "Veda"
 ---

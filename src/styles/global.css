@@ -60,6 +60,7 @@ body {
   display: flex;            /* Make footer stick to bottom */
   min-height: 100vh;
   flex-direction: column;
+  overflow-wrap: anywhere; word-break: break-word; -webkit-hyphens: auto; hyphens: auto; 
 }
 
 main {
@@ -90,6 +91,8 @@ main {
 	  0 0 0 1px rgba(229, 231, 235, 0.5), /* ring-1 ring-gray-200/50 */
 	  0 1px 2px rgba(0, 0, 0, 0.06); /* shadow */
 	transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, border-color 200ms ease; /* transition-all */
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
   }
 
 
@@ -105,6 +108,9 @@ main {
     0 1px 2px rgba(0, 0, 0, 0.06); /* shadow */
   transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, border-color 200ms ease; /* transition-all */
   margin: 20px 0;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
 }
 .glass:hover {
   /* hover:shadow-lg */
@@ -126,6 +132,8 @@ main {
     0 1px 2px rgba(0, 0, 0, 0.5);
   transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
   margin: 20px 0;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 .glassdark:hover {
   box-shadow:
@@ -231,6 +239,8 @@ pre {
 pre > code {
 	all: unset;
 }
+
+ol li, ul li {    line-height: 1.3em;}
 
 .callout {
 	background: color-mix(in srgb, var(--accent) 20%, transparent);
