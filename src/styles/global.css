@@ -60,7 +60,7 @@ body {
   display: flex;            /* Make footer stick to bottom */
   min-height: 100vh;
   flex-direction: column;
-  overflow-wrap: anywhere; word-break: break-word; -webkit-hyphens: auto; hyphens: auto; 
+  overflow-wrap: anywhere; word-break: break-word; 
 }
 
 main {
@@ -195,12 +195,15 @@ h5 {
 strong,
 b {
 	font-weight: 700;
+	-webkit-hyphens: auto; hyphens: auto;
 }
 p {
 	margin-bottom: 1em;
+	-webkit-hyphens: auto; hyphens: auto;
 }
 .prose p {
 	margin-bottom: 2em;
+	-webkit-hyphens: auto; hyphens: auto;
 }
 
 a {color:var(--accent);}
@@ -240,7 +243,8 @@ pre > code {
 	all: unset;
 }
 
-ol li, ul li {    line-height: 1.3em;}
+ol li, ul li {    line-height: 1.3em;
+	-webkit-hyphens: auto; hyphens: auto;}
 
 .callout {
 	background: color-mix(in srgb, var(--accent) 20%, transparent);
