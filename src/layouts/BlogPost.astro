@@ -43,7 +43,11 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 			}
 			.hero-image { display: block; margin: 0 auto; }
 			.hero-image img {
-
+				/* Make hero responsive and prevent horizontal overflow on mobile */
+				display: block;
+				max-width: 100%;
+				width: 100%;
+				height: auto;
 				border-radius: 27px;
 				box-shadow: var(--box-shadow);
 			}
@@ -71,7 +75,6 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 			}
 			.prose .tag {
 				display: inline-block;
-				background: rgb(var(--gray-light));
 				color: black;
 				border-radius: 999px;
 				text-decoration: none;
@@ -79,6 +82,7 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				margin: 0 6px;
 				font-size: 0.85em;
 			}
+			.prose .tag:hover {color: black;}
 			.last-updated-on {
 				font-style: italic;
 			}
