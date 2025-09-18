@@ -37,3 +37,26 @@ Bez kritického myslenia ľahko podliehame dezinformáciám, mýtom či emocion�
 ---
 
 Rozvíjanie kritického myslenia nie je jednorazová aktivita, ale dlhodobý proces. Každá situácia, v ktorej aktívne spochybňujeme a overujeme tvrdenia, je príležitosťou zlepšiť túto zručnosť. Vďaka tomu sa stávame odolnejší voči manipulácii, samostatnejší v úsudku a otvorenejší novým perspektívam.
+
+## 🛑 Metóda STOP
+
+Je jednoduchý nástroj, ktorý ti pomôže, keď niečo znie až príliš dobre (alebo zle) na to, aby to bola pravda.
+Stačí, ak sa pri každom silnom tvrdení - v správach, od politikov, na sociálnych sieťiach, pri rozhovoroch - pozastavíš - 
+urobíš STOP a toto slovo zároveň použiješ ako návod na preferenie daného tvrdenia takto:
+				
+<p><strong>S</strong> – <strong>Skontroluj zdroj</strong> - odkiaľ pochádza toto tvrdenie? Je to 
+					<a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivý zdroj?</a><br/>
+				<strong>T</strong> – <strong>Triezvo premýšľaj</strong><br/>
+				<strong>O</strong> – <strong>Over fakty</strong><br/>
+				<strong>P</strong> – <strong>Pozor na vlastnú zaujatosť</strong></p>
+
+<p>Týchto 4 krokov ti môže ušetriť nielen trapas na Facebooku, ale aj názor, ktorého by si mohol časom ľutovať.</p>
+
+
+<blockquote>
+				<p>Information is not the same as truth. Most information is not an accurate representation of reality. 
+				The main role information plays is to connect many things, to connect people. Sometimes people are connected by truth, 
+				but often it is easier to use fiction or illusion.</p>
+				<footer><cite>Yuval Noah Harari</cite></footer>
+				
+</blockquote>
