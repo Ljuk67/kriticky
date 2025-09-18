@@ -23,7 +23,7 @@ Zaujatosť (bias) je skrytá tendencia nášho myslenia, ktorá nás vedie k rý
 - **Príklad (SK):** Diskusie o očkovaní proti COVID-19. Ľudia často zdieľali len články, ktoré potvrdzovali ich názor (či už za alebo proti), a ignorovali seriózne dáta.  
 - **Ako sa jej vyhnúť (keď my hovoríme):** Pred tým, než niečo povieme, sami si nájdime aj protiargumenty.
 
-<aside class="callout">
+<aside class="callout callout--info">
 <b>Napríklad:</b> Keď uvažujem nad argumentami ohľadom COVID-19, alebo sa o nich rozprávam, tak sa zahrám na tú druhú stranu a snažím si tie argumenty sám vyvrátiť. <b>Zapnem zdravý skepticizmus voči sebe.</b> Pýtam sa - na čom je tento môj názor založený? Takto napríklad môžem otestovať či som k tomuto názoru prišiel cez spoľahlivé zdroje - konsenzus veľkého počtu vedcov, viaceré štúdie - alebo cez ťažko overiteľné zdroje - rôzne online publikácie, sociálne siete.
 
 Tu sa dá spochybniť aj to, čo robí spoľahlivé zdroje - tak sa znovu pýtam - je to, čo definuje spoľahlivý zdroj moja osobná definícia, alebo je to všeobecne uznávaná definícia spoľahlivých zdrojov? <HandRight style="--icon-size: 30px; margin-right: .25em;"></HandRight> <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/"> Prečítaj si článok o tom, ako odlíšiť spoľahlivé zdroje od nespoľahlivých</a>.

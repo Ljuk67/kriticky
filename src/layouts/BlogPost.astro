@@ -13,7 +13,7 @@ type Props = CollectionEntry<'blog'>['data'] & { slug: string; showComments?: bo
 const { title, description, pubDate, updatedDate, slug, author, tags, showComments = true } = Astro.props as Props;
 // Map of generated SVG thumbs (url strings)
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { query: '?url', import: 'default' });
-const heroUrl = (await (thumbs[`../assets/thumbs/${slug}.svg`] || thumbs[`../assets/thumbs/default.svg`])());
+const heroUrl = await (thumbs[`../assets/thumbs/${slug}.svg`] || thumbs[`../assets/thumbs/default.svg`])() as string;
 // Determine newer/older posts based on pubDate (desc)
 const allPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
