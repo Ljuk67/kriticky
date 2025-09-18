@@ -1,0 +1,23 @@
+---
+// Simple local SVG icon component.
+// Usage: <Info class="w-8 h-8 text-gray-500" aria-hidden />
+interface Props {
+  class?: string;
+  title?: string;
+  ariaHidden?: boolean;
+}
+const { class: className = '', title, ariaHidden = true } = Astro.props as Props;
+---
+<svg
+  class={className}
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+  role={ariaHidden ? undefined : 'img'}
+  aria-hidden={ariaHidden ? 'true' : 'false'}
+>
+  {title && !ariaHidden && <title>{title}</title>}
+  <!-- Circle with "i" glyph -->
+  <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a1.25 1.25 0 1 1 0 2.5A1.25 1.25 0 0 1 12 6Zm1.25 12h-2.5a.75.75 0 0 1 0-1.5h.5V11h-.5a.75.75 0 0 1 0-1.5h2.5a.75.75 0 0 1 0 1.5h-.5v5.5h.5a.75.75 0 0 1 0 1.5Z"/>
+</svg>
+

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx}',
+    './src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx,vue,svelte}',
   ],
   theme: {
     extend: {
@@ -24,5 +24,7 @@ module.exports = {
   },
   // Keep existing styles intact; enable utilities without Tailwind's CSS reset
   corePlugins: { preflight: false },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

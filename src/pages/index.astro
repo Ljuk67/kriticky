@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { tagToSlug } from '../lib/slug';
 import heroTiles from '../assets/patterns/hero-tiles.svg?url';
+import Info from '../components/icons/Info.astro';
 
 // Thumbnails with runtime-safe lazy imports (avoid missing-file crashes in dev)
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { query: '?url', import: 'default' });
@@ -138,10 +139,9 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 
 
 			  <section class="fancybox herobcg text-lg p-6 mt-24">
-				<i class="icon-[mdi--home] w-6 h-6 text-blue-500"></i>
-				<i class="icon-[emojione--backhand-index-pointing-right-light-skin-tone] w-8 h-8 text-red-600"></i>
 
-				<h2> Si tu prvý krát? Začni tu:</h2>
+
+				<h2><Info class="w-12 h-12 text-green-900" /> Si tu prvý krát? Začni tu:</h2>
 				<p>Odporúčané čítanie predtým, než sa ponoríš do článkov:</p>
 				<ol>
 					<li><a href="/blog/zaklady-kritickeho-myslenia/">Prečítaj si základy kritického myslenia</a></li>
