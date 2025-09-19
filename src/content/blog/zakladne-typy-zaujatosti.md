@@ -36,7 +36,7 @@ Tu sa dá spochybniť aj to, čo robí spoľahlivé zdroje - tak sa znovu pýtam
 
 ## 2. Zaujatosť spätnej väzby (hindsight bias)
 - **Čo to je:** Po udalosti máme pocit, že sme „to vedeli od začiatku“.  
-- **Príklad (SK):** Po voľbách 2023 mnohí tvrdili, že výsledok Fica bol jasný už dávno, hoci pred voľbami sa analytici líšili.  
+- **Príklad (SK):** Po voľbách 2023 mnohí tvrdili, že výsledok Fica bol jasný už dávno, hoci pred voľbami sa analytici líšili.  <span class="text-red-500">ZDROJ</span>
 - **Ako sa jej vyhnúť:** Pri hodnotení udalostí si pripomeňme, aké neistoty sme cítili predtým.  
 - **Ako ju spoznať:** Keď niekto hovorí „to bolo jasné“ až po tom, čo sa to stalo.  
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
@@ -56,7 +56,7 @@ https://www.minv.sk/?statistiky-kriminality-v-slovenskej-republike
 
 ## 4. Dostupnostná zaujatosť (availability bias)
 - **Čo to je:** Čo si ľahko vybavíme v pamäti, považujeme za častejšie alebo pravdivejšie.  
-- **Príklad (SK):** Po medializovaných prípadoch násilia cudzincov vznikol pocit, že ide o veľký problém, hoci štatistiky ukazujú, že väčšina trestných činov je od domácich.  
+- **Príklad (SK):** Po medializovaných prípadoch násilia cudzincov vznikol pocit, že ide o veľký problém, hoci štatistiky ukazujú, že väčšina trestných činov je od domácich.  <span class="text-red-500">ZDROJ</span>
 - **Ako sa jej vyhnúť:** Nespokojme sa s jedným príkladom, pozrime sa na štatistiky.  
 - **Ako ju spoznať:** Ak niekto tvrdí, že niečo je „časté“ len preto, že to bolo v správach.  
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Availability_heuristic" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Dostupnostná_heuristika" target="_blank" rel="noopener noreferrer">zdroj 2</a>
