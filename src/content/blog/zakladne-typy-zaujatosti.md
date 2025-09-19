@@ -45,7 +45,9 @@ Tu sa dá spochybniť aj to, čo robí spoľahlivé zdroje - tak sa znovu pýtam
 
 ## 3. Ukotvovacia zaujatosť (anchoring bias)
 - **Čo to je:** Prvá informácia, ktorú počujeme, silne ovplyvní naše rozhodnutie.  
-- **Príklad (SK):** Diskusia o cenách energií – keď politici najprv spomenuli extrémne čísla zdražovania, ľudia ich brali ako základ, aj keď reálne sadzby boli nižšie.  
+- **Príklad (SK):** Diskusia o cenách energií – keď politici najprv spomenuli extrémne čísla zdražovania, ľudia ich brali ako základ, aj keď reálne sadzby boli nižšie.<span class="text-red-500">ZDROJ</span>
+https://www.minv.sk/?statistiky-kriminality-v-slovenskej-republike
+
 - **Ako sa jej vyhnúť:** Overujme viaceré čísla a nevychádzajme len z prvého, ktoré zaznie.  
 - **Ako ju spoznať:** Keď niekto stále porovnáva nové dáta len s tým, čo povedal na začiatku.  
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Anchoring" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Ukotvovacia_heuristika" target="_blank" rel="noopener noreferrer">zdroj 2</a>
