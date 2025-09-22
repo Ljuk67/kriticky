@@ -171,7 +171,7 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 							<li class="glass p-3 rounded-[14px]">
 								<a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
 									<img class="w-full h-auto rounded-[12px] mb-3" src={post.thumb} alt="" />
-									<h4 class="title">{post.data.title}</h4>
+									<h3 class="posttitle">{post.data.title}</h3>
 									<p class="date group-hover:text-[var(--accent)]">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
