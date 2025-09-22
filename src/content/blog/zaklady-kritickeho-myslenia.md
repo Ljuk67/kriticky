@@ -41,7 +41,7 @@ Rozvíjanie kritického myslenia nie je jednorazová aktivita, ale dlhodobý pro
 ## 🛑 Metóda STOP
 
 Je jednoduchý nástroj, ktorý ti pomôže, keď niečo znie až príliš dobre (alebo zle) na to, aby to bola pravda.
-Stačí, ak sa pri každom silnom tvrdení - v správach, od politikov, na sociálnych sieťiach, pri rozhovoroch - pozastavíš - 
+Stačí, ak sa pri každom silnom tvrdení - v správach, od politikov, na sociálnych sietiach, pri rozhovoroch - pozastavíš - 
 urobíš STOP a toto slovo zároveň použiješ ako návod na preferenie daného tvrdenia takto:
 				
 <p><strong>S</strong> – <strong>Skontroluj zdroj</strong> - odkiaľ pochádza toto tvrdenie? Je to 
