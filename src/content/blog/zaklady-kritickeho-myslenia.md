@@ -54,9 +54,7 @@ urobíš STOP a toto slovo zároveň použiješ ako návod na preferenie daného
 
 
 <blockquote>
-				<p>Information is not the same as truth. Most information is not an accurate representation of reality. 
-				The main role information plays is to connect many things, to connect people. Sometimes people are connected by truth, 
-				but often it is easier to use fiction or illusion.</p>
+				<p>Informácia nie je to isté ako pravda. Väčšina informácií nie je presným zobrazením reality. Hlavnou úlohou informácií je spájať veľa vecí, spájať ľudí. Niekedy sú ľudia spojení pravdou, ale často je jednoduchšie použiť fikciu alebo ilúziu.</p>
 				<footer><cite>Yuval Noah Harari</cite></footer>
 				
 </blockquote>
