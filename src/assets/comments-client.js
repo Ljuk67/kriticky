@@ -90,7 +90,6 @@ ready(() => {
         name: (fd.get('name') || '').toString().trim(),
         email: (fd.get('email') || '').toString().trim() || null,
         message: (fd.get('message') || '').toString().trim(),
-        is_approved: false,
       };
       // Basic client validation mirroring DB constraints
       if (!payload.name || payload.name.length < 2) {
@@ -119,7 +118,7 @@ ready(() => {
           } catch {}
           throw new Error('HTTP ' + res.status + (bodyText ? ': ' + bodyText : ''));
         }
-        if (statusEl) statusEl.textContent = 'Ďakujeme, komentár čaká na schválenie.';
+        if (statusEl) statusEl.textContent = 'Ďakujeme za názor!';
         form.reset();
         fetchComments();
       } catch (e) {
