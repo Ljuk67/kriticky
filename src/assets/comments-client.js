@@ -19,6 +19,8 @@ function ready(fn) {
 }
 
 ready(() => {
+  // Track time since comments UI became ready (anti-bot: time-on-page)
+  const pageReadyAt = Date.now();
   const listEl = document.getElementById('comments-list');
   const form = document.getElementById('comment-form');
   const statusEl = document.getElementById('form-status');
@@ -85,10 +87,33 @@ ready(() => {
         form.reset();
         return;
       }
+
+      // Require minimal time on page before allowing submit (20s)
+      try {
+        const elapsed = Date.now() - pageReadyAt;
+        const minMs = 20000;
+        if (elapsed < minMs) {
+          const wait = Math.ceil((minMs - elapsed) / 1000);
+          if (statusEl) statusEl.textContent = `Prosím, počkaj aspoň ${wait}s pred odoslaním komentára.`;
+          return;
+        }
+      } catch {}
+
+      // Simple client-side throttle (per slug): max 1 comment / 60s
+      try {
+        const now = Date.now();
+        const k = 'cm:last:' + slug;
+        const last = Number(localStorage.getItem(k) || '0');
+        if (now - last < 60_000) {
+          const wait = Math.ceil((60_000 - (now - last)) / 1000);
+          if (statusEl) statusEl.textContent = `To je príliš rýchle ;) - pred odoslaním ďalšieho komentára chvíľu počkaj.`;
+          return;
+        }
+      } catch {}
       const payload = {
         slug: fd.get('slug'),
         name: (fd.get('name') || '').toString().trim(),
-        email: (fd.get('email') || '').toString().trim() || null,
+        email: (fd.get('email') || '').toString().trim(),
         message: (fd.get('message') || '').toString().trim(),
       };
       // Basic client validation mirroring DB constraints
@@ -96,11 +121,28 @@ ready(() => {
         if (statusEl) statusEl.textContent = 'Meno musí mať aspoň 2 znaky.';
         return;
       }
+      // Require email present and reasonably valid
+      if (!payload.email) {
+        if (statusEl) statusEl.textContent = 'E‑mail je povinný.';
+        return;
+      }
+      try {
+        const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(payload.email);
+        if (!emailOk) {
+          if (statusEl) statusEl.textContent = 'Zadaj platný e‑mail.';
+          return;
+        }
+      } catch {}
       if (!payload.message || payload.message.length < 3) {
         if (statusEl) statusEl.textContent = 'Komentár musí mať aspoň 3 znaky.';
         return;
       }
       try {
+        // Disable button while sending to avoid dupes
+        if (btn) {
+          btn.disabled = true;
+          btn.setAttribute('aria-disabled', 'true');
+        }
         const res = await fetch(url + '/rest/v1/comments?apikey=' + encodeURIComponent(key), {
           method: 'POST',
           // Do not request returning rows to avoid SELECT RLS on the inserted row
@@ -121,9 +163,17 @@ ready(() => {
         if (statusEl) statusEl.textContent = 'Ďakujeme za názor!';
         form.reset();
         fetchComments();
+        // Record last successful submit time for client-side throttling
+        try { localStorage.setItem('cm:last:' + slug, String(Date.now())); } catch {}
       } catch (e) {
         if (statusEl) statusEl.textContent = 'Chyba pri odosielaní. Skús neskôr.';
         console.error('[comments] submit error', e);
+      }
+      finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.removeAttribute('aria-disabled');
+        }
       }
     });
   }

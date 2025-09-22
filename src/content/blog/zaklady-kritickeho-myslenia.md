@@ -13,7 +13,9 @@ Kritické myslenie je schopnosť jasne a rozumne analyzovať informácie, vyhodn
 
 ## Čo je kritické myslenie?
 
-Kritické myslenie spočíva v systematickom zbere informácií, ich následnom porovnaní a posúdení platnosti. Nejde o číru nedôveru; ide o opatrné a racionálne skúmanie, aby sme zistili, aké informácie sú spoľahlivé a aké nie. Podstatné je aj vedomie vlastných predsudkov – každý z nás má svoj východiskový postoj a skúsenosť, ktorá ovplyvňuje naše rozhodnutia. Kritické myslenie si vyžaduje ochotu tieto východiská prehodnocovať.
+Kritické myslenie spočíva v systematickom zbere informácií, ich následnom porovnaní a posúdení platnosti. Základom je uvedomenie, <strong>že informácia sa nerovná pravde</strong>. Informácia môže byť pravdivá, ale nemusí - môže to byť len niečí názor, môže byť založená na nesprávnych vstupoch, alebo môže byť cielene zavádzajúca.
+Nejde o číru nedôveru; ide o opatrné a racionálne skúmanie, aby sme zistili, aké informácie sú spoľahlivé a aké nie. Podstatné je aj vedomie vlastných predsudkov – každý z nás má svoj východiskový postoj a skúsenosť, ktorá ovplyvňuje naše rozhodnutia. Kritické myslenie si vyžaduje ochotu tieto východiská prehodnocovať.
+Kto kriticky myslí, tak zvažuje pôvod ako externých informácií, a ich pravdivosť, ale aj pôvod svojich interných názorov a ich pravdivosť.
 
 ## Hlavné zručnosti kritického myslenia
 

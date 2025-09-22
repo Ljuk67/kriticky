@@ -2,7 +2,7 @@
 // Client-only Supabase comments (moderated):
 // - Reads PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_ANON_KEY
 // - Lists approved comments for the given slug
-// - Submits new comments as pending (is_approved=false set via RLS)
+// - Submits new comments; DB handles approval/defaults via RLS/defaults
 // UI text is Slovak; code identifiers in English
 interface Props { slug: string; }
 const { slug } = Astro.props as Props;
@@ -42,6 +42,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
             <textarea name="message" required minlength="10" maxlength="5000"></textarea>
           </label>
         </p>
+        <p>Tento formulár ukladá Váš email a meno len na antispamové opatrenia. Pre požiadanie o ich anonymizáciu alebo odstránenie <a href="/kontakt/" class="text-white" target="_blank">stačí napísať</a>.</p>
         <button type="button">Odoslať komentár</button>
         <span id="form-status" role="status" aria-live="polite"></span>
       </form>
@@ -83,7 +84,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
     
     /* Comments list items are injected via JS, so use :global to style them */
     :global(.comments .comment) { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
-    :global(.comments .comment .meta) { color: black; padding-left: 25px; font-size: 0.9rem; margin-bottom: 0.25rem; }
+    :global(.comments .comment .meta) { color: var(--secondary); padding-left: 25px; font-size: 0.9rem; margin-bottom: 0.25rem; }
     :global(.comments .comment .body) { white-space: pre-wrap; }
     
     /* Small screens */
