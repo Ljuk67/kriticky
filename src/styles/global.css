@@ -205,7 +205,6 @@ p {
 }
 .prose p {
 	margin-bottom: 2em;
-	-webkit-hyphens: auto; hyphens: auto;
 }
 
 a {color:var(--accent);}
@@ -311,6 +310,9 @@ blockquote {
 	margin: 0;
 	padding: .5rem;
 }
+blockquote p{
+	-webkit-hyphens: none; hyphens: none;
+}
 
 blockquote:before,
 blockquote:after {
@@ -345,6 +347,8 @@ blockquote:after {
 	blockquote:after { font-size: 5rem; opacity: 1; }
 	blockquote:before { left: 0; top: -0.75rem; }
 	blockquote:after { right: 0; bottom: -0.75rem; }
+	blockquote {font-size: 1.3em;}
+	.posttitle {font-size: 1.3em;}
 }
 
 cite {
