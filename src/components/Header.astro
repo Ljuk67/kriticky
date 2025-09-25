@@ -2,14 +2,16 @@
 import Navbar from './navbar/navbar.astro';
 ---
 <div class="header-sentinel" aria-hidden="true"></div>
-<div class="site-header sticky top-0 z-[1000] bg-white shadow">
+<div class="site-header sticky top-0 z-[1000] bg-white/60 backdrop-blur-[10px] shadow">
   <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div>
       <Navbar />
     </div>
   </div>
   <style>
-  
+    /* Ensure blur works broadly, including Safari */
+    .site-header { -webkit-backdrop-filter: blur(10px); }
+    
     /* Subtle slide-in when the header becomes sticky */
     .site-header.is-sticky-enter { animation: headerSlideIn 360ms ease-out forwards; }
     @keyframes headerSlideIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }

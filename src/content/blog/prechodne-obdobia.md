@@ -19,6 +19,10 @@ Presne takto vyzerajú prechodné obdobia v spoločnosti – **voľby, politick�
 
 ### Keď sa nevládne, ľahko sa rozpráva
 
+<aside class="callout callout--tip">
+Tip: Pýtaj sa na výsledky, nie iba na sľuby. Porovnaj slová s merateľnými činmi a dátami.
+</aside>
+
 Keď je niekto *pri moci*, musí konať. A každý čin má dôsledky. Môžeme ho teda súdiť podľa výsledkov:
 
 - Sľúbil nižšie ceny? Pozrieme sa, či ich naozaj znížil.  
@@ -37,6 +41,10 @@ A tak vzniká priestor pre hoaxy, dezinformácie, populistov a rôznych “zách
 ---
 
 ### Kde je dopyt, tam je ponuka
+
+<aside class="callout callout--tip">
+Tip: Silné príbehy znejú lákavo, ale skontroluj fakty. Ak sa hrá len na emócie, uber plyn a overuj.
+</aside>
 
 Keď sú veci komplikované a neisté, ľudia hľadajú niekoho, kto ich **ukľudní a presvedčí, že všetko má pod kontrolou.**  
 Aj keby to mala byť čistá lož. Hlavne že to znie sebavedomo.
@@ -58,6 +66,10 @@ A to je presne ten moment, keď **rozum ide bokom a nastupujú emócie.**
 
 ### A potom... ticho
 
+<aside class="callout callout--tip">
+Tip: Rovnaké kritériá používaj na všetkých – aj na „našich“. Dôvera je dobrá, kontrola lepšia.
+</aside>
+
 Zaujímavé je, že **keď sa takýto “záchranca” dostane k moci**, väčšinou sa veci nezlepšia.  
 Ale **už nemôže len kričať a ukazovať prstom.** Už musí konať.
 
@@ -68,6 +80,10 @@ A ten istý cyklus sa opakuje – niekto nový príde s “pravdou” a s “rie
 ---
 
 ### Ako sa z toho vymotať?
+
+<aside class="callout callout--tip">
+Tip: Namiesto rýchleho lajku si daj krátke STOP – skontroluj zdroj, hľadaj protiargument a pozri kontext.
+</aside>
 
 Netreba byť expert. Ani mať diplom z politiky.  
 Stačí si občas položiť zopár jednoduchých otázok:
@@ -82,6 +98,10 @@ A hlavne: **keď niečo znie až príliš jednoducho na to, aby to bola pravda �
 ---
 
 ### Výzva na záver
+
+<aside class="callout callout--tip">
+Tip: Keď niekto kričí, že pozná jedinú pravdu, pýtaj sa viac a ver menej. Jednoduché odpovede na zložité problémy bývajú podozrivé.
+</aside>
 
 ➡️ **Nabudúce, keď budeš počuť silné reči, ktoré znejú ako “konečne pravda” – zastav sa na chvíľu.**  
 Spýtaj sa:  
