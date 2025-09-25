@@ -15,6 +15,10 @@ Ak chceme robiť dobré rozhodnutia, potrebujeme vedieť rozlíšiť, ktorým in
 
 ## Typy zdrojov a čo od nich čakať
 
+<aside class="callout callout--tip">
+Tip: Nie všetky zdroje majú rovnakú váhu. Uprednostni systematické prehľady, metaanalýzy a odborný konsenzus pred anekdotami či virálnymi príspevkami – a vždy pozri metodiku.
+</aside>
+
 1) Primárne vedecké štúdie  
 – Pôvodný výskum, často v recenzovaných (peer‑reviewed) časopisoch.  
 – Plusy: transparentná metodika, dáta, citácie.  
@@ -53,7 +57,7 @@ Ak chceme robiť dobré rozhodnutia, potrebujeme vedieť rozlíšiť, ktorým in
 8) „Kamarát povedal“ (anekdoty)  
 – Osobné skúsenosti a tradované príbehy.  
 – Plusy: kontext, ľudský rozmer.  
-– Mínusy: skreslenia pamäte, potvrdzovacie skreslenie, neoveriteľnosť.
+– Mínusy: skreslenia pamäte, <a href="/blog/zakladne-typy-zaujatosti/#konfirmacne-skreslenie">potvrdzovacie skreslenie</a>, neoveriteľnosť.
 
 9) Preprinty vs. recenzované články  
 – Preprint = článok pred recenziou; užitočný pre rýchle zdieľanie, ale ešte neprešiel kontrolou.  
@@ -62,6 +66,10 @@ Ak chceme robiť dobré rozhodnutia, potrebujeme vedieť rozlíšiť, ktorým in
 ---
 
 ## Ako si overiť, či je zdroj spoľahlivý
+
+<aside class="callout callout--tip">
+Tip: Rýchly filter – autor a jeho odbornosť, jasná metodika, odkazy na dáta a aspoň dve nezávislé potvrdenia z <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">kvalitných zdrojov</a>.
+</aside>
 
 Použi tieto otázky ako rýchly checklist:
 
@@ -88,6 +96,10 @@ Praktický postup (5 krokov):
 
 ## Test: roztrieďme vyššie uvedené zdroje touto metódou
 
+<aside class="callout callout--tip">
+Tip: Toto členenie je orientačné. Vždy hodnotíš konkrétny článok či video – nie len kategóriu, do ktorej patrí.
+</aside>
+
 Skôr spoľahlivé (ak spĺňajú kritériá):
 
 - Systematické prehľady a metaanalýzy – ak majú jasné kritériá výberu, hodnotenie kvality a transparentnú metodiku.  
@@ -109,6 +121,10 @@ Poznámka: aj „spoľahlivé“ kategórie môžu zlyhať (nekvalitná metóda,
 
 ## Rýchla mini-metóda na každý deň (STOP+)
 
+<aside class="callout callout--tip">
+Tip: Keď niečo znie príliš dobre (alebo zle), použi STOP+: skontroluj zdroj, premysli si to triezvo, over fakty a daj pozor na vlastné skreslenia.
+</aside>
+
 - S – Skontroluj zdroj: kto to hovorí a kde to vyšlo?  
 - T – Triezvo premýšľaj: nehrá to na emócie? nie je to „príliš dobré“?  
 - O – Over fakty: aspoň dva nezávislé zdroje a originálne dáta.  
@@ -117,5 +133,4 @@ Poznámka: aj „spoľahlivé“ kategórie môžu zlyhať (nekvalitná metóda,
 
 ---
 
-Záver: Nehľadáme dokonalosť, ale dôveryhodnosť. Čím systematickejšie pracujeme so zdrojmi a dôkazmi, tým menej nám hrozí, že nás oklame marketing, politika či algoritmy. Spoľahlivý zdroj nie je len o „mienke“, ale o tom, ako poctivo narába s realitou.
-
+Záver: Nehľadáme dokonalosť, ale dôveryhodnosť. Čím systematickejšie pracujeme so zdrojmi a dôkazmi, tým menej nám hrozí, že nás oklame marketing, politika či algoritmy. <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">Spoľahlivý zdroj</a> nie je len o „mienke“, ale o tom, ako poctivo narába s realitou.
