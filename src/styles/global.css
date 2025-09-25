@@ -287,8 +287,8 @@ ol li, ul li {    line-height: 1.3em;
 }
 .callout--tip::before {
   color: #14532d;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 2.1-1.23 3.6-2.4 4.8-.7.7-1.1 1.2-1.1 2.2h-3c0-1-.4-1.5-1.1-2.2C8.23 10.6 7 9.1 7 7a5 5 0 0 1 5-5Zm-3 15h6a3 3 0 0 1-3 3 3 3 0 0 1-3-3Zm1.5 4h3a1.5 1.5 0 0 1-3 0Z"/></svg>') no-repeat center / contain;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 2.1-1.23 3.6-2.4 4.8-.7.7-1.1 1.2-1.1 2.2h-3c0-1-.4-1.5-1.1-2.2C8.23 10.6 7 9.1 7 7a5 5 0 0 1 5-5Zm-3 15h6a3 3 0 0 1-3 3 3 3 0 0 1-3-3Zm1.5 4h3a1.5 1.5 0 0 1-3 0Z"/></svg>') no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12h1m8-9v1m8 8h1M5.6 5.6l.7.7m12.1-.7l-.7.7M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0-1 3a2 2 0 0 1-4 0a3.5 3.5 0 0 0-1-3m.7 1h4.6'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12h1m8-9v1m8 8h1M5.6 5.6l.7.7m12.1-.7l-.7.7M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0-1 3a2 2 0 0 1-4 0a3.5 3.5 0 0 0-1-3m.7 1h4.6'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 .callout--warn {
@@ -296,8 +296,9 @@ ol li, ul li {    line-height: 1.3em;
 }
 .callout--warn::before {
   color: #b45309;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2Zm1 15h-2v2h2v-2Zm0-8h-2v6h2V9Z"/></svg>') no-repeat center / contain;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2 2 22h20L12 2Zm1 15h-2v2h2v-2Zm0-8h-2v6h2V9Z"/></svg>') no-repeat center / contain;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9-3v4m0 3v.01'/%3E%3C/svg%3E");
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9-3v4m0 3v.01'/%3E%3C/svg%3E");
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9-3v4m0 3v.01'/%3E%3C/svg%3E");
 }
 
 blockquote {
@@ -443,3 +444,7 @@ info-icon::before {
 HandRight::before, hand-right::before { content: "👉"; }
 HandLeft::before,  hand-left::before  { content: "👈"; }
 InfoIcon::before,  info-icon::before  { content: "🛈"; }
+
+/* In-page anchor offset so headings aren't hidden under sticky header */
+:is(h1,h2,h3,h4,h5,h6)[id] { scroll-margin-top: 100px; }
+:target { scroll-margin-top: 100px; }

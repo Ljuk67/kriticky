@@ -59,3 +59,42 @@ tags:
 - Code and identifiers: Keep code identifiers and filenames in English. Comments inside code can be Slovak if they describe UI text; otherwise prefer English for technical comments.
 - Assistant/PR/commits: Keep assistant messages, PR descriptions, and commit messages in English.
 - Scope: Entire repository.
+
+### Tone & Voice (Slovak)
+- Always use informal second person singular in articles and UI copy: prefer "ty/teba/ti/ťa", verbs like "robíš, čítaš, pozri, skús, over" instead of formal plural "Vy/robíte/čítate". Avoid capitalized "Vy".
+- Target audience - people who don't know about critical thinking, or have only a small understanding of it. People who vote for polarising leaders like the SMER party in Slovakia, because of their slogans, not real deliverables or past achievements (or lack of)
+
+## Content Linking Rules
+- When referencing "kvalitné zdroje", "spoľahlivé zdroje", "dôveryhodné zdroje" (including singular forms and close variants/synonyms), hyperlink the phrase to `/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/`.
+- Use the phrase itself as the link text. Apply this consistently in Markdown, MDX, and inline HTML within content or components.
+ - Exception (self-link): If you are editing the same article as the target (i.e., the current page’s route equals the target URL), do not create the hyperlink; leave the phrase as plain text.
+ - Exception (frequent linking) - don't add any more hyperlinks if you have already placed one, for at least the next few paragraphs.
+
+- When mentioning confirmation bias in Slovak (e.g., "konfirmačné skreslenie", "potvrdzovacie skreslenie", "potvrdzujúce skreslenie"; including singular/plural and diacritic variants), link the phrase to `/blog/zakladne-typy-zaujatosti/#konfirmacne-skreslenie`.
+- Keep the exact phrase as the link text; do not add extra wording inside the link.
+ - Exception (self-link): If the current article is the same as the target (`/blog/zakladne-typy-zaujatosti/` with the given anchor), do not link; keep the phrase as plain text.
+- Exception (frequent linking) - don't add any more hyperlinks if you have already placed one, for at least the next few paragraphs.
+
+## Content Formatting Rules
+- Use the callout pattern for examples, tips, and short walkthroughs: wrap example blocks in `<aside class="callout callout--info">…</aside>`.
+- Add a one‑sentence actionable takeaway under every section heading: place `<aside class="callout callout--tip">One clear, actionable sentence.</aside>` directly below each `h2`/`h3` in articles.
+- Prefer one idea per callout; lists inside callouts should use proper HTML lists (`<ul><li>…</li></ul>`) to avoid Markdown parsing issues inside HTML blocks.
+- When mixing Markdown and HTML (e.g., `<aside>`, custom components), always leave a blank line after the closing HTML tag and before the next Markdown block to preserve correct Markdown rendering.
+
+## Anchor Offset
+- For in-page anchor navigation (e.g., `#konfirmacne-skreslenie`), ensure a 100px visual offset so headings aren’t hidden under sticky headers.
+- Implementation guidance (preferred, in `src/styles/global.css`):
+  - Add a global rule: `:is(h1,h2,h3,h4,h5,h6)[id] { scroll-margin-top: 100px; }`
+  - Optionally also: `:target { scroll-margin-top: 100px; }` as a broad fallback.
+- Use this convention across all pages and content where anchors are used.
+
+## Hosting & Deployment
+- Hosting: Websupport (Slovak hosting). Not using Cloudflare or Netlify.
+- Deploy flow: push to GitHub, then publish build artifacts to Websupport web root.
+- Build locally: `nvm use && npm ci && npm run build` → upload contents of `dist/` to the site root (or configured subdir) on Websupport via SFTP/SSH/CI.
+- Tip: keep `dist/` out of git. Use CI (GitHub Actions) or a local script to rsync/upload `dist/` after each merge to `master`.
+
+## Privacy‑Friendly Analytics (Websupport compatible)
+Goal: uniques, page views, device category; minimal cookies and simple setup.
+
+GDPR friendly or anonymous statistic preferred.

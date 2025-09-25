@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Abstraktný geometrický náhľad">
+  
+    <defs>
+      <linearGradient id="bg-grad" x1="0" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(143, 360, 180)">
+        <stop offset="0%" stop-color="#ccc58e" />
+        <stop offset="100%" stop-color="#abc2cb" />
+      </linearGradient>
+      <clipPath id="rounded">
+        <rect x="0" y="0" width="720" height="360" rx="21.599999999999998" ry="21.599999999999998" />
+      </clipPath>
+    </defs>
+  <g clip-path="url(#rounded)">
+    <rect x="0" y="0" width="720" height="360" fill="url(#bg-grad)" />
+    <polygon points="617.1729532544068,191.1715415094692 675.6348971404559,285.3339310826022 604.2977841079412,361.77405807444086 504.32745011490726,374.72339047382934 442.15097705207353,278.8826544574102 514.4421349145442,195.709321678626" fill="#57C785" opacity="0.48" /><polygon points="46.881950248626296,-77.64801276641823 309.69959107258484,-40.838521058455925 336.1559115809021,213.5533224179931 122.21189007347888,312.9111594280573 -142.0115888205503,170.5391103662526" fill="hsl(0 0% 70%)" opacity="0.47" /><g transform="translate(354.5696353018284 77.83415430039167) rotate(26)"><rect x="-91.7568838000486" y="-50.95912037497087" width="183.5137676000972" height="101.91824074994175" fill="none" stroke="hsl(0 0% 75%)" stroke-width="4.511263170316815" stroke-linejoin="round" opacity="0.42"/></g><circle cx="313.1786028072238" cy="298.85293783061206" r="83.34533200427127" fill="none" stroke="hsl(0 0% 90%)" stroke-width="4.07833086406812" opacity="0.33" /><g transform="translate(104.7970312088728 258.7783318720758) rotate(307)"><rect x="-64.61161972365392" y="-87.05915924147634" width="129.22323944730783" height="174.11831848295267" fill="#EDDD53" opacity="0.39"/></g><g transform="translate(602.3038747608662 63.96906929276883) rotate(156)"><rect x="-58.382641844031916" y="-90.55673666476403" width="116.76528368806383" height="181.11347332952806" fill="#2A7B9B" opacity="0.44"/></g>
+  </g>
+</svg>
