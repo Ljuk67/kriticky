@@ -8,13 +8,16 @@ import FormattedDate from '../../components/FormattedDate.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
+  const prod = import.meta.env.PROD;
+  const visible = prod ? posts.filter((p) => p.data.status === 'published') : posts;
   const tags = new Set<string>();
-  for (const p of posts) for (const t of (p.data.tags ?? [])) tags.add(t);
+  for (const p of visible) for (const t of (p.data.tags ?? [])) tags.add(t);
   return [...tags].map((t) => ({ params: { tag: tagToSlug(t) }, props: { tag: t } }));
 }
 
 const { tag } = Astro.props as { tag: string };
 const posts = (await getCollection('blog'))
+  .filter((p) => (import.meta.env.PROD ? p.data.status === 'published' : true))
   .filter((p) => (p.data.tags ?? []).includes(tag))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
