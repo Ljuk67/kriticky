@@ -255,6 +255,7 @@ ol li, ul li {    line-height: 1.3em;
 	padding: 2.5rem;
 	border-radius: 20px;
 	gap: 1rem;
+	margin: 20px auto;
 }
 .callout::before,
 .callout--info::before,

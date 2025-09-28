@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { tagToSlug } from '../../lib/slug';
 
-const posts = await getCollection('blog');
+const posts = (await getCollection('blog')).filter((p) => (import.meta.env.PROD ? p.data.status === 'published' : true));
 const catCounts = new Map<string, number>();
 for (const p of posts) {
   const cats = Array.isArray(p.data.categories) ? p.data.categories : [];
@@ -43,4 +43,3 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
     <Footer />
   </body>
   </html>
-
