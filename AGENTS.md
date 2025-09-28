@@ -54,6 +54,29 @@ tags:
 - Client-exposed env vars must be prefixed with `PUBLIC_`.
 - Large assets: optimize before committing; avoid storing build artifacts.
 
+## Draft posts (not published in production)
+
+- Each blog post supports a frontmatter field `status` with values `draft` or `published`.
+- Default is `published` to keep current content visible.
+- In production builds (`npm run build` / `npm run preview` output), only posts with `status: "published"` are:
+  - Listed on the blog index and category pages
+  - Generated as individual `/blog/[slug]/` pages
+  - Included in RSS (`/rss.xml`)
+- In local development (`npm run dev`), drafts are visible so you can preview them.
+
+Example frontmatter:
+
+```md
+---
+title: "My Draft"
+description: "Work in progress"
+pubDate: "Sep 10 2025"
+author: "Lukas Cech"
+status: "draft"
+---
+```
+
+
 ## Language Policy
 - Frontend content: Write all user-facing website copy in Slovak (sk-SK).
 - Code and identifiers: Keep code identifiers and filenames in English. Comments inside code can be Slovak if they describe UI text; otherwise prefer English for technical comments.
@@ -77,7 +100,7 @@ tags:
 
 ## Content Formatting Rules
 - Use the callout pattern for examples, tips, and short walkthroughs: wrap example blocks in `<aside class="callout callout--info">…</aside>`.
-- Add a one‑sentence actionable takeaway under every section heading: place `<aside class="callout callout--tip">One clear, actionable sentence.</aside>` directly below each `h2`/`h3` in articles.
+- Add a one‑sentence actionable takeaway above every section heading - summarise the section above it: place `<aside class="callout callout--tip">One clear, actionable sentence.</aside>` directly above each `h2` in articles.
 - Prefer one idea per callout; lists inside callouts should use proper HTML lists (`<ul><li>…</li></ul>`) to avoid Markdown parsing issues inside HTML blocks.
 - When mixing Markdown and HTML (e.g., `<aside>`, custom components), always leave a blank line after the closing HTML tag and before the next Markdown block to preserve correct Markdown rendering.
 

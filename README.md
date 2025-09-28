@@ -11,3 +11,4 @@ Upevniť a rozšíriť kritické myslenie u bežných ľudí.
 - Pagefind – vyhľadávanie priamo na stránke
 - giscus – komentáre čitateľov cez GitHub Discussions
 <hr/>
+

@@ -4,7 +4,10 @@ import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.map((post) => ({
+	const filtered = import.meta.env.PROD
+		? posts.filter((p) => p.data.status === 'published')
+		: posts;
+	return filtered.map((post) => ({
 		params: { slug: post.id },
 		props: post,
 	}));
