@@ -3,6 +3,7 @@ title: "DRAFT: Ako rozpoznať kvalitné vedecké štúdie od nekvalitných?"
 description: "Praktický sprievodca, ako rýchlo odlíšiť dôveryhodný výskum od slabých alebo zavádzajúcich štúdií."
 pubDate: "Sep 26 2025"
 author: "Lukas Cech"
+status: "draft"
 tags:
   - "kritické myslenie"
   - "veda"
@@ -10,7 +11,6 @@ tags:
   - "metodológia"
 categories:
   - "Veda"
-draft: true
 ---
 
 V ére, keď sa “štúdie ukazujú” na sociálnych sieťach každý deň, je dôležité vedieť, ktoré sú naozaj dôveryhodné a ktoré len vyzerajú presvedčivo. Nižšie nájdeš praktický návod, ako rýchlo odlíšiť kvalitný výskum od slabého.

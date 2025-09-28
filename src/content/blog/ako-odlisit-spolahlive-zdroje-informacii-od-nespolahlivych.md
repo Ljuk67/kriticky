@@ -3,6 +3,7 @@ title: "DRAFT: Ako odlíšiť spoľahlivé zdroje informácií od nespoľahlivý
 description: "Praktický návod, ako rozlišovať typy zdrojov (štúdie, vedecký konsenzus, politici, kamaráti, sociálne siete, influenceri) a ako si overiť ich dôveryhodnosť."
 pubDate: "Sep 14 2025"
 author: "Lukas Cech"
+status: "draft"
 tags:
   - "overovanie zdrojov"
   - "kritické myslenie"

@@ -3,6 +3,7 @@ title: "DRAFT: Keď to znie príliš dobre: overuj účinky doplnkov, diéty a l
 description: "Ako rýchlo rozpoznať prehnané sľuby v zdraví a kde hľadať klinické dôkazy namiesto recenzií. Praktické príklady (vitamín D, kolagén, detox čaj) a spoľahlivé postupy."
 pubDate: "Sep 22 2025"
 author: "Lukas Cech"
+status: "draft"
 tags:
   - "zdravie"
   - "doplnky"

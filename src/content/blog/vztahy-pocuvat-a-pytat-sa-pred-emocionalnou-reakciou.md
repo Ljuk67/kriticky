@@ -3,6 +3,7 @@ title: "DRAFT: Vzťahy: Počúvať a pýtať sa, nie len reagovať emóciou – 
 description: "Praktický návod, ako v rozhovoroch najskôr porozumieť – pýtať sa, parafrázovať a vyjasňovať význam – namiesto rýchlych emočných reakcií."
 pubDate: "Sep 22 2025"
 author: "Lukas Cech"
+status: "draft"
 tags:
   - "vzťahy"
   - "komunikácia"

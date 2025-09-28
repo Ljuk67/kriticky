@@ -3,6 +3,7 @@ title: "DRAFT: Prechodné obdobia: Raj pre hoaxy, sľuby a rozprávkarov"
 description: "Keď sa spoločnosť mení, otvára sa priestor pre manipuláciu, dezinformácie a populistov. Prečo? A ako sa brániť?"
 pubDate: "Sep 09 2025"
 author: "Lukas Cech"
+status: "draft"
 tags:
   - "dezinformácie"
   - "voľby"

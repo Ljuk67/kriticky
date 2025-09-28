@@ -57,8 +57,8 @@ tags:
 ## Draft posts (not published in production)
 
 - Each blog post supports a frontmatter field `status` with values `draft` or `published`.
-- Default is `published` to keep current content visible.
-- In production builds (`npm run build` / `npm run preview` output), only posts with `status: "published"` are:
+- Default is `published` to keep current content visible - so to publish a post, it's enough to remove 'status: "draft"'
+- In production builds (`npm run build` / `npm run preview` output), only posts with `status: "published"` or no status are:
   - Listed on the blog index and category pages
   - Generated as individual `/blog/[slug]/` pages
   - Included in RSS (`/rss.xml`)
