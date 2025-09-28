@@ -11,7 +11,7 @@ categories:
 
 Kritické myslenie je schopnosť jasne a rozumne analyzovať informácie, vyhodnocovať argumenty a prijímať rozhodnutia na základe dôkazov. V dnešnom preplnenom informačnom prostredí sa stáva nevyhnutnosťou, pretože nás chráni pred manipuláciou, predsudkami či nepravdivými tvrdeniami.
 
-## Čo je kritické myslenie?
+## V čom spočíva kritické myslenie?
 
 <aside class="callout callout--tip">
 Tip: Považuj informáciu za hypotézu, nie hotový fakt – kým nenájdeš spoľahlivé potvrdenia a rozumieš kontextu.
@@ -80,7 +80,7 @@ Tip: Vždy začni otázkou „Čo presne chcem zistiť?“ Zabráníš tak tomu,
 Tip: Kritické myslenie šetrí peniaze, nervy aj čas – od nákupov cez prácu po zdravie. Drobné návyky robia veľký rozdiel.
 </aside>
 
-Bez kritického myslenia ľahko podliehame dezinformáciám, mýtom či emocionálnym nátlakom. V pracovnom aj osobnom živote nám pomáha prijímať správnejšie rozhodnutia a viesť konštruktívne diskusie. Jeho osvojovanie vedie k nestrannosti, kreatívnym riešeniam a k osobnostnému rastu.
+Bez kritického myslenia ľahko podliehame dezinformáciám, mýtom či emocionálnym nátlakom. Skôr sa necháme zmiasť reklamou, marketingom či politikmi, ktorí radi pravdu skresľujú vo svoj prospech. V pracovnom aj osobnom živote nám pomáha prijímať správnejšie rozhodnutia a viesť konštruktívne diskusie. Jeho osvojovanie vedie k nestrannosti, kreatívnym riešeniam a k osobnostnému rastu.
 
 Konkrétne situácie, kde sa ti zíde:
 - Peniaze: Porovnanie „výhodného“ úveru vs. skrytých poplatkov; nákup telefónu – špecifikácie vs. reklama.

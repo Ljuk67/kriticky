@@ -27,7 +27,16 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = { src: defaultThumbUrl }, type = 'website', author, datePublished, dateModified, keywords = [] } = Astro.props as Props;
+const { title, description, image, type = 'website', author, datePublished, dateModified, keywords = [] } = Astro.props as Props;
+// Default OG image handling:
+// - Pages (type === 'website') use site-wide opengraph JPEG from public/
+// - Articles (type === 'article') keep existing default SVG thumb unless overridden
+const resolvedImage = image ?? (type === 'article' ? { src: defaultThumbUrl } : { src: '/opengraph.jpeg' });
+// Social preview fallback: many platforms ignore SVG for og:image.
+// If the chosen image is an SVG, fall back to a site-wide JPEG.
+const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.toLowerCase().endsWith('.svg'))
+  ? '/opengraph.jpeg'
+  : resolvedImage.src;
 ---
 
 <!-- Global Metadata -->
@@ -66,14 +75,14 @@ const { title, description, image = { src: defaultThumbUrl }, type = 'website', 
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
+<meta property="og:image" content={new URL(ogImageSrc, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+<meta property="twitter:image" content={new URL(ogImageSrc, Astro.url)} />
 
 <!-- JSON-LD -->
 {
@@ -84,7 +93,7 @@ const { title, description, image = { src: defaultThumbUrl }, type = 'website', 
         '@type': 'BlogPosting',
         headline: title,
         description,
-        image: new URL(image.src, Astro.url).toString(),
+        image: new URL(ogImageSrc, Astro.url).toString(),
         mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
         inLanguage: 'sk',
         author: author ? { '@type': 'Person', name: author } : undefined,
