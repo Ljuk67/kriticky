@@ -16,9 +16,9 @@ async function getThumb(id) {
   return await loader();
 }
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection('blog'))
+  .filter((p) => (import.meta.env.PROD ? p.data.status === 'published' : true))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const enhanced = await Promise.all(posts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
 
 // Compute categories with at least one post

@@ -15,7 +15,9 @@ const { title, description, pubDate, updatedDate, slug, author, tags, showCommen
 const thumbs = import.meta.glob('../assets/thumbs/*.svg', { query: '?url', import: 'default' });
 const heroUrl = await (thumbs[`../assets/thumbs/${slug}.svg`] || thumbs[`../assets/thumbs/default.svg`])() as string;
 // Determine newer/older posts based on pubDate (desc)
-const allPosts = (await getCollection('blog')).sort(
+const allPosts = (await getCollection('blog'))
+  .filter((p) => (import.meta.env.PROD ? p.data.status === 'published' : true))
+  .sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 const currentIndex = allPosts.findIndex((p) => p.id === slug);

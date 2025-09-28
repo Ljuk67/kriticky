@@ -19,14 +19,16 @@ async function getThumb(id: string) {
 }
 
 const allPosts = await getCollection('blog');
-const latestPosts = allPosts
+// Respect draft visibility: in production show only published posts; in dev show all
+const posts = allPosts.filter((p) => (import.meta.env.PROD ? p.data.status === 'published' : true));
+const latestPosts = posts
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .slice(0, 8);
 const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
 
 // Compute tag cloud data
 const tagCounts = new Map<string, number>();
-for (const p of allPosts) {
+for (const p of posts) {
   const tags = Array.isArray(p.data.tags) ? p.data.tags : [];
   for (const t of tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
 }
@@ -43,7 +45,7 @@ const scale = (c: number) => {
 
 // Compute categories with at least one post
 const catCounts = new Map<string, number>();
-for (const p of allPosts) {
+for (const p of posts) {
   const cats = Array.isArray(p.data.categories) ? p.data.categories : [];
   for (const c of cats) catCounts.set(c, (catCounts.get(c) ?? 0) + 1);
 }

@@ -17,6 +17,8 @@ const blog = defineCollection({
       author: z.string().default('Lukas Cech'),
       tags: z.array(z.string()).default([]),
       categories: z.array(z.string()).default([]),
+      // Draft/publish state; drafts are not built in production
+      status: z.enum(['draft', 'published']).default('published'),
 		}),
 });
 
