@@ -3,6 +3,7 @@ title: "DRAFT: Základné typy zaujatostí, na ktoré si dať pozor"
 description: "Top 10 najčastejších psychologických zaujatostí (bias), ktoré ovplyvňujú naše myslenie. Jednoduché vysvetlenia, príklady zo Slovenska a tipy, ako sa brániť manipulácii a dezinformáciám."
 pubDate: "Sep 14 2025"
 author: "Lukas Cech"
+status: "draft"
 tags:
   - "zaujatosti"
   - "bias"
