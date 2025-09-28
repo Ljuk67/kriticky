@@ -1,5 +1,5 @@
 ---
-title: "Ako odlíšiť spoľahlivé zdroje informácií od nespoľahlivých?"
+title: "DRAFT: Ako odlíšiť spoľahlivé zdroje informácií od nespoľahlivých?"
 description: "Praktický návod, ako rozlišovať typy zdrojov (štúdie, vedecký konsenzus, politici, kamaráti, sociálne siete, influenceri) a ako si overiť ich dôveryhodnosť."
 pubDate: "Sep 14 2025"
 author: "Lukas Cech"

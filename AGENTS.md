@@ -98,3 +98,9 @@ tags:
 Goal: uniques, page views, device category; minimal cookies and simple setup.
 
 GDPR friendly or anonymous statistic preferred.
+
+## Content Writing Style
+- Write like a blogger aiming for broad understanding; prefer clear, conversational Slovak.
+- It’s OK to use less-common terms, but immediately explain them in brackets in plain Slovak, e.g., "cherry-picking (vyberanie si len tých dôkazov, ktoré sa mi hodia)".
+- Expand acronyms on first use with a brief bracketed explanation.
+- Favor concrete examples, short paragraphs, and bullets where it improves clarity.
