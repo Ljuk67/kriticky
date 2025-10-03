@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { tagToSlug } from '../../lib/slug';
 import FormattedDate from '../../components/FormattedDate.astro';
+import PostsGrid from '../../components/PostsGrid.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -44,25 +45,15 @@ const enhanced = await Promise.all(posts.map(async (p) => ({ ...p, thumb: await 
       <p><a href={`${import.meta.env.BASE_URL}tags/`}>← Všetky značky</a></p>
       {enhanced.length === 0 && <p class="text-gray-500">Žiadne články pre túto značku.</p>}
       {enhanced.length > 0 && (
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-8 list-none p-0 m-0">
-          {enhanced.map((post) => (
-            <li class="glass rounded-[14px] p-3">
-              <a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
-                <img class="w-full h-auto rounded-[14px] mb-4" src={post.thumb} alt="" />
-                <h2 class="posttitle text-center text-[1.5em]">{post.data.title}</h2>
-                <div class="text-center date text-gray-500 group-hover:text-[var(--accent)]">
-                  <FormattedDate date={post.data.pubDate} />
-                </div>
-                <div class="text-center meta text-gray-500">Autor: {post.data.author}</div>
-              </a>
-              {Array.isArray(post.data.tags) && post.data.tags.length > 0 && (
-                <div class="tags mt-1 text-gray-500" aria-label="Značky">
-                  {post.data.tags.map((t) => <a class="inline-block bg-gray-200 text-gray-800 rounded-full px-2 py-0.5 no-underline mr-1" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
+        <PostsGrid items={enhanced.map((post) => ({
+          url: `${import.meta.env.BASE_URL}blog/${post.id}/`,
+          title: post.data.title,
+          date: post.data.pubDate,
+          thumbUrl: post.thumb,
+        }))}
+        columnsClass="grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
+        titleClass="text-[1.5em]"
+        />
       )}
     </main>
     <Footer />
