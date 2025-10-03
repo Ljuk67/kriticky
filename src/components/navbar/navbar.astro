@@ -49,7 +49,13 @@ const menuitems = [
             {SITE_TITLE}
           </a>
         </span>
-        <div class="block lg:hidden">
+        <div class="flex items-center gap-2 lg:hidden">
+          <a id="open-search-mobile" href="/hladat/" class="inline-flex items-center justify-center" aria-label="Hľadať" title="Hľadať">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+          </a>
           <MenuIcon class="w-6 h-6 mt-2" />
         </div>
       </div>
@@ -91,12 +97,39 @@ const menuitems = [
               </>
             ))
           }
+          <!-- Search icon button -->
+          <li class="ml-2">
+            <a id="open-search" href="/hladat/" class="inline-flex items-center justify-center" aria-label="Hľadať" title="Hľadať">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </svg>
+            </a>
+          </li>
         </ul>
 
       </MenuItems>
     </Astronav>
   </header>
 </Container>
+<!-- Site search modal -->
+<div id="site-search-modal" class="fixed inset-0 z-[1100] hidden" aria-hidden="true">
+  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="relative mx-auto my-16 w-[min(92%,720px)] rounded-xl bg-white p-4 shadow-xl">
+    <div class="flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+      <input id="modal-q" type="search" placeholder="Napíš, čo chceš nájsť…" class="flex-1 px-3 py-2 rounded-md border border-gray-300" />
+      <a href="/hladat/" class="btn btn-light ml-2">Plná stránka</a>
+      <button id="close-search" class="ml-2 w-9 h-9 rounded-full hover:bg-gray-100" aria-label="Zavrieť">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div id="modal-results" class="mt-4 max-h-[60vh] overflow-auto"></div>
+  </div>
+</div>
 <style>
   /* Style inside child component via :global since Astro scopes styles per component */
   /* Reset native <menu> defaults in astro-navbar components */
@@ -155,3 +188,55 @@ const menuitems = [
     }
   }
 </style>
+<script is:inline>
+  (function(){
+    const openBtn = document.getElementById('open-search');
+    const openBtnMobile = document.getElementById('open-search-mobile');
+    const modal = document.getElementById('site-search-modal');
+    const closeBtn = document.getElementById('close-search');
+    const input = document.getElementById('modal-q');
+    const results = document.getElementById('modal-results');
+    function show(){ modal?.classList.remove('hidden'); input?.focus(); }
+    function hide(){ modal?.classList.add('hidden'); results && (results.innerHTML = ''); }
+    function norm(s){ return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim(); }
+    function tokens(s){ return norm(s).split(/[^a-z0-9]+/).filter(Boolean); }
+    function levenshtein(a,b){ const m=a.length,n=b.length; if(!m) return n; if(!n) return m; const dp=new Array(n+1); for(let j=0;j<=n;j++) dp[j]=j; for(let i=1;i<=m;i++){ let prev=dp[0]; dp[0]=i; for(let j=1;j<=n;j++){ const tmp=dp[j]; dp[j]=Math.min(dp[j]+1, dp[j-1]+1, prev+(a[i-1]===b[j-1]?0:1)); prev=tmp; } } return dp[n]; }
+    function fuzzyScore(hay, needles){ const ht=tokens(hay); let s=0; for(const q of needles){ if(!q) continue; if(ht.some(t=>t.includes(q))){ s++; continue; } let best=Infinity; for(const t of ht){ best=Math.min(best, levenshtein(t,q)); } const thr=q.length<=4?1:2; if(best<=thr) s++; } return s; }
+    async function search(q){
+      const n = norm(q); if(!n){ results && (results.innerHTML=''); return; }
+      const res = await fetch(`${import.meta.env.BASE_URL}search.json`);
+      const data = await res.json();
+      const qTok = tokens(q);
+      const scored = data.map((p)=>{
+        const ts = fuzzyScore(p.title, qTok);
+        const ds = fuzzyScore(p.description || '', qTok);
+        const tagstr = Array.isArray(p.tags) ? p.tags.join(' ') : '';
+        const gs = fuzzyScore(tagstr, qTok);
+        return { ...p, score: ts*3 + ds + gs };
+      }).filter(p=>p.score>0).sort((a,b)=> b.score - a.score || (new Date(b.pubDate||0)-new Date(a.pubDate||0))).slice(0,20);
+      results.innerHTML = scored.length ? `
+        <ul class="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          ${scored.map(p=>`
+            <li class=\"glass p-3 rounded-[14px]\">
+              <a class=\"block no-underline\" href=\"${p.url}\">
+                <span class=\"text-xs text-gray-600\">${p.type==='page'?'Stránka':'Článok'}</span>
+                <h3 class=\"posttitle\">${p.title}</h3>
+                ${p.description?`<p class=\\"text-sm text-gray-600\\">${p.description}</p>`:''}
+              </a>
+            </li>`).join('')}
+        </ul>` : '<p>Nič sa nenašlo. Skús iné slová.</p>';
+    }
+    openBtn && openBtn.addEventListener('click', (e)=>{
+      // On desktop, open modal; on mobile/tablet, go to /hladat/
+      if (window.matchMedia('(min-width: 1024px)').matches) {
+        e.preventDefault();
+        show();
+      }
+    });
+    // Mobile link navigates to /hladat/ by default; no modal interception
+    closeBtn?.addEventListener('click', ()=>hide());
+    modal?.addEventListener('click', (e)=>{ if(e.target===modal) hide(); });
+    if(input) input.addEventListener('input', (e)=>{ const v = e && e.target && 'value' in e.target ? e.target.value : ''; search(v); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
+  })();
+</script>

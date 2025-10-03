@@ -390,9 +390,10 @@ cite:before {
     row-gap: 10px;
 }
 
-.tags a{background: var(--secondary);
+.tags a{background: var(--gray);
+		color: black;
 		padding: 1px 20px;
-		font-size: 0.8em;
+		font-size: 0.65em;
 	}
 /* Button utilities are defined in src/styles/tailwind.css under @layer components */
 
@@ -449,3 +450,5 @@ InfoIcon::before,  info-icon::before  { content: "🛈"; }
 /* In-page anchor offset so headings aren't hidden under sticky header */
 :is(h1,h2,h3,h4,h5,h6)[id] { scroll-margin-top: 100px; }
 :target { scroll-margin-top: 100px; }
+
+.no-underline{text-decoration-line: none !important;}
