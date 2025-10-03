@@ -187,6 +187,12 @@ const menuitems = [
       display: block !important; /* override hidden */
     }
   }
+
+  /* Compact search modal results */
+  :global(#site-search-modal .glass) { padding: 1rem; }
+  :global(#site-search-modal .posttitle) { font-size: 1.2em; }
+  /* Make all fonts in the search modal 30% smaller */
+  :global(#site-search-modal) { font-size: 0.7em; }
 </style>
 <script is:inline>
   (function(){
@@ -210,9 +216,10 @@ const menuitems = [
       const scored = data.map((p)=>{
         const ts = fuzzyScore(p.title, qTok);
         const ds = fuzzyScore(p.description || '', qTok);
+        const cs = fuzzyScore(p.content || '', qTok);
         const tagstr = Array.isArray(p.tags) ? p.tags.join(' ') : '';
         const gs = fuzzyScore(tagstr, qTok);
-        return { ...p, score: ts*3 + ds + gs };
+        return { ...p, score: ts*3 + ds + cs + gs };
       }).filter(p=>p.score>0).sort((a,b)=> b.score - a.score || (new Date(b.pubDate||0)-new Date(a.pubDate||0))).slice(0,20);
       results.innerHTML = scored.length ? `
         <ul class="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-3">

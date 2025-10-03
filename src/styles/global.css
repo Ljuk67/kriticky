@@ -333,7 +333,7 @@ blockquote:before {
 
 blockquote:after {
 	content: '”';
-	right: -2rem;
+	right: 1rem;
 	bottom: 5rem;
 }
 

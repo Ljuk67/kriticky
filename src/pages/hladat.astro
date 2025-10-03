@@ -22,7 +22,7 @@ import Page from "../layouts/Page.astro";
             <li class=\"glass !m-2 p-3 rounded-[14px]\">
               <a class=\"block no-underline\" href=\"${p.url}\">
                 <span class=\"text-xs text-gray-600\">${p.type==='page'?'Stránka':'Článok'}</span>
-                <h3 class=\"posttitle mt-2 leading-snug\">${p.title}</h3>
+                <h3 class=\"posttitle mt-0 leading-snug\">${p.title}</h3>
                 ${p.description?`<p class=\\"text-sm text-gray-600\\">${p.description}</p>`:''}
               </a>
             </li>`).join('')}
