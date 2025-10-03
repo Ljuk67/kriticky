@@ -127,3 +127,12 @@ GDPR friendly or anonymous statistic preferred.
 - It’s OK to use less-common terms, but immediately explain them in brackets in plain Slovak, e.g., "cherry-picking (vyberanie si len tých dôkazov, ktoré sa mi hodia)".
 - Expand acronyms on first use with a brief bracketed explanation.
 - Favor concrete examples, short paragraphs, and bullets where it improves clarity.
+
+## Footnotes: Explain Expert Terms
+- When drafting new posts, annotate terms the average reader may not understand (e.g., metaanalýza, konfidenčný interval, randomizovaná kontrolovaná štúdia).
+- Use the inline footnote pattern directly in Markdown/MDX/HTML:
+  - `<span class="fn" data-footnote="Krátke, zrozumiteľné vysvetlenie.">termín</span>`
+- Also add recurring terms + explanations to the shared list so they’re auto‑annotated site‑wide:
+  - Edit `public/footnotes-terms.json` and add entries like:
+    - `{ "term": "metaanalýza", "aliases": ["meta-analýza", "metaanalyza"], "note": "…", "maxPerPage": 1 }`
+- Don’t annotate inside code blocks or links. Avoid overuse: one footnote per term per page is enough.

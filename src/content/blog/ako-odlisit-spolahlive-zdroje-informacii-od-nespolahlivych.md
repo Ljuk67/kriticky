@@ -16,122 +16,111 @@ Ak chceme robiť dobré rozhodnutia, potrebujeme vedieť rozlíšiť, ktorým in
 
 ## Typy zdrojov a čo od nich čakať
 
-<aside class="callout callout--tip">
-Tip: Nie všetky zdroje majú rovnakú váhu. Uprednostni systematické prehľady, metaanalýzy a odborný konsenzus pred anekdotami či virálnymi príspevkami – a vždy pozri metodiku.
+<aside class="callout callout--tip"> Tip: Nie všetky zdroje majú rovnakú váhu. Uprednostni systematické prehľady, metaanalýzy (analýzy, ktoré spájajú viaceré iné analýzy a štúdie do jednej pre spoľahlivejší výsledok) a odborný konsenzus pred anekdotami (názormi, zážitkami) či virálnymi príspevkami – a vždy pozri metodiku danej štúdie. 
 </aside>
 
-1) Primárne vedecké štúdie  
-– Pôvodný výskum, často v recenzovaných (peer‑reviewed) časopisoch.  
-– Plusy: transparentná metodika, dáta, citácie.  
-– Mínusy: jednotlivá štúdia môže byť limitovaná (malá vzorka, špecifický kontext), výsledky nemusia byť všeobecne platné.
+1. **Primárne vedecké štúdie**  
+   – pôvodný výskum v recenzovaných časopisoch.  
+   – plus: transparentná metodika, dáta.  
+   – mínus: jedna štúdia nemusí byť reprezentatívna.
 
-2) Systematické prehľady a metaanalýzy  
-– Špeciálny typ práce, ktorý zhŕňa viac štúdií a vyhodnocuje ich kvalitu.  
-– Plusy: vyššia úroveň dôkazu, lepší obraz o celku.  
-– Mínusy: kvalita závisí od výberu štúdií a metodiky.
+2. **Systematické prehľady a metaanalýzy**  
+   – zhŕňajú viac štúdií.  
+   – plus: silnejší dôkaz.  
+   – mínus: závisia od výberu a kvality zahrnutých štúdií.
 
-3) Vedecký konsenzus a odborné inštitúcie  
-– Stanoviská vedeckých spoločností, akadémií, guideline-ov (napr. WHO, EMA, SAV, odborné spoločnosti).  
-– Plusy: berú do úvahy celé spektrum dôkazov.  
-– Mínusy: aktualizujú sa postupne; niekedy bývajú skepticky vnímané v politicky vyhrotených témach.
+3. **Vedecký konsenzus a odborné inštitúcie**  
+   – napr. WHO, SAV, odborné spoločnosti.  
+   – plus: berú do úvahy celé spektrum dôkazov.  
+   – mínus: aktualizujú sa pomalšie, pri kontroverzných témach môžu byť spochybňované.
 
-4) Spravodajské médiá  
-– Od kvalitnej žurnalistiky až po bulvár.  
-– Plusy: redakčné štandardy, editovanie, citovanie viacerých strán.  
-– Mínusy: rýchlosť môže predbehnúť presnosť; titulky môžu byť prehnane „klikacie“.
+4. **Spravodajské médiá**  
+   – od Denníka N po bulvár.  
+   – plus: redakčné štandardy, editovanie.  
+   – mínus: tlak na rýchlosť, klikacie titulky.
 
-5) Politici a politické strany  
-– Komunikujú prioritne svoj program a ciele.  
-– Plusy: priame vyjadrenia o tom, čo chcú robiť.  
-– Mínusy: motivácia presvedčiť, nie objektívne informovať; selektívny výber dát.
+5. **Politici a politické strany**  
+   – hovoria to, čo zapadá do ich programu.  
+   – plus: ukazujú priority.  
+   – mínus: selektívny výber dát, marketingový jazyk.  
+   – príklad: počas volieb sa šíria tvrdenia typu „migranti zvyšujú kriminalitu“. Fakty z polície SR však ukazujú, že podiel cudzincov na kriminalite je dlhodobo minimálny. Politici používajú strach, pretože mobilizuje voličov.
 
-6) Sociálne siete a virálne príspevky  
-– Mix faktov, názorov a emócií – bez redakčného dozoru.  
-– Plusy: rýchla spätná väzba, prístup k svedectvám z prvej ruky.  
-– Mínusy: ľahká manipulácia, dezinformácie, algoritmy zvýhodňujú emocionálne a polarizujúce obsahy.
+6. **Sociálne siete a virály**  
+   – mix faktov a emócií bez dozoru.  
+   – plus: svedectvá z prvej ruky.  
+   – mínus: dezinformácie, algoritmy tlačia na polarizáciu.  
 
-7) Influenceri  
-– Osobnosti s dosahom, často mimo danej expertízy.  
-– Plusy: dobré vysvetľovanie, popularizácia.  
-– Mínusy: konflikt záujmov (spolupráce), chýbajúca odbornosť mimo vlastnej oblasti.
+   **Príklady:**  
+   - „5G siete šíria COVID-19“ – tento hoax sa šíril v roku 2020 a dokonca viedol k podpáleniu stožiarov v Európe. Problém je, že žiadna biologická cesta prenosu vírusu cez rádiové vlny neexistuje. COVID-19 sa šíri kvapôčkami a aerosólom.  
+   - „Vlaky s migrantmi dorazia zajtra“ – virálne statusy tvrdili, že na Slovensko prichádzajú tisíce migrantov denne. V realite šlo často o fotky vlakov z iných krajín alebo o úplne bežné vlakové spoje. Štatistiky ukazujú rádovo menšie čísla.  
+   - „Čipy vo vakcínach“ – populárny hoax počas pandémie. V skutočnosti je technicky nemožné vložiť čip do bežnej ihly na očkovanie, a už vôbec by nevedel fungovať v tele bez zdroja energie. Tento príbeh využíval strach z kontroly a technológií.
 
-8) „Kamarát povedal“ (anekdoty)  
-– Osobné skúsenosti a tradované príbehy.  
-– Plusy: kontext, ľudský rozmer.  
-– Mínusy: skreslenia pamäte, <a href="/blog/zakladne-typy-zaujatosti/#konfirmacne-skreslenie">potvrdzovacie skreslenie</a>, neoveriteľnosť.
+7. **Influenceri**  
+   – populárne tváre, často mimo odboru.  
+   – plus: vedia zrozumiteľne vysvetliť.  
+   – mínus: komerčné záujmy, chýbajúca odbornosť.  
+   – príklad: niektorí známi influenceri tvrdili, že ivermektín je „zázračný liek“ na COVID-19. Ukázalo sa však, že štúdie, ktoré to podporovali, boli buď slabé, alebo úplne stiahnuté pre chyby. Oficiálne odporúčania odborných spoločností ivermektín neodporúčajú.
 
-9) Preprinty vs. recenzované články  
-– Preprint = článok pred recenziou; užitočný pre rýchle zdieľanie, ale ešte neprešiel kontrolou.  
-– Recenzovaný článok = aspoň základné sito kvality, no aj tu treba čítať metodiku.
+8. **Anekdoty („kamarát povedal“)**  
+   – osobné skúsenosti.  
+   – plus: ľudský rozmer.  
+   – mínus: neoveriteľnosť, <a href="/blog/zakladne-typy-zaujatosti/#konfirmacne-skreslenie">potvrdzovacie skreslenie</a>.  
+   – príklad: „moja suseda dostala chrípku po očkovaní, takže vakcíny nefungujú“. V skutočnosti sa chrípka a iné infekcie objavujú aj náhodne po očkovaní – korelácia neznamená príčinu.
+
+9. **Preprinty vs. recenzované články**  
+   – preprinty sú pred recenziou.  
+   – plus: rýchlosť.  
+   – mínus: chýba kontrola kvality.  
+   – príklad: počas pandémie sa šírili preprinty o účinnosti chlórochinových liekov, ktoré neskôr recenzované výskumy vyvrátili. Kto sa spoliehal len na preprint, veril neovereným tvrdeniam.
 
 ---
 
 ## Ako si overiť, či je zdroj spoľahlivý
 
-<aside class="callout callout--tip">
-Tip: Rýchly filter – autor a jeho odbornosť, jasná metodika, odkazy na dáta a aspoň dve nezávislé potvrdenia z <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">kvalitných zdrojov</a>.
-</aside>
-
 Použi tieto otázky ako rýchly checklist:
 
-- Kto je autor a akú má odbornosť v téme?  
-- Kde to vyšlo – má platforma redakčné/vedecké štandardy?  
-- Sú uvedené konkrétne dáta, metodika, odkazy na zdroje?  
-- Existujú nezávislé zdroje, ktoré tvrdenia potvrdzujú?  
-- Sú závery primerané dôkazom (nepreháňajú)?  
-- Je zverejnený konflikt záujmov alebo financovanie?  
+- Kto je autor a akú má odbornosť?  
+- Kde to vyšlo – existujú redakčné/vedecké štandardy?  
+- Sú uvedené dáta, metodika, odkazy?  
+- Potvrdzujú to nezávislé zdroje?  
+- Sú závery primerané dôkazom?  
+- Je zverejnené financovanie alebo konflikt záujmov?  
 - Je informácia aktuálna a nie vytrhnutá z kontextu?  
-- Nespoliehajú sa len na emócie, anekdoty či autoritu?
 
-Praktický postup (5 krokov):
-
-1) Identita a motivácia: kto hovorí a prečo?  
-2) Evidencia: aké sú dáta a ako boli získané (metodika)?  
-3) Kontext: sú výsledky v súlade s inými štúdiami/konsenzom?  
-4) Transparentnosť: odkazy, financovanie, limity, nesúlad záujmov.  
-5) Krížová kontrola: nájdi aspoň 2–3 nezávislé potvrdenia.
-
-Červené vlajky: veľké tvrdenia bez dôkazov, absolútne formulácie („vždy“, „nikdy“), útoky na oponenta namiesto argumentov, konšpiračné rámce, urgentný tlak („zdieľaj hneď“), zamlčané limity.
+<aside class="callout callout--tip">
+Červené vlajky: veľké tvrdenia bez dôkazov, absolútne formulácie („vždy“, „nikdy“, „všetci“), útoky na oponenta, konšpirácie, urgentný tlak („zdieľaj hneď“).
+</aside>
 
 ---
 
-## Test: roztrieďme vyššie uvedené zdroje touto metódou
+## Test: roztrieďme vyššie uvedené zdroje
 
-<aside class="callout callout--tip">
-Tip: Toto členenie je orientačné. Vždy hodnotíš konkrétny článok či video – nie len kategóriu, do ktorej patrí.
-</aside>
+**Skôr spoľahlivé (ak spĺňajú kritériá):**  
+– systematické prehľady a metaanalýzy  
+– vedecký konsenzus a inštitúcie  
+– recenzované štúdie  
+– kvalitné spravodajstvo (napr. citujú viac strán, dávajú odkazy na dáta)
 
-Skôr spoľahlivé (ak spĺňajú kritériá):
+**Skôr nespoľahlivé (alebo len doplnkové):**  
+– anekdoty  
+– sociálne siete bez overenia  
+– influenceri mimo svojej expertízy  
+– politici ako jediný zdroj  
+– preprinty bez recenzie
 
-- Systematické prehľady a metaanalýzy – ak majú jasné kritériá výberu, hodnotenie kvality a transparentnú metodiku.  
-- Vedecký konsenzus / odborné inštitúcie – ak vychádzajú z aktuálneho korpusu dôkazov a uvádzajú zdrojovanie.  
-- Primárne recenzované štúdie – ak majú adekvátnu vzorku, zverejnené dáta/metodiku a primerané závery.  
-- Kvalitné spravodajstvo – ak cituje viac strán, uvádza kontext a odkazy na údaje (reporty, rozhodnutia, štatistiky).
-
-Skôr nespoľahlivé (alebo len doplnkové):
-
-- „Kamarát povedal“ – anekdota nie je dôkaz; môže inšpirovať otázky, ale nie záver.  
-- Sociálne siete/virály – bez overenia a zdrojov; emócie a algoritmy zvyšujú skreslenie.  
-- Influenceri – mimo svojej expertízy a s komerčnými motiváciami sú rizikoví; vyžadujú krížovú kontrolu.  
-- Politici – majú silnú motivačnú zložku (presvedčiť/voliť); nebrať ako konečný zdroj pravdy, ale overovať v dátach a nezávislých analýzach.  
-- Preprinty – užitočné, ale kým chýba recenzia, treba obozretnosť a porovnanie s inými prácami.
-
-Poznámka: aj „spoľahlivé“ kategórie môžu zlyhať (nekvalitná metóda, konflikty záujmov, chybné interpretácie). A naopak, aj influencer môže sprostredkovať kvalitné informácie – ak korektne cituje a opiera sa o dôkazy. Kľúčové je uplatniť vyššie uvedené kroky na každý konkrétny obsah.
+Poznámka: kategória ≠ automatická kvalita. Hodnotíš vždy konkrétny obsah.
 
 ---
 
 ## Rýchla mini-metóda na každý deň (STOP+)
 
-<aside class="callout callout--tip">
-Tip: Keď niečo znie príliš dobre (alebo zle), použi STOP+: skontroluj zdroj, premysli si to triezvo, over fakty a daj pozor na vlastné skreslenia.
-</aside>
-
-- S – Skontroluj zdroj: kto to hovorí a kde to vyšlo?  
-- T – Triezvo premýšľaj: nehrá to na emócie? nie je to „príliš dobré“?  
-- O – Over fakty: aspoň dva nezávislé zdroje a originálne dáta.  
-- P – Pozor na bias: nepodsúva mi to len to, čo chcem počuť?  
-- + – Transparentnosť: sú odkazy, financovanie a limity jasne uvedené?
+- **S** – Skontroluj zdroj: kto hovorí a kde to vyšlo?  
+- **T** – Triezvo premýšľaj: nehrá to len na emócie?  
+- **O** – Over fakty: nájdi aspoň dva nezávislé zdroje.  
+- **P** – Pozor na bias: nepodsúva mi to len to, čo chcem počuť?  
+- **+** – Transparentnosť: odkazy, financovanie, limity.
 
 ---
 
-Záver: Nehľadáme dokonalosť, ale dôveryhodnosť. Čím systematickejšie pracujeme so zdrojmi a dôkazmi, tým menej nám hrozí, že nás oklame marketing, politika či algoritmy. <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">Spoľahlivý zdroj</a> nie je len o „mienke“, ale o tom, ako poctivo narába s realitou.
+**Záver:**  
+Spoľahlivý zdroj nie je otázka „viery“, ale poctivej práce s dôkazmi. Čím systematickejšie kontrolujeme fakty, tým menej nás nachytajú marketing, politika alebo algoritmy.

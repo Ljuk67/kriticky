@@ -11,6 +11,8 @@ import type { ImageMetadata } from 'astro';
 import defaultThumbUrl from '../assets/thumbs/default.svg?url';
 import { SITE_TITLE } from '../consts';
 import gateUrl from '../assets/password-gate.js?url';
+import footnotesUrl from '../assets/footnotes.js?url';
+import footnotesAutoUrl from '../assets/footnotes-auto.js?url';
 
 
 interface Props {
@@ -55,6 +57,10 @@ const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.t
 
 <!-- Temporary password gate across site -->
 <script type="module" src={gateUrl}></script>
+<!-- Footnotes behaviour (tooltips/popovers) -->
+<script type="module" src={footnotesUrl}></script>
+<!-- Auto-annotate known terms with footnotes -->
+<script type="module" src={footnotesAutoUrl}></script>
 
 <!-- Self-hosted fonts via @fontsource-variable packages -->
 

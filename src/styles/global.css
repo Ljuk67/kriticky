@@ -451,4 +451,99 @@ InfoIcon::before,  info-icon::before  { content: "🛈"; }
 :is(h1,h2,h3,h4,h5,h6)[id] { scroll-margin-top: 100px; }
 :target { scroll-margin-top: 100px; }
 
+/* Footnotes: inline trigger + popover */
+.fn[data-footnote] {
+  position: relative;
+  border-bottom: 1px dotted rgba(0,0,0,0.35);
+  cursor: help;
+}
+/* If JS generated popover exists, prefer it over ::after */
+.fn.has-popover::after { content: none !important; }
+
+.fn[data-footnote]::after {
+  content: attr(data-footnote);
+  position: absolute;
+  z-index: 60;
+  left: 0;
+  top: calc(100% + 8px);
+  max-width: min(32rem, 92vw);
+  white-space: normal;
+  line-height: 1.35;
+  background: #111;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.fn[data-footnote]::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 100%;
+  width: 0; height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #111;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+/* Show on hover/focus or when toggled open via JS */
+.fn[data-footnote]:hover::after,
+.fn[data-footnote]:hover::before,
+.fn[data-footnote]:focus::after,
+.fn[data-footnote]:focus::before,
+.fn[data-footnote].is-open::after,
+.fn[data-footnote].is-open::before {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* HTML popover variant (supports links inside note) */
+/* Fixed, centered popover that spans content width */
+.fn-popover {
+  position: fixed; /* positioned by JS */
+  z-index: 1200; /* above sticky header (z=1000) */
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: min(100dvw - 32px, 56rem); /* match ~max-w-4xl content width */
+  background: #111;
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.fn-popover a { color: #7dd3fc; text-decoration: underline; }
+.fn-popover a:hover { color: #22d3ee; text-decoration: none; }
+/* Close button for mobile */
+.fn-popover .fn-close {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .fn-popover .fn-close { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fn[data-footnote]::after, .fn[data-footnote]::before { transition: none; }
+}
+
 .no-underline{text-decoration-line: none !important;}
