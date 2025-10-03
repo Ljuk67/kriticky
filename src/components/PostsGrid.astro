@@ -22,7 +22,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<ul class={`posts-grid grid ${columnsClass} gap-4 list-none p-0 m-0 ${className}`}>
+<ul class={`posts-grid not-prose grid ${columnsClass} gap-4 list-none p-0 m-0 ${className}`}>
   {items.map((it) => (
     <li class="glass p-3 rounded-[14px]">
       <a class="block group no-underline" href={it.url}>
