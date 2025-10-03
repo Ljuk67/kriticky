@@ -1,0 +1,46 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+interface Item {
+  url: string;
+  title: string;
+  date?: Date | string;
+  thumbUrl?: string;
+}
+interface Props {
+  items: Item[];
+  class?: string;
+  titleClass?: string;
+  columnsClass?: string;
+}
+
+const {
+  items,
+  class: className = '',
+  titleClass = '',
+  columnsClass = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
+} = Astro.props as Props;
+---
+
+<ul class={`posts-grid grid ${columnsClass} gap-4 list-none p-0 m-0 ${className}`}>
+  {items.map((it) => (
+    <li class="glass p-3 rounded-[14px]">
+      <a class="block group no-underline" href={it.url}>
+        {it.thumbUrl && <img class="w-full h-auto rounded-[12px] mb-3" src={it.thumbUrl} alt="" />}
+        <h3 class={`posttitle ${titleClass}`}>{it.title}</h3>
+        {it.date && (
+          <p class="date group-hover:text-[var(--accent)]"><FormattedDate date={new Date(it.date)} /></p>
+        )}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .posts-grid li a { text-decoration: none; }
+  .posts-grid li img, .posts-grid li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 12px; }
+  .posts-grid li .posttitle { margin: 0; color: rgb(var(--black)); }
+  .posts-grid li .date { margin: 0; color: rgb(var(--gray)); }
+  .posts-grid li:hover .date { color: rgb(var(--accent)); }
+  .posts-grid li:hover img, .posts-grid li:hover svg { box-shadow: var(--box-shadow); }
+</style>
