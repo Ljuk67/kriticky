@@ -204,7 +204,7 @@ const menuitems = [
     function fuzzyScore(hay, needles){ const ht=tokens(hay); let s=0; for(const q of needles){ if(!q) continue; if(ht.some(t=>t.includes(q))){ s++; continue; } let best=Infinity; for(const t of ht){ best=Math.min(best, levenshtein(t,q)); } const thr=q.length<=4?1:2; if(best<=thr) s++; } return s; }
     async function search(q){
       const n = norm(q); if(!n){ results && (results.innerHTML=''); return; }
-      const res = await fetch(`${import.meta.env.BASE_URL}search.json`);
+      const res = await fetch('/search.json');
       const data = await res.json();
       const qTok = tokens(q);
       const scored = data.map((p)=>{

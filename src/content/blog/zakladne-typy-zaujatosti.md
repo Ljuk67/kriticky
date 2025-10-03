@@ -42,6 +42,8 @@ Tu sa dá spochybniť aj to, čo robí <a href="/blog/ako-odlisit-spolahlive-zdr
 
 ---
 
+<a id="hindsight-bias"></a>
+
 ## 2. Zaujatosť spätnej väzby (hindsight bias)
 <aside class="callout callout--tip">
 Tip: Zapíš si, čo si si myslel(a) pred udalosťou. Po nej porovnaj s realitou – znížiš efekt „vedel som to od začiatku“.
@@ -54,6 +56,8 @@ Tip: Zapíš si, čo si si myslel(a) pred udalosťou. Po nej porovnaj s realitou
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
 
 ---
+
+<a id="anchoring-bias"></a>
 
 ## 3. Ukotvovacia zaujatosť (anchoring bias)
 <aside class="callout callout--tip">
@@ -70,6 +74,8 @@ https://www.minv.sk/?statistiky-kriminality-v-slovenskej-republike
 
 ---
 
+<a id="availability-bias"></a>
+
 ## 4. Dostupnostná zaujatosť (availability bias)
 <aside class="callout callout--tip">
 Tip: Daj si pozor na silné príbehy. Over frekvenciu javu v dátach, nie v pamäti.
@@ -82,6 +88,8 @@ Tip: Daj si pozor na silné príbehy. Over frekvenciu javu v dátach, nie v pam�
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Availability_heuristic" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Dostupnostná_heuristika" target="_blank" rel="noopener noreferrer">zdroj 2</a>
 
 ---
+
+<a id="groupthink"></a>
 
 ## 5. Zoskupovacia zaujatosť (groupthink)
 <aside class="callout callout--tip">
@@ -96,6 +104,8 @@ Tip: Urč v tíme „advokáta diabla“, ktorý má za úlohu hľadať riziká 
 
 ---
 
+<a id="status-quo-bias"></a>
+
 ## 6. Zaujatosť status quo
 <aside class="callout callout--tip">
 Tip: Predstav si, že aktuálny stav neexistuje. Vybrali by sme si ho dnes znova? Prečo?
@@ -108,6 +118,8 @@ Tip: Predstav si, že aktuálny stav neexistuje. Vybrali by sme si ho dnes znova
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Status_quo_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Status_quo_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
 
 ---
+
+<a id="illusory-truth-effect"></a>
 
 ## 7. Zaujatosť ilúzie pravdy (illusory truth effect)
 <aside class="callout callout--tip">
@@ -122,6 +134,8 @@ Tip: Opakovanie nie je dôkaz. Sleduj zdroj a kvalitu argumentov, nie počet opa
 
 ---
 
+<a id="in-group-bias"></a>
+
 ## 8. Zaujatosť vlastnej skupiny (in-group bias)
 <aside class="callout callout--tip">
 Tip: Skús posúdiť argument bez mena autora. Zmeň sa obsah, keď nevidíš, kto to povedal?
@@ -134,6 +148,8 @@ Tip: Skús posúdiť argument bez mena autora. Zmeň sa obsah, keď nevidíš, k
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/In-group_favoritism" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/In-group_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
 
 ---
+
+<a id="authority-bias"></a>
 
 ## 9. Efekt autority (authority bias)
 <aside class="callout callout--tip">
@@ -148,6 +164,8 @@ Tip: Autorita nie je záruka pravdy. Pýtaj sa: ak by to isté povedal neznámy 
 
 ---
 
+<a id="negativity-bias"></a>
+
 ## 10. Efekt negativity (negativity bias)
 <aside class="callout callout--tip">
 Tip: Vytvor si zvyk pridať ku každému problému aspoň jeden relevantný pozitívny fakt – vyváži to vnímanie.
@@ -158,3 +176,116 @@ Tip: Vytvor si zvyk pridať ku každému problému aspoň jeden relevantný pozi
 - **Ako sa jej vyhnúť:** Pri hodnotení situácie si vedome pripomeňme aj pozitívne fakty.  
 - **Ako ju spoznať:** Ak niekto stále zdôrazňuje iba problémy, aj keď existujú riešenia.  
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Negativity_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Negativity_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+
+---
+
+## Ďalšie časté zaujatosti (užitočné v praxi)
+<aside class="callout callout--tip">Ak ti niečo „nesedí“, pomenuj skreslenie – pomôže ti to zachytiť manipuláciu v správach, politike aj bežnom živote.</aside>
+
+<a id="heuristika-dostupnosti"></a>
+
+## Heuristika dostupnosti
+<aside class="callout callout--tip">Keď ti niečo rýchlo napadne, skontroluj aj reálne čísla a širší kontext.</aside>
+
+- **Čo to je:** Odhadujeme pravdepodobnosť podľa toho, ako ľahko si na niečo spomenieme (čerstvé, emotívne, často opakované).
+- **Príklad (SK):** Po pár mediálnych správach o kriminalite máme pocit, že „všade je nebezpečne“, aj keď dlhodobé dáta ukazujú pokles.
+- **Ako sa jej vyhnúť:** Hľadaj dlhodobé štatistiky a porovnaj viac rokov, nielen jednu „horúcu“ správu.
+
+<a id="efekt-iluzornej-pravdy"></a>
+
+## Efekt iluzórnej pravdy
+<aside class="callout callout--tip">Ak to počuješ často, nie je to dôkaz – skús dohľadať pôvodné zdroje a fakty.</aside>
+
+- **Čo to je:** Opakované tvrdenie sa nám javí pravdivejšie len preto, že ho často počujeme.
+- **Príklad (SK):** Politické slogany alebo reťazové statusy opakované na sociálnych sieťach získajú „punc pravdy“ bez dôkazov.
+- **Ako sa jej vyhnúť:** Overuj tvrdenia mimo bubliny a vráť sa k pôvodným dátam.
+
+<a id="efekt-ramcovania"></a>
+
+## Efekt rámcovania (framing)
+<aside class="callout callout--tip">Prelož si tvrdenie do opačného rámca (z „zisky“ na „straty“) a skontroluj, či by si sa rozhodol rovnako.</aside>
+
+- **Čo to je:** To isté tvrdenie v inom „rámci“ (pozitívne vs. negatívne) znie inak a mení naše rozhodnutie.
+- **Príklad (SK):** „95 % úspešnosť“ vs. „5 % zlyhaní“ tej istej liečby – ľudia reagujú inak, hoci ide o identické dáta.
+- **Ako sa jej vyhnúť:** Hľadaj obidva pohľady (zisk aj riziko) a rozhoduj sa podľa celého obrazu.
+
+<a id="zakladna-atribucna-chyba"></a>
+
+## Základná atribučná chyba
+<aside class="callout callout--tip">Skús si povedať: „Možno je za tým situácia, nie povaha človeka.“</aside>
+
+- **Čo to je:** Chyby iných vysvetľujeme ich „povahou“, vlastné skôr okolnosťami.
+- **Príklad (SK):** „On mešká, lebo je nespoľahlivý“ vs. „Ja meškám, lebo bola zápcha na D1“.
+- **Ako sa jej vyhnúť:** Pri súdoch o ľuďoch si najprv over okolnosti (informácie, motivácie, kontext).
+
+<a id="efekt-utopenych-nakladov"></a>
+
+## Efekt utopených nákladov
+<aside class="callout callout--tip">Rozhoduj sa podľa budúcich prínosov a nákladov – nie podľa toho, koľko si už minul(a).</aside>
+
+- **Čo to je:** Pokračujeme v niečom len preto, že sme už investovali čas/peniaze, hoci je racionálne skončiť.
+- **Príklad (SK):** Tlačenie projektu vo firme/politike „lebo sme už toľko investovali“, aj keď analýzy ukazujú slabý prínos.
+- **Ako sa jej vyhnúť:** Pýtaj sa: „Keby som dnes začínal(a) od nuly, išiel(a) by som do toho?“
+
+<a id="halo-efekt"></a>
+
+## Haló efekt (halo effect)
+<aside class="callout callout--tip">Oddeluj vlastnosti: sympatickosť ≠ odbornosť; rétorika ≠ pravdivosť.</aside>
+
+- **Čo to je:** Jedna nápadná vlastnosť (sympatickosť, vzhľad) zafarbí náš pohľad na všetko ostatné.
+- **Príklad (SK):** Populárny rečník presvedčí ľudí aj o slabých argumentoch.
+- **Ako sa jej vyhnúť:** Hodnoť tvrdenia podľa dôkazov, nie podľa dojmu z osoby.
+
+<a id="stadovy-efekt"></a>
+
+## Stádový efekt (bandwagon)
+<aside class="callout callout--tip">Ak „to tvrdia všetci“, skús nájsť aj dôveryhodný opačný pohľad – získaš rovnováhu.</aside>
+
+- **Čo to je:** Veríme alebo robíme niečo len preto, že to robí veľa ľudí.
+- **Príklad (SK):** Virálne politické tvrdenia bez dôkazov – „všetci to zdieľajú, tak to bude pravda“.
+- **Ako sa jej vyhnúť:** Zaujímaj sa o dôkazy a zdroje, nie o popularitu tvrdenia.
+
+<a id="skupinove-myslenie"></a>
+
+## Skupinové myslenie (groupthink)
+<aside class="callout callout--tip">V tíme si úmyselne vytvor rolu „diabla“ – jeden človek má hľadať protiargumenty.</aside>
+
+- **Čo to je:** Skupina potláča nesúhlas, aby „držala jednotu“, čím zhorší rozhodnutie.
+- **Príklad (SK):** Stranícke hlasovania bez vecnej diskusie – „nevyčnievaj“ pred voľbami.
+- **Ako sa jej vyhnúť:** Podporuj kultúru otázok a nesúhlasu, hodnotiace mítingy, anonymný feedback.
+
+<a id="hracske-klamstvo"></a>
+
+## Hráčske klamstvo (gambler's fallacy)
+<aside class="callout callout--tip">Pri náhode nepredpovedaj „vyrovnanie“ – žrebovanie nemá pamäť.</aside>
+
+- **Čo to je:** Myslíme si, že po sérii výsledkov „musí prísť opak“, aj keď ide o nezávislé náhody.
+- **Príklad (SK):** Tipovanie „už dlho nepadla 7, určite padne“.
+- **Ako sa jej vyhnúť:** Pri náhodných javoch nerob dedukcie z krátkych sérií.
+
+<a id="ignorovanie-zakladnej-miery"></a>
+
+## Ignorovanie základnej miery (base rate neglect)
+<aside class="callout callout--tip">Najprv sa pozri na východiskové pravdepodobnosti – až potom na „príbeh“ jedného prípadu.</aside>
+
+- **Čo to je:** Ignorujeme všeobecné pravdepodobnosti a preceňujeme efektné príbehy.
+- **Príklad (SK):** Vyhodnocovanie rizík podľa jednej „emocionálnej“ správy namiesto dlhodobých dát.
+- **Ako sa jej vyhnúť:** Vždy hľadaj základné miery: koľko prípadov celkovo, aká je pravdepodobnosť v populácii.
+
+<a id="optimisticke-skreslenie"></a>
+
+## Optimistické skreslenie
+<aside class="callout callout--tip">Použi „predbežný pesimizmus“ pri plánovaní: čo môže zlyhať a ako to vopred oslabiť?</aside>
+
+- **Čo to je:** Podceňujeme riziká pre seba a preceňujeme pozitívne scenáre.
+- **Príklad (SK):** „Mne sa nehoda nestane“ – ignorovanie bezpečnostných odporúčaní.
+- **Ako sa jej vyhnúť:** Pri rozhodovaní si spíš riziká a priprav záložné kroky.
+
+<a id="efekt-prilisnej-sebadovery"></a>
+
+## Efekt prílišnej sebadôvery (overconfidence)
+<aside class="callout callout--tip">Daj si rozptyl odhadu („min–max“) namiesto jedného „istého“ čísla.</aside>
+
+- **Čo to je:** Sme si príliš istí vlastnými odhadmi; naša istota predbieha presnosť.
+- **Príklad (SK):** Prehnane presné predpovede výsledkov volieb bez uvedenia neistoty.
+- **Ako sa jej vyhnúť:** Komunikuj odhady s intervalmi a neistotou, nie absolútne.
