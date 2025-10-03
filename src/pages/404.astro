@@ -1,0 +1,84 @@
+---
+import Page from "../layouts/Page.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { getCollection } from "astro:content";
+
+// Reuse homepage thumbnail loading
+const thumbs = import.meta.glob("../assets/thumbs/*.svg", { query: "?url", import: "default" });
+async function getThumb(id: string) {
+  const key = `../assets/thumbs/${id}.svg`;
+  const def = `../assets/thumbs/default.svg`;
+  const loader = (thumbs as Record<string, () => Promise<string>>)[key] || (thumbs as Record<string, () => Promise<string>>)[def];
+  return await loader();
+}
+
+const allPosts = await getCollection("blog");
+const posts = allPosts.filter((p) => (import.meta.env.PROD ? p.data.status === "published" : true));
+const latestPosts = posts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 4);
+const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
+---
+
+<Page title="Táto stránka sa nenašla" description="Skús vyhľadať, čo hľadáš, alebo si pozri najnovšie články.">
+
+  <form id="site-search" class="flex gap-2 items-center mb-8" role="search">
+    <label for="q" class="sr-only">Hľadaj na webe</label>
+    <input id="q" name="q" type="search" placeholder="Napíš, čo chceš nájsť…" class="flex-1 px-4 py-2 rounded-md border border-gray-300" />
+    <button type="submit" class="btn">Hľadať</button>
+  </form>
+  <div id="results" class="mb-10" aria-live="polite"></div>
+
+  <section class="latest-posts full-bleed">
+    <div class="mx-0 md:mx-8">
+      <h2>Najnovšie články</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 list-none p-0 m-0">
+      {
+        latestWithThumbs.map((post) => (
+          <li class="glass p-3 rounded-[14px]">
+            <a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
+              <img class="w-full h-auto rounded-[12px] mt-0 mb-3" src={post.thumb} alt="" />
+              <h3 class="posttitle">{post.data.title}</h3>
+              <p class="date group-hover:text-[var(--accent)]">
+                <FormattedDate date={post.data.pubDate} />
+              </p>
+            </a>
+          </li>
+        ))
+      }
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('site-search');
+    const resultsEl = document.getElementById('results');
+    function norm(s){ return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim(); }
+    function tokens(s){ return norm(s).split(/[^a-z0-9]+/).filter(Boolean); }
+    function levenshtein(a,b){ const m=a.length,n=b.length; if(!m) return n; if(!n) return m; const dp=new Array(n+1); for(let j=0;j<=n;j++) dp[j]=j; for(let i=1;i<=m;i++){ let prev=dp[0]; dp[0]=i; for(let j=1;j<=n;j++){ const tmp=dp[j]; dp[j]=Math.min(dp[j]+1, dp[j-1]+1, prev+(a[i-1]===b[j-1]?0:1)); prev=tmp; } } return dp[n]; }
+    function fuzzyScore(hay, needles){ const ht=tokens(hay); let s=0; for(const q of needles){ if(!q) continue; if(ht.some(t=>t.includes(q))){ s++; continue; } let best=Infinity; for(const t of ht){ best=Math.min(best, levenshtein(t,q)); } const thr=q.length<=4?1:2; if(best<=thr) s++; } return s; }
+    async function searchSite(query){ const qn=norm(query); if(!qn){ resultsEl.innerHTML=''; return; } try{ const res=await fetch(`${import.meta.env.BASE_URL}search.json`); const data=await res.json(); const qTok=tokens(query); const scored=data.map(p=>{ const ts=fuzzyScore(p.title, qTok); const ds=fuzzyScore(p.description||'', qTok); const cs=fuzzyScore(p.content||'', qTok); const tagstr=Array.isArray(p.tags)?p.tags.join(' '):''; const gs=fuzzyScore(tagstr, qTok); return {...p, score: ts*3+ds+cs+gs}; }).filter(p=>p.score>0).sort((a,b)=> b.score - a.score || (new Date(b.pubDate||0)-new Date(a.pubDate||0))).slice(0,10); if(!scored.length){ resultsEl.innerHTML=`<p>Nič sa nenašlo. Skús iné slová alebo <a href='${import.meta.env.BASE_URL}blog/'>pozri blog</a>.</p>`; return; } resultsEl.innerHTML = `
+          <h2>Výsledky hľadania</h2>
+          <ul class="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            ${scored.map((p)=>`
+              <li class=\"glass p-3 rounded-[14px]\">
+                <a class=\"block no-underline\" href=\"${p.url}\">
+                  <h3 class=\"posttitle\">${p.title}</h3>
+                  <p class=\"text-sm text-gray-600\">${p.description || ''}</p>
+                </a>
+              </li>`).join('')}
+          </ul>`; } catch(err){ console.error(err); resultsEl.innerHTML='<p>Nepodarilo sa načítať výsledky. Skús to neskôr.</p>'; } }
+    form && form.addEventListener('submit', (e)=>{ e.preventDefault(); const inp=document.getElementById('q'); const val=inp && 'value' in inp ? inp.value : ''; searchSite(val); });
+    const inp=document.getElementById('q'); inp && inp.addEventListener('input', (e)=>{ const val=e && e.target && 'value' in e.target ? e.target.value : ''; searchSite(val); });
+  </script>
+
+  <style>
+    /* Make latest-posts behave like homepage section */
+    .latest-posts ul li a { text-decoration: none; }
+    .latest-posts ul li img, .latest-posts ul li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 12px; }
+    .latest-posts ul li .posttitle { margin: 0; color: rgb(var(--black)); }
+    .latest-posts ul li .date { margin: 0; color: rgb(var(--gray)); }
+    .latest-posts ul li:hover .date { color: rgb(var(--accent)); }
+    .latest-posts ul li:hover img, .latest-posts ul li:hover svg { box-shadow: var(--box-shadow); }
+  </style>
+</Page>
