@@ -1,6 +1,7 @@
 ---
 import Page from "../layouts/Page.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import PostsGrid from "../components/PostsGrid.astro";
 import { getCollection } from "astro:content";
 
 // Reuse homepage thumbnail loading
@@ -32,21 +33,14 @@ const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p,
   <section class="latest-posts full-bleed">
     <div class="mx-0 md:mx-8">
       <h2>Najnovšie články</h2>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 list-none p-0 m-0">
-      {
-        latestWithThumbs.map((post) => (
-          <li class="glass p-3 rounded-[14px]">
-            <a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
-              <img class="w-full h-auto rounded-[12px] mt-0 mb-3" src={post.thumb} alt="" />
-              <h3 class="posttitle">{post.data.title}</h3>
-              <p class="date group-hover:text-[var(--accent)]">
-                <FormattedDate date={post.data.pubDate} />
-              </p>
-            </a>
-          </li>
-        ))
-      }
-      </ul>
+      <PostsGrid items={latestWithThumbs.map((post) => ({
+        url: `${import.meta.env.BASE_URL}blog/${post.id}/`,
+        title: post.data.title,
+        date: post.data.pubDate,
+        thumbUrl: post.thumb,
+      }))}
+      columnsClass="grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4"
+      />
     </div>
   </section>
 

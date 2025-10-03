@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import PostsGrid from '../components/PostsGrid.astro';
 import { getCollection } from 'astro:content';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { tagToSlug } from '../lib/slug';
@@ -167,22 +168,14 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 						</ul>
 					</div>
 				)}
-				<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none p-0 m-0">
-					{
-						latestWithThumbs.map((post) => (
-							<li class="glass p-3 rounded-[14px]">
-								<a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
-									<img class="w-full h-auto rounded-[12px] mb-3" src={post.thumb} alt="" />
-									<h3 class="posttitle">{post.data.title}</h3>
-									<p class="date group-hover:text-[var(--accent)]">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+				<PostsGrid items={latestWithThumbs.map((post) => ({
+				  url: `${import.meta.env.BASE_URL}blog/${post.id}/`,
+				  title: post.data.title,
+				  date: post.data.pubDate,
+				  thumbUrl: post.thumb,
+				}))} titleClass="text-[1.5em]" />
 				<p class="view-all"><a href={`${import.meta.env.BASE_URL}blog/`}>Zobraziť všetky články →</a></p>
+				
 				</div>
 			</section>
 
