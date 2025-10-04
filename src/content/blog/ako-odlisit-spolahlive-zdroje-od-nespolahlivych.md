@@ -36,15 +36,17 @@ Ak chceme robiť dobré rozhodnutia, potrebujeme vedieť rozlíšiť, ktorým in
 
 2. **Systematické prehľady a metaanalýzy**  
    - Čo to je: systematicky vyhľadajú všetky relevantné štúdie k otázke, zhodnotia ich kvalitu a metaanalýza ich výsledky štatisticky skombinuje.  
-   - Prečo sú silné: „výskum výskumov“ — znižujú náhodu jednotlivých štúdií a dávajú presnejší odhad efektu.  
-   - **➕ Plus:** prehľad celého terénu, väčšia presnosť, transparentný postup (PRISMA).  
+   - Prečo sú silné: „výskum výskumov“ — znižujú náhodu jednotlivých štúdií a dávajú presnejší odhad efektu / výsledku štúdií.  
+   - **➕ Plus:** prehľad celej škály uhlov pohľadov a testov na skúmanú otázku, väčšia presnosť, transparentný postup <a href="https://www.prisma-statement.org/" target="_blank">PRISMA</a>.  
    - **➖ Mínus:** závisia od kvality a výberu zahrnutých štúdií; heterogenita (rôzne metodiky) môže výsledok rozmazávať; riziko publikačného skreslenia.  
    - Na čo si daj pozor: kritériá zaradenia/nezaradenia; hodnotenie rizika biasu; heterogenitu (I²); funnel plot (publikačné skreslenie).  
-   - Ako si to rýchlo overíš: nájdi PRISMA diagram, pozri forest plot (veľkosť efektu a intervaly), skontroluj, či záver korešponduje s dátami a limitmi.  
-   - Príklad: ak 5 malých štúdií hovorí „možno áno“ a 10 ďalších „skôr nie“, metaanalýza ti ukáže, kde leží spoločný efekt a s akou neistotou.
+   - Ako si to rýchlo overíš: nájdi PRISMA diagram, pozri forest plot (veľkosť efektu a intervaly), skontroluj, či záver korešponduje s dátami a limitmi. Nemusíš to ale preháňať s týmito vedeckými názvami - môžeš túto štúdiu / metaanalýzu napríklad hodiť do AI ako ChatGPT a vyžiadať si o jej zhrnutie a otestovanie, či je spoľahlivá.
+<aside class="callout callout--info"> 
+  <b>Príklad:</b> ak 5 malých štúdií hovorí „možno áno“ a 10 ďalších „skôr nie“, metaanalýza ti ukáže, kde leží spoločný efekt a s akou neistotou.
+</aside>
 
 3. **Vedecký konsenzus a odborné inštitúcie**  
-   - Čo to je: zhoda väčšiny expertov na základe dostupných dôkazov (odborné spoločnosti, guideline‑y, stanoviská).  
+   - Čo to je: zhoda väčšiny expertov na základe dostupných dôkazov (odporúčania expertov, stanoviská).  
    - **➕ Plus:** integruje celé spektrum dôkazov; praktické odporúčania; komunikuje limity aj výnimky.  
    - **➖ Mínus:** neaktualizuje sa z hodiny na hodinu; pri úplne nových témach býva opatrný; môže byť terčom útokov.  
    - Na čo si daj pozor: aktuálnosť (dátum revízie), konflikty záujmov, citované zdroje.  
@@ -53,20 +55,31 @@ Ak chceme robiť dobré rozhodnutia, potrebujeme vedieť rozlíšiť, ktorým in
 4. **Spravodajské médiá**  
    - Čo to je: správy a analýzy pre verejnosť.  
    - **➕ Plus:** redakčné štandardy, editovanie, právo na opravu, často citujú viac strán.  
-   - **➖ Mínus:** tlak na rýchlosť, titulky, občasná senzácia.  
-   - Na čo si daj pozor: či uvádzajú primárne zdroje (dáta, štúdie), vyváženosť (nie „he‑said, she‑said“ bez dôkazov), opravy/aktualizácie.  
-   - Ako overiť: klikni na zdroj dát (ŠÚ SR, Eurostat…), porovnaj aspoň dva nezávislé články, skontroluj, či čísla sedia s originálom.  
-   - Príklad: analýza cien energií — kvalitný článok dá odkaz na metodiku a konkrétne tabuľky, nie iba „podľa odborníkov“.
+   - **➖ Mínus:** tlak na rýchlosť, titulky, môžu uprednostniť naháňanie návštevnosti - senzácií alebo profitu pred objektívnym informovaním.  
+   - Na čo si daj pozor: či uvádzajú primárne zdroje (dáta, štúdie), vyváženosť (nie „on povedal, ona povedala“ bez dôkazov), či v minulosti priznajú chybu a urobia opravy/aktualizácie (a ukazujú tak správnu integritu a dôveryhodnost), alebo to zatĺkajú.  
+   - Ako overiť: klikni na zdroj dát (ŠÚ SR, Eurostat…), porovnaj aspoň 2-3 nezávislé články na tú istú tému, skontroluj, či čísla sedia s originálom.  
+
+<aside class="callout callout--info"> 
+  <b>Príklad:</b> analýza cien energií — kvalitný článok dá odkaz na metodiku, konkrétne tabuľky, výpočty a zdroje, nie iba „podľa odborníkov“.
+  </aside>
 
 5. **Politici a politické strany**  
-   - Čo to je: komunikácia záujmov a programu.  
+   - Čo to je: komunikácia politických záujmov a ich programu.  
    - **➕ Plus:** ukazujú priority a hodnoty; užitočné na pochopenie zámeru.  
-   - **➖ Mínus:** selektívny výber dát, slogany, emócie; riziko cherry‑pickingu a strašenia.  
+   - **➖ Mínus:** selektívny výber dát, slogany, emócie; riziko cherry‑pickingu a strašenia či polarizácie. Preferencia toho, čo strane získa viac hlasov namiesto toho, čo je dobré pre všetkých voličov. 
    - Na čo si daj pozor: odkaz na dáta, spôsob merania, kontext (časový rad), či sa netvária názory ako fakty.  
    - Ako overiť: fact‑checking, originálne štatistiky, porovnanie s nezávislými zdrojmi.
    
   <aside class="callout callout--info">
   <b>Príklad:</b> počas volieb sa šíria tvrdenia typu „migranti zvyšujú kriminalitu“. Fakty z polície SR však ukazujú, že podiel cudzincov na kriminalite je dlhodobo minimálny. Politici používajú strach, pretože mobilizuje voličov.
+
+<b>Príklad 2:</b> Fico tvrdil, že britská vláda prostredníctvom mediálnej agentúry financovala influencerov aj novinárov v Slovensku, „aby ovplyvnili voľby proti Smeru-SD“ — jeho výrok sa sústredí len na časť správy, podľa ktorej išlo o kampaň na mobilizáciu mladých voličov všeobecne (nie vyloženú podporu konkrétnej strany). 
+Toto je cherry-picking, lebo vybral len tú interpretáciu, ktorá sa mu hodí do naratívu (že proti nemu „nejaká cudzia mocnosť“ zasahuje), a ignoruje kontext či vyjadrenia autorov, že kampaň cielila na motivovanie mladých ísť voliť hocikoho, nie explicitne podporiť jednu stranu.
+<a href="https://tvnoviny.sk/domace/clanok/979903-po-novinarovi-reaguje-na-slova-premiera-fica-o-zamere-ovplyvnit-volby-aj-britske-velvyslanectvo" target="_blank">zdroj 1</a>,
+<a href="https://www.aktuality.sk/clanok/WCQpBXk/robert-fico-ma-problem-s-britmi-nehovori-pravdu-a-sam-benefitoval-z-ovplyvnovania-volieb-zo-zahranicia-podcast/" target="_blank">zdroj 2</a>, <a href="https://nazory.pravda.sk/komentare-a-glosy/clanok/761298-ficovo-velke-odhalenie-kto-ma-pravdu-trafene-husi-zagagali-na-oboch-stranach/" target="_blank">zdroj 3</a>.
+
+A že to bolo vo všeobecnosti to isté, ako usporiadať v dedine guľáš a zábavu zdarma tesne pred voľbami a priviesť tam na autobusoch skôr staršie generácie.
+
 </aside>
 
 6. **Sociálne siete a virály**  
@@ -105,7 +118,7 @@ Ak chceme robiť dobré rozhodnutia, potrebujeme vedieť rozlíšiť, ktorým in
   </aside>
 
 9. **Preprinty vs. recenzované články**  
-   - Čo to je: preprint = článok pred recenziou; recenzované = skontrolované odborníkmi pred publikovaním.  
+   - Čo to je: preprint = vedecký článok zverejnený pred recenziou / kontrolou ostatnými odborníkmi pred publikovaním. <a href="https://sk.wikipedia.org/wiki/Preprint" target="_blank">Viac info</a>  
    - **➕ Plus (preprint):** rýchlosť, otvorenosť; **➕ Plus (recenzované):** kontrola kvality.  
    - **➖ Mínus (preprint):** chyby a prehnané závery bez korekcií; **➖ Mínus (recenzované):** trvá to dlhšie.  
    - Na čo si daj pozor: jasné označenie, či je to preprint; či bol článok neskôr revidovaný alebo stiahnutý; či iné tímy našli podobné výsledky.  
