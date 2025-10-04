@@ -26,6 +26,8 @@
     return regs;
   }
 
+  function normKey(s){ return (s || '').toString(); }
+
   function shouldSkip(node){
     if (!node || !node.parentElement) return true;
     if (node.parentElement.closest('.fn, .no-footnotes')) return true;
@@ -69,6 +71,7 @@
       span.className = 'fn';
       const more = best.term.moreUrl ? ` <a href="${best.term.moreUrl}">Viac info &gt;&gt;</a>` : '';
       span.setAttribute('data-footnote', best.term.note + more);
+      if (best.term.key) span.setAttribute('data-fn-key', best.term.key);
       span.textContent = best.inner;
       matchNode.parentNode.replaceChild(span, matchNode);
       best.term.used++;
@@ -85,11 +88,21 @@
       if (!res.ok) return;
       const entries = await res.json();
       const terms = entries.map((e)=> ({
+        key: normKey(e.key || e.term),
         note: e.note,
+        moreUrl: e.moreUrl,
         max: Number.isFinite(e.maxPerPage) ? e.maxPerPage : 1,
         used: 0,
         regexes: buildRegexes(e)
       }));
+      // Initialize used counts based on existing annotations (persist across runs)
+      try {
+        for (const t of terms) {
+          if (!t.key) continue;
+          const sel = `.fn[data-fn-key="${CSS && CSS.escape ? CSS.escape(t.key) : t.key}"]`;
+          t.used = document.querySelectorAll(sel).length;
+        }
+      } catch {}
       if (!terms.length) return;
 
       const rootNodes = Array.from(document.querySelectorAll('.prose, main'));
