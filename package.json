@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/run-thumbs-if-stale.mjs",
-    "build": "astro build",
+    "build": "astro build && node scripts/build-search-index.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "gen:thumbs": "node scripts/generate-thumbs.mjs"

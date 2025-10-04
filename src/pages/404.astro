@@ -55,7 +55,7 @@ const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p,
           <h2>Výsledky hľadania</h2>
           <ul class="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-3">
             ${scored.map((p)=>`
-              <li class=\"glass !p-4 rounded-[14px]\">
+              <li class=\"glass !m-1 !p-4 rounded-[14px]\">
                 <a class=\"block no-underline\" href=\"${p.url}\">
                   <h3 class=\"posttitle mt-0\">${p.title}</h3>
                   <p class=\"text-sm text-gray-600\">${p.description || ''}</p>

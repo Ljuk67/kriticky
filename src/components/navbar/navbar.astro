@@ -224,7 +224,7 @@ const menuitems = [
       results.innerHTML = scored.length ? `
         <ul class="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-3">
           ${scored.map(p=>`
-            <li class=\"glass p-3 rounded-[14px]\">
+            <li class=\"glass !m-1 p-3 rounded-[14px]\">
               <a class=\"block no-underline\" href=\"${p.url}\">
                 <span class=\"text-xs text-gray-600\">${p.type==='page'?'Stránka':'Článok'}</span>
                 <h3 class=\"posttitle\">${p.title}</h3>
