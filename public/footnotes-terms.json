@@ -28,8 +28,8 @@
   { "term": "zaujatosť vlastnej skupiny", "aliases": ["in-group bias", "ingroup bias", "zaujatost vlastnej skupiny"], "note": "Uprednostňujeme „našich“ (národ, stranu, skupinu) pred inými – bez ohľadu na fakty.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#in-group-bias", "maxPerPage": 1 },
 
   { "term": "systematická prehľadová štúdia", "aliases": ["systematicka prehladova studia", "systematická revízia", "systematicka revizia"], "note": "Systematická prehľadová štúdia je súhrn existujúcich výskumov na tú istú otázku podľa vopred daných pravidiel. Cieľ: zhrnúť všetky kvalitné dôkazy na jednom mieste.", "maxPerPage": 1 },
-  { "term": "randomizovaná kontrolovaná štúdia", "aliases": ["randomizovana kontrolovana studia", "randomizovaná kontrolovaná skúška", "RCT"], "note": "Randomizovaná kontrolovaná štúdia (RCT) náhodne rozdelí ľudí do skupín (liek vs. kontrola), aby znížila vplyv náhody a skrytých rozdielov. Patrí medzi najsilnejšie dôkazy o účinku.", "maxPerPage": 1 },
-  { "term": "dvojito zaslepená", "aliases": ["double blind", "dvojito zaslepena"], "note": "Dvojito zaslepená štúdia: ani účastníci, ani výskumníci nevedia, kto dostal liek a kto placebo. Znižuje to skreslenia v hodnotení výsledkov.", "maxPerPage": 1 },
+  { "term": "randomizovaná kontrolovaná štúdia", "aliases": ["randomizácia", "randomizovana kontrolovana studia", "randomizovaná kontrolovaná skúška", "RCT"], "note": "Randomizovaná kontrolovaná štúdia (RCT) náhodne rozdelí ľudí do skupín (liek vs. kontrola), aby znížila vplyv náhody a skrytých rozdielov. Patrí medzi najsilnejšie dôkazy o účinku.", "maxPerPage": 1 },
+  { "term": "dvojito zaslepená", "aliases": ["zaslepenie", "double blind", "dvojito zaslepena"], "note": "Dvojito zaslepená štúdia: ani účastníci, ani výskumníci nevedia, kto dostal liek a kto placebo. Znižuje to skreslenia v hodnotení výsledkov.", "maxPerPage": 1 },
   { "term": "placebo", "aliases": ["placebo efekt", "placeboefekt"], "note": "Placebo je neúčinná látka/procedúra. Placebo efekt je zlepšenie len vďaka očakávaniu – nie vďaka skutočnému účinku.", "maxPerPage": 1 },
   { "term": "korelácia", "aliases": ["korelacia", "korelácia ≠ kauzalita", "korelacia != kauzalita", "kauzalita"], "note": "Korelácia ≠ kauzalita: keď dve veci „chodia spolu“, neznamená to, že jedna spôsobuje druhú. Môže existovať tretí faktor alebo číra náhoda.", "maxPerPage": 1 },
   { "term": "konfidenčný interval", "aliases": ["konfidencny interval"], "acronyms": ["CI"], "note": "Konfidenčný interval udáva rozumný rozsah, v ktorom sa pravdepodobne nachádza skutočný efekt. Čím je užší, tým presnejší je odhad.", "maxPerPage": 1 },
@@ -44,5 +44,16 @@
   { "term": "efekt veľkosti", "aliases": ["efekt velkosti", "effect size"], "note": "Efekt veľkosti (effect size) hovorí, nakoľko je účinok prakticky významný – nielen či je „štatisticky významný“, ale aj aký veľký je.", "maxPerPage": 1 },
   { "term": "publikačné skreslenie", "aliases": ["publikacne skreslenie", "publication bias"], "note": "Publikačné skreslenie: štúdie s „zaujímavými“ výsledkami sa publikujú častejšie než tie „nudné“. To môže preceňovať účinky v prehľadoch.", "maxPerPage": 1 },
   { "term": "p‑hacking", "aliases": ["p-hacking", "p hacking"], "note": "p‑hacking: skúšanie mnohých analýz, kým nevyjde „významný“ výsledok. Zvyšuje riziko falošných poplachov.", "maxPerPage": 1 },
-  { "term": "mätúca premenná", "aliases": ["matuca premenna", "confounder", "zámenná premenná", "zamenná premenna"], "note": "Mätúca premenná (confounder) je skrytý faktor, ktorý ovplyvňuje aj príčinu, aj výsledok. Potom sa nám javí, že A spôsobuje B, hoci to tak nie je.", "maxPerPage": 1 }
+  { "term": "mätúca premenná", "aliases": ["matuca premenna", "confounder", "zámenná premenná", "zamenná premenna"], "note": "Mätúca premenná (confounder) je skrytý faktor, ktorý ovplyvňuje aj príčinu, aj výsledok. Potom sa nám javí, že A spôsobuje B, hoci to tak nie je.", "maxPerPage": 1 },
+  { "term": "anekdota", "aliases": ["anektody", "anekdotami", "anekdotou"], "note": "Anekdota je osobný príbeh alebo skúsenosť jedného človeka, ktorá znie presvedčivo, ale sama o sebe nie je dôkaz. Čo funguje / platí pre jedného človeka, nemusí pre iného. Alebo je to len náhoda.", "maxPerPage": 1 },
+  { "term": "citlivostná analýza", "aliases": ["citlivostna analyza","citlivostné analýzy", "citlivostne analyzy", "citlivostnej analýzy", "citlivostnej analýze", "citlivostnou analýzou", "citlivostných analýz", "citlivostných analýzach", "citlivostných"],
+    "note": "Citlivostná analýza testuje, či záver zostáva stabilný, keď zmeníš predpoklady alebo vstupy (napr. vylúčiš slabé štúdie, zmeníš metódu). Pomáha odhaliť, či výsledok nestojí na jednej chúlostivej voľbe.","maxPerPage": 1},
+  { "term": "kontrolná skupina", "aliases": ["kontrolnou skupinou", "kontrolné skupiny", "kontrolnými skupinami"], "note": "Kontrolná skupina je skupina ľudí vo výskume, ktorá nedostane skúšanú liečbu alebo zásah, aby sa výsledky dali porovnať s tými, ktorí ju dostali. Pomáha zistiť, či zmena nastala vďaka liečbe, alebo len náhodou či vplyvom iných faktorov.", "maxPerPage": 1 },
+  { "term": "konflikt záujmov",
+    "aliases": ["konflikt zaujmov", "konflikty záujmov", "konflikty zaujmov", "konfliktov záujmov", "konfliktov zaujmov"],
+    "note": "Konflikt záujmov nastáva, keď autor alebo organizácia môžu mať osobný či finančný prospech z výsledku. Neznamená to automaticky nepravdu, ale vyžaduje vyššiu transparentnosť a opatrnosť pri interpretácii.",
+    "maxPerPage": 1
+  }
+
+
 ]

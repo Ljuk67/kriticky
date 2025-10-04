@@ -8,6 +8,7 @@
   const SEL = '[data-footnote]';
   let openEl = null;
   let openPop = null;
+  let sticky = false; // when true, keep popover open until outside click
 
   function closeAll(){
     if (openEl) { openEl.classList.remove(OPEN_CLASS); }
@@ -17,6 +18,7 @@
     }
     openEl = null;
     openPop = null;
+    sticky = false;
   }
   function open(el){
     if (openEl === el) return;
@@ -33,7 +35,12 @@
       openPop = pop;
     }
   }
-  function toggle(el){ if (openEl === el) closeAll(); else open(el); }
+  function toggle(el){
+    if (openEl === el && sticky) { closeAll(); return; }
+    // set sticky on click; hover will not set sticky
+    sticky = true;
+    open(el);
+  }
   function ensureFocusable(el){
     const tag = el.tagName.toLowerCase();
     const focusableTags = ['a','button','input','textarea','select','summary'];
@@ -83,7 +90,21 @@
       toggle(el);
     });
     el.addEventListener('mouseenter', ()=> open(el));
-    el.addEventListener('mouseleave', ()=> closeAll());
+    el.addEventListener('mouseleave', (e)=>{
+      const to = e.relatedTarget;
+      if (openPop && to && (to === openPop || openPop.contains(to))) return; // moving into popover
+      if (!sticky) closeAll();
+    });
+    // Keep open when hovering the popover, close when leaving both
+    const pop = el._fnPopover;
+    if (pop){
+      pop.addEventListener('mouseenter', ()=> open(el));
+      pop.addEventListener('mouseleave', (e)=>{
+        const to = e.relatedTarget;
+        if (to && (to === el || el.contains(to))) return; // back to trigger
+        if (!sticky) closeAll();
+      });
+    }
     el.addEventListener('keydown', (e)=>{
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(el); }
       if (e.key === 'Escape') { closeAll(); el.blur(); }
@@ -109,12 +130,15 @@
 
     document.addEventListener('click', (e)=>{
       if (!openEl) return;
-      if (e.target instanceof Element && (e.target.closest(SEL) === openEl)) return;
+      if (!(e.target instanceof Element)) return;
+      // Allow interactions on trigger and the popover without closing
+      if (e.target.closest(SEL) === openEl) return;
+      if (openPop && e.target.closest('.fn-popover') === openPop) return;
       closeAll();
     });
     document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeAll(); });
-    window.addEventListener('scroll', ()=>{ if (openEl) closeAll(); }, { passive: true });
-    window.addEventListener('resize', ()=>{ if (openEl) closeAll(); });
+    window.addEventListener('scroll', ()=>{ if (openEl && !sticky) closeAll(); }, { passive: true });
+    window.addEventListener('resize', ()=>{ if (openEl && !sticky) closeAll(); });
   }
 
   if (document.readyState === 'loading') {

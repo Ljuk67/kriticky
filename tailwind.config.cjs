@@ -17,6 +17,7 @@ module.exports = {
           css: {
             fontSize: '1em', // keep prose-lg at body size; headings still scale
             lineHeight: '1.7',
+            'li': { marginTop: '0.4em', marginBottom: '0.4em' },
           },
         },
       }),

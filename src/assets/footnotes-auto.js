@@ -14,8 +14,10 @@
     const regs = [];
     // Word forms: allow inflectional endings; avoid Unicode property escapes for broad support
     for (const w of words){
+      // Allow flexible whitespace between words in aliases (incl. NBSP)
+      const pat = escapeRegex(w).replace(/\\\s/g, '\\s').replace(/\s+/g, '\\s+');
       // (^|non-letter) (term + optional letters) (word boundary)
-      regs.push({ raw: w, re: new RegExp(`(?:^|[^A-Za-zÀ-ž])(${escapeRegex(w)}[A-Za-zÀ-ž]*)\\b`, 'i') });
+      regs.push({ raw: w, re: new RegExp(`(?:^|[^A-Za-zÀ-ž])(${pat}[A-Za-zÀ-ž]*)\\b`, 'i') });
     }
     // Acronyms: standalone, uppercase only; no trailing letters
     for (const a of acronyms){
@@ -34,30 +36,47 @@
     return false;
   }
 
-  function annotateInNode(node, term, note){
-    const text = node.nodeValue;
-    for (const { re } of term.regexes){
-      const m = re.exec(text);
-      if (!m) continue;
-      const whole = m[0];
-      const inner = m[1];
-      const startInner = m.index + whole.indexOf(inner);
-      const before = text.slice(0, startInner);
-      const match = inner;
-      const after = text.slice(startInner + match.length);
+  function annotateManyInNode(node, terms, limit) {
+    let current = node;
+    let count = 0;
+    while (current && current.nodeType === Node.TEXT_NODE && (limit == null || count < limit)) {
+      const text = current.nodeValue || '';
+      let best = null;
+      for (const term of terms) {
+        if (term.used >= term.max) continue;
+        for (const { re } of term.regexes) {
+          re.lastIndex = 0;
+          const m = re.exec(text);
+          if (!m) continue;
+          const whole = m[0];
+          const inner = m[1];
+          const startInner = m.index + whole.indexOf(inner);
+          if (
+            best === null ||
+            startInner < best.start ||
+            (startInner === best.start && inner.length > best.inner.length)
+          ) {
+            best = { term, start: startInner, inner };
+          }
+        }
+      }
+      if (!best) break;
+      // Split current text node into before | match | after
+      const afterStart = best.start + best.inner.length;
+      const matchNode = current.splitText(best.start); // current now "before", matchNode is match+after
+      const afterNode = matchNode.splitText(best.inner.length); // matchNode is match, afterNode is after
       const span = document.createElement('span');
       span.className = 'fn';
-      const more = term.moreUrl ? ` <a href="${term.moreUrl}">Viac info &gt;&gt;</a>` : '';
-      span.setAttribute('data-footnote', note + more);
-      span.textContent = match;
-      const frag = document.createDocumentFragment();
-      if (before) frag.appendChild(document.createTextNode(before));
-      frag.appendChild(span);
-      if (after) frag.appendChild(document.createTextNode(after));
-      node.parentNode.replaceChild(frag, node);
-      return true;
+      const more = best.term.moreUrl ? ` <a href="${best.term.moreUrl}">Viac info &gt;&gt;</a>` : '';
+      span.setAttribute('data-footnote', best.term.note + more);
+      span.textContent = best.inner;
+      matchNode.parentNode.replaceChild(span, matchNode);
+      best.term.used++;
+      count++;
+      // Continue scanning the remainder of the original text
+      current = afterNode;
     }
-    return false;
+    return count;
   }
 
   async function run(){
@@ -82,13 +101,7 @@
         const node = walker.currentNode;
         if (total >= MAX_TOTAL) break;
         if (shouldSkip(node)) continue;
-        for (const term of terms){
-          if (term.used >= term.max) continue;
-          if (annotateInNode(node, term, term.note)){
-            term.used++; total++;
-            break; // tree changed; continue outer walker loop
-          }
-        }
+        total += annotateManyInNode(node, terms, MAX_TOTAL - total);
       }
     }catch(e){ /* ignore */ }
   }

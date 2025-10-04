@@ -252,19 +252,21 @@ ol li, ul li {    line-height: 1.3em;
 .callout--tip,
 .callout--warn {
 	background: color-mix(in srgb, var(--accent) 20%, transparent);
-	padding: 2.5rem;
+	padding: 40px 25px;
 	border-radius: 20px;
 	gap: 1rem;
 	margin: 20px auto;
 }
+@screen md { .callout { padding: 2rem; } }
+
 .callout::before,
 .callout--info::before,
 .callout--tip::before,
 .callout--warn::before {
 	content: "";
 	display: inline-block;
-	width: 3rem; /* w-12 */
-	height: 3rem; /* h-12 */
+	width: 3rem; 
+	height: 3rem; 
 	margin: -17px 10px 0px 0px ;
 	vertical-align: middle;
 	color: var(--accent-dark);
