@@ -85,9 +85,11 @@ A že to bolo vo všeobecnosti to isté, ako usporiadať v dedine guľáš a zá
 6. **Sociálne siete a virály**  
    - Čo to je: otvorený mix názorov, zážitkov a informácií bez redakčného dozoru.  
    - **➕ Plus:** rýchlosť, svedectvá z terénu.  
-   - **➖ Mínus:** dezinformácie, algoritmy tlačia na polarizáciu a senzácie; nízka kontrola kvality.  
-   - Na čo si daj pozor: kto je autor, čo z toho má, odkiaľ má dáta, či nevytrháva kontext; opatrnosť pri viráloch.  
-   - Ako overiť: nájdi pôvodný zdroj (reverse image search, link na štúdiu), porovnaj s renomovanými médiami a dátami; nehľadaj len potvrdenie názoru.
+   - **➖ Mínus:** <b>Sociálne siete neboli vytvorené na zdieľanie dôležitých správ a informácií</b>. Práve naopak - boli vytvorené na zdieľanie súkromných názorov, zážitkov a vlastnej tvorby s našimi blízkymi. Až postupom času sa na nich začali šíriť aj dezinformácie, ich algoritmy tlačia na vrch polarizačný obsah a senzácie (pretože cieľom sociálnych sietí nie je informovať - ale udržať našu pozornosť a zvyšovať čas, ktorý na nich trávime, počas ktorého nám vedia ukázať viac reklám). Senzácie sú na to lepšie ako pravdivé informácie a spravodajstvo). Sociálne siete majú veľmi nízku kontrolu kvality či pravdivosti údajov - pretože, na rozdiel od spravodajských médií, sociálnym sieťiam nehrozí strata sledovanosti či dôvery, ak sú na nich nepravdivé informácie. 
+   - Na čo si daj pozor: kto je autor, čo z toho má, odkiaľ má dáta, či nevytrháva kontext; opatrnosť pri viráloch a dnes už aj overovanie, či neide o AI generovaný obsah.  
+   - Ako overiť: nájdi pôvodný zdroj (skús vyhľadať zdieľaný obrázok cez Google image search, link na štúdiu), porovnaj s hlavnými spravodajskými médiami 
+   (ak sa niečo veľké vo svete deje, budú o tom písať aj oni. Ak nepíšu, je to ďalší dôvod overovať ďalej. Pýtaj sa: <em>Prečo by spravodajské médiá, ktoré toto vyhľadávajú a živia sa tým, o tejto správe nevedeli?</em>)
+   Nehľadaj len potvrdenie názoru, ale aj opačné názory.
 
   <aside class="callout callout--info">
 <b>Napríklad:</b> 
@@ -98,11 +100,11 @@ A že to bolo vo všeobecnosti to isté, ako usporiadať v dedine guľáš a zá
    </aside>
 
 7. **Influenceri**  
-   - Čo to je: populárne tváre s dosahom, no často mimo svoj odbor.  
-   - **➕ Plus:** vedia zrozumiteľne vysvetliť, priblížiť tému.  
-   - **➖ Mínus:** komerčné záujmy, spolupráce, chýbajúca odbornosť; riziko omylov.  
+   - Čo to je: populárne tváre s dosahom, no často mimo svoj odbor. Hlavnou motiváciou je zarábanie prostredníctvom reklamy a predaja produktov alebo získaním sponzorov pri vyššom počte followerov (sledovateľov). A ako získať vyšší počet followerov? Rovnako ako pri sociálnych sietiach - zdieľaním obsahu, ktorý vzbudzuje u ľudí emócie (častokrát <a href="https://www.library.hbs.edu/working-knowledge/hate-spreads-faster-on-twitter-evidence-from-44-news-outlets" target="_blank">poburujúci obsah sa šíri rýchlejšie ako pozitívny</a> - a preto funguje pre influencerov lepšie) 
+   - **➕ Plus:** obsah zdieľaný influencermi prináša čitateľom pocit dôveryhodnosti, osobného odporúčania a jednoduchší prístup k novým produktom či trendom.
+   - **➖ Mínus:** majú hlavne komerčné záujmy, spolupráce, chýbajúca odbornosť; riziko omylov, vlastná skúsenosť sa nemusí odzrkadliť u iných ľudí.  
    - Na čo si daj pozor: uvádzajú zdroje a metodiku? rozlišujú názor vs. fakt? majú konflikt záujmov?  
-   - Ako overiť: skontroluj odkazy, porovnaj s odporúčaniami odborných inštitúcií, neuspokoj sa s rečníckou istotou.
+   - Ako overiť: skontroluj odkazy a ich zdroje, porozmýšľaj čo zdieľaním tejto informácie môžu získať - nad ich motiváciou, porovnaj s odporúčaniami odborných inštitúcií.
   <aside class="callout callout--info">
   <b>Príklad:</b>niektorí známi influenceri tvrdili, že ivermektín je „zázračný liek“ na COVID-19. Ukázalo sa však, že štúdie, ktoré to podporovali, boli buď slabé, alebo úplne stiahnuté pre chyby. Oficiálne odporúčania odborných spoločností ivermektín neodporúčajú.
   </aside>
