@@ -102,11 +102,11 @@ A že to bolo vo všeobecnosti to isté, ako usporiadať v dedine guľáš a zá
 7. **Influenceri**  
    - Čo to je: populárne tváre s dosahom, no často mimo svoj odbor. Hlavnou motiváciou je zarábanie prostredníctvom reklamy a predaja produktov alebo získaním sponzorov pri vyššom počte followerov (sledovateľov). A ako získať vyšší počet followerov? Rovnako ako pri sociálnych sietiach - zdieľaním obsahu, ktorý vzbudzuje u ľudí emócie (častokrát <a href="https://www.library.hbs.edu/working-knowledge/hate-spreads-faster-on-twitter-evidence-from-44-news-outlets" target="_blank">poburujúci obsah sa šíri rýchlejšie ako pozitívny</a> - a preto funguje pre influencerov lepšie) 
    - **➕ Plus:** obsah zdieľaný influencermi prináša čitateľom pocit dôveryhodnosti, osobného odporúčania a jednoduchší prístup k novým produktom či trendom.
-   - **➖ Mínus:** majú hlavne komerčné záujmy, spolupráce, chýbajúca odbornosť; riziko omylov, vlastná skúsenosť sa nemusí odzrkadliť u iných ľudí.  
+   - **➖ Mínus:** majú hlavne komerčné záujmy, spolupráce, chýbajúca odbornosť; riziko omylov, vlastná skúsenosť sa nemusí odzrkadliť u iných ľudí. A vlastná skúsenosť určite neprevažuje výsledky vedeckých štúdií - vlastné skúsenosti nepodliehajú žiadnej kontrole kvality, kritike, overovaniu a vysokým štandardom, ako vedecké štúdie.
    - Na čo si daj pozor: uvádzajú zdroje a metodiku? rozlišujú názor vs. fakt? majú konflikt záujmov?  
    - Ako overiť: skontroluj odkazy a ich zdroje, porozmýšľaj čo zdieľaním tejto informácie môžu získať - nad ich motiváciou, porovnaj s odporúčaniami odborných inštitúcií.
   <aside class="callout callout--info">
-  <b>Príklad:</b>niektorí známi influenceri tvrdili, že ivermektín je „zázračný liek“ na COVID-19. Ukázalo sa však, že štúdie, ktoré to podporovali, boli buď slabé, alebo úplne stiahnuté pre chyby. Oficiálne odporúčania odborných spoločností ivermektín neodporúčajú.
+  <b>Príklad: </b>niektorí známi influenceri tvrdili, že ivermektín je „zázračný liek“ na COVID-19. Ukázalo sa však, že štúdie, ktoré to podporovali, boli buď slabé, alebo úplne stiahnuté pre chyby. Oficiálne odporúčania odborných spoločností ivermektín neodporúčajú. No keďže majú influenceri širší dosah (= viac followerov) ako vedecké inštitúcie, ich nekompletné informácie dosiahli viac ľudí, ako pravdivé výsledky vedeckého konsenzu (na čom sa vedci zhodnú). 
   </aside>
 
 8. **Anekdoty („kamarát povedal“)**  
