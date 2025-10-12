@@ -128,6 +128,38 @@ GDPR friendly or anonymous statistic preferred.
 - Expand acronyms on first use with a brief bracketed explanation.
 - Favor concrete examples, short paragraphs, and bullets where it improves clarity.
 
+## STOP Method (Slovak)
+- Purpose: a simple checklist to slow down and verify claims in articles and UI copy. Use it in posts where appropriate; you can briefly elaborate points to fit context.
+- Recommended presentation: a short callout with a bullet list, or weave individual letters (S‑T‑O‑P) into relevant sections.
+
+S — Skontroluj zdroj
+- Kto to tvrdí? Je to dôveryhodný zdroj? Má meno, odbornú autoritu, minulosť v klamstvách?
+
+T — Triezvo premýšľaj
+- Nehrá to na tvoje emócie? Znie to príliš dobre/zle na to, aby to bola pravda?
+
+O — Over fakty
+- Dajú sa tvrdenia potvrdiť z viacerých nezávislých zdrojov? Je k tomu dôkaz, štúdia, reálne čísla? Alebo je to len niečí názor?
+
+P — Pozor na zaujatosť
+- Vlastná zaujatosť: nehľadáš len to, čo potvrdzuje tvoje názory? Neodmietaš niečo len preto, že s tým nesúhlasíš?
+- Autorova zaujatosť: čo je motiváciou autora? Čo chce naozaj dosiahnuť?
+
+Example callout snippet (use in Markdown/MDX articles):
+
+```md
+<aside class="callout callout--info">
+  <strong>STOP: rýchla kontrola tvrdení</strong>
+  <ul>
+    <li><strong>S — Skontroluj zdroj:</strong> Kto to tvrdí? Je dôveryhodný?</li>
+    <li><strong>T — Triezvo premýšľaj:</strong> Nehrá to na tvoje emócie?</li>
+    <li><strong>O — Over fakty:</strong> Nájdeš nezávislé potvrdenie, dáta, štúdiu?</li>
+    <li><strong>P — Pozor na zaujatosť:</strong> Tvoja aj autorova. Čo je motivácia?</li>
+  </ul>
+</aside>
+
+```
+
 ## Footnotes: Explain Expert Terms
 - When drafting new posts, annotate terms the average reader may not understand (e.g., metaanalýza, konfidenčný interval, randomizovaná kontrolovaná štúdia).
 - Use the inline footnote pattern directly in Markdown/MDX/HTML:

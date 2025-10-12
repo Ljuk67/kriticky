@@ -53,7 +53,18 @@
     "aliases": ["konflikt zaujmov", "konflikty záujmov", "konflikty zaujmov", "konfliktov záujmov", "konfliktov zaujmov"],
     "note": "Konflikt záujmov nastáva, keď autor alebo organizácia môžu mať osobný či finančný prospech z výsledku. Neznamená to automaticky nepravdu, ale vyžaduje vyššiu transparentnosť a opatrnosť pri interpretácii.",
     "maxPerPage": 1
-  }
+  },
 
+  { "term": "clickbait",
+    "aliases": ["click-bait", "click bait", "klikbajt", "klikbait", "návnada na kliky", "lákavý nadpis"],
+    "note": "Clickbait je lákavý titulok alebo náhľad, ktorý ťa má prinútiť kliknúť, aj keď obsah je slabý alebo zavádzajúci.",
+    "maxPerPage": 1
+  },
+
+  { "term": "červené vlajky",
+    "aliases": ["cervene vlajky", "červená vlajka", "cervena vlajka", "červených vlajok", "cervenych vlajok", "red flags", "red flag", "red-flag", "red-flags"],
+    "note": "Červené vlajky = varovné signály, že niečo nie je v poriadku. Pri článkoch a videách ide o typické znaky nespoľahlivého obsahu: bombastické sľuby, silné emócie bez dát, chýbajúce alebo nejasné zdroje, cherry‑picking (vyberanie si len tých dôkazov, ktoré sa mi hodia), či útoky na osoby namiesto argumentov. Keď ich zbadáš, spomaľ, hľadaj kontext a over si tvrdenia v spoľahlivých zdrojoch.",
+    "maxPerPage": 1
+  }
 
 ]
