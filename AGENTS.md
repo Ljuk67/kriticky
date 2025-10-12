@@ -44,6 +44,11 @@ tags:
 - Example (new post): `git checkout -b content/zaklady-kritickeho-myslenia` → add files under `src/content/blog/` → `git push -u origin content/zaklady-kritickeho-myslenia` → open a PR for review.
 - Codex will follow this flow: branch per task, implement changes, push, then create a pull request for your review.
 
+## Large Changes Approval
+- Before adding new functions/features or changes that require updating multiple files, posts, or pages (i.e., broad content or cross-cutting changes), pause and ask for approval.
+- Verify the scope and approach with the user first; do not proceed with widespread edits without explicit confirmation.
+- Suggest creating and working on a dedicated branch for the change (e.g., `feat/<scope>` or `content/<scope>`) before implementation.
+
 ## Commit & Pull Request Guidelines
 - Commits: concise, imperative, and descriptive (no strict convention observed). Example: `Add article on basics of critical thinking`.
 - PRs: include a clear description, linked issues, and screenshots/GIFs for visual changes. Note key pages affected and steps to verify.
