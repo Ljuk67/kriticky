@@ -1,7 +1,7 @@
 ---
 title: "Základy kritického myslenia"
 description: "Úvod do kritického myslenia a jeho kľúčových zručností"
-pubDate: "Sep 08 2025"
+pubDate: "Oct 08 2025"
 author: "Lukas Cech"
 tags:
   - "základy"
