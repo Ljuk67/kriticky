@@ -15,7 +15,22 @@ categories:
 ---
 
 
-Zaujatosť (bias) je skrytá tendencia nášho myslenia, ktorá nás vedie k rýchlym, ale často nepresným záverom. Kritické myslenie znamená tieto nástrahy rozpoznať – u seba aj u iných. Tu je 10 najčastejších zaujatostí, vysvetlených jednoducho a s príkladmi zo Slovenska.
+Zaujatosť (anglicky "bias") je skrytý návyk nášho myslenia, ktorá nás vedie k rýchlym, ale často nepresným záverom. Nie je to „zlá vlastnosť“ ani lenivosť — je to prirodzený spôsob, ako si mozog skracuje cestu k cieľu, čo je častokrát užitočné. Problém je, že tieto skratky môžu byť v niektorých situáciách nepresné, alebo nás zavedú na nesprávny chodníček. Alebo ich zneužívajú ľudia či marketing na dosiahnutie ich cieľov na náš úkor. Kritické myslenie znamená tieto nástrahy rozpoznať – u seba aj u iných. Tu je 10 najčastejších zaujatostí, vysvetlených jednoducho a s príkladmi zo Slovenska.
+
+  **Ako to vyzerá v bežnom živote:**
+
+  - Držíš s „našimi“: keď ide o tvoju obľúbenú pollitickú stranu, klub alebo „tvojich ľudí“, chyby svojich prehliadaš, súperom veríš menej a ich chybám pridávaš viac dôležitosti.
+  - Vidíš to, čo chceš vidieť: všimneš si príbehy, ktoré ti sedia, a tie, čo nesedia, rýchlo odmietneš.
+  - Silné emócie berú volant: ak ťa niečo nahnevá alebo nadchne, uveríš tomu skôr, aj bez dôkazov.
+  - Prvý dojem drží dlho: prvé info, ktoré počuješ, si zapamätáš najviac a neskoršie opravy prejdeš len okrajovo.
+  - Jedna skúsenosť = „tak to je vždy“: zlý zážitok u lekára či na úrade si zovšeobecníš na všetkých.
+
+   **Prečo to riešiť:**
+
+  - Môžeš sa vyhnúť nesprávnym rozhodnutiam (zlé nákupy, nesprávne voľby v zdraví či peniazoch).
+  - Rýchle, ale skreslené názory ľahko šíria hoaxy a rozdeľujú ľudí.
+  - Prichádzaš o lepšie nápady, lebo iné pohľady ani neskúsiš.
+  - Môžeš sa vyhnúť zbytočným konfliktom, ktoré nikam nevedú, prípadne naviažeš lepšie vzťahy aj s ľuďmi, ktorí nemusia zdieľať tvoje názory.
 
 ---
 <a id="konfirmacne-skreslenie"></a>
