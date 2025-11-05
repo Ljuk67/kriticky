@@ -19,7 +19,7 @@ Zaujatosť (anglicky "bias") je skrytý návyk nášho myslenia, ktorá nás ved
 
   **Ako to vyzerá v bežnom živote:**
 
-  - Držíš s „našimi“: keď ide o tvoju obľúbenú pollitickú stranu, klub alebo „tvojich ľudí“, chyby svojich prehliadaš, súperom veríš menej a ich chybám pridávaš viac dôležitosti.
+  - Držíš s „našimi“: keď ide o tvoju obľúbenú politickú stranu, klub alebo „tvojich ľudí“, chyby svojich prehliadaš, súperom veríš menej a ich chybám pridávaš viac dôležitosti.
   - Vidíš to, čo chceš vidieť: všimneš si príbehy, ktoré ti sedia, a tie, čo nesedia, rýchlo odmietneš.
   - Silné emócie berú volant: ak ťa niečo nahnevá alebo nadchne, uveríš tomu skôr, aj bez dôkazov.
   - Prvý dojem drží dlho: prvé info, ktoré počuješ, si zapamätáš najviac a neskoršie opravy prejdeš len okrajovo.
