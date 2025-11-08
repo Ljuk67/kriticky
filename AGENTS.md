@@ -105,7 +105,7 @@ status: "draft"
 
 ## Content Formatting Rules
 - Use the callout pattern for examples, tips, and short walkthroughs: wrap example blocks in `<aside class="callout callout--info">…</aside>`.
-- Add a one‑sentence actionable takeaway above every section heading - summarise the section above it: place `<aside class="callout callout--tip">One clear, actionable sentence.</aside>` directly above each `h2` in articles.
+- Add a one‑sentence actionable takeaway at the end of every section (usually starting with a H2 heading) - summarise the section above it: place `<aside class="callout callout--tip">One clear, actionable sentence.</aside>` directly after end of each `h2` sectiopn in articles.
 - Prefer one idea per callout; lists inside callouts should use proper HTML lists (`<ul><li>…</li></ul>`) to avoid Markdown parsing issues inside HTML blocks.
 - When mixing Markdown and HTML (e.g., `<aside>`, custom components), always leave a blank line after the closing HTML tag and before the next Markdown block to preserve correct Markdown rendering.
 

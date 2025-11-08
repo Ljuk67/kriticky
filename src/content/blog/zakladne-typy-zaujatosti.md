@@ -1,9 +1,9 @@
 ---
-title: "DRAFT: Základné typy zaujatostí, na ktoré si dať pozor"
-description: "Top 10 najčastejších psychologických zaujatostí (bias), ktoré ovplyvňujú naše myslenie. Jednoduché vysvetlenia, príklady zo Slovenska a tipy, ako sa brániť manipulácii a dezinformáciám."
-pubDate: "Sep 14 2025"
+title: "Základné typy zaujatostí - kognitívne skreslenia"
+description: "Top 10 najčastejších psychologických zaujatostí (kognitívnych skreslení), ktoré ovplyvňujú naše myslenie. Jednoduché vysvetlenia, príklady zo Slovenska a tipy, ako sa brániť manipulácii a dezinformáciám."
+pubDate: "Nov 08 2025"
 author: "Lukas Cech"
-status: "draft"
+
 tags:
   - "zaujatosti"
   - "bias"
@@ -35,16 +35,13 @@ Zaujatosť (anglicky "bias") je skrytý návyk nášho myslenia, ktorá nás ved
 ---
 <a id="konfirmacne-skreslenie"></a>
 
-## 1. Potvrdzovacia zaujatosť (confirmation bias)
-Alebo aj konfirmačné skreslenie.
-
-<aside class="callout callout--tip">
-Tip: Schválne si nájdi aspoň jeden kvalitný protiargument k svojmu názoru – pomôže to vyrovnať výber informácií.
-</aside>
+## 1. Konfirmačné skreslenie (confirmation bias)
+Alebo aj potvrdzovacia zaujatosť.
 
 - **Čo to je:** Máme tendenciu vyhľadávať iba informácie, ktoré potvrdzujú to, čomu už veríme.  
-- **Príklad (SK):** Diskusie o očkovaní proti COVID-19. Ľudia často zdieľali len články, ktoré potvrdzovali ich názor (či už za alebo proti), a ignorovali seriózne dáta.  
-- **Ako sa jej vyhnúť (keď my hovoríme):** Pred tým, než niečo povieme, sami si nájdime aj protiargumenty.
+
+- **Príklad:** Diskusie o očkovaní proti COVID-19. Ľudia často zdieľali len články, ktoré potvrdzovali ich názor (či už za alebo proti), a ignorovali články, ktoré nepotvrdzovali ich názor.  
+- **Ako sa konfirmačnému skresleniu vyhnúť (keď my hovoríme):** Pred tým, než niečo povieme, sami si nájdime aj protiargumenty.
 
 <aside class="callout callout--info">
 <b>Napríklad:</b> Keď uvažujem nad argumentami ohľadom COVID-19, alebo sa o nich rozprávam, tak sa zahrám na tú druhú stranu a snažím si tie argumenty sám vyvrátiť. <b>Zapnem zdravý skepticizmus voči sebe.</b> Pýtam sa - na čom je tento môj názor založený? Takto napríklad môžem otestovať či som k tomuto názoru prišiel cez <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivé zdroje</a> - konsenzus veľkého počtu vedcov, viaceré štúdie - alebo cez ťažko overiteľné zdroje - rôzne online publikácie, sociálne siete.
@@ -52,40 +49,50 @@ Tip: Schválne si nájdi aspoň jeden kvalitný protiargument k svojmu názoru �
 Tu sa dá spochybniť aj to, čo robí <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivé zdroje</a> - tak sa znovu pýtam - je to, čo definuje <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivý zdroj</a> moja osobná definícia, alebo je to všeobecne uznávaná definícia <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivých zdrojov</a>? <HandRight style="--icon-size: 30px; margin-right: .25em;"></HandRight> <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/"> Prečítaj si článok o tom, ako odlíšiť spoľahlivé zdroje od nespoľahlivých</a>.
 </aside>
 
-- **Ako ju spoznať (u iných):** Ak niekto používa len zdroje jednej strany a úplne ignoruje fakty z druhej.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Potvrdzovacia_zaujatosť" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Ako konfirmačné skreslenie spoznať (u iných):** Ak niekto používa len zdroje jednej strany a úplne ignoruje fakty z druhej.  
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, 
+<a href="https://sk.wikipedia.org/wiki/Konfirma%C4%8Dn%C3%A9_skreslenie" target="_blank" rel="noopener noreferrer">zdroj 2</a>,
+<a href="https://www.britannica.com/science/confirmation-bias" target="_blank" rel="noopener noreferrer">zdroj 3</a>
+
+<aside class="callout callout--tip">
+Tip: Schválne si nájdi aspoň jeden kvalitný protiargument k svojmu názoru – pomôže to vyrovnať výber informácií.
+</aside>
 
 ---
 
 <a id="hindsight-bias"></a>
 
-## 2. Zaujatosť spätnej väzby (hindsight bias)
-<aside class="callout callout--tip">
-Tip: Zapíš si, čo si si myslel(a) pred udalosťou. Po nej porovnaj s realitou – znížiš efekt „vedel som to od začiatku“.
-</aside>
+## 2. Skreslenie spätného pohľadu (hindsight bias)
+Alebo aj "Ja-som-to-vedel" efekt.
 
 - **Čo to je:** Po udalosti máme pocit, že sme „to vedeli od začiatku“.  
-- **Príklad (SK):** Po voľbách 2023 mnohí tvrdili, že výsledok Fica bol jasný už dávno, hoci pred voľbami sa analytici líšili.  <span class="text-red-500">ZDROJ</span>
-- **Ako sa jej vyhnúť:** Pri hodnotení udalostí si pripomeňme, aké neistoty sme cítili predtým.  
+
+- **Príklad:** Po voľbách 2023 mnohí tvrdili, že výsledok - výhra SMER-SD - bol jasný už dávno, hoci pred voľbami sa analytici líšili a bežní ľudia tiež nevedeli ako to dopadne. Predvolebné preferencie boli veľmi natesno pre SMER-SD a Progresívne Slovensko (niekde bolo <a href="https://www.ta3.com/clanok/1015827/prieskum-pre-ta3-kto-by-v-oktobri-vyhral-volby-fico-vedie-v-doveryhodnosti-simecka-mu-dycha-na-chrbat" target="_blank" rel="noopener noreferrer">PSko na 1. mieste</a>, v iných prieskumoch <a href="https://www.aktuality.sk/udalost/volby-2023/prieskumy/" target="_blank" rel="noopener noreferrer">zasa SMER-SD</a>) a v niektorých prípadoch bol na druhom mieste HLAS (<a href="https://www.focus-research.sk/archiv/volebne-preferencie-politickych-stran-jun-2023/" target="_blank" rel="noopener noreferrer">v júni 2023</a>, no už <a href="https://www.focus-research.sk/archiv/volebne-preferencie-politickych-stran-september-2023-ii/" target="_blank" rel="noopener noreferrer">v septembri 2023 bol na treťom</a>). Z týchto rozdielov vo výsledkoch prieskumov je vidieť, že to bolo rôznorodé a neisté do poslednej chvíle. Čiže tvrdiť po voľbách, že to bolo jasné, sa líší od reality. 
+- **Ako sa mu vyhnúť:** Pri hodnotení udalostí si pripomeň, aké neistoty si cítil/a predtým. Alebo sa zamysli - keď si teraz hovorím, že to bolo jasné, že som to vedel/a od začiatku - dala by som na to stávku za 10,000 EUR? Pretože ak to naozaj bolo také jasné, tak potom táto stávka mohla vyhrať veľa. Ale málokedy by sme pred udalosťou takúto stávku urobili. No po udalosti sa už výsledok **zdá** jasný.
 - **Ako ju spoznať:** Keď niekto hovorí „to bolo jasné“ až po tom, čo sa to stalo.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://www.britannica.com/topic/hindsight-bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+
+<aside class="callout callout--tip">
+Podobne to ilustruje aj slovenské príslovie: <em>"Po bitve je každý generál"</em>. Je ľahké "vedieť", keď už sa vec stala a nie sú tam už žiadne premenné a neistoty.
+</aside>
 
 ---
 
 <a id="anchoring-bias"></a>
 
-## 3. Ukotvovacia zaujatosť (anchoring bias)
+## 3. Kotvenie (anchoring effect)
+
+- **Čo to je:** Prvá informácia, ktorá sa k nám dostane, silne ovplyvní naše rozhodnutia a ako vnímame ďalšie informácie. Inými slovami: prvej informácii dáme viac váhy a dôvery, ďalšie už posudzujeme "ukotvení" tou prvou.
+- **Príklad:** Pri voľbách sa politici často oháňajú výškou kriminality u imigrantov - <a href="https://www.minv.sk/?statistika-kriminality-v-slovenskej-republike-csv" target="_blank" rel="noopener noreferrer">no reálne štatistiky MVSR</a> ukazujú, že národnostné menšiny tvoria priemerne 5% všetkých kriminálnych činov a slováci tvoria 95%  <span class="fn" data-footnote="Miera kriminality slovenských občanov z celkovej kriminality bola stále okolo 95% v rokoch 2023, 2024 a 2025. Rok 2025 len do septembra, v čase zverejnenia tohto článku neboli dostupné ďalšie mesiace.">(poznámka k analýze)</span>. Čiže sústrediť sa na 5%, ked vlastne takmer všetky kriminálne činy sú spôsobené slovákmi, je zavádzajúce. Politikom to slúži na namaľovanie čerta na stenu, na ktorého sa potom všetci sústredia. No ak by chceli naozaj pomôcť slovensku, mali by sa zamerať na znižovanie kriminality u samotných slovákov. Ale vedia, že ľudí osloví viac (aj keď mylná a štatisticky nepodložená) predstava o kriminálnikoch, ktorí prichádzajú z vonku a to im získa voličov. Ukotvia si ľudí "zlými imigrantmi" a čokoľvek povedia iní neskôr, už nemá takú váhu.
+
+- **Ako sa mu vyhnúť:** Overujme štatistiky a tvrdenia z viacerých zdrojov a nevychádzajme len z prvého, ktoré zaznie.  
+- **Ako ho spoznať:** Keď niekto stále porovnáva nové dáta len s tým, čo povedal na začiatku.  
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Anchoring_effect" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Kotvenie" target="_blank" rel="noopener noreferrer">zdroj 2</a>, 
+<a href="https://www.pon.harvard.edu/tag/anchoring-effect/" target="_blank" rel="noopener noreferrer">zdroj 3</a>
+
 <aside class="callout callout--tip">
-Tip: Pred rozhodnutím si úmyselne pozri druhý zdroj čísiel/odhadov. Prvý „kotviaci“ údaj si označ ako dočasný.
+Tip: Zapíš si, čo si si myslel(a) pred udalosťou. Po nej to porovnaj s realitou – znížiš efekt „vedel som to od začiatku“. Niekedy sa možno trafíš, no častokrát nie - výsledok bude iný. Nie je to ani dobré ani zlé - cieľ nie je sa trafiť, ale byť si vedomý/á, že po udalosti je každý múdry, no pred udalosťou
 </aside>
-
-- **Čo to je:** Prvá informácia, ktorú počujeme, silne ovplyvní naše rozhodnutie.  
-- **Príklad (SK):** Diskusia o cenách energií – keď politici najprv spomenuli extrémne čísla zdražovania, ľudia ich brali ako základ, aj keď reálne sadzby boli nižšie.<span class="text-red-500">ZDROJ</span>
-https://www.minv.sk/?statistiky-kriminality-v-slovenskej-republike
-
-- **Ako sa jej vyhnúť:** Overujme viaceré čísla a nevychádzajme len z prvého, ktoré zaznie.  
-- **Ako ju spoznať:** Keď niekto stále porovnáva nové dáta len s tým, čo povedal na začiatku.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Anchoring" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Ukotvovacia_heuristika" target="_blank" rel="noopener noreferrer">zdroj 2</a>
 
 ---
 
