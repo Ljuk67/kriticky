@@ -11,11 +11,11 @@ tags:
   - "psychológia"
   - "voľby"
 categories:
-  - "Zaujatosti - biases"
+  - "Kognitívne skreslenia"
 ---
 
 
-Zaujatosť (anglicky "bias") je skrytý návyk nášho myslenia, ktorá nás vedie k rýchlym, ale často nepresným záverom. Nie je to „zlá vlastnosť“ ani lenivosť — je to prirodzený spôsob, ako si mozog skracuje cestu k cieľu, čo je častokrát užitočné. Problém je, že tieto skratky môžu byť v niektorých situáciách nepresné, alebo nás zavedú na nesprávny chodníček. Alebo ich zneužívajú ľudia či marketing na dosiahnutie ich cieľov na náš úkor. Kritické myslenie znamená tieto nástrahy rozpoznať – u seba aj u iných. Tu je 10 najčastejších zaujatostí, vysvetlených jednoducho a s príkladmi zo Slovenska.
+Zaujatosť alebo skreslenie (anglicky "bias") je skrytý návyk nášho myslenia, ktorá nás vedie k rýchlym, ale často nepresným záverom. Nie je to „zlá vlastnosť“ ani lenivosť — je to prirodzený spôsob, ako si mozog skracuje cestu k cieľu, čo je častokrát užitočné. Problém je, že tieto skratky môžu byť v niektorých situáciách nepresné, alebo nás zavedú na nesprávny chodníček. Alebo ich zneužívajú ľudia či marketing na dosiahnutie ich cieľov na náš úkor. Kritické myslenie znamená tieto nástrahy rozpoznať – u seba aj u iných. Tu je 10 najčastejších zaujatostí, vysvetlených jednoducho a s príkladmi zo Slovenska.
 
   **Ako to vyzerá v bežnom živote:**
 
@@ -43,16 +43,18 @@ Alebo aj potvrdzovacia zaujatosť.
 - **Príklad:** Diskusie o očkovaní proti COVID-19. Ľudia často zdieľali len články, ktoré potvrdzovali ich názor (či už za alebo proti), a ignorovali články, ktoré nepotvrdzovali ich názor.  
 - **Ako sa konfirmačnému skresleniu vyhnúť (keď my hovoríme):** Pred tým, než niečo povieme, sami si nájdime aj protiargumenty.
 
+- **Príklad:** Voliči sledujú najmä médiá, ktoré podporujú „ich“ stranu, a všetko ostatné považujú za zaujaté alebo zmanipulované. Ak článok alebo video zapadá do ich názoru, zdieľajú ho bez overenia. Ak im ho niekto spochybní, odmietnu to ako „propagandu“ – namiesto hľadania pravdy tak len posilňujú vlastné presvedčenie.  
+
 <aside class="callout callout--info">
 <b>Napríklad:</b> Keď uvažujem nad argumentami ohľadom COVID-19, alebo sa o nich rozprávam, tak sa zahrám na tú druhú stranu a snažím si tie argumenty sám vyvrátiť. <b>Zapnem zdravý skepticizmus voči sebe.</b> Pýtam sa - na čom je tento môj názor založený? Takto napríklad môžem otestovať či som k tomuto názoru prišiel cez <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivé zdroje</a> - konsenzus veľkého počtu vedcov, viaceré štúdie - alebo cez ťažko overiteľné zdroje - rôzne online publikácie, sociálne siete.
 
-Tu sa dá spochybniť aj to, čo robí <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivé zdroje</a> - tak sa znovu pýtam - je to, čo definuje <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivý zdroj</a> moja osobná definícia, alebo je to všeobecne uznávaná definícia <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivých zdrojov</a>? <HandRight style="--icon-size: 30px; margin-right: .25em;"></HandRight> <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/"> Prečítaj si článok o tom, ako odlíšiť spoľahlivé zdroje od nespoľahlivých</a>.
+Tu sa dá spochybniť aj to, čo robí <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivé zdroje</a> - tak sa znovu pýtam - je to, čo definuje spoľahlivý zdroj moja osobná definícia, alebo je to všeobecne uznávaná definícia spoľahlivých zdrojov? <HandRight style="--icon-size: 30px; margin-right: .25em;"></HandRight> <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/"> Prečítaj si článok o tom, ako odlíšiť spoľahlivé zdroje od nespoľahlivých</a>.
 </aside>
 
 - **Ako konfirmačné skreslenie spoznať (u iných):** Ak niekto používa len zdroje jednej strany a úplne ignoruje fakty z druhej.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, 
-<a href="https://sk.wikipedia.org/wiki/Konfirma%C4%8Dn%C3%A9_skreslenie" target="_blank" rel="noopener noreferrer">zdroj 2</a>,
-<a href="https://www.britannica.com/science/confirmation-bias" target="_blank" rel="noopener noreferrer">zdroj 3</a>
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank" rel="noopener noreferrer">Wikipedia</a>, 
+<a href="https://sk.wikipedia.org/wiki/Konfirma%C4%8Dn%C3%A9_skreslenie" target="_blank" rel="noopener noreferrer">Wikipedia SK</a>,
+<a href="https://www.britannica.com/science/confirmation-bias" target="_blank" rel="noopener noreferrer">Encyclopedia Britannica</a>
 
 <aside class="callout callout--tip">
 Tip: Schválne si nájdi aspoň jeden kvalitný protiargument k svojmu názoru – pomôže to vyrovnať výber informácií.
@@ -65,64 +67,110 @@ Tip: Schválne si nájdi aspoň jeden kvalitný protiargument k svojmu názoru �
 ## 2. Skreslenie spätného pohľadu (hindsight bias)
 Alebo aj "Ja-som-to-vedel" efekt.
 
-- **Čo to je:** Po udalosti máme pocit, že sme „to vedeli od začiatku“.  
+- **Čo to je:** Po udalosti máme pocit, že sme „to vedeli od začiatku“. V skutočnosti si však len <b>spätne upravujeme spomienky tak, aby sedeli k výsledku</b>.
 
-- **Príklad:** Po voľbách 2023 mnohí tvrdili, že výsledok - výhra SMER-SD - bol jasný už dávno, hoci pred voľbami sa analytici líšili a bežní ľudia tiež nevedeli ako to dopadne. Predvolebné preferencie boli veľmi natesno pre SMER-SD a Progresívne Slovensko (niekde bolo <a href="https://www.ta3.com/clanok/1015827/prieskum-pre-ta3-kto-by-v-oktobri-vyhral-volby-fico-vedie-v-doveryhodnosti-simecka-mu-dycha-na-chrbat" target="_blank" rel="noopener noreferrer">PSko na 1. mieste</a>, v iných prieskumoch <a href="https://www.aktuality.sk/udalost/volby-2023/prieskumy/" target="_blank" rel="noopener noreferrer">zasa SMER-SD</a>) a v niektorých prípadoch bol na druhom mieste HLAS (<a href="https://www.focus-research.sk/archiv/volebne-preferencie-politickych-stran-jun-2023/" target="_blank" rel="noopener noreferrer">v júni 2023</a>, no už <a href="https://www.focus-research.sk/archiv/volebne-preferencie-politickych-stran-september-2023-ii/" target="_blank" rel="noopener noreferrer">v septembri 2023 bol na treťom</a>). Z týchto rozdielov vo výsledkoch prieskumov je vidieť, že to bolo rôznorodé a neisté do poslednej chvíle. Čiže tvrdiť po voľbách, že to bolo jasné, sa líší od reality. 
-- **Ako sa mu vyhnúť:** Pri hodnotení udalostí si pripomeň, aké neistoty si cítil/a predtým. Alebo sa zamysli - keď si teraz hovorím, že to bolo jasné, že som to vedel/a od začiatku - dala by som na to stávku za 10,000 EUR? Pretože ak to naozaj bolo také jasné, tak potom táto stávka mohla vyhrať veľa. Ale málokedy by sme pred udalosťou takúto stávku urobili. No po udalosti sa už výsledok **zdá** jasný.
-- **Ako ju spoznať:** Keď niekto hovorí „to bolo jasné“ až po tom, čo sa to stalo.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://www.britannica.com/topic/hindsight-bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Príklad:** Po voľbách 2023 mnohí tvrdili, že výhra SMER-SD bola jasná už dávno. Lenže pred voľbami to vôbec nebolo jednoznačné – analytici aj verejnosť sa líšili a prieskumy boli tesné.  
+  - V niektorých bolo <a href="https://www.ta3.com/clanok/1015827/prieskum-pre-ta3-kto-by-v-oktobri-vyhral-volby-fico-vedie-v-doveryhodnosti-simecka-mu-dycha-na-chrbat" target="_blank" rel="noopener noreferrer">na 1. mieste Progresívne Slovensko</a>,  
+  - v iných <a href="https://www.aktuality.sk/udalost/volby-2023/prieskumy/" target="_blank" rel="noopener noreferrer">viedol SMER-SD</a>,  
+  - a ešte <a href="https://www.focus-research.sk/archiv/volebne-preferencie-politickych-stran-jun-2023/" target="_blank" rel="noopener noreferrer">v júni 2023 bol HLAS druhý</a>, kým <a href="https://www.focus-research.sk/archiv/volebne-preferencie-politickych-stran-september-2023-ii/" target="_blank" rel="noopener noreferrer">v septembri už tretí</a>.  
+  Výsledky teda boli neisté až do poslednej chvíle – tvrdiť po voľbách, že „to bolo jasné“, je len ilúzia istoty.
+
+- **Príklad 2:** Keď v roku 2020 prišla pandémia, mnohí spätne tvrdili, že „bolo jasné, že to prerastie do celosvetovej krízy“. V skutočnosti však na začiatku nikto presne nevedel, ako vážna situácia bude – názory odborníkov sa líšili, médiá zdieľali protichodné informácie a mnohé vlády reagovali pomaly. Až po udalosti sa zdá, že vývoj bol predvídateľný – mozog si totiž spätne **vkladá logiku tam, kde predtým bola neistota**.  
+
+
+- **Ako sa mu vyhnúť:** Skús si pripomenúť, aké pochybnosti si mal/a **pred** udalosťou. Alebo sa spýtaj: *„Dala by som na to stávku 10 000 €?“* Ak nie, zrejme to nebolo také „jasné“, ako sa teraz zdá.  
+- **Ako ho spoznať:** Keď niekto sebavedomo povie „to bolo jasné“ až *po tom*, čo sa to stalo.  
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Hindsight_bias" target="_blank" rel="noopener noreferrer">Wikipedia</a>, <a href="https://www.britannica.com/topic/hindsight-bias" target="_blank" rel="noopener noreferrer">Britannica</a>
 
 <aside class="callout callout--tip">
-Podobne to ilustruje aj slovenské príslovie: <em>"Po bitve je každý generál"</em>. Je ľahké "vedieť", keď už sa vec stala a nie sú tam už žiadne premenné a neistoty.
+Slovenské príslovie to vystihuje presne: <em>„Po bitke je každý generál.“</em> Keď už poznáme výsledok, je jednoduché tváriť sa, že sme ho predvídali.
 </aside>
-
 ---
 
 <a id="anchoring-bias"></a>
 
 ## 3. Kotvenie (anchoring effect)
 
-- **Čo to je:** Prvá informácia, ktorá sa k nám dostane, silne ovplyvní naše rozhodnutia a ako vnímame ďalšie informácie. Inými slovami: prvej informácii dáme viac váhy a dôvery, ďalšie už posudzujeme "ukotvení" tou prvou.
-- **Príklad:** Pri voľbách sa politici často oháňajú výškou kriminality u imigrantov - <a href="https://www.minv.sk/?statistika-kriminality-v-slovenskej-republike-csv" target="_blank" rel="noopener noreferrer">no reálne štatistiky MVSR</a> ukazujú, že národnostné menšiny tvoria priemerne 5% všetkých kriminálnych činov a slováci tvoria 95%  <span class="fn" data-footnote="Miera kriminality slovenských občanov z celkovej kriminality bola stále okolo 95% v rokoch 2023, 2024 a 2025. Rok 2025 len do septembra, v čase zverejnenia tohto článku neboli dostupné ďalšie mesiace.">(poznámka k analýze)</span>. Čiže sústrediť sa na 5%, ked vlastne takmer všetky kriminálne činy sú spôsobené slovákmi, je zavádzajúce. Politikom to slúži na namaľovanie čerta na stenu, na ktorého sa potom všetci sústredia. No ak by chceli naozaj pomôcť slovensku, mali by sa zamerať na znižovanie kriminality u samotných slovákov. Ale vedia, že ľudí osloví viac (aj keď mylná a štatisticky nepodložená) predstava o kriminálnikoch, ktorí prichádzajú z vonku a to im získa voličov. Ukotvia si ľudí "zlými imigrantmi" a čokoľvek povedia iní neskôr, už nemá takú váhu.
+- **Čo to je:** Prvá informácia, ktorá sa k nám dostane, silne ovplyvní naše rozhodnutia a to, ako vnímame ďalšie informácie. Inými slovami – prvej informácii dáme viac váhy a dôvery, a ďalšie už posudzujeme „ukotvení“ tou prvou.  
 
-- **Ako sa mu vyhnúť:** Overujme štatistiky a tvrdenia z viacerých zdrojov a nevychádzajme len z prvého, ktoré zaznie.  
+- **Príklad:** Pri voľbách sa politici často oháňajú výškou kriminality u imigrantov.  
+  <a href="https://www.minv.sk/?statistika-kriminality-v-slovenskej-republike-csv" target="_blank" rel="noopener noreferrer">Reálne štatistiky MV SR</a> však ukazujú, že národnostné menšiny tvoria v priemere len okolo **5 %** všetkých trestných činov, zatiaľ čo **Slováci až 95 %**.  
+  <span class="fn" data-footnote="Miera kriminality slovenských občanov z celkovej kriminality bola stále okolo 95 % v rokoch 2023, 2024 a 2025. Rok 2025 len do septembra, v čase zverejnenia tohto článku neboli dostupné ďalšie mesiace.">(poznámka k analýze)</span>  
+
+  Zamerať sa na 5 % a pritom ignorovať 95 % je zavádzajúce. Politikom to slúži na „namaľovanie čerta na stenu“ – vytvoria obraz hrozby, ktorá v skutočnosti nie je významná. Ak by chceli skutočne pomôcť Slovensku, zamerali by sa na znižovanie kriminality u samotných Slovákov.  
+  No vedia, že silnejšie zaberá (hoci štatisticky nepodložená) predstava o „nebezpečných imigrantoch“. Tým si u ľudí vytvoria **kotvu** – a čokoľvek, čo zaznie neskôr, už nemá takú váhu.
+
+
+- **Príklad 2:**  Predajca vystaví nový televízor s cenovkou 1 199 €, no hneď vedľa uvedie, že „pôvodná cena bola 1 699 €“. Aj keď 1 199 € nie je lacné, v porovnaní s pôvodnou sumou to pôsobí ako výhodná kúpa – mozog sa ukotví na vyššiu hodnotu. 👉 Reálne teda neposudzuješ cenu podľa hodnoty výrobku, ale podľa kotvy, ktorú ti obchodník nasadil.
+
+- **Príklad 3:** Nehnuteľnosti: Maklér ukáže byt a povie, že podobné sa predávajú za 250 000 €, aj keď vie, že reálna hodnota je okolo 210 000 €. Kupujúci sa potom nevedome orientuje podľa prvej sumy a všetko pod 250-tisíc sa mu zdá ako „férová ponuka“. ➡️ Táto prvá informácia nastaví rámec, ako budeš vnímať všetky ďalšie ceny.
+
+- **Príklad 4:**  Politické prieskumy: Ak prieskumy dlho ukazujú, že určitá strana má 40 % podpory, ľudia si túto hodnotu zapamätajú ako „silnú“. Aj keď o pár týždňov klesne na 25 %, stále ju vnímajú ako favorita, pretože pôvodné číslo sa stalo mentálnou kotvou. 👉 Politické marketingové tímy to často využívajú na budovanie dojmu „stability a sily“.
+
+- **Ako sa mu vyhnúť:** Overuj tvrdenia a štatistiky z viacerých zdrojov – neostaň pri prvom, ktoré zaznie.  
 - **Ako ho spoznať:** Keď niekto stále porovnáva nové dáta len s tým, čo povedal na začiatku.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Anchoring_effect" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Kotvenie" target="_blank" rel="noopener noreferrer">zdroj 2</a>, 
-<a href="https://www.pon.harvard.edu/tag/anchoring-effect/" target="_blank" rel="noopener noreferrer">zdroj 3</a>
+- **Zdroje:**: <a href="https://en.wikipedia.org/wiki/Anchoring_effect" target="_blank" rel="noopener noreferrer">Wikipedia</a>, <a href="https://sk.wikipedia.org/wiki/Kotvenie" target="_blank" rel="noopener noreferrer">Wikipedia (SK)</a>, <a href="https://www.pon.harvard.edu/tag/anchoring-effect/" target="_blank" rel="noopener noreferrer">Harvard Program on Negotiation</a>  
 
 <aside class="callout callout--tip">
-Tip: Zapíš si, čo si si myslel(a) pred udalosťou. Po nej to porovnaj s realitou – znížiš efekt „vedel som to od začiatku“. Niekedy sa možno trafíš, no častokrát nie - výsledok bude iný. Nie je to ani dobré ani zlé - cieľ nie je sa trafiť, ale byť si vedomý/á, že po udalosti je každý múdry, no pred udalosťou
+<strong>Tip:</strong> Zapíš si, čo si si myslel(a) predtým, než sa niečo stane – a po udalosti to porovnaj s realitou.  
+Pomôže ti to znížiť efekt spätného „vedel som to od začiatku“.  
+Cieľom nie je trafiť výsledok, ale uvedomiť si, že naša myseľ sa rada nechá ukotviť prvou informáciou.
 </aside>
 
 ---
 
 <a id="availability-bias"></a>
 
-## 4. Dostupnostná zaujatosť (availability bias)
-<aside class="callout callout--tip">
-Tip: Daj si pozor na silné príbehy. Over frekvenciu javu v dátach, nie v pamäti.
-</aside>
+## 4. Heuristika dostupnosti (availability bias)
+Alebo aj dostupnostné skreslenie.
 
-- **Čo to je:** Čo si ľahko vybavíme v pamäti, považujeme za častejšie alebo pravdivejšie.  
-- **Príklad (SK):** Po medializovaných prípadoch násilia cudzincov vznikol pocit, že ide o veľký problém, hoci štatistiky ukazujú, že väčšina trestných činov je od domácich.  <span class="text-red-500">ZDROJ</span>
-- **Ako sa jej vyhnúť:** Nespokojme sa s jedným príkladom, pozrime sa na štatistiky.  
-- **Ako ju spoznať:** Ak niekto tvrdí, že niečo je „časté“ len preto, že to bolo v správach.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Availability_heuristic" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Dostupnostná_heuristika" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Čo to je:** To, čo si ľahko vybavíme v pamäti, považujeme za častejšie, dôležitejšie alebo pravdepodobnejšie. Náš mozog si jednoducho mýli **pamätateľnosť** s **pravdepodobnosťou**. Je to jedna z ďalších mentálnych skratiek, ktorá vo všeobecnosti zľahčuje náš život - no niekedy vie zavádzať.
+
+- **Príklad:** Po medializovaných prípadoch násilia spáchaného cudzincami vznikol dojem, že ide o veľký problém.  
+  V skutočnosti však <a href="https://www.minv.sk/?statistika-kriminality-v-slovenskej-republike-csv" target="_blank" rel="noopener noreferrer">štatistiky MV SR</a> dlhodobo ukazujú, že drvivá väčšina trestných činov je páchaná domácimi občanmi – cudzinci tvoria len malé percento všetkých prípadov.  
+  Médiá ale tieto ojedinelé prípady zvýraznia, a tak sa v pamäti javia častejšie, než v skutočnosti sú.
+
+- **Príklad 2:** Film Čeľuste spôsobil, že každý si hneď vybavil ako žralok trhá ľudí a preto bol strach zo žralokov na mysli každého človeka pri mori. No realita je úplne iná - žraloky nevyhľadávajú ľudí ako korisť a útoky sú veľmi zriedkavé: <a href="https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/" target="_blank" rel="noopener noreferrer">Priemerne sa vo svete ročne stane približne 40-90 nezavinených útokov žralokov a z toho približne 5-7 vedie k úmrtiu.</a>. V živote ľuďom hrozí plno iných hrozieb, ktoré sú štatisticky oveľa pravdepodobnejšie, no obrazy z filmu Čeľuste sa uložia do pamäte lepšie, ako štatistiky ohľadom úmrtí spôsobených auto haváriami, utopením a početných iných hrozieb, <a href="https://www.floridamuseum.ufl.edu/shark-attacks/odds/compare-risk/" target="_blank" rel="noopener noreferrer">ktoré su aj 1000x pravdepodobnejšie, ako útok žralokom</a>.
+
+
+
+- **Ako sa jej vyhnúť:** Nenechaj sa uniesť jedným silným príbehom. Pozri si čísla, trend alebo širší kontext.  
+- **Ako ju spoznať:** Keď niekto hovorí, že „to sa deje stále“, len preto, že o tom často počul v správach alebo na sociálnych sieťach.  
+- **Zdroje:**: <a href="https://www.floridamuseum.ufl.edu/shark-attacks/" target="_blank" rel="noopener noreferrer">International Shark Attack File - Florida Museum</a>, <a href="https://en.wikipedia.org/wiki/Shark_attack" target="_blank" rel="noopener noreferrer">Wikipedia)</a>  
+
+<aside class="callout callout--tip">
+<strong>Tip:</strong> Silné príbehy pôsobia presvedčivo, ale nemusia byť typické. Overuj frekvenciu javu v dátach – nie v pamäti.
+</aside>
 
 ---
 
 <a id="groupthink"></a>
 
-## 5. Zoskupovacia zaujatosť (groupthink)
-<aside class="callout callout--tip">
-Tip: Urč v tíme „advokáta diabla“, ktorý má za úlohu hľadať riziká a protiargumenty.
-</aside>
+## 5. Skupinové myslenie (groupthink)
 
-- **Čo to je:** Skupina ľudí radšej prijme spoločný názor, než aby riskovala konflikt.  
-- **Príklad (SK):** V parlamente poslanci často hlasujú podľa straníckej línie, aj keď niektorí osobne nesúhlasia.  
-- **Ako sa jej vyhnúť:** Povedzme nahlas svoj názor, aj keď vieme, že nebude populárny.  
-- **Ako ju spoznať:** V diskusii nikto nespochybňuje „vedúci“ názor.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Groupthink" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Groupthink" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Čo to je:** Ide o jav, keď skupina ľudí radšej prijme spoločný názor, než by riskovala konflikt, nesúhlas alebo zdržanie rozhodnutia.  
+  Cieľom sa stáva **súlad**, nie **pravda**. Skupina sa tak utvrdzuje v jednom smere a ignoruje iné možnosti.
+
+- **Príklad:** V parlamente poslanci často hlasujú podľa straníckej línie, aj keď osobne nesúhlasia s návrhom. Dôvodom býva tlak „nevyčnievať“ alebo obava, že by išli proti vlastnej skupine. 
+  Podobne to funguje aj v pracovných tímoch – keď všetci súhlasia s vedúcim, aby nenarušili atmosféru, no projekt potom trpí zlým rozhodnutím.
+
+- **Príklad 2:** Počas pandémie COVID-19 mnohé pracovné tímy alebo školské kolektívy prijímali rozhodnutia bez diskusie, lebo „všetci to tak robia“.  
+  Niektoré firmy bez overenia prebrali tvrdé opatrenia či plošné pravidlá z médií, aj keď pre ich prostredie nedávali zmysel.  
+  Nikto ich nespochybňoval – báli sa pôsobiť ako „problémoví“ alebo „necitliví“.  
+
+- **Príklad 3:** V automobilke sa vedenie rozhodne investovať do nového modelu, aj keď niektorí inžinieri majú pochybnosti o technickej spoľahlivosti.  Na poradách však nikto nič nepovie, lebo všetci vedia, že manažér projekt tlačí „zhora“. O pár rokov neskôr sa ukáže, že práve tieto problémy spôsobili nákladné stiahnutie vozidiel z trhu.  
+
+- **Ako sa mu vyhnúť:** Neboj sa povedať svoj názor – aj keď ide proti väčšine. Práve odlišný pohľad často odhalí riziká, ktoré si ostatní nevšimli.  
+  Pomáha aj to, keď má tím nastavené pravidlo, že nesúhlas nie je útok, ale príspevok k lepšiemu rozhodnutiu.
+
+- **Ako ho spoznať:**  
+  - V diskusii všetci prikyvujú, ale nikto nekladie nepríjemné otázky.  
+  - Kritika sa vníma ako „negativita“.  
+- **Zdroje:** <a href="https://sk.wikipedia.org/wiki/Groupthink" target="_blank" rel="noopener noreferrer">Wikipedia SK</a>, <a href="https://www.psychologytoday.com/us/basics/groupthink" target="_blank" rel="noopener noreferrer">PsychologyToday.com</a>
+
+<aside class="callout callout--tip">
+Tip: Urč v tíme „diablovho advokáta“, ktorý má za úlohu hľadať riziká a protiargumenty.
+</aside>
 
 ---
 

@@ -30,6 +30,9 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image, type = 'website', author, datePublished, dateModified, keywords = [] } = Astro.props as Props;
+// Simple on/off toggle for the temporary password gate
+// Set to true to enable, false to disable
+const ENABLE_PASSWORD_GATE = false;
 // Default OG image handling:
 // - Pages (type === 'website') use site-wide opengraph JPEG from public/
 // - Articles (type === 'article') keep existing default SVG thumb unless overridden
@@ -53,10 +56,10 @@ const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.t
 	href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
-<meta name="robots" content="noindex, nofollow" />
+{ ENABLE_PASSWORD_GATE && <meta name="robots" content="noindex, nofollow" /> }
 
-<!-- Temporary password gate across site -->
-<script type="module" src={gateUrl}></script>
+<!-- Temporary password gate across site (toggled via PUBLIC_ENABLE_PASSWORD_GATE) -->
+{ ENABLE_PASSWORD_GATE && <script type="module" src={gateUrl}></script> }
 <!-- Footnotes behaviour (tooltips/popovers) -->
 <script type="module" src={footnotesUrl}></script>
 <!-- Auto-annotate known terms with footnotes -->
