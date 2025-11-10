@@ -44,6 +44,11 @@ const resolvedImage = image ?? (type === 'article' ? { src: defaultThumbUrl } : 
 const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.toLowerCase().endsWith('.svg'))
   ? '/opengraph.jpeg'
   : resolvedImage.src;
+// URLs for breadcrumbs
+const HOME_URL = new URL('/', Astro.site).toString();
+const BLOG_URL = new URL('blog/', Astro.site).toString();
+const PAGE_URL = new URL(Astro.url.pathname, Astro.site).toString();
+const SEARCH_URL = new URL('hladat', Astro.site).toString();
 ---
 
 <!-- Global Metadata -->
@@ -114,6 +119,43 @@ const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.t
         datePublished: datePublished ? new Date(datePublished).toISOString() : undefined,
         dateModified: dateModified ? new Date(dateModified).toISOString() : undefined,
         keywords: keywords && keywords.length ? keywords.join(', ') : undefined,
+      })}
+    />
+  )
+}
+{
+  type === 'article' && (
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Domov', item: HOME_URL },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: BLOG_URL },
+          { '@type': 'ListItem', position: 3, name: title, item: PAGE_URL },
+        ],
+      })}
+    />
+  )
+}
+{
+  type !== 'article' && (
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        url: HOME_URL,
+        name: SITE_TITLE,
+        inLanguage: 'sk',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${SEARCH_URL}?q={search_term_string}`,
+          'query-input': 'required name=search_term_string',
+        },
       })}
     />
   )
