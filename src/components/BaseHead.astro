@@ -99,8 +99,10 @@ const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.t
 <!-- JSON-LD -->
 {
   type === 'article' && (
-    <script type="application/ld+json">
-      {JSON.stringify({
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         headline: title,
@@ -113,6 +115,6 @@ const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.t
         dateModified: dateModified ? new Date(dateModified).toISOString() : undefined,
         keywords: keywords && keywords.length ? keywords.join(', ') : undefined,
       })}
-    </script>
+    />
   )
 }
