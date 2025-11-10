@@ -28,8 +28,10 @@ import Page from "../layouts/Page.astro";
             </li>`).join('')}
         </ul>` : '<p>Nič sa nenašlo. Skús iné slová.</p>'; }
     const form = document.getElementById('site-search');
-    form && form.addEventListener('submit', (e)=>{ e.preventDefault(); const inp=document.getElementById('q'); const val=inp && 'value' in inp ? inp.value : ''; doSearch(val); });
+    form && form.addEventListener('submit', (e)=>{ e.preventDefault(); const inp=document.getElementById('q'); const val=inp && 'value' in inp ? inp.value : ''; doSearch(val); try{ const u=new URL(window.location.href); u.searchParams.set('q', val); history.replaceState(null,'',u.toString()); }catch{} });
     const inp=document.getElementById('q');
     inp && inp.addEventListener('input', (e)=> doSearch(e && e.target && 'value' in e.target ? e.target.value : ''));
+    // On load: read ?q= and run search
+    try{ const u=new URL(window.location.href); const q=u.searchParams.get('q')||''; if(q){ if(inp) inp.value=q; doSearch(q); } }catch{}
   </script>
 </Page>
