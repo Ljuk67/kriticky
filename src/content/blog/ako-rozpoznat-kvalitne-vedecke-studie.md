@@ -1,11 +1,9 @@
 ---
-title: "DRAFT: Ako rozpoznať kvalitné vedecké štúdie od nekvalitných?"
+title: "Ako rozpoznať kvalitné vedecké štúdie od nekvalitných?"
 description: "Praktický sprievodca, ako rýchlo odlíšiť dôveryhodný výskum od slabých alebo zavádzajúcich štúdií."
-pubDate: "Sep 26 2025"
+pubDate: "Nov 11 2025"
 author: "Lukas Cech"
-status: "draft"
 tags:
-  - "kritické myslenie"
   - "veda"
   - "štúdie"
   - "metodológia"
@@ -32,13 +30,13 @@ V ére, keď sa “štúdie ukazujú” na sociálnych sieťach každý deň, je
 ## Znaky dôveryhodnej štúdie
 
 - Recenzované publikovanie – štúdia prešla recenziou odborníkmi (peer review – nezávislá kontrola kvality a metód pred zverejnením).
-- Silný dizajn: randomizovaná, kontrolovaná – účastníci sú náhodne priradení a porovnávame s kontrolnou skupinou (randomizovaná kontrolovaná štúdia = RCT).
+- Silný dizajn (nie grafický ale ako je štúdia navrhnutá, jej štruktúra a postup): randomizovaná, kontrolovaná – účastníci sú náhodne priradení a porovnávame s kontrolnou skupinou (randomizovaná kontrolovaná štúdia = RCT).
 - Dvojito zaslepená (double-blind) – ani účastníci, ani výskumníci nevedia, kto dostal liečbu a kto placebo; znižuje to zaujatosť.
 - Dostatočná veľkosť vzorky – dosť účastníkov na spoľahlivé závery (vyššia “štatistická sila” = menšie riziko, že vidíme náhodu).
 - Predregistrácia (preregistration) – výskumníci vopred zverejnia plán a analýzy; obmedzuje to dodatočné “prispôsobovanie” výsledkov.
-- Jasná metodika a merania – používajú sa validované nástroje (overené a spoľahlivé testy/škály) a zmysluplné ukazovatele.
+- Jasná metodika a merania – používajú sa uznávané nástroje (overené a spoľahlivé testy/škály) a zmysluplné ukazovatele.
 - Transparentnosť – dostupný protokol, kód alebo dáta (aspoň v anonymizovanej forme) pre overenie.
-- Bez konfliktu záujmov – autori a sponzori priznávajú financovanie; nie sú motivovaní výsledok “ofarbiť”.
+- Bez konfliktu záujmov – autori a sponzori priznávajú financovanie; nie sú motivovaní výsledok “prifarbiť” tým, že ich sponzoruje firma, ktorej záleží na tom, aby dosiahla špecifický výsledok.
 - Replikovateľnosť – výsledok potvrdzujú nezávislé tímy v ďalších štúdiách (nie je to jednorazová náhoda).
 - Veľkosť efektu – nejde len o “významnosť” (p-hodnota), ale aj o to, aký veľký a prakticky dôležitý je efekt.
 - Dobrý kontext v literatúre – štúdia nadväzuje na predchádzajúce poznatky a primerane cituje zdroje.
@@ -52,6 +50,8 @@ V ére, keď sa “štúdie ukazujú” na sociálnych sieťach každý deň, je
 
 - Bez kontrolnej skupiny alebo bez náhodného priraďovania tam, kde je to možné.
 - Príliš malá vzorka, nestabilné výsledky a obrovské rozdiely bez vysvetlenia.
+- Do štúdie sa vstupuje už s jasným názorom či cieľom - "Vieme, že vo vakcínach sú mikročipy, tak ideme hľadať nejaké výsledky, ktoré by to nejako potvrdili".
+- Idú silno proti zaužívaným názorom a vedeckému konsenzu - a aj keď neprejdú recenzným postupom (peer reviews), tak nezmenia názor. 
 - Selektívne reportovanie – cherry-picking (vyberanie si len tých dát, ktoré sa mi hodia) alebo vynechávanie negatívnych výsledkov.
 - P-hacking (manipulácia s analýzami tak, aby vyšli “štatisticky významné” výsledky) – veľa testov bez korekcií, hľadanie efektu “kým niečo vyjde”.
 - Nejasná, neúplná metodika – nedajú sa zopakovať postupy; chýba protokol.
@@ -62,14 +62,38 @@ V ére, keď sa “štúdie ukazujú” na sociálnych sieťach každý deň, je
 
 ## Ako čítať výsledky a závery
 
-- Skontroluj intervaly spoľahlivosti (rozsah, v ktorom je pravdepodobná skutočná hodnota) – úzke intervaly = presnejší odhad.
-- Pozri aj na praktickú významnosť – aj malý, no stabilný efekt môže byť dôležitý; veľký, no nepresný efekt môže byť nedôveryhodný.
-- Hľadaj súlad s inými štúdiami a prehľadmi; pýtaj sa, či existuje nezávislé potvrdenie.
+Keď sa dostaneš k časti „Výsledky“ alebo „Záver“ v štúdii, neber to ako finálnu pravdu. Toto je práve moment, kedy treba zapnúť kritické myslenie a pozrieť sa hlbšie.  
+
+### Intervaly spoľahlivosti – nie je číslo ako číslo  
+Ak štúdia uvádza napríklad, že nejaký liek znížil riziko ochorenia o **20 % (95 % CI: 18–22 %)**, znamená to, že vedci si sú takmer istí, že skutočný efekt leží niekde medzi 18 % a 22 %.  
+Čím **užší interval**, tým **presnejší odhad**.  
+Naopak, ak interval siaha napríklad od –5 % po +40 %, výsledok je síce „zaujímavý“, ale **veľmi neistý** – môže to znamenať, že liek vôbec nefunguje… alebo funguje výborne - jedno dosť vylučuje druhé, čo robí výsledok málo užitočným. Takéto výsledky ber s rezervou.
+
+
+### Štatistická vs. praktická významnosť  
+Mnohé články píšu, že „výsledok bol štatisticky významný“ – ale to ešte **neznamená, že je aj prakticky dôležitý**.  
+<aside class="callout callout--info">
+
+**Príklad**:  
+Ak nový doplnok zníži krvný tlak o 1 mmHg a má p < 0,05 (čo znamená, že je menej než 5 % pravdepodobnosť, že pozorovaný výsledok vznikol len náhodou – teda výsledok je štatisticky významný, no nemusí byť automaticky aj dôležitý v praxi.), štatisticky to môže vyzerať dobre, ale v praxi je to **zanedbateľný efekt**.  
+Naopak, malý, no **konzistentný efekt** v mnohých kvalitných štúdiách môže byť **hodnotnejší**, než jeden „wow“ výsledok s veľkým efektom, ale slabou istotou.
+</aside>
+
+### Hľadaj súlad s inými výskumami  
+Jeden výskum nič nedokazuje. Skús si položiť otázku:  
+- Našli **iné štúdie** podobné výsledky?  
+- Existujú **prehľadové články (meta-analýzy)**, ktoré tento efekt potvrdzujú aj v rôznych podmienkach a na väčšej vzorke?  
+
+Ak sa výsledky **opakujú v nezávislých výskumoch**, je to dobré znamenie.  
+Ak je štúdia jediná, ktorá niečo „revolučné“ tvrdí, buď skeptický – vedecká revolúcia sa nestane z dňa na deň, ale až vtedy, keď sa výsledok potvrdí **viackrát a rôznymi tímami**.
+
+---
+
 
 ## Praktický checklist
 
-- Je to recenzované v dôveryhodnom časopise?
-- Je dizajn adekvátny (kontrolná skupina, randomizácia, dvojito zaslepené)?
+- Je to vydané a recenzované v dôveryhodnom časopise?
+- Je štruktúra štúdie adekvátna (kontrolná skupina, randomizácia, dvojito zaslepené)?
 - Je vzorka dosť veľká a reprezentatívna?
 - Je metodika jasná a replikovateľná? Sú merania validované?
 - Je priznané financovanie a konflikty záujmov?
@@ -78,5 +102,5 @@ V ére, keď sa “štúdie ukazujú” na sociálnych sieťach každý deň, je
 
 ---
 
-Zhrnutie: kvalitná štúdia stojí na poctivom dizajne, transparentnosti a overiteľnosti. Ak si nie si istý, hľadaj systematické prehľady a meta-analýzy – a vždy over, či závery stoja na viacerých nezávislých dôkazoch, nie na jedinom “hype” výsledku.
+Zhrnutie: kvalitná štúdia stojí na poctivej štruktúre, transparentnosti a overiteľnosti. Ak si nie si istý, hľadaj systematické prehľady a meta-analýzy – a vždy over, či závery stoja na viacerých nezávislých dôkazoch, nie na jedinom “hype” výsledku.
 

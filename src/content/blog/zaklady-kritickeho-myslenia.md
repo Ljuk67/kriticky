@@ -51,7 +51,7 @@ Príklad: Počúvaš dva protichodné názory na ceny energií. Spojíš inform�
 - **Reflexia** – spätné hodnotenie vlastného myslenia: je môj záver naozaj logický? Nezanedbal som iné možnosti? Ak sa môj názor počas tohto procesu zmenil - prečo? 
 
 <aside class="callout callout--info">
-Príklad: Máš pocit, že „táto strana vždy klame“. Skontroluj, či si nevyberáš len správy, ktoré to potvrdzujú (<a href="/blog/zakladne-typy-zaujatosti/#konfirmacne-skreslenie">konfirmačné skreslenie</a>). Pozri si aspoň dva <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">kvalitné zdroje</a> s iným názorom.
+Príklad: Máš pocit, že „táto strana vždy klame“. Skontroluj, či si nevyberáš len správy, ktoré to potvrdzujú (<a href="/blog/zakladne-typy-zaujatosti/#konfirmacne-skreslenie">konfirmačné skreslenie</a>). Pozri si aspoň dva <a href="/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/">kvalitné zdroje</a> s iným názorom.
 </aside>
 
 <aside class="callout callout--tip">
@@ -74,7 +74,7 @@ Ak toto znie príliš komplikovane - nemusí to tak byť - tento proces vieš ur
 <strong>Príklad krok za krokom:</strong> Na Instagrame vidíš reels: „Slováci budú platiť najvyššie dane v EÚ.“
 <ul>
 <li>Otázka: Hovorí sa o všetkých daniach, alebo o konkrétnej (napr. DPH alebo len za špecifický typ potraviny)? Kedy a komu sa to týka?</li>
-<li>Dáta: Pozri Eurostat/Ministerstvo financií, články z <a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">kvalitných médií</a>, čo presne navrhujú zákony.</li>
+<li>Dáta: Pozri Eurostat/Ministerstvo financií, články z <a href="/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/">kvalitných médií</a>, čo presne navrhujú zákony.</li>
 <li>Analýza: Je to porovnanie sadzby, alebo reálnej daňovej záťaže po odpočtoch? Týka sa to podnikateľov či zamestnancov?</li>
 <li>Záver: „Tvrdenie je prehnané. Navrhovaná zmena by nás nedala na prvé miesto v EÚ, ale zvyšuje daň pre konkrétnu skupinu potravín.“</li>
 <li>Reflexia: Nemal som tendenciu veriť videu len preto, že to zapadá do môjho názoru na dane?</li>
@@ -89,7 +89,7 @@ Konkrétne situácie, kde sa ti zíde:
 - Peniaze: Porovnanie „výhodného“ úveru na letáku vs. spravenie si vlastného prieskumu a zistenie, že existujú aj výhodnejšie úvery; nákup telefónu – aké reálne špecifikácie potrebujem vs. čo mi chce predať reklama.
 - Práca: Rozlíšenie medzi sľubmi v pracovnej ponuke a skutočnými podmienkami (mzda v hrubom vs. v čistom, nadčasy).
 - Zdravie: Doplnok výživy so „100 % účinkom“ – hľadať klinické dôkazy, [štúdie](/blog/ako-rozpoznat-kvalitne-vedecke-studie/), nie užívateľské recenzie.
-- Politika: Odlišovanie volebných sľubov od reálneho plánu (termíny, rozpočet, kto to zaplatí). Preskúmanie čo o politikovi hovoria [spoľahlivé zdroje](/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/) - dodržal svoje sľuby v predošlých obdobiach? 
+- Politika: Odlišovanie volebných sľubov od reálneho plánu (termíny, rozpočet, kto to zaplatí). Preskúmanie čo o politikovi hovoria [spoľahlivé zdroje](/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/) - dodržal svoje sľuby v predošlých obdobiach? 
 - Vzťahy: Počúvať a pýtať sa, či som to správne pochopil, predtým, než zareagujem. Byť si vedomý emócií, ktoré pri počúvaní cítim - a ako môžu vplývať na moju reakciu / odpoveď.
 
 ---
@@ -103,7 +103,7 @@ Stačí, ak sa pri každom silnom tvrdení – v správach, od politikov, na soc
 urobíš STOP a toto slovo zároveň použiješ ako návod na preverenie daného tvrdenia takto:
 				
 <p><strong>S</strong> – <strong>Skontroluj zdroj</strong> - odkiaľ pochádza toto tvrdenie? Je to 
-					<a href="/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/">spoľahlivý zdroj?</a><br/>
+					<a href="/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/">spoľahlivý zdroj?</a><br/>
 				<strong>T</strong> – <strong>Triezvo premýšľaj</strong><br/>
 				<strong>O</strong> – <strong>Over fakty</strong><br/>
 				<strong>P</strong> – <strong>Pozor na vlastnú zaujatosť</strong></p>

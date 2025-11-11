@@ -16,6 +16,10 @@
 - `npm run dev` — Start Astro dev server with hot reload.
 - `npm run build` — Create production build into `dist/`.
 - `npm run preview` — Serve the production build locally.
+ - Link checker:
+   - `npm run check:site` — Scan `dist/` for broken internal links/assets. Fails if any are found.
+   - `npm run check:site -- --external` — Also check external http(s) links.
+   - `npm run linkcheck:remind` — Prints a reminder if the last scan was >30 days ago.
 
 ## Coding Style & Naming Conventions
 - Indentation: 2 spaces; UTF-8; LF line endings.
@@ -173,3 +177,16 @@ Example callout snippet (use in Markdown/MDX articles):
   - Edit `public/footnotes-terms.json` and add entries like:
     - `{ "term": "metaanalýza", "aliases": ["meta-analýza", "metaanalyza"], "note": "…", "maxPerPage": 1 }`
 - Don’t annotate inside code blocks or links. Avoid overuse: one footnote per term per page is enough.
+
+## Link Checker
+- The site link checker runs automatically after each build (`postbuild`). It scans `dist/` for missing internal targets (404-like) and optional external 404s.
+- Manual runs:
+  - `npm run check:site` — fast offline internal check.
+  - `npm run check:site -- --external` — include external links (uses HTTP requests).
+- Anchors: add `--check-anchors` to verify that `#id` anchors exist on target pages.
+- Reminders: `npm run linkcheck:remind` warns if it’s been more than 30 days since the last scan. Timestamp is stored in `.linkcheck/last-run.json` (ignored by git).
+
+## Footnotes Workflow (authoring reminder)
+- Add recurring term explanations in `public/footnotes-terms.json` so annotations work site‑wide.
+- In content, annotate uncommon terms inline: `<span class="fn" data-footnote="Krátke vysvetlenie.">termín</span>`.
+- Keep one annotation per term per page; avoid annotating inside links and code.
