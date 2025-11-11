@@ -132,6 +132,7 @@ $verifyUrl = $base . '/api/comments/verify.php?token=' . urlencode($token);
 
 // Send verification email to commenter
 require_once __DIR__ . '/../lib/smtp.php';
+require_once __DIR__ . '/../lib/logger.php';
 
 $to = $email;
 $subject = 'Potvrď svoj komentár na kriticky.sk';
@@ -146,6 +147,13 @@ try {
   smtp_send_mail($to, $subject, $text, $html);
 } catch (Throwable $e) {
   error_log('comments submit: smtp error: ' . $e->getMessage());
+  // Log for later inspection (mask email)
+  $masked = preg_replace('/(^.).*(@.*$)/', '$1***$2', $email);
+  app_log('email_verification_send_failed', [
+    'slug' => $slug,
+    'to' => $masked,
+    'error' => $e->getMessage(),
+  ]);
 }
 
 echo json_encode(['ok' => true]);
