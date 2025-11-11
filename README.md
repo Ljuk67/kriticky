@@ -13,7 +13,7 @@ Upevniť a rozšíriť kritické myslenie u bežných ľudí.
 <hr/>
 
 ## Kontrola odkazov (link checker)
-- Po každom build-e beží automatická kontrola odkazov (postbuild). Ak nájde nefunkčné interné odkazy, build zlyhá.
+- Po každom build-e beží automatická kontrola odkazov (postbuild). Build nezlyhá; iba vypíše nefunkčné odkazy.
 - Ručné spustenie:
   - `npm run check:site` – skontroluje odkazy v `dist/` (interné, offline).
   - `npm run check:site -- --external` – pridá kontrolu externých odkazov (HTTP statusy).
