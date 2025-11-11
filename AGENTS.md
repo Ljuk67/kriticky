@@ -17,7 +17,7 @@
 - `npm run build` — Create production build into `dist/`.
 - `npm run preview` — Serve the production build locally.
  - Link checker:
-   - `npm run check:site` — Scan `dist/` for broken internal links/assets. Fails if any are found.
+ - `npm run check:site` — Scan `dist/` for broken internal links/assets. Build does not fail; prints broken URLs.
    - `npm run check:site -- --external` — Also check external http(s) links.
    - `npm run linkcheck:remind` — Prints a reminder if the last scan was >30 days ago.
 
