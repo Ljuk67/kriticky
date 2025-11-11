@@ -6,3 +6,4 @@ node_modules/
 # Ignore all env variants, but allow example
 .env.*
 !.env.example
+.linkcheck/
