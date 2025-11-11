@@ -80,6 +80,7 @@ if (!is_array($rows2) || count($rows2) === 0) { echo 'Komentár už bol potvrden
 $approved = $rows2[0];
 
 // Notify admin by email
+require_once __DIR__ . '/../lib/config.php';
 require_once __DIR__ . '/../lib/smtp.php';
 require_once __DIR__ . '/../lib/logger.php';
 $to = getenv('ADMIN_NOTIFY_TO') ?: 'mysli@kriticky.sk';
@@ -100,6 +101,10 @@ $html = '<p><strong>Nový komentár na kriticky.sk</strong></p>'
       . '<blockquote>' . nl2br(htmlspecialchars($snippet)) . '</blockquote>'
       . '<p><a href="' . htmlspecialchars($postUrl) . '">Otvoriť článok</a></p>';
 try {
+  foreach (['SMTP_HOST','SMTP_PORT','SMTP_SECURE','SMTP_USER','SMTP_PASS','SMTP_FROM'] as $k) {
+    $v = cfg($k, getenv($k) ?: '');
+    if ($v !== null && $v !== '') putenv($k . '=' . $v);
+  }
   smtp_send_mail($to, $subject, $text, $html);
 } catch (Throwable $e) {
   error_log('comments verify: smtp notify error: ' . $e->getMessage());
