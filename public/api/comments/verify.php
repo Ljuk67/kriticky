@@ -81,6 +81,7 @@ $approved = $rows2[0];
 
 // Notify admin by email
 require_once __DIR__ . '/../lib/smtp.php';
+require_once __DIR__ . '/../lib/logger.php';
 $to = getenv('ADMIN_NOTIFY_TO') ?: 'mysli@kriticky.sk';
 $subject = 'New comment on kriticky.sk';
 $slug = (string)($approved['slug'] ?? '');
@@ -98,7 +99,16 @@ $html = '<p><strong>Nový komentár na kriticky.sk</strong></p>'
       . 'Meno: ' . htmlspecialchars($name) . '</p>'
       . '<blockquote>' . nl2br(htmlspecialchars($snippet)) . '</blockquote>'
       . '<p><a href="' . htmlspecialchars($postUrl) . '">Otvoriť článok</a></p>';
-try { smtp_send_mail($to, $subject, $text, $html); } catch (Throwable $e) { error_log('comments verify: smtp notify error: ' . $e->getMessage()); }
+try {
+  smtp_send_mail($to, $subject, $text, $html);
+} catch (Throwable $e) {
+  error_log('comments verify: smtp notify error: ' . $e->getMessage());
+  app_log('admin_notify_send_failed', [
+    'slug' => $slug,
+    'to' => $to,
+    'error' => $e->getMessage(),
+  ]);
+}
 
 // Redirect back to the article
 header('Location: ' . $postUrl);

@@ -42,3 +42,11 @@ Upevniť a rozšíriť kritické myslenie u bežných ľudí.
 3) Schéma (pozri `scripts/sql/comments_migration.sql`):
    - Potrebné stĺpce: `is_approved`, `verify_token`, `verify_expires_at`, `verified_at`.
    - RLS: povoliť `SELECT` len pre `is_approved=true`; `INSERT/UPDATE` len cez service role.
+
+### Logy chýb (verifikačné/oznamovacie e‑maily)
+- PHP endpointy logujú zlyhania odoslania e‑mailov do súboru (JSON riadky):
+  - Prednosť majú premenné prostredia:
+    - `LOG_FILE` – úplná cesta k súboru (napr. `/home/…/logs/comments.log`)
+    - `LOG_DIR` – adresár; súbor sa vytvorí ako `comments.log`
+  - Ak nie sú nastavené, používa sa systémový dočasný adresár (`/tmp/kriticky-comments.log`).
+- Položky: čas, event (`email_verification_send_failed` alebo `admin_notify_send_failed`), IP, UA, slug, e‑mail (zamaskovaný pre verifikačné maily), chyba.
