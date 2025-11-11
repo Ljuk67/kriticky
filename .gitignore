@@ -7,3 +7,4 @@ node_modules/
 .env.*
 !.env.example
 .linkcheck/
+public/api/config.local.php

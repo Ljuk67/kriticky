@@ -70,9 +70,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 if (mb_strlen($message) < 3) { echo json_encode(['ok' => true]); exit; }
 
-// Supabase config
-$sbUrl = rtrim((string)envv('SUPABASE_URL', ''), '/');
-$sbServiceKey = (string)envv('SUPABASE_SERVICE_ROLE_KEY', '');
+// Supabase config (prefer config.local.php; fallback to env)
+require_once __DIR__ . '/../lib/config.php';
+$sbUrl = rtrim((string)cfg('SUPABASE_URL', ''), '/');
+$sbServiceKey = (string)cfg('SUPABASE_SERVICE_ROLE_KEY', '');
 if ($sbUrl === '' || $sbServiceKey === '') {
   http_response_code(500);
   echo json_encode(['ok' => false, 'error' => 'not_configured']);
@@ -144,6 +145,10 @@ $html = '<p>Ahoj ' . htmlspecialchars($name) . ',</p>'
       . '<p>Ak si komentár neposlal(a), správu ignoruj.</p>';
 
 try {
+  foreach (['SMTP_HOST','SMTP_PORT','SMTP_SECURE','SMTP_USER','SMTP_PASS','SMTP_FROM'] as $k) {
+    $v = cfg($k, getenv($k) ?: '');
+    if ($v !== null && $v !== '') putenv($k . '=' . $v);
+  }
   smtp_send_mail($to, $subject, $text, $html);
 } catch (Throwable $e) {
   error_log('comments submit: smtp error: ' . $e->getMessage());
