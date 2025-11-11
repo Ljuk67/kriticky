@@ -91,7 +91,7 @@ ready(() => {
       // Require minimal time on page before allowing submit (20s)
       try {
         const elapsed = Date.now() - pageReadyAt;
-        const minMs = 20000;
+        const minMs = 2000;
         if (elapsed < minMs) {
           const wait = Math.ceil((minMs - elapsed) / 1000);
           if (statusEl) statusEl.textContent = `Prosím, počkaj aspoň ${wait}s pred odoslaním komentára.`;
@@ -143,26 +143,23 @@ ready(() => {
           btn.disabled = true;
           btn.setAttribute('aria-disabled', 'true');
         }
-        const res = await fetch(url + '/rest/v1/comments?apikey=' + encodeURIComponent(key), {
+        // Send to server endpoint that handles verification + insert
+        const res = await fetch('/api/comments/submit.php', {
           method: 'POST',
-          // Do not request returning rows to avoid SELECT RLS on the inserted row
-          headers: { ...headers },
-          body: JSON.stringify(payload),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...payload, hp_field: fd.get('hp_field') || '' }),
         });
-        if (!res.ok) {
-          // Try to parse JSON error from PostgREST for clearer feedback
-          let bodyText = '';
-          try {
-            const txt = await res.text();
-            bodyText = txt;
-            const j = JSON.parse(txt);
-            if (j && j.message) bodyText = j.message;
-          } catch {}
-          throw new Error('HTTP ' + res.status + (bodyText ? ': ' + bodyText : ''));
+        let ok = false;
+        try {
+          const j = await res.json();
+          ok = !!(j && j.ok);
+        } catch {}
+        if (!res.ok || !ok) {
+          if (statusEl) statusEl.textContent = 'Komentár sa nepodarilo odoslať. Skús neskôr.';
+          throw new Error('Submit failed ' + res.status);
         }
-        if (statusEl) statusEl.textContent = 'Ďakujeme za názor!';
+        if (statusEl) statusEl.textContent = 'Skontroluj e‑mail a potvrď komentár. Vďaka!';
         form.reset();
-        fetchComments();
         // Record last successful submit time for client-side throttling
         try { localStorage.setItem('cm:last:' + slug, String(Date.now())); } catch {}
       } catch (e) {
