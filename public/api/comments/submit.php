@@ -75,6 +75,9 @@ require_once __DIR__ . '/../lib/config.php';
 $sbUrl = rtrim((string)cfg('SUPABASE_URL', ''), '/');
 $sbServiceKey = (string)cfg('SUPABASE_SERVICE_ROLE_KEY', '');
 if ($sbUrl === '' || $sbServiceKey === '') {
+  // Log for later inspection
+  require_once __DIR__ . '/../lib/logger.php';
+  app_log('supabase_not_configured');
   http_response_code(500);
   echo json_encode(['ok' => false, 'error' => 'not_configured']);
   exit;
@@ -120,6 +123,15 @@ function sb_request(string $method, string $url, string $serviceKey, array $body
 if ($st < 200 || $st >= 300) {
   // Log and report failure to the client so UI shows error
   error_log('comments submit: supabase insert failed status=' . $st . ' err=' . $err . ' body=' . $body);
+  require_once __DIR__ . '/../lib/logger.php';
+  $masked = preg_replace('/(^.).*(@.*$)/', '$1***$2', $email);
+  app_log('supabase_insert_failed', [
+    'slug' => $slug,
+    'to' => $masked,
+    'status' => $st,
+    'err' => substr((string)$err, 0, 200),
+    'body' => substr((string)$body, 0, 200),
+  ]);
   http_response_code(502);
   echo json_encode(['ok' => false, 'error' => 'insert_failed']);
   exit;
