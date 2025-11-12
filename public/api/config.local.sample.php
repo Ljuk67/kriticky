@@ -2,6 +2,9 @@
 // Copy this file to config.local.php and fill in real values.
 // Keep it out of git (already ignored). The file returns an assoc array of secrets.
 return [
+  // Site base URL (used to build verification and redirect links)
+  'SITE_BASE_URL' => 'https://kriticky.sk',
+
   // Supabase (server-side)
   'SUPABASE_URL' => 'https://YOUR-PROJECT.supabase.co',
   'SUPABASE_SERVICE_ROLE_KEY' => 'SUPABASE_SERVICE_ROLE_KEY',

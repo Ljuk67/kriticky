@@ -88,9 +88,14 @@ $slug = (string)($approved['slug'] ?? '');
 $name = (string)($approved['name'] ?? 'Anonym');
 $message = (string)($approved['message'] ?? '');
 $snippet = mb_substr($message, 0, 200);
-$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-$host = $_SERVER['HTTP_HOST'] ?? 'kriticky.sk';
-$base = $scheme . '://' . $host;
+// Build post URL using trusted base URL
+$base = rtrim((string)cfg('SITE_BASE_URL', ''), '/');
+if ($base === '') {
+  $serverName = $_SERVER['SERVER_NAME'] ?? 'kriticky.sk';
+  $serverName = preg_replace('/[^a-z0-9.-]/i', '', $serverName);
+  $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+  $base = $scheme . '://' . $serverName;
+}
 $postUrl = $base . '/blog/' . rawurlencode($slug) . '/#comments';
 
 $text = "Nový komentár na kriticky.sk\nSlug: $slug\nMeno: $name\n\n$snippet\n\nLink: $postUrl";
