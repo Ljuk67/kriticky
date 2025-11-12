@@ -1,0 +1,29 @@
+Options -Indexes
+
+# Deny direct HTTP access to local config files
+<Files "config.local.php">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
+
+<Files "config.local.sample.php">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
+
+# Block direct access to helper library scripts
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^lib/ - [F,L]
+</IfModule>
+
