@@ -39,7 +39,9 @@ Upevniť a rozšíriť kritické myslenie u bežných ľudí.
    - `SMTP_HOST=smtp.m1.websupport.sk`, `SMTP_PORT=587`, `SMTP_SECURE=starttls`
    - `SMTP_USER=admin@kriticky.sk`, `SMTP_PASS=...`, `SMTP_FROM=admin@kriticky.sk`, `SMTP_FROM_NAME=Kriticky.sk`
    - `ADMIN_NOTIFY_TO=mysli@kriticky.sk`
-3) Schéma (pozri `scripts/sql/comments_migration.sql`):
+3) Web URL (server):
+   - `SITE_BASE_URL=https://kriticky.sk` — používa sa na zostavenie overovacieho odkazu a presmerovania (nepoužíva sa hlavička Host z požiadavky).
+4) Schéma (pozri `scripts/sql/comments_migration.sql`):
    - Potrebné stĺpce: `is_approved`, `verify_token`, `verify_expires_at`, `verified_at`.
    - RLS: povoliť `SELECT` len pre `is_approved=true`; `INSERT/UPDATE` len cez service role.
 

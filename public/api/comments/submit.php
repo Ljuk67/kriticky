@@ -143,10 +143,15 @@ if ($st < 200 || $st >= 300) {
   exit;
 }
 
-// Build verification link
-$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-$base = $scheme . '://' . $host;
+// Build verification link using trusted base URL (avoid untrusted Host header)
+$base = rtrim((string)cfg('SITE_BASE_URL', ''), '/');
+if ($base === '') {
+  // Fallback: derive from server name (sanitized), not HTTP_HOST; still recommend configuring SITE_BASE_URL
+  $serverName = $_SERVER['SERVER_NAME'] ?? 'kriticky.sk';
+  $serverName = preg_replace('/[^a-z0-9.-]/i', '', $serverName);
+  $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+  $base = $scheme . '://' . $serverName;
+}
 $verifyUrl = $base . '/api/comments/verify.php?token=' . urlencode($token);
 
 // Send verification email to commenter
