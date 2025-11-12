@@ -9,6 +9,9 @@ function _log_path(): string {
   return sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'kriticky-comments.log';
 }
 
+// Expose the resolved path for diagnostics
+function log_path(): string { return _log_path(); }
+
 function app_log(string $event, array $data = []): void {
   $line = [
     'ts' => date('c'),
@@ -19,10 +22,12 @@ function app_log(string $event, array $data = []): void {
   $json = json_encode($line, JSON_UNESCAPED_UNICODE);
   $path = _log_path();
   try {
+    // Ensure directory exists
+    $dir = dirname($path);
+    if (!is_dir($dir)) @mkdir($dir, 0700, true);
     file_put_contents($path, $json . PHP_EOL, FILE_APPEND | LOCK_EX);
   } catch (Throwable $e) {
     // Fallback to PHP error_log if filesystem write fails
     error_log('app_log failed: ' . $e->getMessage() . ' line=' . $json);
   }
 }
-
