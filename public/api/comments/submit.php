@@ -163,7 +163,7 @@ $html = '<p>Ahoj ' . htmlspecialchars($name) . ',</p>'
       . '<p>Ak si komentár neposlal(a), správu ignoruj.</p>';
 
 try {
-  foreach (['SMTP_HOST','SMTP_PORT','SMTP_SECURE','SMTP_USER','SMTP_PASS','SMTP_FROM'] as $k) {
+  foreach (['SMTP_HOST','SMTP_PORT','SMTP_SECURE','SMTP_USER','SMTP_PASS','SMTP_FROM','SMTP_FROM_NAME'] as $k) {
     $v = cfg($k, getenv($k) ?: '');
     if ($v !== null && $v !== '') putenv($k . '=' . $v);
   }
