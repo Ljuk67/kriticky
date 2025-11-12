@@ -100,7 +100,7 @@ $html = '<p><strong>Nový komentár na kriticky.sk</strong></p>'
       . '<blockquote>' . nl2br(htmlspecialchars($snippet)) . '</blockquote>'
       . '<p><a href="' . htmlspecialchars($postUrl) . '">Otvoriť článok</a></p>';
 try {
-  foreach (['SMTP_HOST','SMTP_PORT','SMTP_SECURE','SMTP_USER','SMTP_PASS','SMTP_FROM'] as $k) {
+  foreach (['SMTP_HOST','SMTP_PORT','SMTP_SECURE','SMTP_USER','SMTP_PASS','SMTP_FROM','SMTP_FROM_NAME'] as $k) {
     $v = cfg($k, getenv($k) ?: '');
     if ($v !== null && $v !== '') putenv($k . '=' . $v);
   }

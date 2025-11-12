@@ -13,6 +13,7 @@ function smtp_send_mail(string $to, string $subject, string $textBody, string $h
   $user = (string)smtp_env('SMTP_USER', '');
   $pass = (string)smtp_env('SMTP_PASS', '');
   $from = (string)smtp_env('SMTP_FROM', $user ?: 'no-reply@localhost');
+  $fromName = (string)smtp_env('SMTP_FROM_NAME', '');
 
   $sock = stream_socket_client("tcp://$host:$port", $errno, $errstr, 10);
   if (!$sock) throw new Exception("SMTP connect failed: $errstr ($errno)");
@@ -78,7 +79,7 @@ function smtp_send_mail(string $to, string $subject, string $textBody, string $h
 
   $boundary = 'bnd_' . bin2hex(random_bytes(8));
   $headers = [];
-  $headers[] = 'From: ' . $from;
+  $headers[] = 'From: ' . format_address($from, $fromName);
   $headers[] = 'To: ' . $to;
   $headers[] = 'Subject: ' . encode_subject($subject);
   $headers[] = 'MIME-Version: 1.0';
@@ -111,3 +112,11 @@ function encode_subject(string $s): string {
   return '=?UTF-8?B?' . base64_encode($s) . '?=';
 }
 
+function format_address(string $email, string $name = ''): string {
+  $email = trim($email);
+  $name = trim($name);
+  if ($name === '') return '<' . $email . '>';
+  $needsEnc = (bool)preg_match('/[^\x20-\x7E]/', $name);
+  $disp = $needsEnc ? encode_subject($name) : '"' . addcslashes($name, '"') . '"';
+  return $disp . ' <' . $email . '>';
+}

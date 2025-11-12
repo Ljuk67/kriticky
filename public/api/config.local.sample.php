@@ -17,6 +17,7 @@ return [
   'SMTP_USER' => 'admin@kriticky.sk',
   'SMTP_PASS' => 'REPLACE_ME',
   'SMTP_FROM' => 'admin@kriticky.sk',
+  'SMTP_FROM_NAME' => 'Kriticky.sk',
   'ADMIN_NOTIFY_TO' => 'mysli@kriticky.sk',
 
   // Optional logging location
@@ -24,4 +25,3 @@ return [
   // or
   // 'LOG_DIR' => '/home/USER/logs',
 ];
-
