@@ -7,6 +7,7 @@ header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 
 require_once __DIR__ . '/../lib/config.php';
+require_once __DIR__ . '/../lib/logger.php';
 
 $out = [
   'supabaseUrl' => (bool)cfg('SUPABASE_URL', ''),
@@ -18,6 +19,7 @@ $out = [
     'from' => (bool)cfg('SMTP_FROM', ''),
   ],
   'supabase' => [ 'selectStatus' => null, 'error' => null ],
+  'log' => [ 'path' => null, 'writable' => null, 'error' => null ],
 ];
 
 // Minimal Supabase SELECT test (no data written)
@@ -44,6 +46,21 @@ try {
   }
 } catch (Throwable $e) {
   $out['supabase']['error'] = $e->getMessage();
+}
+
+// Log path/writability probe
+try {
+  $path = log_path();
+  $out['log']['path'] = $path;
+  $dir = dirname($path);
+  if (!is_dir($dir)) @mkdir($dir, 0700, true);
+  $probe = ['ts' => date('c'), 'event' => 'status_probe'];
+  $ok = @file_put_contents($path, json_encode($probe) . PHP_EOL, FILE_APPEND | LOCK_EX);
+  $out['log']['writable'] = $ok !== false;
+  if ($ok === false) $out['log']['error'] = 'file_put_contents failed';
+} catch (Throwable $e) {
+  $out['log']['writable'] = false;
+  $out['log']['error'] = $e->getMessage();
 }
 
 echo json_encode($out);
