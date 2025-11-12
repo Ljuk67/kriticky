@@ -132,8 +132,14 @@ if ($st < 200 || $st >= 300) {
     'err' => substr((string)$err, 0, 200),
     'body' => substr((string)$body, 0, 200),
   ]);
+  // Try to classify common errors without leaking details
+  $code = 'insert_failed';
+  $snippet = strtolower((string)$body);
+  if (strpos($snippet, 'verify_token') !== false || strpos($snippet, 'verify_expires_at') !== false) {
+    $code = 'missing_verify_columns';
+  }
   http_response_code(502);
-  echo json_encode(['ok' => false, 'error' => 'insert_failed']);
+  echo json_encode(['ok' => false, 'error' => $code]);
   exit;
 }
 
