@@ -4,8 +4,6 @@
 
 declare(strict_types=1);
 
-function envv(string $k, ?string $d=null): ?string { $v = getenv($k); return $v === false ? $d : $v; }
-
 header('Content-Type: text/html; charset=utf-8');
 header('Cache-Control: no-store');
 
@@ -16,8 +14,9 @@ if ($token === '') {
   exit;
 }
 
-$sbUrl = rtrim((string)envv('SUPABASE_URL', ''), '/');
-$sbServiceKey = (string)envv('SUPABASE_SERVICE_ROLE_KEY', '');
+require_once __DIR__ . '/../lib/config.php';
+$sbUrl = rtrim((string)cfg('SUPABASE_URL', ''), '/');
+$sbServiceKey = (string)cfg('SUPABASE_SERVICE_ROLE_KEY', '');
 if ($sbUrl === '' || $sbServiceKey === '') {
   http_response_code(500);
   echo 'Server not configured';
