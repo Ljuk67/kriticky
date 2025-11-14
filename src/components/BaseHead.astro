@@ -73,9 +73,20 @@ const SEARCH_URL = new URL('hladat', Astro.site).toString();
 <!-- Auto-annotate known terms with footnotes -->
 <script type="module" src={footnotesAutoUrl}></script>
 
-<!-- Goat counter - open source statistics: goatcounter.com -->
-<script data-goatcounter="https://kriticky.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- GoatCounter.com stats (load only in production; exclude localhost; defer) -->
+{import.meta.env.PROD && (
+  <>
+    <script is:inline>
+      {`
+        window.goatcounter = window.goatcounter || {};
+        // Do not count on localhost / 127.0.0.1
+        window.goatcounter.allow_local = false;
+      `}
+    </script>
+    <script data-goatcounter="https://kriticky.goatcounter.com/count" defer src="//gc.zgo.at/count.js"></script>
+    <noscript><img src="https://kriticky.goatcounter.com/count?p={{pathname}}" alt=""/></noscript>
+  </>
+)}
 
 <!-- Self-hosted fonts via @fontsource-variable packages -->
 
