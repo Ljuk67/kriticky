@@ -84,8 +84,9 @@ function extractUrls(html) {
   return urls.map((u) => u.url ?? u);
 }
 
-function isHttp(u) { return /^https?:\/\//i.test(u); }
+function isHttp(u) { return /^(https?:)?\/\//i.test(u); }
 function isSkippable(u) { return /^(#|mailto:|tel:|javascript:|data:|sms:)/i.test(u); }
+function isTemplate(u) { return (u.includes('${') || u.includes('{{')); }
 
 function stripQueryHash(u) {
   const i = u.indexOf('#');
@@ -186,7 +187,7 @@ async function run() {
     const html = await readFile(file, 'utf8');
     const urls = extractUrls(html);
     for (const u of urls) {
-      if (!u || isSkippable(u)) continue;
+      if (!u || isSkippable(u) || isTemplate(u)) continue;
       if (isHttp(u)) externalRefs.push({ url: u, from: file });
       else internalRefs.push({ url: u, from: file });
     }
