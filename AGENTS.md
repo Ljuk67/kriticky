@@ -53,6 +53,11 @@ tags:
 - Verify the scope and approach with the user first; do not proceed with widespread edits without explicit confirmation.
 - Suggest creating and working on a dedicated branch for the change (e.g., `feat/<scope>` or `content/<scope>`) before implementation.
 
+## Destructive Edits Policy
+- Never delete or substantially rewrite user-authored content (e.g., blog posts, pages) without explicit approval.
+- If a refactor requires file conversion (e.g., MD → MDX), preserve the full original content verbatim. Confirm with the user before removing or shortening any sections.
+- For any change that removes more than a few sentences or alters meaning, propose a diff/preview and wait for approval before applying.
+
 ## Commit & Pull Request Guidelines
 - Commits: concise, imperative, and descriptive (no strict convention observed). Example: `Add article on basics of critical thinking`.
 - PRs: include a clear description, linked issues, and screenshots/GIFs for visual changes. Note key pages affected and steps to verify.
