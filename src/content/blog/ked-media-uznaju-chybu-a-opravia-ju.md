@@ -32,16 +32,18 @@ Keď sa na chybu upozornilo, BBC priznala, že zostrih nebol v poriadku, pridala
 
 Takto vyzerá zodpovedný prístup: chyba sa neprehliada, ale vysvetlí, opraví a transparentne zdokumentuje. 
 
-### Všetky organizácie, médiá, firmy sú postavené na jednotlivcoch - ktorí sa občas môžu pomýliť
-
-Nezáleží na tom, aké veľké je dané médium či organizácia alebo ako dobre majú nastavený etický kódex. Stále je postavená na jednotlivcoch, od ktorých závisí samotná aplikácia správnych postupov v praxi. Jednotlivci sa môžu občas zmýliť, alebo spraviť nesprávne rozhodnutie - vedome alebo nevedome. 
-
-Kľúčové je, ako sa organizácia k chybe postaví: či ju prizná, vysvetlí, urobí nápravu a nastaví procesy tak, aby sa podobná situácia neopakovala. Dôveryhodné médiá to robia pravidelne a transparentne. Tie menej dôveryhodné to riešia len čiastočne – a tie úplne nedôveryhodné chybu radšej skryjú, zmažú alebo predstierajú, že sa "skutok nestal".
+<img src="/src/assets/theguardian_video_editing.webp" width="600" alt="Sme.sk – priznanie chyby a oprava článku" class="mx-auto block"/>
 
 ### Odkazy na článok
 
 - <a href="https://www.theguardian.com/media/live/2025/nov/10/bbc-tim-davie-resigns-bias-panorama-donald-trump-latest-news-updates" target="_blank" rel="noopener">Spravodajstvo na The Guardian</a>
 - <a href="https://web.archive.org/web/20251110093130/https://www.theguardian.com/media/live/2025/nov/10/bbc-tim-davie-resigns-bias-panorama-donald-trump-latest-news-updates" target="_blank" rel="noopener">Archivovaná verzia článku</a>
+
+### Všetky organizácie, médiá, firmy sú postavené na jednotlivcoch - ktorí sa občas môžu pomýliť
+
+Nezáleží na tom, aké veľké je dané médium či organizácia alebo ako dobre majú nastavený etický kódex. Stále je postavená na jednotlivcoch, od ktorých závisí samotná aplikácia správnych postupov v praxi. Jednotlivci sa môžu občas zmýliť, alebo spraviť nesprávne rozhodnutie - vedome alebo nevedome. 
+
+Kľúčové je, ako sa organizácia k chybe postaví: či ju prizná, vysvetlí, urobí nápravu a nastaví procesy tak, aby sa podobná situácia neopakovala. Dôveryhodné médiá to robia pravidelne a transparentne. Tie menej dôveryhodné to riešia len čiastočne – a tie úplne nedôveryhodné chybu radšej skryjú, zmažú alebo predstierajú, že sa "skutok nestal".
 
 ## Prečo je to dôležité
 
