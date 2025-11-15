@@ -233,6 +233,17 @@ img {
 	height: auto;
 	border-radius: 8px;
 }
+/* Ensure Astro <Picture> outputs never overflow the text column */
+.prose picture {
+  display: block;
+  max-width: 100%;
+  margin-inline: auto;
+}
+.prose picture img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
