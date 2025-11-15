@@ -11,12 +11,14 @@
     @apply btn bg-white text-gray-900 ring-1 ring-gray-200 shadow-sm hover:shadow-lg hover:ring-2 hover:ring-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-50 disabled:pointer-events-none;
   }
   .btn-dark {
-    @apply btn bg-gray-900 text-white shadow-sm hover:shadow-lg hover:ring-2 hover:ring-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 disabled:opacity-50 disabled:pointer-events-none;
+    /* Dark primary button: stronger hover shadow and darker hover bg */
+    @apply btn bg-gray-900 text-white shadow-sm hover:bg-gray-950 hover:shadow-xl hover:ring-2 hover:ring-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-700 disabled:opacity-50 disabled:pointer-events-none;
   }
   /* Ensure links styled as .btn aren't underlined inside .prose */
   .prose a.btn { @apply no-underline; }
   .prose a.btn-light, .prose a.btn-dark { @apply no-underline; }
   /* In case some global rule sets underline, double down */
   a.btn { text-decoration: none; }
-  a.btn:hover, a.btn-light:hover, a.btn-dark:hover { color: inherit; }
+  /* Only adjust light button hover color; do not override .btn-dark */
+  a.btn-light:hover { color: inherit; }
 }

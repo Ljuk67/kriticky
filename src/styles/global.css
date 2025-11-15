@@ -207,14 +207,15 @@ p {
 	margin-bottom: 2em;
 }
 
-a {color:var(--accent);}
-a:hover {color:var(--accent-dark);}
+a:not(.btn):not(.btn-light):not(.btn-dark):not(.tag) { color: var(--accent); }
+a:hover:not(.btn):not(.btn-light):not(.btn-dark):not(.tag) { color: var(--accent-dark); }
 
 /* Page description styling: larger and italic for emphasis */
 .prose .page-description,
 .page-description {
   font-size: 1.3em;
   font-style: italic;
+  hyphens: none;
 }
 textarea {
 	width: 100%;
