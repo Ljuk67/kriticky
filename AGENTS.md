@@ -37,7 +37,7 @@ tags:
 ---
   ```
 - TypeScript: strict mode (see `tsconfig.json`); prefer explicit exports.
-- Images: place under `src/assets/`; reference via import for optimized handling. But we prefer using our svg generator in scripts/generate-thumbs.mjs
+- Images: place under `src/assets/` and prefer Astro’s image pipeline for posts and components (see “Images in Posts” below). For generated thumbs, we still prefer using our SVG generator in `scripts/generate-thumbs.mjs`.
 
 ## Testing Guidelines
 - No test suite configured yet. If adding tests, prefer Playwright for E2E and Vitest for unit tests. Place tests under `tests/` with `*.spec.ts` naming. Add an `npm test` script when introduced.
@@ -182,6 +182,41 @@ Example callout snippet (use in Markdown/MDX articles):
   - Edit `public/footnotes-terms.json` and add entries like:
     - `{ "term": "metaanalýza", "aliases": ["meta-analýza", "metaanalyza"], "note": "…", "maxPerPage": 1 }`
 - Don’t annotate inside code blocks or links. Avoid overuse: one footnote per term per page is enough.
+
+## Images in Posts (Astro Assets)
+- Use Astro’s image system (`astro:assets`) for blog posts and components to get:
+  - Responsive `srcset` and `<picture>` markup
+  - Automatic AVIF/WebP (with JPEG/PNG fallback)
+  - Cache‑busted URLs and dead‑asset pruning
+  - CLS prevention (width/height included)
+- Authoring pattern (prefer MDX for posts with images):
+  - Convert the post to `.mdx` when inserting local images.
+  - Place source files under `src/assets/` (kebab‑case names, no spaces).
+  - Import and render via `Picture` or `Image`:
+
+```mdx
+import { Picture } from 'astro:assets'
+import hero from '../../assets/hero-example.jpg'
+
+<Picture
+  src={hero}
+  widths={[320, 640, 960, 1280]}
+  sizes="(max-width: 640px) 100vw, 640px"
+  formats={['avif', 'webp', 'jpeg']}
+  alt="Stručný, vecný popis obrázka"
+/>
+```
+
+- Simpler case (single optimized format):
+
+```mdx
+import { Image } from 'astro:assets'
+import pic from '../../assets/pic.png'
+
+<Image src={pic} widths={[320, 640, 960]} sizes="100vw" format="webp" alt="Popis" />
+```
+
+- If a post must remain `.md`, use public paths as a fallback (place files under `public/images/` and reference `/images/...`). Prefer MDX + `astro:assets` whenever feasible.
 
 ## Link Checker
 - The site link checker runs automatically after each build (`postbuild`). It scans `dist/` for missing internal targets (404-like) and optional external 404s.
