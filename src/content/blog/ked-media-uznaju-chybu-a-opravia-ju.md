@@ -1,0 +1,55 @@
+---
+title: "Integrita médií: ukážky, keď médiá uznajú chybu a opravia ju"
+description: "Príklady z praxe, keď redakcia prizná omyl a otvorene opraví svoj článok. Takto vyzerá mediálna integrita v praxi."
+pubDate: "Nov 15 2025"
+author: "Lukas Cech"
+tags:
+  - "integrita"
+categories:
+  - "Médiá"
+---
+
+Občas sa stane aj [spoľahlivým médiám](/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/), že niečo uletí. Je ľudské sa zmýliť. Dôležité je, čo príde potom - či sa to snažia zakryť a vykrútiť sa z toho, alebo majú integritu, priznajú si chybu a opravia ju. 
+
+## Sme.sk - nesprávna formulácia redaktora
+
+Pôvodný text obsahoval problematickú formuláciu. Po upozornení čitateľov redakcia text upravila, doplnila vysvetlenie a ospravedlnila sa. Takýto postup nie je slabosť – je to prejav integrity a profesionality. Presne takto sa buduje dôvera – transparentne, bez zbytočných výhovoriek.
+
+<img src="/src/assets/sme_priznanie_chyby.webp" width="300" alt="Sme.sk – priznanie chyby a oprava článku" class="mx-auto block"/>
+
+### Odkazy na článok
+
+- <a href="https://www.sme.sk/domov/c/gaspar-pavol-novinari-media-sis-monitorovanie-sledovanie" target="_blank" rel="noopener">Pôvodný článok na Sme.sk</a>
+- <a href="https://web.archive.org/web/20251115145623/https://www.sme.sk/domov/c/gaspar-pavol-novinari-media-sis-monitorovanie-sledovanie" target="_blank" rel="noopener">Ak by už článok nebol dostupný, tu je zálohovaný</a>
+
+<aside class="callout callout--info">Keď zdieľaš citlivú tému, prilož aj archívny odkaz. Pomáha to proti „miznúcim“ článkom a uľahčuje kontrolu tvrdení. Weby niekedy staré články mažú, pretože nemajú návštevnosť alebo už nie sú aktuálne. Uložiť do archívu internetu ho môžeš na <a href="https://web.archive.org/" target="_blank" rel="noopener">Wayback Machine</a></aside>
+
+## The Guardian - chybne zostrihané video Donalda Trumpa
+
+V novembri 2025 sa BBC ocitla pod tlakom po tom, čo sa zistilo, že v relácii Panorama odvysielala chybne zostrihané video Donalda Trumpa. V pôvodnej verzii vystrihli krátky úsek, ktorý menil kontext jeho vyjadrenia – čo mohlo u divákov vytvoriť dojem zaujatosti. Nešlo o „fake“, skôr o nešťastnú editáciu, ktorá v spravodajstve jednoducho nemá čo robiť. Video bolo zostrihané tak, že jeho výsledný dojem bol touto editáciou pozmenený od toho, aký dojem vzbudzovalo vypočutie celého príhovoru Donalda Trumpa.
+
+Keď sa na chybu upozornilo, BBC priznala, že zostrih nebol v poriadku, pridala vysvetlenie a segment upravila. Generálny riaditeľ Tim Davie následne odstúpil – nie iba kvôli tomuto incidentu, ale ako súčasť širšej debaty o mediálnej nestrannosti. Guardian o tom priebežne informoval a dopĺňal svoje spravodajstvo o aktualizácie, aby čitateľov držal pri faktoch, nie pri dojmoch.
+
+Takto vyzerá zodpovedný prístup: chyba sa neprehliada, ale vysvetlí, opraví a transparentne zdokumentuje. 
+
+### Všetky organizácie, médiá, firmy sú postavené na jednotlivcoch - ktorí sa občas môžu pomýliť
+
+Nezáleží na tom, aké veľké je dané médium či organizácia alebo ako dobre majú nastavený etický kódex. Stále je postavená na jednotlivcoch, od ktorých závisí samotná aplikácia správnych postupov v praxi. Jednotlivci sa môžu občas zmýliť, alebo spraviť nesprávne rozhodnutie - vedome alebo nevedome. 
+
+Kľúčové je, ako sa organizácia k chybe postaví: či ju prizná, vysvetlí, urobí nápravu a nastaví procesy tak, aby sa podobná situácia neopakovala. Dôveryhodné médiá to robia pravidelne a transparentne. Tie menej dôveryhodné to riešia len čiastočne – a tie úplne nedôveryhodné chybu radšej skryjú, zmažú alebo predstierajú, že sa "skutok nestal".
+
+### Odkazy na článok
+
+- <a href="https://www.theguardian.com/media/live/2025/nov/10/bbc-tim-davie-resigns-bias-panorama-donald-trump-latest-news-updates" target="_blank" rel="noopener">Spravodajstvo na The Guardian</a>
+- <a href="https://web.archive.org/web/20251110093130/https://www.theguardian.com/media/live/2025/nov/10/bbc-tim-davie-resigns-bias-panorama-donald-trump-latest-news-updates" target="_blank" rel="noopener">Archivovaná verzia článku</a>
+
+## Prečo je to dôležité
+
+Keď médium verejne uvedie chybu, dá tým čitateľom jasný signál: záleží nám na presnosti, budujeme dôveru a férovo priznávame, keď niečo nesedí. Je to lepšie než mlčať alebo chybu „premazať“ bez vysvetlenia. Je to ľudské, takisto ako je ľudské aj ospravedlniť sa.
+
+<aside class="callout callout--tip">Ak narazíš na nepresnosť, pokojne napíš redakcii – slušne, s odkazmi a vecne. Zvyšuješ tým kvalitu informácií pre všetkých.</aside>
+
+<aside class="callout callout--tip">Pri čítaní online článkov si všímaj „Aktualizované“/„Opravené“ poznámky – veľa prezradia o zodpovednom prístupe redakcie.</aside>
+
+
+
