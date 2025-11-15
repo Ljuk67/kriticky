@@ -207,8 +207,9 @@ p {
 	margin-bottom: 2em;
 }
 
-a:not(.btn):not(.btn-light):not(.btn-dark):not(.tag) { color: var(--accent); }
-a:hover:not(.btn):not(.btn-light):not(.btn-dark):not(.tag) { color: var(--accent-dark); }
+/* Low-specificity link colors so component classes (e.g., navbar) can override */
+:where(a:not(.btn):not(.btn-light):not(.btn-dark):not(.tag)) { color: var(--accent); }
+:where(a:hover:not(.btn):not(.btn-light):not(.btn-dark):not(.tag)) { color: var(--accent-dark); }
 
 /* Page description styling: larger and italic for emphasis */
 .prose .page-description,
