@@ -249,6 +249,8 @@ pre > code {
 ol li, ul li {    line-height: 1.3em;
 	-webkit-hyphens: auto; hyphens: auto;}
 
+.posttitle{hyphens: none;}
+
 .callout,
 .callout--info,
 .callout--tip,
