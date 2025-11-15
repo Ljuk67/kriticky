@@ -1,6 +1,5 @@
 ---
 import Page from '../layouts/Page.astro';
-import bdUrl from '../assets/bdetector.webp?url';
 ---
 
 <Page
@@ -11,7 +10,7 @@ import bdUrl from '../assets/bdetector.webp?url';
   <div class="grid sm:grid-cols-1 md:grid-cols-1 mt-8 gap-12">
     <div class="flex gap-4 items-start border-4 fancybox">
       <div class="mt-1 rounded-full p-1 w-12 h-12 shrink-0 overflow-hidden">
-        <img src={bdUrl} alt="Bullshit Detector" class="w-full h-full object-cover rounded-full m-0" />
+        <img src="/images/bdetector.webp" alt="Bullshit Detector" class="w-full h-full object-cover rounded-full m-0" />
       </div>
       <div>
         <h3 class="font-semibold text-2xl m-0">Bullshit Detector</h3>
