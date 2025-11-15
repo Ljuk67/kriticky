@@ -9,7 +9,9 @@ categories:
   - "Médiá"
 ---
 
-// Images served from public/images for direct HTML usage
+import { Picture } from 'astro:assets'
+import sme from '../../assets/sme_priznanie_chyby.webp'
+import guardian from '../../assets/theguardian_video_editing.webp'
 
 Občas sa stane aj [spoľahlivým médiám](/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/), že niečo uletí. Je ľudské sa zmýliť. Dôležité je, čo príde potom - či sa to snažia zakryť a vykrútiť sa z toho, alebo majú integritu, priznajú si chybu a opravia ju. 
 
@@ -17,7 +19,14 @@ Občas sa stane aj [spoľahlivým médiám](/blog/ako-odlisit-spolahlive-zdroje-
 
 Pôvodný text obsahoval problematickú formuláciu. Po upozornení čitateľov redakcia text upravila, doplnila vysvetlenie a ospravedlnila sa. Takýto postup nie je slabosť – je to prejav integrity a profesionality. Presne takto sa buduje dôvera – transparentne, bez zbytočných výhovoriek.
 
-<img src="/images/sme_priznanie_chyby.webp" width="300" alt="Sme.sk – priznanie chyby a oprava článku" class="mx-auto block"/>
+  <Picture
+  src={sme}
+  widths={[320, 640]}
+  sizes="(max-width: 640px) 100vw, 320px"
+  formats={['avif','webp','jpeg']}
+  alt="Sme.sk – priznanie chyby a oprava článku"
+  class="mx-auto block max-w-[320px] w-full"
+  />
 
 ### Odkazy na článok
 
@@ -34,7 +43,14 @@ Keď sa na chybu upozornilo, BBC priznala, že zostrih nebol v poriadku, pridala
 
 Takto vyzerá zodpovedný prístup: chyba sa neprehliada, ale vysvetlí, opraví a transparentne zdokumentuje. 
 
-<img src="/images/theguardian_video_editing.webp" width="600" alt="Chybne zostrihané video – príklad z Guardianu" class="mx-auto block"/>
+<Picture
+  src={guardian}
+  widths={[480, 768]}
+  sizes="(max-width: 768px) 100vw, 768px"
+  formats={["avif","webp","jpeg"]}
+  alt="Chybne zostrihané video – príklad z Guardianu"
+  class="mx-auto block max-w-[768px]"
+/>
 
 ### Odkazy na článok
 
