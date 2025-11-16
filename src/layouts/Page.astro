@@ -9,9 +9,16 @@ interface Props {
   description?: string;
   sectionClass?: string;
   wrap?: boolean; // if false, render slot directly under main
+  mainClass?: string;
 }
 
-const { title, description, sectionClass = 'prose prose-lg max-w-none', wrap = true }: Props & { sectionClass?: string; wrap?: boolean } = Astro.props;
+const {
+  title,
+  description,
+  sectionClass = 'prose prose-lg max-w-none',
+  wrap = true,
+  mainClass = 'mx-auto max-w-4xl px-4 sm:px-6 lg:px-8',
+}: Props & { sectionClass?: string; wrap?: boolean; mainClass?: string } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
@@ -26,7 +33,7 @@ const resolvedImageWithDomain = new URL(
   </head>
   <body>
     <Header />
-    <main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <main class={mainClass}>
       {wrap && (
         <section class={sectionClass}>
           {title && <h1>{title}</h1>}
