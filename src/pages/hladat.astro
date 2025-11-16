@@ -2,10 +2,22 @@
 import Page from "../layouts/Page.astro";
 ---
 
-<Page title="Hľadanie" description="Nájdi články a stránky podľa názvu alebo témy.">
+<Page
+  title="Hľadanie"
+  description="Nájdi články a stránky podľa názvu alebo témy."
+  sectionClass="prose prose-lg max-w-none search-page"
+  mainClass="search-main"
+>
   <form id="site-search" class="flex gap-2 items-center mb-6" role="search">
     <label for="q" class="sr-only">Hľadaj</label>
-    <input id="q" name="q" type="search" placeholder="Napíš, čo chceš nájsť…" class="flex-1 px-4 py-2 rounded-md border border-gray-300" autofocus />
+    <input
+      id="q"
+      name="q"
+      type="search"
+      placeholder="Napíš, čo chceš nájsť…"
+      class="flex-1 px-4 py-2 rounded-md border border-gray-300"
+      autofocus
+    />
     <button type="submit" class="btn">Hľadať</button>
   </form>
   <div id="results" aria-live="polite"></div>
@@ -35,3 +47,25 @@ import Page from "../layouts/Page.astro";
     try{ const u=new URL(window.location.href); const q=u.searchParams.get('q')||''; if(q){ if(inp) inp.value=q; doSearch(q); } }catch{}
   </script>
 </Page>
+
+<style is:global>
+  .search-main {
+    width: 56rem;
+    max-width: 90vw;
+    margin-inline: auto;
+
+  }
+  .search-page > h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .search-page > .page-description {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .search-page form {
+      min-width: 480px;
+    }
+  }
+</style>
