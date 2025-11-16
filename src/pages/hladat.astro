@@ -9,16 +9,16 @@ import Page from "../layouts/Page.astro";
   mainClass="search-main"
 >
   <form id="site-search" class="flex gap-2 items-center mb-6" role="search">
-    <label for="q" class="sr-only">Hľadaj</label>
+    <label for="q" class="sr-only">Nájsť</label>
     <input
       id="q"
       name="q"
       type="search"
       placeholder="Napíš, čo chceš nájsť…"
-      class="flex-1 px-4 py-2 rounded-md border border-gray-300"
+      class="flex-1 px-5 py-2.5 rounded-lg border border-gray-700 bg-gray-900/90 text-gray-100 placeholder-gray-400 shadow-lg shadow-black/40 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all"
       autofocus
     />
-    <button type="submit" class="btn">Hľadať</button>
+    <button type="submit" class="btn-dark cursor-pointer">Hľadať</button>
   </form>
   <div id="results" aria-live="polite"></div>
 
