@@ -4,7 +4,7 @@ import Page from "../layouts/Page.astro";
 
 <Page
   title="Hľadanie"
-  description="Nájdi články a stránky podľa názvu alebo témy."
+  description=""
   sectionClass="prose prose-lg max-w-none search-page"
   mainClass="search-main"
 >
@@ -57,12 +57,16 @@ import Page from "../layouts/Page.astro";
   }
   .search-page > h1 {
     font-size: 1.2rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
   }
   .search-page > .page-description {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     margin-bottom: 0.75rem;
   }
+  .posttitle {
+        font-size: 1.1em;
+        line-height: 1.1em;
+    }
   @media (min-width: 768px) {
     .search-page form {
       min-width: 480px;
