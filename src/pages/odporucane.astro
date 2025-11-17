@@ -2,6 +2,7 @@
 import Page from '../layouts/Page.astro';
 import { Image } from 'astro:assets';
 import bd from '../assets/bdetector.webp';
+import konsp from '../assets/konspiratori.webp';
 ---
 
 <Page
@@ -25,6 +26,26 @@ import bd from '../assets/bdetector.webp';
         </p>
         <p class="mt-3">
           <a href="https://www.websupport.sk/o-nas/bullshit-detector/" target="_blank" rel="noopener" class="btn btn-dark">
+            Prejsť na projekt
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-4 items-start border-4 fancybox">
+      <div class="mt-1 rounded-full p-1 w-12 h-12 shrink-0 overflow-hidden">
+        <Image src={konsp} alt="Konspiratori.sk" widths={[48]} sizes="48px" class="w-full h-full object-cover rounded-full m-0" />
+      </div>
+      <div>
+        <h3 class="font-semibold text-2xl m-0">Konspiratori.sk</h3>
+        <p class="text-slate-500 mt-2 leading-relaxed">
+          Verejná databáza webových stránok s neserióznym, klamlivým, podvodným, konšpiračným alebo propagandistickým obsahom.
+        </p>
+        <p class="text-slate-500 mt-0 leading-relaxed">
+           Tvoríme zoznam webov a YouTube kanálov, pri ktorých členovia našej komisie majú pochybnosti o ich dôveryhodnosti a kvalite obsahu. Na týchto weboch a kanáloch neodporúčame inzerovať a zároveň na ne neodporúčame odkazovať z vašich portálov. Je iba na vás, či s naším zoznamom súhlasíte a či ho budete využívať. Zoznam webov bol zostavený členmi komisie na základe odborného posúdenia a podľa jasne stanovených kritérií.
+        </p>
+        <p class="mt-3">
+          <a href="https://konspiratori.sk/" target="_blank" rel="noopener" class="btn btn-dark">
             Prejsť na projekt
           </a>
         </p>
