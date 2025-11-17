@@ -3,6 +3,7 @@ import Page from '../layouts/Page.astro';
 import { Image } from 'astro:assets';
 import bd from '../assets/bdetector.webp';
 import konsp from '../assets/konspiratori.webp';
+import demag from '../assets/demagog.png';
 ---
 
 <Page
@@ -11,6 +12,7 @@ import konsp from '../assets/konspiratori.webp';
 >
 
   <div class="grid sm:grid-cols-1 md:grid-cols-1 mt-8 gap-12">
+    
     <div class="flex flex-col md:flex-row gap-4 items-start md:items-center border-4 fancybox">
       <div class="mt-1 rounded-full p-1 w-12 h-12 shrink-0 overflow-hidden">
         <Image src={bd} alt="Bullshit Detector" widths={[48]} sizes="48px" class="w-full h-full object-cover rounded-full m-0" />
@@ -51,6 +53,29 @@ import konsp from '../assets/konspiratori.webp';
         </p>
       </div>
     </div>
+
+    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center border-4 fancybox">
+      <div class="flex mt-1 p-1 w-12 h-12 shrink-0 overflow-hidden bg-[#ff3300]">
+        <Image src={demag} alt="Demagog.sk" widths={[48]} sizes="48px" class="object-contain p-0 m-0" />
+      </div>
+      <div>
+        <h3 class="font-semibold text-2xl m-0">Demagog.sk</h3>
+        <p class="text-slate-500 mt-2 leading-relaxed">
+          Factcheck politických diskusií. (Overovanie pravdivosti tvrdení politikov)
+        </p>
+        <p class="text-slate-500 mt-0 leading-relaxed">
+          Demagog.sk je projektom Inštitútu pre dobre spravovanú spoločnosť na overovanie nepravdivých informácií a kontrolu faktických výrokov politikov, političiek a iných verejne aktívnych osôb, ktoré odznejú vo verejnom priestore. Pri overovaní informácií dbáme na nestrannosť, vyváženosť a neúčelovosť. Sme presvedčení, že verejná diskusia má byť postavená na overiteľných faktoch a nielen na pocitoch a emóciách.
+        </p>
+        <p class="mt-3">
+          <a href="https://demagog.sk/" target="_blank" rel="noopener" class="btn btn-dark">
+            Prejsť na projekt
+          </a>
+        </p>
+      </div>
+    </div>
+
   </div>
 
+
+  
 </Page>
