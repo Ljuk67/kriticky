@@ -10,13 +10,13 @@ module.exports = {
           css: {
             maxWidth: 'none',
             fontSize: '1em', // inherit body size (20px from global.css)
-            lineHeight: '1.7',
+            lineHeight: '1.45',
           },
         },
         lg: {
           css: {
             fontSize: '1em', // keep prose-lg at body size; headings still scale
-            lineHeight: '1.7',
+            lineHeight: '1.45',
             'li': { marginTop: '0.4em', marginBottom: '0.4em' },
           },
         },

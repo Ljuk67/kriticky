@@ -257,7 +257,7 @@ pre > code {
 	all: unset;
 }
 
-ol li, ul li {    line-height: 1.3em;
+ol li, ul li {
 	-webkit-hyphens: auto; hyphens: auto;}
 
 .posttitle{hyphens: none;}
