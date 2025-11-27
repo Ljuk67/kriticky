@@ -73,7 +73,7 @@ Ak toto znie príliš komplikovane - nemusí to tak byť - tento proces vieš ur
 <aside class="callout callout--info">
 <strong>Príklad krok za krokom:</strong> Na Instagrame vidíš reels: „Slováci budú platiť najvyššie dane v EÚ.“
 <ul>
-<li>Otázka: Hovorí sa o všetkých daniach, alebo o konkrétnej (napr. DPH alebo len za špecifický typ potraviny)? Kedy a komu sa to týka?</li>
+<li>Otázka: Hovorí sa o všetkých daniach, alebo o konkrétnej (napr. DPH alebo len za špecifický typ potraviny)? Kedy a koho sa to týka?</li>
 <li>Dáta: Pozri Eurostat/Ministerstvo financií, články z <a href="/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/">kvalitných médií</a>, čo presne navrhujú zákony.</li>
 <li>Analýza: Je to porovnanie sadzby, alebo reálnej daňovej záťaže po odpočtoch? Týka sa to podnikateľov či zamestnancov?</li>
 <li>Záver: „Tvrdenie je prehnané. Navrhovaná zmena by nás nedala na prvé miesto v EÚ, ale zvyšuje daň pre konkrétnu skupinu potravín.“</li>
@@ -111,10 +111,10 @@ urobíš STOP a toto slovo zároveň použiješ ako návod na preverenie daného
 <aside class="callout callout--info">
 <p><strong>Praktické minipríklady pre STOP:</strong></p>
 <ul>
-<li>S – Video tvrdí: „Všetky potraviny zdraželi kvôli EÚ.“ Zdroj? Neznáma stránka bez autora. Už tu bliká oranžová kontrolka - ak by to tak bolo, písali by o tom viaceré a viac známe zdroje.</li>
+<li>S – Skontroluj zdroj: Video tvrdí: „Všetky potraviny zdraželi kvôli EÚ.“ Zdroj? Neznáma stránka bez autora. Už tu bliká oranžová kontrolka - ak by to tak bolo, písali by o tom viaceré a viac známe zdroje.</li>
 <li>T – Triezvo: Môže existovať viac príčin (energia, doprava, úroky). Jedna veta je podozrivo jednoduchá. Máloktoré veci v živote, týkajúce sa fungovania štátu, vedy či politiky, sa dajú vysvetliť jednou vetou.</li>
 <li>O – Over: Nájdeš štatistiky inflácie, články od ekonomických analytikov – vidíš, že dôvodov je viac, aj interných zo strany slovenskej vlády, aj zo sveta, aj z EÚ.</li>
-<li>P – Zaujatosť: Nemám sklon viniť EÚ za všetko? Ako by som hodnotil rovnakú vetu, keby sa týkala inej inštitúcie?</li>
+<li>P – Pozor na tvoju / ich zaujatosť: Nemám sklon viniť EÚ za všetko? Ako by som hodnotil rovnakú vetu, keby sa týkala inej inštitúcie? Je cieľ autora informácie jasný?</li>
 </ul>
 
 <p><strong>Ešte jedna vzorová situácia:</strong> SMS „Vyhrali ste 1 000 € – kliknite.“</p>
@@ -122,7 +122,7 @@ urobíš STOP a toto slovo zároveň použiješ ako návod na preverenie daného
 <li>S – <strong>Skontroluj zdroj</strong>: Číslo bez identifikácie, doména vyzerá zvláštne.</li>
 <li>T – <strong>Triezvo premýšľaj</strong>: Prečo by peniaze rozdávali? Čo z toho majú?</li>
 <li>O – <strong>Over fakty</strong>: Rýchle vyhľadanie čísla/domény – samé varovania pred podvodom.</li>
-<li>P – <strong>Pozor na vlastnú zaujatosť:</strong> Nechcem uveriť len preto, že by sa mi „hodila“ taká výhra?</li>
+<li>P – <strong>Pozor na vlastnú / ich zaujatosť:</strong> Nechcem uveriť len preto, že by sa mi „hodila“ taká výhra?</li>
 </ul>
 </aside>
 
