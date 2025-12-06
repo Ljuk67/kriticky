@@ -260,6 +260,8 @@ pre > code {
 	all: unset;
 }
 
+sup, sup a{font-size: 0.8em; line-height:1em; margin: 0px;}
+
 ol li, ul li {
 	-webkit-hyphens: auto; hyphens: auto;}
 
@@ -297,9 +299,12 @@ ol li, ul li {
 
 /* Keep first paragraph inline so the icon aligns with the first text line in MDX */
 .callout > p:first-of-type,
+.callout--post > h4:first-of-type,
 .callout--info > p:first-of-type,
 .callout--tip > p:first-of-type,
 .callout--warn > p:first-of-type { display: inline; }
+
+.callout--post > p:first-of-type{display: block;}
 
 /* Callout variants */
 .callout--info {

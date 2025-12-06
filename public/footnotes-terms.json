@@ -71,5 +71,13 @@
     "aliases": ["buzzword", "Buzzword", "buzzwords"],
     "note": "Sú to slová, ktoré sú práve v trende - všetci o nich píšu a hovoria, no reálne neznamenajú nič konkrétne. Buzz = šum, hučanie, buzzwords = slová, ktoré hučia, znejú",
     "maxPerPage": 1
+  },
+
+  { "term": "falošná dilema",
+    "aliases": ["falošnej dilemy", "falošná dichotómia", "falošné dilemy"],
+    "note": "Falošná dilema je manipulatívny argument, ktorý predstiera, že existujú len dve možnosti, aj keď v skutočnosti ich môže byť viac. Napríklad všetko 'prírodné' je zdravé a všetko ľuďmi vytvorené je zlé. No dobré a zlé majú v sebe obidve tieto kategórie, nedá sa to takto všeobecne zaškatuľkovať.",
+    "maxPerPage": 1
   }
+
+
 ]

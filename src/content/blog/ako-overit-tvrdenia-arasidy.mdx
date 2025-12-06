@@ -1,23 +1,56 @@
 ---
-title: "DRAFT: Príklad z praxe: 'Ohromujúce odhalenie' ohľadom arašidov?"
+title: "Príklad z praxe: 'Ohromujúce odhalenie' ohľadom arašidov?"
 description: "Hĺbková analýza štúdie prezentovanej na badatel.net. Čo skutočne zistila, aké sú jej limity, ako bola prezentovaná na badatel.net a ako sa nenechať oklamať dramatizáciou výsledkov štúdií na dezinformačných weboch."
 pubDate: "Dec 6 2025"
 author: "Lukas Cech"
-status: "draft"
+
 tags:
-  - "klinické dôkazy"
-  - "observačné štúdie"
   - "cherry-picking"
 categories:
   - "Zdravie"
   - "Príklady z praxe"
 ---
 
+import { Image } from 'astro:assets'
+import badatelArasidy from '../../assets/badatel_arasidy.jpeg'
+
+
+V tomto článku si ukážeme, ako postupovať pri overovaní tvrdení z internetu. Keďže ale takáto analýza si vyžaduje veľa času a využitie rôznych nástrojov, ku ktorým nemusí mať každý prístup, tak je jednoduchšie a časovo úspornejšie vychádzať zjednoduchého pravidla: 
+
+<aside class="callout callout--info">
+  Keď si autor autorka článku nenašli ten čas aby svoje tvrdenia podložili odkazom na <a href="/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/">spoľahlivé zdroje</a> a vypísaním dôležitých detailov z daných zdrojov a štúdií, aby sme to nemuseli my - **tak skrátka takému článku nebudeme dôverovať a odídeme.** Ak ich cieľom nie je dať nám tie správne informácie, tak je šanca, že majú inú motiváciu, ktorá nemá na prvom mieste naše zdravie alebo lepší život. Internet je plný webstránok, ktoré si tento čas nájdu, takže nie je problém preskočiť tie, ktoré sa na to vykašlú.
+</aside>
 
 
 
 
-  Hneď <a href="https://web.archive.org/web/20251205161221/https://www.badatel.net/podla-noveho-vyskumu-denna-konzumacia-arasidov-dokaze-uz-za-14-tyzdnov-zlepsit-pamat-a-funkcie-mozgu/" target="_blank" rel="noopener">prvý článok</a> (v čase publikácie - december 2025 - link na archív internetu) tvrdí, že "denná konzumácia arašidov dokáže už za 14 týždňov zlepšiť pamäť a funkcie mozgu" - ako zdroj uvádzajú len všeobecný názov štúdie, 🚩 bez prekliku na samotnú štúdiu a takisto ako hlavný zdroj uvádzajú ďalšiu nedôveryhodnú stránku <a href="https://www.naturalnews.com/2025-12-02-daily-peanuts-improves-memory-brain-function-research.html" target="_blank" rel="noopener">NaturalNews</a>, ktorá tiež nemá preklik na danú štúdiu. Takže nevieme, či vôbec existuje. Keď si autor tohto článku 🚩 nedal čas na vloženie odkazu (keď už tú štúdiu zdanlivo čítal), prečo by sme mu mali veriť? 🚩 Namiesto toho odkazujú na rôzne ich vlastné knihy o prírodnom liečení <b>(zámer = neklikajte na štúdiu, ale na naše knihy a kupujte)</b>. Vlastne väčšina článkov na badatel.net sú 🚩 len preklady článkov z NaturalNews - čiže žiadne overovanie, len preklad aby mali nejaký obsah a vedeli ponúkať svoje knihy. 🚩 Ak jeden web používa ako zdroj prevažne jeden ďalší, nie príliš dôveryhodný web, tak ho radšej zatvorím a nečítam ďalej.
+  Ako príklad použijeme web **Badatel.net** – <a href="https://konspiratori.sk/stranka/670" target="_blank">Info o badatel.net na konspiratori.sk</a>  
+  Šíri „proti-mainstreamové“ zdravotné odporúčania, popiera modernú medicínu a zároveň odporúča množstvo „zázračných“ riešení.
+
+  Hneď <a href="https://web.archive.org/web/20251205161221/https://www.badatel.net/podla-noveho-vyskumu-denna-konzumacia-arasidov-dokaze-uz-za-14-tyzdnov-zlepsit-pamat-a-funkcie-mozgu/" target="_blank" rel="noopener">prvý článok</a> *(v čase publikácie - december 2025 - odkaz je na archív internetu, pre prípad, že by článok zmazali)* tvrdí, že "denná konzumácia arašidov dokáže už za 14 týždňov zlepšiť pamäť a funkcie mozgu". 
+  
+  ## Poďme si teda pozrieť, či nájdeme nejaké červené vlajky 🚩:
+   - 🚩 ako zdroj uvádzajú len všeobecný názov štúdie, bez prekliku na samotnú štúdiu
+   - 🚩 a takisto ako hlavný zdroj uvádzajú ďalšiu nedôveryhodnú stránku <a href="https://www.naturalnews.com/2025-12-02-daily-peanuts-improves-memory-brain-function-research.html" target="_blank" rel="noopener">NaturalNews</a>, ktorá tiež nemá preklik na danú štúdiu. Asi nechcú, aby sme danú štúdiu čítali?
+   - 🚩 keď si autor tohto článku nenašiel čas na vloženie odkazu (keď už tú štúdiu zdanlivo čítal), prečo by sme mu mali veriť? 🚩 
+   - 🚩 je tu jasná finančná motivácia - predaj ekníh - namiesto toho odkazujú na rôzne ich vlastné knihy o prírodnom liečení <b>(zámer = neklikajte na štúdiu, ale na naše knihy a kupujte)</b>. 
+   - 🚩 vlastne väčšina článkov na badatel.net sú len preklady článkov z NaturalNews - čiže žiadne overovanie, len priamy preklad aby mali nejaký obsah a vedeli ponúkať svoje knihy. 
+   - 🚩 Ak jeden web používa ako zdroj prevažne jeden ďalší, nie príliš dôveryhodný web, tak ho radšej zatvorím a nečítam ďalej.
+
+    <figure style="text-align:center; margin: 1.5rem auto;">
+    <Image
+      src={badatelArasidy}
+      widths={[360, 720]}
+      sizes="(max-width: 720px) 100vw, 720px"
+      alt="vystrizok z článku na badatel.net"
+      style="display:block; margin: 0 auto; margin-bottom:0px; box-shadow:5px 5px 10px gray;"
+    />
+    <figcaption style="margin-top: 0px; color: #4b5563;">
+      Používanie silných výrazov, očierňovanie klasickej medicíny (bez dodania dôkazov), prekliky na vlastné produkty, ktoré s témou nesúvisia. Všetko kričí - pozor! tomuto webu by som ohľadom informácií týkajúcich sa zdravia nedôveroval.
+    </figcaption>
+  </figure>
+
+## Skúsme im ale dať šancu a nájdeme si samotnú štúdiu sami:
 
   Keď bádame po danej štúdii ďalej, dopátrame sa k výsledku, že existovala, bola založená len na 31 osobách a výsledky boli pozitívne, ale nič prevratné. Dá sa to zhrnúť takto:
   - Jesť orechy/arašidy ako súčasť zdravej stravy dáva zmysel – aj mimo tejto štúdie (tuky, vláknina, polyfenoly, bielkoviny).
@@ -26,10 +59,10 @@ categories:
     - nie je to náhrada liečby,
   - neznamená to „ochrana pred demenciou“ ani „výrazné zlepšenie kognície“.
 
-  <a href="https://pubmed.ncbi.nlm.nih.gov/41205298/" target="_blank" rel="noopener">Štúdia na PubMed →</a>
+  <a class="btn btn-dark" href="https://pubmed.ncbi.nlm.nih.gov/41205298/" target="_blank" rel="noopener">Štúdia na PubMed →</a>
 
   Ak máš rád/rada arašidy a nemáš alergiu, sú fajn súčasť jedálnička a môžu mať pozitívny dopad. Ale ako náhradu za liečbu "starnúceho mozgu" (citujem badatel.net) to ani autori štúdie neodporúčajú. 
-  NaturalNews ani Badatel by som nepoužíval ako zdroj zdravotných informácií – ich spôsob, ako túto štúdiu predávajú, je prikrášlený a hrá na city: zoberú legitímny výskum, vytrhnú z kontextu percentá, ignorujú limity a vložia to do naratívu „prírodné vs. zlá farmácia“. 
+  NaturalNews ani Badatel by som nepoužíval ako zdroj zdravotných informácií – ich spôsob, ako túto štúdiu predávajú, je prikrášlený a hrá na city: zoberú legitímny výskum, vytrhnú z kontextu percentá alebo tvrdenia (cherry-picking), ignorujú limity štúdie a vložia to do falošnej dilemy „prírodné vs. zlá medicína". 
 
   #### Konkrétne na badatel.net: 
 
