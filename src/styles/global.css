@@ -35,6 +35,7 @@
 	src:
 		local("Atkinson Hyperlegible Regular"),
 		local("Atkinson Hyperlegible"),
+		url("/fonts/atkinson-regular.woff2") format("woff2"),
 		url("/fonts/atkinson-regular.ttf") format("truetype"),
 		url("/fonts/atkinson-regular.woff") format("woff");
 	font-weight: 400;
@@ -45,6 +46,7 @@
 	font-family: "Atkinson";
 	src:
 		local("Atkinson Hyperlegible Bold"),
+		url("/fonts/atkinson-bold.woff2") format("woff2"),
 		url("/fonts/atkinson-bold.ttf") format("truetype"),
 		url("/fonts/atkinson-bold.woff") format("woff");
 	font-weight: 700;
