@@ -63,8 +63,13 @@
 
   { "term": "červené vlajky",
     "aliases": ["cervene vlajky", "červená vlajka", "cervena vlajka", "červených vlajok", "cervenych vlajok", "red flags", "red flag", "red-flag", "red-flags"],
-    "note": "Červené vlajky = varovné signály, že niečo nie je v poriadku. Pri článkoch a videách ide o typické znaky nespoľahlivého obsahu: bombastické sľuby, silné emócie bez dát, chýbajúce alebo nejasné zdroje, cherry‑picking (vyberanie si len tých dôkazov, ktoré sa mi hodia), či útoky na osoby namiesto argumentov. Keď ich zbadáš, spomaľ, hľadaj kontext a over si tvrdenia v spoľahlivých zdrojoch.",
+    "note": "Červené vlajky = varovné signály, že niečo nie je v poriadku. Ide o typické znaky nespoľahlivého obsahu: bombastické sľuby, silné emócie bez dát, chýbajúce alebo nejasné zdroje, cherry‑picking (vyberanie si len tých dôkazov, ktoré sa mi hodia), či útoky na osoby namiesto argumentov. Keď ich zbadáš, spomaľ, hľadaj kontext a over si tvrdenia v spoľahlivých zdrojoch.",
+    "maxPerPage": 1
+  },
+
+  { "term": "buzzword",
+    "aliases": ["buzzword", "Buzzword", "buzzwords"],
+    "note": "Sú to slová, ktoré sú práve v trende - všetci o nich píšu a hovoria, no reálne neznamenajú nič konkrétne. Buzz = šum, hučanie, buzzwords = slová, ktoré hučia, znejú",
     "maxPerPage": 1
   }
-
 ]

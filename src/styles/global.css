@@ -93,10 +93,13 @@ main {
 	transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, border-color 200ms ease; /* transition-all */
   }
 
+  .colorbox {    padding: 2em 1em 1em 1em;
+    background: linear-gradient(180deg, var(--highlight) 0%, var(--secondary));
+  }
+
   .glassify{	backdrop-filter: blur(15px);
 	-webkit-backdrop-filter: blur(15px);
 }
-
 
 .glass {
   /* Tailwind-inspired styling: rounded-2xl p-8 bg-gray-50 transition-all ring-1 ring-gray-200/50 shadow hover:shadow-lg */
@@ -180,19 +183,19 @@ h6 {
     font-family: 'Bricolage Grotesque Variable', 'Inter Variable', Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 h1 {
-	font-size: 3.052em;
+	font-size: clamp(2.2rem, 4vw + 1.2rem, 3.2rem);
 }
 h2 {
-	font-size: 2.441em;
+	font-size: clamp(1.9rem, 3vw + 1rem, 2.6rem);
 }
 h3 {
-	font-size: 1.953em;
+	font-size: clamp(1.6rem, 2.2vw + 0.9rem, 2.1rem);
 }
 h4 {
-	font-size: 1.563em;
+	font-size: clamp(1.35rem, 1.8vw + 0.8rem, 1.7rem);
 }
 h5 {
-	font-size: 1.25em;
+	font-size: clamp(1.15rem, 1vw + 0.8rem, 1.4rem);
 }
 strong,
 b {
@@ -263,6 +266,7 @@ ol li, ul li {
 .posttitle{hyphens: none;}
 
 .callout,
+.callout--post,
 .callout--info,
 .callout--tip,
 .callout--warn {
@@ -275,6 +279,7 @@ ol li, ul li {
 @screen md { .callout { padding: 2rem; } }
 
 .callout::before,
+.callout--post::before,
 .callout--info::before,
 .callout--tip::before,
 .callout--warn::before {
@@ -323,6 +328,12 @@ ol li, ul li {
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9-3v4m0 3v.01'/%3E%3C/svg%3E");
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9-3v4m0 3v.01'/%3E%3C/svg%3E");
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9-3v4m0 3v.01'/%3E%3C/svg%3E");
+}
+
+.callout--post::before {
+  color: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18Z'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 8l5 4l-5 4'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 12H8'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 21a9 9 0 1 0 0-18a9 9 0 0 0 0 18Z'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 8l5 4l-5 4'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 12H8'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 blockquote {
