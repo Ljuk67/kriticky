@@ -32,14 +32,21 @@
 }
 @font-face {
 	font-family: "Atkinson";
-	src: url("/fonts/atkinson-regular.woff") format("woff");
+	src:
+		local("Atkinson Hyperlegible Regular"),
+		local("Atkinson Hyperlegible"),
+		url("/fonts/atkinson-regular.woff") format("woff"),
+		url("/fonts/atkinson-regular.ttf") format("truetype");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Atkinson";
-	src: url("/fonts/atkinson-bold.woff") format("woff");
+	src:
+		local("Atkinson Hyperlegible Bold"),
+		url("/fonts/atkinson-bold.woff") format("woff"),
+		url("/fonts/atkinson-bold.ttf") format("truetype");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
