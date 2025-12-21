@@ -23,7 +23,7 @@
   { "term": "optimistické skreslenie", "aliases": ["optimisticke skreslenie", "optimism bias"], "note": "Podceňujeme riziká pre seba („mne sa to nestane“) a preceňujeme pozitívne výsledky.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#optimisticke-skreslenie", "maxPerPage": 1 },
   { "term": "efekt prílišnej sebadôvery", "aliases": ["efekt prilisnej sebadôvery", "efekt prilisnej sebadovry", "overconfidence effect"], "note": "Sme si príliš istí svojimi odhadmi – naša „istota“ presahuje skutočnú presnosť.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#efekt-prilisnej-sebadovery", "maxPerPage": 1 },
 
-  { "term": "efekt autority", "aliases": ["authority bias", "autorita", "efekt autority bias"], "note": "Názory autorít pôsobia presvedčivejšie, aj keď nie sú podložené dôkazmi.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#authority-bias", "maxPerPage": 1 },
+  { "term": "efekt autority", "aliases": ["authority bias", "efekt autority bias"], "note": "Názory autorít pôsobia presvedčivejšie, aj keď nie sú podložené dôkazmi.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#authority-bias", "maxPerPage": 1 },
   { "term": "zaujatosť spätnej väzby", "aliases": ["hindsight bias", "spatna vazba zaujatosť", "zaujatost spatnej vazby"], "note": "Po udalosti máme pocit, že sme „to vedeli od začiatku“.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#hindsight-bias", "maxPerPage": 1 },
   { "term": "zaujatosť vlastnej skupiny", "aliases": ["in-group bias", "ingroup bias", "zaujatost vlastnej skupiny"], "note": "Uprednostňujeme „našich“ (národ, stranu, skupinu) pred inými – bez ohľadu na fakty.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#in-group-bias", "maxPerPage": 1 },
 
