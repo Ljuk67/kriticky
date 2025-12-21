@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Abstraktný geometrický náhľad">
+  
+    <defs>
+      <linearGradient id="bg-grad" x1="0" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(26, 360, 180)">
+        <stop offset="0%" stop-color="#e4dfb9" />
+        <stop offset="100%" stop-color="#93afba" />
+      </linearGradient>
+      <clipPath id="rounded">
+        <rect x="0" y="0" width="720" height="360" rx="21.599999999999998" ry="21.599999999999998" />
+      </clipPath>
+    </defs>
+  <g clip-path="url(#rounded)">
+    <rect x="0" y="0" width="720" height="360" fill="url(#bg-grad)" />
+    <polygon points="251.75447493139058,-158.54736479486195 493.81727434849654,-120.80855442489188 596.5858553336586,96.57695554819404 468.882128923006,269.05426808858857 296.91860492592934,292.0640459363667 161.11090730463155,202.4364724270535 156.0809074378498,38.699082156671935" fill="#57C785" opacity="0.55" /><circle cx="407.9422750622034" cy="244.57792512327435" r="98.88826449314102" fill="#2A7B9B" opacity="0.52" /><g transform="translate(108.97653027623892 297.804633166641) rotate(266)"><rect x="-73.61044616853982" y="-88.52875564985254" width="147.22089233707965" height="177.05751129970508" fill="hsl(0 0% 75%)" opacity="0.33"/></g><g transform="translate(72.1993488818407 95.34207222796977) rotate(121)"><rect x="-85.28056309859431" y="-89.47969530119232" width="170.56112619718863" height="178.95939060238464" fill="hsl(0 0% 70%)" opacity="0.40"/></g><g transform="translate(607.8121240586042 119.54426944255829) rotate(124)"><rect x="-49.14711780589677" y="-81.53418557292073" width="98.29423561179354" height="163.06837114584147" fill="#EDDD53" opacity="0.51"/></g>
+  </g>
+</svg>
