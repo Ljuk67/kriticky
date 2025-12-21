@@ -185,7 +185,7 @@ Tip: Predstav si, že aktuálny stav neexistuje. Vybrali by sme si ho dnes znova
 - **Príklad (SK):** Pri diskusii o dôchodkovej reforme ľudia odmietali zmeny, aj keď boli ekonomicky nevyhnutné.  
 - **Ako sa jej vyhnúť:** Skúsme si predstaviť, že aktuálny stav neexistuje – vybrali by sme si ho nanovo?  
 - **Ako ju spoznať:** Keď niekto tvrdí „takto to bolo vždy, takto to má byť“.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Status_quo_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Status_quo_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Status_quo_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>
 
 ---
 
@@ -200,7 +200,7 @@ Tip: Opakovanie nie je dôkaz. Sleduj zdroj a kvalitu argumentov, nie počet opa
 - **Príklad (SK):** Opakované tvrdenia, že „EÚ nám berie suverenitu“, sa stali bežným heslom, hoci právne Slovensko má stále vlastné zákonodarné právomoci.  
 - **Ako sa jej vyhnúť:** Overujme tvrdenia, aj keď ich počujeme stokrát.  
 - **Ako ju spoznať:** Ak niekto argumentuje len tým, že „to hovoria všetci“.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Illusory_truth_effect" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Ilúzia_pravdy" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Illusory_truth_effect" target="_blank" rel="noopener noreferrer">zdroj 1</a>
 
 ---
 
@@ -208,14 +208,14 @@ Tip: Opakovanie nie je dôkaz. Sleduj zdroj a kvalitu argumentov, nie počet opa
 
 ## 8. Zaujatosť vlastnej skupiny (in-group bias)
 <aside class="callout callout--tip">
-Tip: Skús posúdiť argument bez mena autora. Zmeň sa obsah, keď nevidíš, kto to povedal?
+Tip: Skús posúdiť argument bez mena autora. Zmení sa obsah alebo kontext, keď nevidíš, kto to povedal?
 </aside>
 
 - **Čo to je:** Uprednostňujeme ľudí z našej skupiny (národ, strana, región) pred inými.  
 - **Príklad (SK):** Diskusie o prerozdelení eurofondov – politici obhajujú „svoj“ región bez ohľadu na celkový prínos.  
 - **Ako sa jej vyhnúť:** Skúmajme fakty nezávisle od toho, kto to hovorí.  
 - **Ako ju spoznať:** Keď niekto hodnotí nápady podľa toho, kto ich povedal, nie podľa obsahu.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/In-group_favoritism" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/In-group_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/In-group_favoritism" target="_blank" rel="noopener noreferrer">zdroj 1</a>
 
 ---
 
@@ -230,7 +230,7 @@ Tip: Autorita nie je záruka pravdy. Pýtaj sa: ak by to isté povedal neznámy 
 - **Príklad (SK):** Keď známi politici alebo lekári počas pandémie tvrdili nepodložené veci, ich priaznivci ich prijímali bez otázok.  
 - **Ako sa jej vyhnúť:** Pýtajme sa: ak by to isté povedal niekto neznámy, verili by sme mu?  
 - **Ako ju spoznať:** Keď niekto neuvádza dôkazy, iba meno autority.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Authority_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Authority_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Authority_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>
 
 ---
 
@@ -245,7 +245,7 @@ Tip: Vytvor si zvyk pridať ku každému problému aspoň jeden relevantný pozi
 - **Príklad (SK):** V médiách sa viac riešia politické škandály než pozitívne reformy, hoci tie majú väčší dopad.  
 - **Ako sa jej vyhnúť:** Pri hodnotení situácie si vedome pripomeňme aj pozitívne fakty.  
 - **Ako ju spoznať:** Ak niekto stále zdôrazňuje iba problémy, aj keď existujú riešenia.  
-- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Negativity_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>, <a href="https://sk.wikipedia.org/wiki/Negativity_bias" target="_blank" rel="noopener noreferrer">zdroj 2</a>
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Negativity_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>
 
 ---
 

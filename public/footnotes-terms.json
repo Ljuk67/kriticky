@@ -17,7 +17,7 @@
   { "term": "efekt utopených nákladov", "aliases": ["efekt utopenych nakladov", "sunk cost fallacy"], "note": "Pokračujeme v niečom len preto, že sme už „veľa investovali“, aj keď je racionálne skončiť.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#efekt-utopenych-nakladov", "maxPerPage": 1 },
   { "term": "haló efekt", "aliases": ["halo efekt", "halo effect"], "note": "Jedna výrazná vlastnosť (napr. sympatickosť) zafarbí naše vnímanie všetkého ostatného.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#halo-efekt", "maxPerPage": 1 },
   { "term": "stádový efekt", "aliases": ["stadovy efekt", "bandwagon effect"], "note": "Veríme alebo robíme niečo len preto, že to robí veľa ľudí.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#stadovy-efekt", "maxPerPage": 1 },
-  { "term": "skupinové myslenie", "aliases": ["skupinove myslenie", "groupthink"], "note": "Skupina potláča nesúhlas a riziká, aby „držala jednotu“, čím zhorší rozhodnutie.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#groupthink", "maxPerPage": 1 },
+  { "term": "skupinové myslenie", "aliases": ["skupinove myslenie", "groupthink"], "note": "Skupina potláča nesúhlas a iné názory, aby „držala jednotu“, čím zhoršuje kritické myslenie a vedie k skresleným rozhodnutiam, ubíja inováciu a otvorenú komunikáciu.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#groupthink", "maxPerPage": 1 },
   { "term": "hráčske klamstvo", "aliases": ["hráčsky omyl", "hracske klamstvo", "gambler's fallacy"], "note": "Myslíme si, že náhoda „sa sama vyrovná“ – napr. po sérii prehier „musí zákonite prísť výhra“.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#hracske-klamstvo", "maxPerPage": 1 },
   { "term": "ignorovanie základnej miery", "aliases": ["base rate neglect", "ignorovanie zakladnej miery", "základná miera"], "note": "Ignorujeme východiskové pravdepodobnosti a preceňujeme „príbeh“ konkrétneho prípadu.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#ignorovanie-zakladnej-miery", "maxPerPage": 1 },
   { "term": "optimistické skreslenie", "aliases": ["optimisticke skreslenie", "optimism bias"], "note": "Podceňujeme riziká pre seba („mne sa to nestane“) a preceňujeme pozitívne výsledky.", "moreUrl": "/blog/zakladne-typy-zaujatosti/#optimisticke-skreslenie", "maxPerPage": 1 },
@@ -76,6 +76,16 @@
   { "term": "falošná dilema",
     "aliases": ["falošnej dilemy", "falošná dichotómia", "falošné dilemy"],
     "note": "Falošná dilema je manipulatívny argument, ktorý predstiera, že existujú len dve možnosti, aj keď v skutočnosti ich môže byť viac. Napríklad všetko 'prírodné' je zdravé a všetko ľuďmi vytvorené je zlé. No dobré a zlé majú v sebe obidve tieto kategórie, nedá sa to takto všeobecne zaškatuľkovať.",
+    "maxPerPage": 1
+  },
+  { "term": "útok na osobu",
+    "aliases": ["utok na osobu", "útokom na osobu", "utokom na osobu"],
+    "note": "Útok na osobu je taktika, keď sa rieši človek a jeho údajné motívy namiesto samotného problému alebo dôkazov. Odvádza pozornosť od podstaty.",
+    "maxPerPage": 1
+  },
+  { "term": "mentálne skratky",
+    "aliases": ["mentalne skratky", "mentálna skratka", "mentalna skratka", "mentálnych skratiek", "mentalnych skratiek"],
+    "note": "Mentálne skratky sú rýchle automatické spôsoby uvažovania, ktoré nám často šetria čas, no niekedy vedú k skresleným záverom.",
     "maxPerPage": 1
   }
 
