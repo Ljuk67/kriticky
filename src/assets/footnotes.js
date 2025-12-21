@@ -62,7 +62,8 @@
     close.addEventListener('click', ()=> closeAll());
     const content = document.createElement('div');
     content.className = 'fn-content';
-    content.innerHTML = note; // controlled content from repo
+    const prefix = '<div class="fn-prefix">(kliknutím na frázu ostane čierne okno otvorené)</div>';
+    content.innerHTML = prefix + note; // controlled content from repo
     pop.appendChild(close);
     pop.appendChild(content);
     pop.style.position = 'fixed';
