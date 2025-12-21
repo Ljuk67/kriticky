@@ -87,7 +87,12 @@
     "aliases": ["mentalne skratky", "mentálna skratka", "mentalna skratka", "mentálnych skratiek", "mentalnych skratiek"],
     "note": "Mentálne skratky sú rýchle automatické spôsoby uvažovania, ktoré nám často šetria čas, no niekedy vedú k skresleným záverom.",
     "maxPerPage": 1
-  }
+  },
+  { "term": "factcheck",
+  "aliases": ["factchecking"],
+  "note": "Ovrerovanie pravdivosti tvrdení. Ak niekto robí factchecking vyjadrení politika, tak porovnáva to, čo politik tvrdí, s dostupnými faktami a realitou.",
+  "maxPerPage": 1
+}
 
 
 ]
