@@ -58,11 +58,11 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 							<li class={['glass','rounded-[14px]', i === 0 ? 'sm:col-span-2 p-4' : 'p-3'].join(' ')}>
 								<a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
 									<img class="w-full h-auto rounded-[14px] mb-2" src={post.thumb} alt="" />
-									<h2 class={['posttitle', 'text-center', i === 0 ? 'text-[1.8em] font-semibold' : 'text-[1.5em]'].join(' ')}>{post.data.title}</h2>
-									<div class="text-center date text-gray-500 group-hover:text-[var(--accent)]">
+									<h2 class={['posttitle', 'text-center', i === 0 ? 'text-[1.6em] font-semibold' : 'text-[1.3em]'].join(' ')}>{post.data.title}</h2>
+									<div class="text-center date text-gray-500 text-sm">
 										<FormattedDate date={post.data.pubDate} />
 									</div>
-									<div class="text-center meta text-gray-500">Autor: {post.data.author}</div>
+									<div class="text-center text-sm meta text-gray-500">Autor: {post.data.author}</div>
 								</a>
 								{Array.isArray(post.data.tags) && post.data.tags.length > 0 && (
 									<div class="tags mt-1 text-gray-500" aria-label="Značky">

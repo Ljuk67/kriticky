@@ -29,7 +29,7 @@ const {
         {it.thumbUrl && <img class="w-full h-auto rounded-[12px] mb-3" src={it.thumbUrl} alt="" />}
         <h3 class={`posttitle ${titleClass}`}>{it.title}</h3>
         {it.date && (
-          <p class="date group-hover:text-[var(--accent)]"><FormattedDate date={new Date(it.date)} /></p>
+          <p class="date text-sm"><FormattedDate date={new Date(it.date)} /></p>
         )}
       </a>
     </li>
@@ -41,6 +41,5 @@ const {
   .posts-grid li img, .posts-grid li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 12px; }
   .posts-grid li .posttitle { margin: 0; color: rgb(var(--black)); }
   .posts-grid li .date { margin: 0; color: rgb(var(--gray)); }
-  .posts-grid li:hover .date { color: rgb(var(--accent)); }
   .posts-grid li:hover img, .posts-grid li:hover svg { box-shadow: var(--box-shadow); }
 </style>
