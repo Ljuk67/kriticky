@@ -45,13 +45,32 @@ const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p,
   </section>
 
   <script>
+    interface SearchEntry {
+      url: string;
+      title: string;
+      description?: string;
+      content?: string;
+      tags?: string[];
+      pubDate?: string | number | Date;
+    }
+
     const form = document.getElementById('site-search');
     const resultsEl = document.getElementById('results');
-    function norm(s){ return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim(); }
-    function tokens(s){ return norm(s).split(/[^a-z0-9]+/).filter(Boolean); }
-    function levenshtein(a,b){ const m=a.length,n=b.length; if(!m) return n; if(!n) return m; const dp=new Array(n+1); for(let j=0;j<=n;j++) dp[j]=j; for(let i=1;i<=m;i++){ let prev=dp[0]; dp[0]=i; for(let j=1;j<=n;j++){ const tmp=dp[j]; dp[j]=Math.min(dp[j]+1, dp[j-1]+1, prev+(a[i-1]===b[j-1]?0:1)); prev=tmp; } } return dp[n]; }
-    function fuzzyScore(hay, needles){ const ht=tokens(hay); let s=0; for(const q of needles){ if(!q) continue; if(ht.some(t=>t.includes(q))){ s++; continue; } let best=Infinity; for(const t of ht){ best=Math.min(best, levenshtein(t,q)); } const thr=q.length<=4?1:2; if(best<=thr) s++; } return s; }
-    async function searchSite(query){ const qn=norm(query); if(!qn){ resultsEl.innerHTML=''; return; } try{ const res=await fetch('/search.json'); const data=await res.json(); const qTok=tokens(query); const scored=data.map(p=>{ const ts=fuzzyScore(p.title, qTok); const ds=fuzzyScore(p.description||'', qTok); const cs=fuzzyScore(p.content||'', qTok); const tagstr=Array.isArray(p.tags)?p.tags.join(' '):''; const gs=fuzzyScore(tagstr, qTok); return {...p, score: ts*3+ds+cs+gs}; }).filter(p=>p.score>0).sort((a,b)=> b.score - a.score || (new Date(b.pubDate||0)-new Date(a.pubDate||0))).slice(0,10); if(!scored.length){ resultsEl.innerHTML=`<p>Nič sa nenašlo. Skús iné slová alebo <a href='/blog/'>pozri blog</a>.</p>`; return; } resultsEl.innerHTML = `
+    const input = document.getElementById('q');
+
+    if (!(form instanceof HTMLFormElement) || !(resultsEl instanceof HTMLDivElement) || !(input instanceof HTMLInputElement)) {
+      throw new Error('404 search UI is missing required elements.');
+    }
+
+    const searchForm = form;
+    const resultsRoot = resultsEl;
+    const searchInput = input;
+
+    function norm(s: unknown) { return (s || '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim(); }
+    function tokens(s: unknown): string[] { return norm(s).split(/[^a-z0-9]+/).filter(Boolean); }
+    function levenshtein(a: string, b: string): number { const m = a.length, n = b.length; if (!m) return n; if (!n) return m; const dp = new Array<number>(n + 1); for (let j = 0; j <= n; j++) dp[j] = j; for (let i = 1; i <= m; i++) { let prev = dp[0]; dp[0] = i; for (let j = 1; j <= n; j++) { const tmp = dp[j]; dp[j] = Math.min(dp[j] + 1, dp[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1)); prev = tmp; } } return dp[n]; }
+    function fuzzyScore(hay: unknown, needles: string[]): number { const ht = tokens(hay); let s = 0; for (const q of needles) { if (!q) continue; if (ht.some((t) => t.includes(q))) { s++; continue; } let best = Infinity; for (const t of ht) { best = Math.min(best, levenshtein(t, q)); } const thr = q.length <= 4 ? 1 : 2; if (best <= thr) s++; } return s; }
+    async function searchSite(query: string) { const qn = norm(query); if (!qn) { resultsRoot.innerHTML = ''; return; } try { const res = await fetch('/search.json'); const data = (await res.json()) as SearchEntry[]; const qTok = tokens(query); const scored = data.map((p: SearchEntry) => { const ts = fuzzyScore(p.title, qTok); const ds = fuzzyScore(p.description || '', qTok); const cs = fuzzyScore(p.content || '', qTok); const tagstr = Array.isArray(p.tags) ? p.tags.join(' ') : ''; const gs = fuzzyScore(tagstr, qTok); return { ...p, score: ts * 3 + ds + cs + gs }; }).filter((p) => p.score > 0).sort((a, b) => b.score - a.score || (new Date(b.pubDate ?? 0).valueOf() - new Date(a.pubDate ?? 0).valueOf())).slice(0, 10); if (!scored.length) { resultsRoot.innerHTML = `<p>Nič sa nenašlo. Skús iné slová alebo <a href='/blog/'>pozri blog</a>.</p>`; return; } resultsRoot.innerHTML = `
           <h2>Výsledky hľadania</h2>
           <ul class="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 gap-3">
             ${scored.map((p)=>`
@@ -61,9 +80,9 @@ const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p,
                   <p class=\"text-sm text-gray-600\">${p.description || ''}</p>
                 </a>
               </li>`).join('')}
-          </ul>`; } catch(err){ console.error(err); resultsEl.innerHTML='<p>Nepodarilo sa načítať výsledky. Skús to neskôr.</p>'; } }
-    form && form.addEventListener('submit', (e)=>{ e.preventDefault(); const inp=document.getElementById('q'); const val=inp && 'value' in inp ? inp.value : ''; searchSite(val); });
-    const inp=document.getElementById('q'); inp && inp.addEventListener('input', (e)=>{ const val=e && e.target && 'value' in e.target ? e.target.value : ''; searchSite(val); });
+          </ul>`; } catch (err) { console.error(err); resultsRoot.innerHTML = '<p>Nepodarilo sa načítať výsledky. Skús to neskôr.</p>'; } }
+    searchForm.addEventListener('submit', (e: Event) => { e.preventDefault(); searchSite(searchInput.value); });
+    searchInput.addEventListener('input', (e: Event) => { searchSite(e.target instanceof HTMLInputElement ? e.target.value : ''); });
   </script>
 
   <style>

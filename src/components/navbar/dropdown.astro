@@ -1,6 +1,19 @@
 ---
 import { Dropdown as DropdownContainer, DropdownItems } from "astro-navbar";
-const { title, path, lastItem, children } = Astro.props;
+
+interface MenuChild {
+  title: string;
+  path: string;
+}
+
+interface Props {
+  title: string;
+  path: string;
+  lastItem?: boolean;
+  children: MenuChild[];
+}
+
+const { title, path, lastItem, children } = Astro.props as Props;
 ---
 
 <li class="relative flex flex-col lg:flex-row items-start lg:items-center has-submenu">
@@ -35,7 +48,7 @@ const { title, path, lastItem, children } = Astro.props;
         <div
           class="px-3 py-2 bg-gray-100 rounded-[12px] lg:rounded-md lg:shadow-sm lg:border flex flex-col">
           {
-            children.map((item) => (
+            children.map((item: MenuChild) => (
               <a
                 href={item.path}
                 class="py-1 pl-2 lg:pl-0 text-gray-700 hover:text-black no-underline">

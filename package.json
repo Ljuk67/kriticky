@@ -2,6 +2,10 @@
   "name": "kriticky",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=9.6.5"
+  },
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/run-thumbs-if-stale.mjs",
@@ -14,18 +18,19 @@
     "linkcheck:remind": "node scripts/linkcheck-reminder.mjs"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/rss": "^4.0.17",
+    "@astrojs/sitemap": "^3.7.1",
     "@sentry/astro": "^10.10.0",
     "@spotlightjs/astro": "^3.2.6",
-    "astro": "^5.16.4",
+    "astro": "^5.18.1",
     "astro-navbar": "^2.4.0",
     "openai": "^5.20.0",
     "pagefind": "^1.4.0",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/mdx": "^4.3.14",
     "@astrojs/tailwind": "^6.0.2",
     "@fontsource-variable/bricolage-grotesque": "^5.2.8",
     "@fontsource-variable/inter": "^5.2.6",
@@ -34,6 +39,7 @@
     "@iconify-json/uil": "^1.2.3",
     "@tailwindcss/typography": "^0.5.16",
     "astro-icon": "^1.1.5",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3"
   }
 }

@@ -21,10 +21,11 @@ const sizes = {
 };
 
 const styles = {
+  inverted: "bg-white text-black hover:bg-gray-100 border-2 border-black",
   outline: "border-2 border-black hover:bg-black text-black hover:text-white",
   primary:
     "bg-black text-white hover:bg-slate-900  border-2 border-transparent",
-};
+} as const;
 ---
 
 <button
