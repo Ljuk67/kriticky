@@ -109,6 +109,10 @@ status: "draft"
 ### Tone & Voice (Slovak)
 - Always use informal second person singular in articles and UI copy: prefer "ty/teba/ti/ťa", verbs like "robíš, čítaš, pozri, skús, over" instead of formal plural "Vy/robíte/čítate". Avoid capitalized "Vy".
 - Target audience - people who don't know about critical thinking, or have only a small understanding of it. People who vote for polarising leaders like the SMER party in Slovakia, because of their slogans, not real deliverables or past achievements (or lack of)
+- When persuading or explaining political/social topics, default to Haidt-style conservative moral language before liberal/academic framing.
+- Speak in terms such as: poriadok, zodpovednosť, charakter, slušnosť, ochrana rodiny, bezpečie, stabilita, úcta k práci, férovosť, vernosť vlastným slovám.
+- The goal is to reach conservative readers who are vulnerable to populism, not liberal readers who already agree with the site.
+- Avoid sounding superior, urban-elite, or dismissive toward conservative instincts. Show how their own values can be used to judge politicians more strictly and more critically.
 
 ## Content Linking Rules
 - Before adding an external link, first check whether there is a good internal article link already available in the repository.
