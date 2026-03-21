@@ -53,6 +53,15 @@ tags:
 - Verify the scope and approach with the user first; do not proceed with widespread edits without explicit confirmation.
 - Suggest creating and working on a dedicated branch for the change (e.g., `feat/<scope>` or `content/<scope>`) before implementation.
 
+## Explain Before Editing
+- Before making any code change, first explain the planned edit to the user.
+- The explanation should cover:
+  - what the issue is
+  - why it matters
+  - what will be changed
+  - why that fix is the right one
+- After that explanation, proceed with the edit unless the user asks to pause or change direction.
+
 ## Destructive Edits Policy
 - Never delete or substantially rewrite user-authored content (e.g., blog posts, pages) without explicit approval.
 - If a refactor requires file conversion (e.g., MD → MDX), preserve the full original content verbatim. Confirm with the user before removing or shortening any sections.
@@ -102,6 +111,8 @@ status: "draft"
 - Target audience - people who don't know about critical thinking, or have only a small understanding of it. People who vote for polarising leaders like the SMER party in Slovakia, because of their slogans, not real deliverables or past achievements (or lack of)
 
 ## Content Linking Rules
+- Before adding an external link, first check whether there is a good internal article link already available in the repository.
+- Also check `public/footnotes-terms.json` before adding an external explainer link for a harder word or phrase. If the term is missing and it is likely useful across the site, add it there.
 - When referencing "kvalitné zdroje", "spoľahlivé zdroje", "dôveryhodné zdroje" (including singular forms and close variants/synonyms), hyperlink the phrase to `/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/`.
 - Use the phrase itself as the link text. Apply this consistently in Markdown, MDX, and inline HTML within content or components.
  - Exception (self-link): If you are editing the same article as the target (i.e., the current page’s route equals the target URL), do not create the hyperlink; leave the phrase as plain text.
@@ -141,6 +152,11 @@ GDPR friendly or anonymous statistic preferred.
 - It’s OK to use less-common terms, but immediately explain them in brackets in plain Slovak, e.g., "cherry-picking (vyberanie si len tých dôkazov, ktoré sa mi hodia)".
 - Expand acronyms on first use with a brief bracketed explanation.
 - Favor concrete examples, short paragraphs, and bullets where it improves clarity.
+
+## Tagging Rule
+- Do not use `kritické myslenie` / `kriticke myslenie` as a post tag.
+- Reason: the whole website is already about critical thinking, so the tag is too broad and does not help with categorization.
+- Prefer more specific tags such as the topic, bias, domain, method, or concrete problem discussed in the article.
 
 ## STOP Method (Slovak)
 - Purpose: a simple checklist to slow down and verify claims in articles and UI copy. Use it in posts where appropriate; you can briefly elaborate points to fit context.

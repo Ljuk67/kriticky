@@ -6,7 +6,20 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import Icon from "astro-icon";   
 
-const menuitems = [
+interface MenuChild {
+  title: string;
+  path: string;
+}
+
+interface MenuItem {
+  title: string;
+  path: string;
+  isHomeIcon?: boolean;
+  badge?: boolean;
+  children?: MenuChild[];
+}
+
+const menuitems: MenuItem[] = [
   {
       title: "Home",
       path: "/",

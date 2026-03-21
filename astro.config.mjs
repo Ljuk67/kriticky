@@ -7,8 +7,10 @@ import astroIcon from 'astro-icon';
 import { defineConfig } from 'astro/config';
 import { exec } from 'node:child_process';
 
+/** @returns {any} */
 function thumbsWatcherPlugin() {
-    let debounceTimer = null;
+    /** @type {ReturnType<typeof setTimeout> | undefined} */
+    let debounceTimer;
     const run = () => {
         if (debounceTimer) clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
@@ -22,7 +24,9 @@ function thumbsWatcherPlugin() {
     return {
         name: 'thumbs-watcher',
         apply: 'serve',
+        /** @param {any} server */
         configureServer(server) {
+            /** @param {string} p */
             const onChange = (p) => {
                 if (p.includes('/src/content/blog/') || p.includes('src\\content\\blog\\')) run();
             };

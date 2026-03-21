@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Abstraktný geometrický náhľad">
+  
+    <defs>
+      <linearGradient id="bg-grad" x1="0" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(163, 360, 180)">
+        <stop offset="0%" stop-color="#9fccb1" />
+        <stop offset="100%" stop-color="#95b3bf" />
+      </linearGradient>
+      <clipPath id="rounded">
+        <rect x="0" y="0" width="720" height="360" rx="21.599999999999998" ry="21.599999999999998" />
+      </clipPath>
+    </defs>
+  <g clip-path="url(#rounded)">
+    <rect x="0" y="0" width="720" height="360" fill="url(#bg-grad)" />
+    <circle cx="572.1750317439437" cy="87.89585341326892" r="67.81937262311517" fill="hsl(0 0% 70%)" opacity="0.42" /><polygon points="388.38956580208054,-97.20289628001548 521.8082579081987,65.80383387588961 481.20524838308836,298.70240589711534 240.51643952327532,310.6181527737139 77.09915519332529,144.77598391057592 150.1638826399203,-94.8440534428175" fill="#2A7B9B" opacity="0.55" /><polygon points="274.988077222135,352.20407247355325 303.8761375100374,262.68877965665126 350.91660216810965,199.20544771752006 429.999101377232,219.05914891922464 490.3143725571422,284.9417009285803 461.79865722030684,382.57607985160723 365.18249283164147,382.93609041720504" fill="none" stroke="#57C785" stroke-width="2.675631521567702" stroke-linejoin="round" opacity="0.47" /><polygon points="111.5014565059274,210.33725956627273 50.19070545411276,152.63863047962153 35.66728889839433,68.99520766594611 116.73685620152577,58.487955240549944 200.42903713407438,72.67017080273976 170.82614964987604,153.3686744249191" fill="hsl(0 0% 75%)" opacity="0.48" /><g transform="translate(72.97778487950563 264.4841975905001) rotate(120)"><rect x="-59.94915189381115" y="-60.548564239746035" width="119.8983037876223" height="121.09712847949207" fill="none" stroke="#EDDD53" stroke-width="3.192185996957124" stroke-linejoin="round" opacity="0.35"/></g>
+  </g>
+</svg>

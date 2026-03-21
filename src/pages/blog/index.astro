@@ -8,11 +8,11 @@ import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import { tagToSlug } from '../../lib/slug';
 // Generated SVG thumbnails (lazy) with fallback to default.svg
-const thumbs = import.meta.glob('../../assets/thumbs/*.svg', { query: '?url', import: 'default' });
-async function getThumb(id) {
+const thumbs = import.meta.glob('../../assets/thumbs/*.svg', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
+async function getThumb(id: string): Promise<string> {
   const key = `../../assets/thumbs/${id}.svg`;
   const def = `../../assets/thumbs/default.svg`;
-  const loader = (thumbs)[key] || (thumbs)[def];
+  const loader = thumbs[key] || thumbs[def];
   return await loader();
 }
 
