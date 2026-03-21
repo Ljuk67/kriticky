@@ -31,26 +31,44 @@
 	);
 }
 @font-face {
-	font-family: "Atkinson";
+	font-family: "Atkinson Hyperlegible";
 	src:
 		local("Atkinson Hyperlegible Regular"),
 		local("Atkinson Hyperlegible"),
-		url("/fonts/atkinson-regular.ttf") format("truetype");
+		url("/fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
 	font-weight: 400;
 	font-style: normal;
-	font-display: optional;
+	font-display: swap;
 }
 @font-face {
-	font-family: "Atkinson";
+	font-family: "Atkinson Hyperlegible";
+	src:
+		local("Atkinson Hyperlegible Italic"),
+		url("/fonts/AtkinsonHyperlegible-Italic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Atkinson Hyperlegible";
 	src:
 		local("Atkinson Hyperlegible Bold"),
-		url("/fonts/atkinson-bold.ttf") format("truetype");
+		url("/fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
 	font-weight: 700;
 	font-style: normal;
-	font-display: optional;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Atkinson Hyperlegible";
+	src:
+		local("Atkinson Hyperlegible Bold Italic"),
+		url("/fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
 body {
-	font-family: "Atkinson", "Segoe UI", Arial, sans-serif;
+	font-family: "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
