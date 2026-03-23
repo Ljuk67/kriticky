@@ -42,9 +42,9 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
             <textarea name="message" required minlength="10" maxlength="5000"></textarea>
           </label>
         </p>
-        <p>Tento formulár ukladá Váš email a meno len na antispamové opatrenia. Pre požiadanie o ich anonymizáciu alebo odstránenie <a href="/kontakt/" class="text-white" target="_blank">stačí napísať</a>.</p>
-        <button type="button">Odoslať komentár</button>
         <span id="form-status" role="status" aria-live="polite"></span>
+        <p class="text-sm">Tento formulár ukladá Váš email a meno len na antispamové opatrenia. Pre požiadanie o ich anonymizáciu alebo odstránenie <a href="/kontakt/" class="text-white" target="_blank">stačí napísať</a>.</p>
+        <button type="button">Odoslať komentár</button>
       </form>
       
       <div id="comments-list" data-slug={slug} data-supabase-url={import.meta.env.PUBLIC_SUPABASE_URL} data-supabase-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}>
@@ -77,7 +77,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
     }
     form#comment-form textarea { height: 150px; }
     form#comment-form .hp { position: absolute; left: -9999px; opacity: 0; height: 0; }
-    #form-status { margin-left: 0.75rem; color: rgb(var(--white));}
+    #form-status { color: black; padding: 1px 5px; background: var(--secondary); border-radius: 5px;}
     
     /* Submit button */
     form#comment-form button { padding: 10px 15px; color: white; background: black; border: 0; border-radius: 6px; font-size: 1em; cursor: pointer; }
