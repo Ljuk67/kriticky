@@ -39,11 +39,16 @@ const GOOGLE_SITE_VERIFICATION = String(import.meta.env.PUBLIC_GOOGLE_SITE_VERIF
 // - Pages (type === 'website') use site-wide opengraph JPEG from public/
 // - Articles (type === 'article') keep existing default SVG thumb unless overridden
 const resolvedImage = image ?? (type === 'article' ? { src: defaultThumbUrl } : { src: '/opengraph.jpeg' });
+const resolvedImageSrc = typeof resolvedImage.src === 'string' ? resolvedImage.src : String(resolvedImage.src);
 // Social preview fallback: many platforms ignore SVG for og:image.
-// If the chosen image is an SVG, fall back to a site-wide JPEG.
-const ogImageSrc = (typeof resolvedImage.src === 'string' && resolvedImage.src.toLowerCase().endsWith('.svg'))
+// If the chosen image is an SVG or an inlined data: image, fall back to a site-wide JPEG.
+const shouldUseFallbackOgImage =
+  resolvedImageSrc.toLowerCase().endsWith('.svg') ||
+  resolvedImageSrc.toLowerCase().startsWith('data:image/svg+xml') ||
+  resolvedImageSrc.toLowerCase().startsWith('data:');
+const ogImageSrc = shouldUseFallbackOgImage
   ? '/opengraph.jpeg'
-  : resolvedImage.src;
+  : resolvedImageSrc;
 const DEFAULT_OG_WIDTH = 1520;
 const DEFAULT_OG_HEIGHT = 808;
 const resolvedImageIsMetadata =
@@ -52,8 +57,7 @@ const resolvedImageIsMetadata =
   'height' in resolvedImage &&
   typeof resolvedImage.width === 'number' &&
   typeof resolvedImage.height === 'number';
-const ogUsesFallbackJpeg =
-  typeof resolvedImage.src === 'string' && resolvedImage.src.toLowerCase().endsWith('.svg');
+const ogUsesFallbackJpeg = shouldUseFallbackOgImage;
 const ogImageWidth = !ogUsesFallbackJpeg && resolvedImageIsMetadata ? resolvedImage.width : DEFAULT_OG_WIDTH;
 const ogImageHeight = !ogUsesFallbackJpeg && resolvedImageIsMetadata ? resolvedImage.height : DEFAULT_OG_HEIGHT;
 // URLs for breadcrumbs
