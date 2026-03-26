@@ -60,6 +60,15 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				margin: 20px 0 0.5em 0;
 				font-size: 2.2em;
 			}
+			.title .comments-link {
+				display: inline-block;
+				margin-top: 0.15em;
+				font-size: 0.95rem;
+				text-decoration: none;
+			}
+			.title .comments-link:hover {
+				text-decoration: underline;
+			}
 			.date {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
@@ -124,6 +133,11 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 							</div>
 						)}
 						<h1>{title}</h1>
+						{showComments && (
+							<p>
+								<a class="comments-link" href="#comments">💬 Diskusia</a>
+							</p>
+						)}
 					</div>
 					<slot />
 				</div>
