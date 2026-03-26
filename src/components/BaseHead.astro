@@ -38,7 +38,7 @@ const GOOGLE_SITE_VERIFICATION = String(import.meta.env.PUBLIC_GOOGLE_SITE_VERIF
 // Default OG image handling:
 // - Pages (type === 'website') use site-wide opengraph JPEG from public/
 // - Articles (type === 'article') keep existing default SVG thumb unless overridden
-const resolvedImage = image ?? (type === 'article' ? { src: defaultThumbUrl } : { src: '/opengraphn.jpeg' });
+const resolvedImage = image ?? (type === 'article' ? { src: defaultThumbUrl } : { src: '/opengraph.jpeg' });
 const resolvedImageSrc = typeof resolvedImage.src === 'string' ? resolvedImage.src : String(resolvedImage.src);
 // Social preview fallback: many platforms ignore SVG for og:image.
 // If the chosen image is an SVG or an inlined data: image, fall back to a site-wide JPEG.
@@ -47,10 +47,10 @@ const shouldUseFallbackOgImage =
   resolvedImageSrc.toLowerCase().startsWith('data:image/svg+xml') ||
   resolvedImageSrc.toLowerCase().startsWith('data:');
 const ogImageSrc = shouldUseFallbackOgImage
-  ? '/opengraphn.jpeg'
+  ? '/opengraph.jpeg'
   : resolvedImageSrc;
-const DEFAULT_OG_WIDTH = 1520;
-const DEFAULT_OG_HEIGHT = 808;
+const DEFAULT_OG_WIDTH = 1536;
+const DEFAULT_OG_HEIGHT = 1024;
 const resolvedImageIsMetadata =
   typeof resolvedImage === 'object' &&
   'width' in resolvedImage &&
