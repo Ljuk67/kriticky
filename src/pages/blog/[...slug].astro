@@ -1,12 +1,10 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { getVisibleBlogPosts } from '../../lib/blog';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	const filtered = import.meta.env.PROD
-		? posts.filter((p) => p.data.status === 'published')
-		: posts;
+	const filtered = getVisibleBlogPosts(await getCollection('blog'));
 	return filtered.map((post) => ({
 		params: { slug: post.id },
 		props: post,

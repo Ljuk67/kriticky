@@ -1,10 +1,8 @@
 import { getCollection } from 'astro:content';
+import { getVisibleBlogPosts, sortBlogPostsByDateDesc } from '../lib/blog';
 
 export async function GET() {
-  const all = await getCollection('blog');
-  const posts = all.filter((p) => (import.meta.env.PROD ? p.data.status === 'published' : true));
-  const blogItems = posts
-    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  const blogItems = sortBlogPostsByDateDesc(getVisibleBlogPosts(await getCollection('blog')))
     .map((p) => ({
       type: 'post' as const,
       id: p.id,
