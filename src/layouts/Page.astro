@@ -21,7 +21,7 @@ const {
 }: Props & { sectionClass?: string; wrap?: boolean; mainClass?: string } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  "/default.jpg",
   Astro.site
 ).toString();
 ---
