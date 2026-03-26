@@ -3,32 +3,22 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
+import { getVisibleBlogPosts, sortBlogPostsByDateDesc, withBlogThumbs } from '../../lib/blog';
 import { tagToSlug } from '../../lib/slug';
 import PostsGrid from '../../components/PostsGrid.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  const prod = import.meta.env.PROD;
-  const visible = prod ? posts.filter((p) => p.data.status === 'published') : posts;
+  const visible = getVisibleBlogPosts(await getCollection('blog'));
   const cats = new Set<string>();
   for (const p of visible) for (const c of (p.data.categories ?? [])) cats.add(c);
   return [...cats].map((c) => ({ params: { category: tagToSlug(c) }, props: { category: c } }));
 }
 
 const { category } = Astro.props as { category: string };
-const posts = (await getCollection('blog'))
-  .filter((p) => (import.meta.env.PROD ? p.data.status === 'published' : true))
-  .filter((p) => (p.data.categories ?? []).includes(category))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-  const thumbs = import.meta.glob('../../assets/thumbs/*.svg', { query: '?url', import: 'default' }) as Record<string, () => Promise<string>>;
-  async function getThumb(id: string): Promise<string> {
-  const key = `../../assets/thumbs/${id}.svg`;
-  const def = `../../assets/thumbs/default.svg`;
-  const loader = thumbs[key] || thumbs[def];
-  return await loader();
-}
-const enhanced = await Promise.all(posts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
+const posts = sortBlogPostsByDateDesc(
+  getVisibleBlogPosts(await getCollection('blog')).filter((p) => (p.data.categories ?? []).includes(category)),
+);
+const enhanced = await withBlogThumbs(posts);
 ---
 
 <!doctype html>

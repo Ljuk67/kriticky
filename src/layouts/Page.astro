@@ -19,11 +19,6 @@ const {
   wrap = true,
   mainClass = 'mx-auto max-w-4xl px-4 sm:px-6 lg:px-8',
 }: Props & { sectionClass?: string; wrap?: boolean; mainClass?: string } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-const resolvedImageWithDomain = new URL(
-  "/default.jpg",
-  Astro.site
-).toString();
 ---
 
 <!doctype html>

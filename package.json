@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/run-thumbs-if-stale.mjs",
-    "build": "astro build && node scripts/build-search-index.mjs",
+    "build": "astro build",
     "postbuild": "node scripts/check-site.mjs --dir dist",
     "preview": "astro preview",
     "astro": "astro",
