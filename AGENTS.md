@@ -127,6 +127,18 @@ status: "draft"
  - Exception (self-link): If the current article is the same as the target (`/blog/zakladne-typy-zaujatosti/` with the given anchor), do not link; keep the phrase as plain text.
 - Exception (frequent linking) - don't add any more hyperlinks if you have already placed one, for at least the next few paragraphs.
 
+## Linking Conventions
+- Website/frontend content: Prefer Markdown links for internal links in Markdown/MDX where possible.
+- Website/frontend content: For external links written in raw HTML, use `<a href="..." target="_blank" rel="noopener noreferrer">...</a>`.
+- Website/frontend content: Keep all existing `Content Linking Rules` unchanged.
+- Assistant terminal/chat references: Prefer `file://` full-path clickable links for chat responses to local repo files.
+- Assistant terminal/chat references: Include line numbers when useful.
+- Assistant terminal/chat references: Use plain repo-relative references only as a fallback when clickable `file://` links are not practical.
+
+Examples:
+- `file:///home/lukas/Documents/BIZ/My websites/Kriticke Myslenie/kriticke/src/components/BaseHead.astro`
+- `file:///home/lukas/Documents/BIZ/My websites/Kriticke Myslenie/kriticke/src/layouts/Page.astro#L22`
+
 ## Content Formatting Rules
 - Use the callout pattern for examples, tips, and short walkthroughs: wrap example blocks in `<aside class="callout callout--info">…</aside>`.
 - Add a one‑sentence actionable takeaway at the end of every section (usually starting with a H2 heading) - summarise the section above it: place `<aside class="callout callout--tip">One clear, actionable sentence.</aside>` directly after end of each `h2` sectiopn in articles.
