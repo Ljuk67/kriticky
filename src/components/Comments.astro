@@ -85,7 +85,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
     /* Comments list items are injected via JS, so use :global to style them */
     :global(.comments .comment) { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
     :global(.comments .comment .meta) { color: var(--secondary); padding-left: 25px; font-size: 0.9rem; margin-bottom: 0.25rem; }
-    :global(.comments .comment .body) { white-space: pre-wrap; }
+    :global(.comments .comment .body) { white-space: pre-wrap; font-size: 1rem; }
     
     /* Small screens */
     @media (max-width: 480px) {
