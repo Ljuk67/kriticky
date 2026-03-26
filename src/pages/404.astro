@@ -1,23 +1,10 @@
 ---
 import Page from "../layouts/Page.astro";
 import PostsGrid from "../components/PostsGrid.astro";
-import { getCollection } from "astro:content";
+import { getVisibleSortedBlogPosts, withBlogThumbs } from "../lib/blog";
 
-// Reuse homepage thumbnail loading
-const thumbs = import.meta.glob("../assets/thumbs/*.svg", { query: "?url", import: "default" });
-async function getThumb(id: string) {
-  const key = `../assets/thumbs/${id}.svg`;
-  const def = `../assets/thumbs/default.svg`;
-  const loader = (thumbs as Record<string, () => Promise<string>>)[key] || (thumbs as Record<string, () => Promise<string>>)[def];
-  return await loader();
-}
-
-const allPosts = await getCollection("blog");
-const posts = allPosts.filter((p) => (import.meta.env.PROD ? p.data.status === "published" : true));
-const latestPosts = posts
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 4);
-const latestWithThumbs = await Promise.all(latestPosts.map(async (p) => ({ ...p, thumb: await getThumb(p.id) })));
+const latestPosts = (await getVisibleSortedBlogPosts()).slice(0, 4);
+const latestWithThumbs = await withBlogThumbs(latestPosts);
 ---
 
 <Page title="Táto stránka sa nenašla" description="Skús to vyhľadať, alebo si pozri najnovšie články.">
