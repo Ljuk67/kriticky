@@ -26,18 +26,24 @@
 - File naming: pages in kebab-case; components in PascalCase; TypeScript files camelCase.
 - Content: blog posts in `src/content/blog/` as `.md` or `.mdx` with frontmatter:
 
-  ```md
+```md
 ---
 title: "Základy kritického myslenia"
 description: "Úvod do kritického myslenia a jeho kľúčových zručností"
 pubDate: "Sep 08 2025"
 author: "Lukas Cech"
 tags:
-  - "kritické myslenie"
+  - "medicína"
 ---
-  ```
-- TypeScript: strict mode (see `tsconfig.json`); prefer explicit exports.
+```
+
+### Do
 - Images: place under `src/assets/` and prefer Astro’s image pipeline for posts and components (see “Images in Posts” below). For generated thumbs, we still prefer using our SVG generator in `scripts/generate-thumbs.mjs`.
+
+### Don't
+- do not hard code colors
+- do not use divs if we have a component already
+- do not add new heavy dependencies without approval
 
 ## Testing Guidelines
 - No test suite configured yet. If adding tests, prefer Playwright for E2E and Vitest for unit tests. Place tests under `tests/` with `*.spec.ts` naming. Add an `npm test` script when introduced.
@@ -91,11 +97,13 @@ Example frontmatter:
 
 ```md
 ---
-title: "My Draft"
+title: "Draft: Post title"
 description: "Work in progress"
 pubDate: "Sep 10 2025"
 author: "Lukas Cech"
 status: "draft"
+tags:
+  - "medicína"
 ---
 ```
 
@@ -110,7 +118,7 @@ status: "draft"
 - Always use informal second person singular in articles and UI copy: prefer "ty/teba/ti/ťa", verbs like "robíš, čítaš, pozri, skús, over" instead of formal plural "Vy/robíte/čítate". Avoid capitalized "Vy".
 - Target audience - people who don't know about critical thinking, or have only a small understanding of it. People who vote for polarising leaders like the SMER party in Slovakia, because of their slogans, not real deliverables or past achievements (or lack of)
 - When persuading or explaining political/social topics, default to Haidt-style conservative moral language before liberal/academic framing.
-- Speak in terms such as: poriadok, zodpovednosť, charakter, slušnosť, ochrana rodiny, bezpečie, stabilita, úcta k práci, férovosť, vernosť vlastným slovám.
+- Speak in terms such as: poriadok, zodpovednosť, charakter, slušnosť, ochrana rodiny, bezpečie, stabilita, úcta k práci, férovosť, vernosť vlastným slovám, integrita.
 - The goal is to reach conservative readers who are vulnerable to populism, not liberal readers who already agree with the site.
 - Avoid sounding superior, urban-elite, or dismissive toward conservative instincts. Show how their own values can be used to judge politicians more strictly and more critically.
 
@@ -159,13 +167,11 @@ Examples:
 - Tip: keep `dist/` out of git. Use CI (GitHub Actions) or a local script to rsync/upload `dist/` after each merge to `master`.
 
 ## Privacy‑Friendly Analytics (Websupport compatible)
-Goal: uniques, page views, device category; minimal cookies and simple setup.
-
-GDPR friendly or anonymous statistic preferred.
+Using goatcounter.com - fully private - [website stats](https://kriticky.goatcounter.com/)
 
 ## Content Writing Style
 - Write like a blogger aiming for broad understanding; prefer clear, conversational Slovak.
-- It’s OK to use less-common terms, but immediately explain them in brackets in plain Slovak, e.g., "cherry-picking (vyberanie si len tých dôkazov, ktoré sa mi hodia)".
+- It’s OK to use less-common terms, but immediately explain them in brackets in plain Slovak, e.g., "cherry-picking (vyberanie si len tých dôkazov, ktoré sa mi hodia)" or use our footnotes mechanism for longer explanations.
 - Expand acronyms on first use with a brief bracketed explanation.
 - Favor concrete examples, short paragraphs, and bullets where it improves clarity.
 
@@ -258,7 +264,3 @@ import pic from '../../assets/pic.png'
 - Anchors: add `--check-anchors` to verify that `#id` anchors exist on target pages.
 - Reminders: `npm run linkcheck:remind` warns if it’s been more than 30 days since the last scan. Timestamp is stored in `.linkcheck/last-run.json` (ignored by git).
 
-## Footnotes Workflow (authoring reminder)
-- Add recurring term explanations in `public/footnotes-terms.json` so annotations work site‑wide.
-- In content, annotate uncommon terms inline: `<span class="fn" data-footnote="Krátke vysvetlenie.">termín</span>`.
-- Keep one annotation per term per page; avoid annotating inside links and code.
