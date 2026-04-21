@@ -5,50 +5,13 @@ Cieľom je ukázať, ako odlíšiť fakty od hoaxov, odhaliť manipulatívne tec
 
 Upevniť a rozšíriť kritické myslenie u bežných ľudí.
 
+## O webe
+- Web je určený najmä pre ľudí, ktorí sa chcú lepšie orientovať v informáciách, médiách, politike a každodenných tvrdeniach.
+- Obsah sa zameriava na praktické príklady, jednoduché vysvetlenia a zrozumiteľné návody, ako rozmýšľať pokojnejšie a presnejšie.
+- Tón webu je civilný, priamy a písaný tak, aby bol užitočný aj pre čitateľa bez odborného zázemia.
+
 ## Technológie
 - [Astro](https://astro.build/) – statický generátor webov, rýchle načítavanie
 - Markdown/MDX – články sú písané v jednoduchom formáte
 - Pagefind – vyhľadávanie priamo na stránke
 - giscus – komentáre čitateľov cez GitHub Discussions
-<hr/>
-
-## Kontrola odkazov (link checker)
-- Po každom build-e beží automatická kontrola odkazov (postbuild). Build nezlyhá; iba vypíše nefunkčné odkazy.
-- Ručné spustenie:
-  - `npm run check:site` – skontroluje odkazy v `dist/` (interné, offline).
-  - `npm run check:site -- --external` – pridá kontrolu externých odkazov (HTTP statusy).
-  - `npm run check:site -- --check-anchors` – overí aj `#kotvy` (ID) na cieľových stránkach.
-- Pripomienka raz za čas: `npm run linkcheck:remind` upozorní, ak kontrola neprebehla dlhšie než 30 dní.
-
-## Poznámky ako pop up (footnotes)
-- Časté pojmy a vysvetlenia udržuj v `public/footnotes-terms.json` (automaticky sa aplikujú naprieč webom).
-- V článkoch používaj inline formát: `<span class="fn" data-footnote="Krátke vysvetlenie.">termín</span>`.
-- Nepoužívaj vnútri odkazov ani kódu; zvyčajne stačí jedna poznámka na termín a stránku.
-
-## Komentáre s e‑mailovým potvrdením (Supabase)
-- Zoznam komentárov sa číta priamo zo Supabase (len schválené `is_approved=true`).
-- Odoslanie ide cez server `public/api/comments/submit.php`:
-  - Vytvorí záznam ako neschválený, vygeneruje `verify_token` a pošle e‑mail s potvrdzovacím odkazom.
-  - Po kliknutí na odkaz `public/api/comments/verify.php?token=...` sa komentár schváli a príde notifikácia na `mysli@kriticky.sk`.
-
-### Nastavenie
-1) Supabase (env):
-   - `PUBLIC_SUPABASE_URL`, `PUBLIC_SUPABASE_ANON_KEY` (pre čítanie zoznamu)
-   - `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (serverové vkladanie a schvaľovanie)
-2) SMTP (env):
-   - `SMTP_HOST=smtp.m1.websupport.sk`, `SMTP_PORT=587`, `SMTP_SECURE=starttls`
-   - `SMTP_USER=admin@kriticky.sk`, `SMTP_PASS=...`, `SMTP_FROM=admin@kriticky.sk`, `SMTP_FROM_NAME=Kriticky.sk`
-   - `ADMIN_NOTIFY_TO=mysli@kriticky.sk`
-3) Web URL (server):
-   - `SITE_BASE_URL=https://kriticky.sk` — používa sa na zostavenie overovacieho odkazu a presmerovania (nepoužíva sa hlavička Host z požiadavky).
-4) Schéma (pozri `scripts/sql/comments_migration.sql`):
-   - Potrebné stĺpce: `is_approved`, `verify_token`, `verify_expires_at`, `verified_at`.
-   - RLS: povoliť `SELECT` len pre `is_approved=true`; `INSERT/UPDATE` len cez service role.
-
-### Logy chýb (verifikačné/oznamovacie e‑maily)
-- PHP endpointy logujú zlyhania odoslania e‑mailov do súboru (JSON riadky):
-  - Prednosť majú premenné prostredia:
-    - `LOG_FILE` – úplná cesta k súboru (napr. `/home/…/logs/comments.log`)
-    - `LOG_DIR` – adresár; súbor sa vytvorí ako `comments.log`
-  - Ak nie sú nastavené, používa sa systémový dočasný adresár (`/tmp/kriticky-comments.log`).
-- Položky: čas, event (`email_verification_send_failed` alebo `admin_notify_send_failed`), IP, UA, slug, e‑mail (zamaskovaný pre verifikačné maily), chyba.
