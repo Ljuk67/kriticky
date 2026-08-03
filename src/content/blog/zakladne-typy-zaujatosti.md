@@ -1,7 +1,8 @@
 ---
 title: "Základné typy zaujatostí - kognitívne skreslenia"
-description: "Top 10 najčastejších psychologických zaujatostí (kognitívnych skreslení), ktoré ovplyvňujú naše myslenie. Jednoduché vysvetlenia, príklady zo Slovenska a tipy, ako sa brániť manipulácii a dezinformáciám."
+description: "Najčastejšie psychologické zaujatosti (kognitívne skreslenia), ktoré ovplyvňujú naše myslenie. Jednoduché vysvetlenia, príklady zo Slovenska a tipy, ako sa brániť manipulácii a dezinformáciám."
 pubDate: "Nov 08 2025"
+updatedDate: "Aug 03 2026"
 author: "Lukas Cech"
 
 tags:
@@ -15,7 +16,7 @@ categories:
 ---
 
 
-Zaujatosť alebo skreslenie (anglicky "bias") je skrytý návyk nášho myslenia, ktorá nás vedie k rýchlym, ale často nepresným záverom. Nie je to „zlá vlastnosť“ ani lenivosť — je to prirodzený spôsob, ako si mozog skracuje cestu k cieľu, čo je častokrát užitočné. Problém je, že tieto skratky môžu byť v niektorých situáciách nepresné, alebo nás zavedú na nesprávny chodníček. Alebo ich zneužívajú ľudia či marketing na dosiahnutie ich cieľov na náš úkor. Kritické myslenie znamená tieto nástrahy rozpoznať – u seba aj u iných. Tu je 10 najčastejších zaujatostí, vysvetlených jednoducho a s príkladmi zo Slovenska.
+Zaujatosť alebo skreslenie (anglicky "bias") je skrytý návyk nášho myslenia, ktorá nás vedie k rýchlym, ale často nepresným záverom. Nie je to „zlá vlastnosť“ ani lenivosť — je to prirodzený spôsob, ako si mozog skracuje cestu k cieľu, čo je častokrát užitočné. Problém je, že tieto skratky môžu byť v niektorých situáciách nepresné, alebo nás zavedú na nesprávny chodníček. Alebo ich zneužívajú ľudia či marketing na dosiahnutie ich cieľov na náš úkor. Kritické myslenie znamená tieto nástrahy rozpoznať – u seba aj u iných. Tu je zoznam najčastejších zaujatostí, vysvetlených jednoducho a s príkladmi zo Slovenska.
 
   **Ako to vyzerá v bežnom živote:**
 
@@ -246,6 +247,36 @@ Tip: Vytvor si zvyk pridať ku každému problému aspoň jeden relevantný pozi
 - **Ako sa jej vyhnúť:** Pri hodnotení situácie si vedome pripomeňme aj pozitívne fakty.  
 - **Ako ju spoznať:** Ak niekto stále zdôrazňuje iba problémy, aj keď existujú riešenia.  
 - **Zdroje:** <a href="https://en.wikipedia.org/wiki/Negativity_bias" target="_blank" rel="noopener noreferrer">zdroj 1</a>
+
+---
+
+<a id="dunning-kruger-efekt"></a>
+
+## 11. Efekt Dunning-Kruger (Dunning-Kruger effect)
+Alebo aj „čím menej vieš, tým si istejší“.
+
+<aside class="callout callout--tip">
+Tip: Ten najistejší hlas v diskusii nemusí byť ten najkompetentnejší. Skús si všímať, či istota niekoho rastie so znalosťou témy, alebo len s hlasitosťou.
+</aside>
+
+- **Čo to je:** Ľudia s nižším rozsahom znalostí, nižšou sebareflexiou alebo skúsenosťami v nejakej oblasti, svoje schopnosti systematicky preceňujú, pretože **nemajú dosť vedomostí na to, aby videli, čo všetko nevedia**. Skutoční odborníci sa naopak často podceňujú, pretože vedia, aká je téma v skutočnosti zložitá a že riešenia sú komplexné a oni nemusia vedieť všetko. Spomeň si na známu vetu "Viem, že nič neviem" (voľný preklad dlhšej vety, ktorú povedal Sokrates). Toto povie len rozumný a uvedomelý človek. Neuvedomelý ani nemusí vedieť, že sa môže mýliť alebo aká je daná téma naozaj komplexná.
+
+- **Príklad:** Diskusie pod politickými článkami na sociálnych sieťach – ľudia bez ekonomického vzdelania s absolútnou istotou vysvetľujú, ako „jednoducho“ opraviť štátny rozpočet alebo dôchodkový systém, zatiaľ čo ekonómovia, ktorí sa témou zaoberajú celé roky, hovoria o kompromisoch a neistote.
+
+<aside class="callout callout--info">
+<b>Príklad z praxe – Kotlár vs. SAV:</b> Vládny splnomocnenec Peter Kotlár od roku 2025 opakovane s úplnou istotou tvrdil, že mRNA vakcíny proti covidu spôsobujú „genetickú modifikáciu“ ľudského organizmu, a požadoval ich okamžitý zákaz. Slovenská akadémia vied (SAV) na jeho podnet urobila skutočnú laboratórnu analýzu vzoriek a v auguste 2025 zverejnila výsledok: vakcíny obsahujú len povolené a bezpečné množstvo zložiek, ďaleko pod schválenými limitmi. Kotlárove tvrdenia SAV označila za technicky nesprávne a nebezpečné. Kotlár závery odmietol aj potom, čo dáta uvidel – presne tak, ako by predpovedal Dunning-Krugerov efekt: čím menej niekto rozumie metodike (laboratórna analýza DNA), tým ťažšie je pre neho uznať, že sa mýlil. <a href="https://spravy.stvr.sk/2025/08/sav-informuje-o-vysledkoch-analyzy-mrna-vakcin-obsahuju-len-schvalene-zlozky/" target="_blank" rel="noopener noreferrer">Zdroj: STVR</a>, <a href="https://spravy.pravda.sk/domace/clanok/764117-analyzovane-mrna-vakciny-proti-covidu-obsahuju-len-schvalene-zlozky-odkazuje-sav/" target="_blank" rel="noopener noreferrer">Pravda</a>.
+</aside>
+
+Populistickí politici tento efekt často využívajú – ponúkajú jednoduché riešenia zložitých problémov (zdravotníctvo, energetika, migrácia) s prehnanou istotou, čo znie presvedčivo najmä pre ľudí, ktorí danú tému nepoznajú do hĺbky. Odborníci, ktorí poznajú všetky súvislosti, sú naopak opatrnejší – čo môže pôsobiť ako slabosť alebo nerozhodnosť, hoci je to len uvedomenie si zložitosti veci.
+
+<aside class="callout callout--info">
+<b>Napríklad:</b> Keď niekto na internete s úplnou istotou vyhlási, že „vie presne", ako vyriešiť infláciu, vojnu alebo reformu zdravotníctva v pár vetách – opatrnosť je namieste. Skutočná znalosť problému takmer vždy prináša aj rešpekt k jeho zložitosti, nie odvážne jednoduché recepty.
+</aside>
+
+- **Ako Dunning-Kruger efekt spoznať:** Keď niekto o zložitej téme hovorí bez váhania, ignoruje výhrady odborníkov a jednoduché riešenie ponúka ako samozrejmosť.
+- **Ako sa mu vyhnúť:** Pred vyslovením silného názoru sa spýtaj sám/sama seba: „Koľko času som tejto téme skutočne venoval/a? Môžem sa aj mýliť? Poznám argumenty tých, čo so mnou nesúhlasia?" Čím menej niečomu rozumieš, tým opatrnejšie by mala znieť tvoja istota. Neboj sa povedať "môžem sa mýliť" a neboj sa zmeniť názor, keď niekto podá dobré argumenty.
+- **Zdroje:** <a href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect" target="_blank" rel="noopener noreferrer">Wikipedia</a>, <a href="https://sk.wikipedia.org/wiki/Dunningov-Krugerov_efekt" target="_blank" rel="noopener noreferrer">Wikipedia SK</a>, <a href="https://www.britannica.com/science/Dunning-Kruger-effect" target="_blank" rel="noopener noreferrer">Encyclopedia Britannica</a>
+
 
 ---
 
