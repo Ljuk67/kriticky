@@ -11,7 +11,7 @@
 - `dist/` — Production build output (generated). Do not edit.
 
 ## Build, Test, and Development Commands
-- `nvm use` — Use Node.js 20 (per `.nvmrc`).
+- `nvm use` — Use Node.js 22+ (per `.nvmrc`).
 - `npm ci` — Clean install dependencies for CI/repeatable builds.
 - `npm run dev` — Start Astro dev server with hot reload.
 - `npm run build` — Create production build into `dist/`.
