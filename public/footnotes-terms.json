@@ -97,7 +97,19 @@
   "aliases": ["factchecking"],
   "note": "Ovrerovanie pravdivosti tvrdení. Ak niekto robí factchecking vyjadrení politika, tak porovnáva to, čo politik tvrdí, s dostupnými faktami a realitou.",
   "maxPerPage": 1
-}
+},
+
+  { "term": "Brandoliniho zákon",
+    "aliases": ["Brandoliniho zakon", "Brandoliniho zákona", "Brandoliniho zákone", "princíp asymetrie nezmyslov", "princip asymetrie nezmyslov"],
+    "note": "Brandoliniho zákon: množstvo energie potrebnej na vyvrátenie nezmyslu je mnohonásobne väčšie než množstvo energie potrebnej na jeho vytvorenie. Vymyslieť tvrdenie trvá sekundy, poriadne ho overiť hodiny. Preto overovanie nikdy nedobehne šírenie hoaxov na rýchlosť.",
+    "maxPerPage": 1
+  },
+
+  { "term": "efekt pretrvávajúceho vplyvu",
+    "aliases": ["efekt pretrvavajuceho vplyvu", "efektu pretrvávajúceho vplyvu", "continued influence effect"],
+    "note": "Efekt pretrvávajúceho vplyvu: aj po tom, čo je nepravdivá informácia jasne opravená, naďalej ovplyvňuje naše úsudky a rozhodovanie. Preto je oveľa účinnejšie lož vôbec nešíriť, než ju potom opravovať.",
+    "maxPerPage": 1
+  }
 
 
 ]
