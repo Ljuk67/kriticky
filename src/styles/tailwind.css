@@ -1,12 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@config "../../tailwind.config.cjs";
 
 /* Reusable button components */
+/* Tailwind v4: @apply can only reference real utilities, so `.btn` must be
+   registered via @utility (top-level, not nested in @layer) for `.btn-light`
+   / `.btn-dark` below to be able to `@apply btn ...`. */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-medium no-underline transition duration-200 ease-out;
+}
+
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-medium no-underline transition duration-200 ease-out;
-  }
   .btn-light {
     @apply btn bg-white text-gray-900 ring-1 ring-gray-200 shadow-sm hover:shadow-lg hover:ring-2 hover:ring-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 disabled:opacity-50 disabled:pointer-events-none;
   }
