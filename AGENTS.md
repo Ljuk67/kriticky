@@ -125,7 +125,7 @@ tags:
 ## Content Linking Rules
 - Before adding an external link, first check whether there is a good internal article link already available in the repository.
 - Also check `public/footnotes-terms.json` before adding an external explainer link for a harder word or phrase. If the term is missing and it is likely useful across the site, add it there.
-- When referencing "kvalitné zdroje", "spoľahlivé zdroje", "dôveryhodné zdroje" (including singular forms and close variants/synonyms), hyperlink the phrase to `/blog/ako-odlisit-spolahlive-zdroje-informacii-od-nespolahlivych/`.
+- When referencing "kvalitné zdroje", "spoľahlivé zdroje", "dôveryhodné zdroje" (including singular forms and close variants/synonyms), hyperlink the phrase to `/blog/ako-odlisit-spolahlive-zdroje-od-nespolahlivych/`.
 - Use the phrase itself as the link text. Apply this consistently in Markdown, MDX, and inline HTML within content or components.
  - Exception (self-link): If you are editing the same article as the target (i.e., the current page’s route equals the target URL), do not create the hyperlink; leave the phrase as plain text.
  - Exception (frequent linking) - don't add any more hyperlinks if you have already placed one, for at least the next few paragraphs.
