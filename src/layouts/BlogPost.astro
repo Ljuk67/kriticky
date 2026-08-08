@@ -57,7 +57,7 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				line-height: 1;
 			}
 			.title h1 {
-				margin: 20px 0 0.5em 0;
+				margin: 0 0 0.5em 0;
 				font-size: 2.2em;
 			}
 			.title .comments-link {
@@ -121,6 +121,7 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				</div>
 				<div class="prose prose-lg max-w-none">
 					<div class="title">
+						<h1>{title}</h1>
 						{Array.isArray(categories) && categories.length > 0 && (
 							<div class="pill-row categories" aria-label="Kategórie">
 								{categories.map((c) => <a class="pill pill-category" href={`/categories/${tagToSlug(c)}/`}>{c}</a>)}
@@ -142,7 +143,6 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 								{tags.map((t) => <a class="pill pill-tag" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
 							</div>
 						)}
-						<h1>{title}</h1>
 						{showComments && (
 							<p>
 								<a class="comments-link" href="#comments">💬 Diskusia</a>
