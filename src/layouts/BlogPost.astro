@@ -37,7 +37,12 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				body{background: #fafafa !important;}
 				.blog-post { background-color: white; padding: 2rem; border-radius: 20px; }
 			}
-			.hero-image { display: block; margin: 0 auto; }
+			.hero-image {
+				display: block;
+				margin: 0 auto;
+				position: relative;
+				z-index: 2; /* paints over the drawer tucked in behind it */
+			}
 			.hero-image img {
 				/* Make hero responsive and prevent horizontal overflow on mobile */
 				display: block;
@@ -50,51 +55,86 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 
 
 			.prose { padding: 0; color: rgb(var(--gray-dark)); }
+			/* Title/meta panel reads as a drawer sliding out from behind the hero
+			   image: same corner radius as the image so it tucks in seamlessly,
+			   pulled up underneath it, only the bottom stays visibly rounded. */
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
+				position: relative;
+				z-index: 1;
+				margin: -40px auto 1.25em;
+				padding: 4.5rem 1.5rem 2.25em;
+				background: var(--gray-light);
+				border: 1px solid rgba(15, 18, 25, 0.08);
+				border-radius: 27px;
 				text-align: center;
 				line-height: 1;
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
-				font-size: 2.2em;
-			}
-			.title .comments-link {
-				display: inline-block;
-				margin-top: 0.15em;
-				font-size: 0.95rem;
-				text-decoration: none;
-			}
-			.title .comments-link:hover {
-				text-decoration: underline;
-			}
-			.date,
-			.meta,
-			.last-updated-on {
-				font-size: 0.8rem;
-				line-height: 1.3;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.meta {
-				margin-top: 0.25em;
-				color: rgb(var(--gray));
+				margin: 0 auto 0.7em;
+				max-width: 20ch;
+				font-size: 2.35em;
+				letter-spacing: -0.01em;
 			}
 			/* .title centers everything else, so keep the pill rows centered too */
 			.title .pill-row {
 				justify-content: center;
 			}
-			.title .categories {
-				margin-bottom: 0.6em;
+			.title .taxonomy {
+				margin-bottom: 1.35em;
 			}
-			.title .tags {
-				margin-top: 0.6em;
+			/* Small line-icon marking where categories end and tags begin, in the
+			   same minimal stroke style as the header's search icon. */
+			.tag-divider {
+				width: 13px;
+				height: 13px;
+				flex: none;
+				color: rgba(15, 18, 25, 0.28);
+			}
+
+			/* One quiet, icon-led meta line: date, author, and the jump to
+			   comments all read as equal, secondary facts about the article —
+			   not a checklist of labeled fields. */
+			.meta-bar {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 0.65em;
+				color: rgba(15, 18, 25, 0.5);
+				font-size: 0.8125rem;
+				font-weight: 500;
+				letter-spacing: 0.01em;
+			}
+			.meta-item {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4em;
+			}
+			.meta-icon {
+				width: 15px;
+				height: 15px;
+				flex: none;
+				opacity: 0.6;
+				transition: opacity 150ms ease;
+			}
+			.meta-sep {
+				opacity: 0.3;
+			}
+			.meta-link {
+				color: inherit;
+				text-decoration: none;
+				transition: color 150ms ease;
+			}
+			.meta-link:hover {
+				color: var(--accent-dark);
+			}
+			.meta-link:hover .meta-icon {
+				opacity: 1;
 			}
 			.last-updated-on {
-				font-style: italic;
+				margin-top: 0.55em;
+				font-size: 0.72rem;
+				color: rgba(15, 18, 25, 0.38);
 			}
 			.post-nav { 
 				display: flex; 
@@ -107,7 +147,11 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 			.post-nav a { color: inherit; text-decoration: none; }
 			.post-nav a:hover { color: rgb(var(--accent)); text-decoration: underline; }
 			@media (max-width: 720px) {
-				.title h1 {font-size: 1.5em;}
+				.title h1 { font-size: 1.35em; }
+				.title .pill {
+					font-size: 0.7rem;
+					padding: 4px 10px;
+				}
 			}
 		</style>
 	</head>
@@ -122,31 +166,56 @@ const olderPost = currentIndex >= 0 && currentIndex < allPosts.length - 1 ? allP
 				<div class="prose prose-lg max-w-none">
 					<div class="title">
 						<h1>{title}</h1>
-						{Array.isArray(categories) && categories.length > 0 && (
-							<div class="pill-row categories" aria-label="Kategórie">
-								{categories.map((c) => <a class="pill pill-category" href={`/categories/${tagToSlug(c)}/`}>{c}</a>)}
+						{((Array.isArray(categories) && categories.length > 0) || (Array.isArray(tags) && tags.length > 0)) && (
+							<div class="pill-row taxonomy" aria-label="Kategórie a značky">
+								{Array.isArray(categories) && categories.map((c) => (
+									<a class="pill pill-category" href={`/categories/${tagToSlug(c)}/`}>{c}</a>
+								))}
+								{Array.isArray(categories) && categories.length > 0 && Array.isArray(tags) && tags.length > 0 && (
+									<svg class="tag-divider" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path>
+										<circle cx="7.5" cy="7.5" r="1.5"></circle>
+									</svg>
+								)}
+								{Array.isArray(tags) && tags.map((t) => (
+									<a class="pill pill-tag" href={`/tags/${tagToSlug(t)}/`}>{t}</a>
+								))}
 							</div>
 						)}
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Naposledy aktualizované <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+						<div class="meta-bar">
+							<span class="meta-item">
+								<svg class="meta-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<rect x="3" y="4" width="18" height="18" rx="2"></rect>
+									<line x1="16" y1="2" x2="16" y2="6"></line>
+									<line x1="8" y1="2" x2="8" y2="6"></line>
+									<line x1="3" y1="10" x2="21" y2="10"></line>
+								</svg>
+								<FormattedDate date={pubDate} />
+							</span>
+							<span class="meta-sep" aria-hidden="true">·</span>
+							<span class="meta-item">
+								<svg class="meta-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+									<circle cx="12" cy="7" r="4"></circle>
+								</svg>
+								<span class="sr-only">Autor: </span>{author}
+							</span>
+							{showComments && (
+								<>
+									<span class="meta-sep" aria-hidden="true">·</span>
+									<a class="meta-item meta-link" href="#comments">
+										<svg class="meta-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M21 11.5a8.38 8.38 0 0 1-4.7 7.6 8.5 8.5 0 0 1-7.6 0L3 21l1.9-5.7a8.38 8.38 0 0 1 0-7.6 8.5 8.5 0 0 1 7.6-4.7h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+										</svg>
+										Diskusia
+									</a>
+								</>
+							)}
 						</div>
-						<div class="meta">Autor: {author}</div>
-						{Array.isArray(tags) && tags.length > 0 && (
-							<div class="pill-row tags" aria-label="Značky">
-								{tags.map((t) => <a class="pill pill-tag" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
+						{updatedDate && (
+							<div class="last-updated-on">
+								Naposledy aktualizované <FormattedDate date={updatedDate} />
 							</div>
-						)}
-						{showComments && (
-							<p>
-								<a class="comments-link" href="#comments">💬 Diskusia</a>
-							</p>
 						)}
 					</div>
 					<slot />
