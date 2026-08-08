@@ -41,6 +41,11 @@ const menuitems: MenuItem[] = [
   { title: "Odporúčané", path: "/odporucane" },
   { title: "Kontakt", path: "/kontakt" },
 ];
+
+const currentPath = Astro.url.pathname;
+function isActive(path: string): boolean {
+  return path === "/" ? currentPath === "/" : (currentPath === path || currentPath.startsWith(path));
+}
 ---
 
 <style>
@@ -91,7 +96,12 @@ const menuitems: MenuItem[] = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-700 hover:text-black no-underline"
+                      class={[
+                        "flex lg:px-3 py-2 items-center no-underline lg:border-b-2",
+                        isActive(item.path)
+                          ? "text-black font-semibold lg:border-[var(--accent)]"
+                          : "text-gray-700 hover:text-black lg:border-transparent",
+                      ].join(" ")}
                       title={item.isHomeIcon ? "Home" : undefined}>
                       {item.isHomeIcon ? (
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -200,6 +210,28 @@ const menuitems: MenuItem[] = [
     :global(li.has-submenu:hover .astronav-dropdown > .dropdown-toggle) {
       display: block !important; /* override hidden */
     }
+  }
+
+  /* Mobile menu: smooth height/opacity transition instead of an instant display cut.
+     Scoped below the lg breakpoint only, so it never fights the lg:flex desktop layout. */
+  @media (max-width: 1023px) {
+    :global(.astronav-items) {
+      transition: max-height 260ms ease, opacity 200ms ease;
+      overflow: hidden;
+    }
+    :global(.astronav-items.hidden) {
+      display: block !important; /* override Tailwind's display:none so max-height can animate */
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    :global(.astronav-items:not(.hidden)) {
+      max-height: 600px;
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.astronav-items) { transition: none; }
   }
 
   /* Compact search modal results */
