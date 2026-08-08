@@ -45,9 +45,11 @@ const enhanced = await withBlogThumbs(posts);
           title: post.data.title,
           date: post.data.pubDate,
           thumbUrl: post.thumb,
+          description: post.data.description,
         }))}
         columnsClass="grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
         titleClass="text-[1.5em]"
+        hideThumbOnMobile
         />
       )}
     </main>
