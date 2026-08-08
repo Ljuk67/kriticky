@@ -100,8 +100,8 @@ main {
 /* Prose (Tailwind Typography) theme overrides to match palette */
 .prose { color: rgb(var(--gray-dark)); }
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { color: rgb(var(--black)); }
-.prose a:not(.btn):not(.btn-light):not(.btn-dark):not(.tag){ color: var(--accent); text-decoration: underline; }
-.prose a:hover:not(.btn):not(.btn-light):not(.btn-dark):not(.tag) { color: var(--accent); text-decoration: none; }
+.prose a:not(.btn):not(.btn-light):not(.btn-dark):not(.tag):not(.pill){ color: var(--accent); text-decoration: underline; }
+.prose a:hover:not(.btn):not(.btn-light):not(.btn-dark):not(.tag):not(.pill) { color: var(--accent); text-decoration: none; }
 .prose strong { color: rgb(var(--black)); }
 .prose code { background-color: rgb(var(--gray-light)); color: rgb(var(--gray-dark)); border-radius: 4px; padding: 0.15em 0.35em; }
 .prose hr { border-color: rgb(var(--gray-light)); }
@@ -447,19 +447,55 @@ cite:before {
 	white-space: nowrap;
 }
 
-.tags {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+/* Unified pill style for tags & categories: used on listing pages, the tag/
+   category clouds, and the post detail page. `.pill-tag` is the neutral,
+   secondary variant; `.pill-category` is the accent-tinted variant for the
+   higher-level taxonomy, so the two stay visually distinct wherever they
+   appear together. */
+.pill-row {
+	display: flex;
 	flex-wrap: wrap;
-    row-gap: 10px;
-}
+	align-items: center;
+	gap: 8px;
+	list-style: none;
 
-.tags a{background: var(--gray);
-		color: black;
-		padding: 1px 20px;
-		font-size: 0.65em;
-	}
+}
+.pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 5px 14px;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	line-height: 1.3;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.pill-count {
+	font-weight: 500;
+	opacity: 0.6;
+}
+.pill-tag {
+	background: rgba(15, 18, 25, 0.055);
+	color: rgb(var(--black));
+	border: 1px solid rgba(15, 18, 25, 0.08);
+}
+.pill-tag:hover {
+	background: rgba(42, 123, 155, 0.1);
+	border-color: rgba(42, 123, 155, 0.35);
+	color: var(--accent-dark);
+}
+.pill-category {
+	background: rgba(42, 123, 155, 0.1);
+	color: var(--accent-dark);
+	border: 1px solid rgba(42, 123, 155, 0.25);
+}
+.pill-category:hover {
+	background: rgba(42, 123, 155, 0.18);
+	border-color: var(--accent);
+}
 /* Button utilities are defined in src/styles/tailwind.css under @layer components */
 
 /* Full-bleed utility: stretches to viewport edges with safe side padding */

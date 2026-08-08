@@ -150,10 +150,10 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 				<h2>Najnovšie články</h2>
 				{allCategories.length > 0 && (
 					<div class="mt-2 mb-4">
-						<ul class="flex flex-wrap gap-2 p-0 m-0 list-none" aria-label="Kategórie">
+						<ul class="pill-row" aria-label="Kategórie">
 							{allCategories.map(([c, count]) => (
 								<li>
-									<a class="inline-block bg-gray-200 text-gray-800 rounded-full px-2 py-0.5 no-underline mr-1" href={`/categories/${tagToSlug(c)}/`}>{c} <span class="text-gray-500 ml-1 text-sm">({count})</span></a>
+									<a class="pill pill-category" href={`/categories/${tagToSlug(c)}/`}>{c} <span class="pill-count">({count})</span></a>
 								</li>
 							))}
 						</ul>
@@ -165,7 +165,7 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 				  date: post.data.pubDate,
 				  thumbUrl: post.thumb,
 				  description: post.data.description,
-				}))} titleClass="text-[1.5em]" />
+				}))} titleClass="text-[1.1em]" />
 				<p class="view-all"><a href={`${import.meta.env.BASE_URL}blog/`}>Zobraziť všetky články →</a></p>
 				
 				</div>
@@ -177,10 +177,10 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 			<section class="tag-cloud full-bleed mt-2 pt-4 border-t border-gray-200">
 			  <div class="mx-0 md:mx-8">
 			  <h3>Podľa tém</h3>
-			  <ul class="flex flex-wrap gap-2 sm:gap-3 md:gap-6 items-baseline p-0 m-0 list-none">
+			  <ul class="pill-row">
 				{allTags.map(([t, c]) => (
 				  <li>
-					<a class="inline-block bg-gray-200 text-gray-800 rounded-full px-3 py-1 no-underline hover:bg-gray-300" href={`/tags/${tagToSlug(t)}/`}>{t} <span class="text-gray-500 ml-1 text-sm">({c})</span></a>
+					<a class="pill pill-tag" href={`/tags/${tagToSlug(t)}/`}>{t} <span class="pill-count">({c})</span></a>
 				  </li>
 				))}
 			  </ul>

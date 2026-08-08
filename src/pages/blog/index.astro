@@ -24,7 +24,11 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 <html lang="sk">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style></style>
+		<style>
+			/* This row sits in a text-center wrapper; render it inline-flex so it
+			   stays centered as a group instead of stretching full width. */
+			.category-filter { display: inline-flex; }
+		</style>
 	</head>
 	<body>
 		<Header />
@@ -32,10 +36,10 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 			<h1 class="text-center">Všetky články o kritickom myslení v praxi</h1>
 			{allCategories.length > 0 && (
 				<div class="mt-3 mb-6 text-center">
-					<ul class="inline-flex flex-wrap gap-2 p-0 m-0 list-none" aria-label="Kategórie">
+					<ul class="pill-row category-filter" aria-label="Kategórie">
 						{allCategories.map(([c, count]) => (
 							<li>
-								<a class="inline-block bg-gray-200 text-gray-800 rounded-full px-4 py-0.5 no-underline mr-1" href={`/categories/${tagToSlug(c)}/`}>{c} <span class="text-gray-500 ml-1 text-sm">({count})</span></a>
+								<a class="pill pill-category" href={`/categories/${tagToSlug(c)}/`}>{c} <span class="pill-count">({count})</span></a>
 							</li>
 						))}
 					</ul>
@@ -47,8 +51,8 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 						enhanced.map((post, i) => (
 							<li class={['glass','rounded-[14px]', i === 0 ? 'sm:col-span-2 p-4' : 'p-3'].join(' ')}>
 								<a class="block group no-underline" href={`${import.meta.env.BASE_URL}blog/${post.id}/`}>
-									<img class="post-thumb w-full h-auto rounded-[14px] mb-2 max-sm:hidden" src={post.thumb} alt="" />
-									<h2 class={['posttitle', i === 0 ? 'text-[1.6em] font-semibold' : 'text-[1.3em]'].join(' ')}>{post.data.title}</h2>
+									<img class="post-thumb w-full h-auto rounded-[14px] mb-2 max-sm:hidden" src={post.thumb} alt="" loading="lazy" decoding="async" />
+									<h2 class={['posttitle', i === 0 ? 'text-[1.6em] font-semibold' : 'text-[1.1em]'].join(' ')}>{post.data.title}</h2>
 									<p class="post-description text-sm mb-1 text-[rgb(var(--black))]">{post.data.description}</p>
 									<div class="date text-gray-500 text-sm">
 										<FormattedDate date={post.data.pubDate} />
@@ -56,8 +60,8 @@ const allCategories = [...catCounts.entries()].sort((a, b) => a[0].localeCompare
 									<div class="text-sm meta text-gray-500">Autor: {post.data.author}</div>
 								</a>
 								{Array.isArray(post.data.tags) && post.data.tags.length > 0 && (
-									<div class="tags mt-1 text-gray-500" aria-label="Značky">
-										{post.data.tags.map((t) => <a class="inline-block bg-gray-200 text-gray-800 rounded-full px-2 py-0.5 no-underline mr-1" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
+									<div class="pill-row mt-2" aria-label="Značky">
+										{post.data.tags.map((t) => <a class="pill pill-tag" href={`/tags/${tagToSlug(t)}/`}>{t}</a>)}
 									</div>
 								)}
 							</li>
