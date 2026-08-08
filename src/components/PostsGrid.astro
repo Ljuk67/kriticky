@@ -29,13 +29,13 @@ const {
   {items.map((it) => (
     <li class="glass p-3 rounded-[14px]">
       <a class="block group no-underline" href={it.url}>
-        {it.thumbUrl && <img class={`post-thumb w-full h-auto rounded-[12px] mb-3${hideThumbOnMobile ? ' max-sm:!hidden' : ''}`} src={it.thumbUrl} alt="" />}
+        {it.thumbUrl && <img class={`post-thumb w-full h-auto rounded-[14px] mb-3${hideThumbOnMobile ? ' max-sm:!hidden' : ''}`} src={it.thumbUrl} alt="" loading="lazy" decoding="async" />}
         <h3 class={`posttitle ${titleClass}`}>{it.title}</h3>
         {it.description && (
           <p class="post-description text-sm mb-1">{it.description}</p>
         )}
         {it.date && (
-          <p class="date text-sm"><FormattedDate date={new Date(it.date)} /></p>
+          <p class="date text-sm text-gray-500"><FormattedDate date={new Date(it.date)} /></p>
         )}
       </a>
     </li>
@@ -44,9 +44,8 @@ const {
 
 <style>
   .posts-grid li a { text-decoration: none; }
-  .posts-grid li img, .posts-grid li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 12px; }
+  .posts-grid li img, .posts-grid li svg { display: block; width: 100%; height: auto; margin-bottom: 14px; border-radius: 14px; }
   .posts-grid li .posttitle { margin: 0; color: rgb(var(--black)); }
   .posts-grid li .post-description { color: rgb(var(--black)); }
-  .posts-grid li .date { margin: 0; color: rgb(var(--gray)); }
-  .posts-grid li:hover img, .posts-grid li:hover svg { box-shadow: var(--box-shadow); }
+  .posts-grid li .date { margin: 0; }
 </style>
