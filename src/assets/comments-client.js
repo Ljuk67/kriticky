@@ -35,7 +35,6 @@ ready(() => {
 
   const headers = {
     apikey: key,
-    Authorization: 'Bearer ' + key,
     'Content-Type': 'application/json',
     Accept: 'application/json',
   };
@@ -44,13 +43,12 @@ ready(() => {
     if (!listEl || !slug) return;
     try {
       const q = new URL(url + '/rest/v1/comments');
-      // Fallback: add apikey as URL param in case some environments strip custom headers
-      q.searchParams.set('apikey', key);
       q.searchParams.set('select', 'id,name,message,created_at');
       q.searchParams.set('slug', 'eq.' + slug);
       q.searchParams.set('is_approved', 'eq.true');
       q.searchParams.set('order', 'created_at.asc');
       const res = await fetch(q, { headers });
+      if (!res.ok) throw new Error(`Comments request failed: ${res.status}`);
       const data = await res.json();
       const items = Array.isArray(data) ? data : [];
       if (!items.length) {

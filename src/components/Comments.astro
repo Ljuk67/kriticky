@@ -1,13 +1,13 @@
 ---
 // Client-only Supabase comments (moderated):
-// - Reads PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_ANON_KEY
+// - Reads PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_PUBLISHABLE_KEY
 // - Lists approved comments for the given slug
 // - Submits new comments; DB handles approval/defaults via RLS/defaults
 // UI text is Slovak; code identifiers in English
 interface Props { slug: string; }
 const { slug } = Astro.props as Props;
 import commentsClientUrl from '../assets/comments-client.js?url';
-const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PUBLIC_SUPABASE_ANON_KEY);
+const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY);
 ---
 
 <section class="comments" aria-label="Komentáre">
@@ -15,7 +15,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
   <h5>Pridaj komentár:</h5>
 
   {!canRun && (
-    <p class="note">Komentáre sú dočasne vypnuté. Chýba <code>PUBLIC_SUPABASE_URL</code> alebo <code>PUBLIC_SUPABASE_ANON_KEY</code>.</p>
+    <p class="note">Komentáre sú dočasne vypnuté. Chýba <code>PUBLIC_SUPABASE_URL</code> alebo <code>PUBLIC_SUPABASE_PUBLISHABLE_KEY</code>.</p>
   )}
 
   {canRun && (
@@ -47,7 +47,7 @@ const canRun = Boolean(import.meta.env.PUBLIC_SUPABASE_URL && import.meta.env.PU
         <button type="button">Odoslať komentár</button>
       </form>
       
-      <div id="comments-list" data-slug={slug} data-supabase-url={import.meta.env.PUBLIC_SUPABASE_URL} data-supabase-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}>
+      <div id="comments-list" data-slug={slug} data-supabase-url={import.meta.env.PUBLIC_SUPABASE_URL} data-supabase-key={import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY}>
         <div class="loading">Načítavam komentáre…</div>
       </div>
 

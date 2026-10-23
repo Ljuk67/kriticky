@@ -11,7 +11,7 @@ require_once __DIR__ . '/../lib/logger.php';
 
 $out = [
   'supabaseUrl' => (bool)cfg('SUPABASE_URL', ''),
-  'serviceRole' => (bool)cfg('SUPABASE_SERVICE_ROLE_KEY', ''),
+  'secretKey' => (bool)cfg('SUPABASE_SECRET_KEY', ''),
   'smtp' => [
     'host' => (bool)cfg('SMTP_HOST', ''),
     'user' => (bool)cfg('SMTP_USER', ''),
@@ -25,12 +25,11 @@ $out = [
 // Minimal Supabase SELECT test (no data written)
 try {
   $sbUrl = rtrim((string)cfg('SUPABASE_URL', ''), '/');
-  $key = (string)cfg('SUPABASE_SERVICE_ROLE_KEY', '');
+  $key = (string)cfg('SUPABASE_SECRET_KEY', '');
   if ($sbUrl && $key) {
     $ch = curl_init($sbUrl . '/rest/v1/comments?select=id&limit=1');
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
       'apikey: ' . $key,
-      'Authorization: Bearer ' . $key,
       'Accept: application/json',
     ]);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
