@@ -1,35 +1,35 @@
 <?php
 declare(strict_types=1);
 
-// Simple config loader that prefers a local PHP file returning an array of secrets.
-// This avoids needing host-level env vars on providers without such UI.
-//
-// Usage:
-//   $cfg = cfg('SUPABASE_URL'); // checks local file first, then getenv()
-
 function _cfg_cache(): array {
   static $cache = null;
   if ($cache !== null) return $cache;
-  $cache = [];
-  // Allow explicit path override via GET/ENV for debugging only if file exists and is within allowed directory
-  $candidates = [];
-  // Default: config.local.php next to this lib directory’s parent (public/api)
-  $candidates[] = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config.local.php';
-  // Try one level above public/ if deployed as /dist
-  $candidates[] = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config.local.php';
-  foreach ($candidates as $p) {
-    if (is_file($p)) {
-      $arr = require $p;
-      if (is_array($arr)) { $cache = $arr; break; }
+  $root = dirname(__DIR__, 3);
+  $path = getenv('KRITICKY_CONFIG_FILE');
+  if ($path === false || $path === '') {
+    $path = $root . '/private/server.php';
+    if (!file_exists($path) && !is_link($path)) return $cache = [];
+  }
+  $resolved = realpath($path);
+  if ($path[0] !== '/' || $resolved === false || !is_file($resolved) || !is_readable($resolved)) {
+    throw new RuntimeException('Server configuration must be a readable absolute private file.');
+  }
+  $publicRoots = [$root . '/public', $root . '/dist', dirname(__DIR__, 2)];
+  if (!empty($_SERVER['DOCUMENT_ROOT'])) $publicRoots[] = $_SERVER['DOCUMENT_ROOT'];
+  foreach ($publicRoots as $publicRoot) {
+    $publicRoot = realpath($publicRoot);
+    if ($publicRoot !== false && ($resolved === $publicRoot || str_starts_with($resolved, rtrim($publicRoot, '/') . '/'))) {
+      throw new RuntimeException('Server configuration must be outside public directories and the document root.');
     }
   }
-  return $cache;
+  $values = require $resolved;
+  if (!is_array($values)) throw new RuntimeException('Private server configuration must return an array.');
+  return $cache = $values;
 }
 
 function cfg(string $key, ?string $default = null): ?string {
-  $c = _cfg_cache();
-  if (array_key_exists($key, $c)) return (string)$c[$key];
-  $v = getenv($key);
-  return $v === false ? $default : $v;
+  $value = getenv($key);
+  if ($value !== false) return $value;
+  $values = _cfg_cache();
+  return array_key_exists($key, $values) ? (string)$values[$key] : $default;
 }
-
