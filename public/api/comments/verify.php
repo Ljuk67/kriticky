@@ -16,7 +16,7 @@ if ($token === '') {
 
 require_once __DIR__ . '/../lib/config.php';
 $sbUrl = rtrim((string)cfg('SUPABASE_URL', ''), '/');
-$sbServiceKey = (string)cfg('SUPABASE_SERVICE_ROLE_KEY', '');
+$sbServiceKey = (string)cfg('SUPABASE_SECRET_KEY', '');
 if ($sbUrl === '' || $sbServiceKey === '') {
   http_response_code(500);
   echo 'Server not configured';
@@ -27,7 +27,6 @@ function sb_request(string $method, string $url, string $serviceKey, array $body
   $ch = curl_init($url);
   $h = array_merge([
     'apikey: ' . $serviceKey,
-    'Authorization: Bearer ' . $serviceKey,
     'Content-Type: application/json',
     'Accept: application/json',
   ], $headers);
