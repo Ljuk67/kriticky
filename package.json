@@ -23,7 +23,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@sentry/astro": "^10.10.0",
     "@spotlightjs/astro": "^3.2.6",
-    "astro": "^5.18.2",
+    "astro": "^7.4.7",
     "astro-navbar": "^2.4.0",
     "openai": "^5.20.0",
     "pagefind": "^1.4.0",
